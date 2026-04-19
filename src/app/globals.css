@@ -1,0 +1,295 @@
+/* ============================================
+   RESET Y VARIABLES GLOBALES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: #f5f5f5;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+/* Estilos globales para mapas y marcadores */
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Asegurar que el mapa se vea correctamente */
+.leaflet-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Mejorar la legibilidad del popup */
+.leaflet-popup-content {
+  font-size: 13px;
+  line-height: 1.4;
+  min-width: 120px;
+}
+
+/* ============================================
+   LAYOUT DE DOS COLUMNAS
+   ============================================ */
+.home-two-columns {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.left-column,
+.right-column {
+  width: 100%;
+}
+
+
+/* ============================================
+   SECCIÓN DE FAVORITOS
+   ============================================ */
+.favorites-section {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  color: #333;
+}
+
+.favorites-section h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.favorites-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.favorite-item {
+  background: #f0f0f0;
+  border-radius: 20px;
+  padding: 5px 10px 5px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.favorite-city-name {
+  cursor: pointer;
+  transition: transform 0.2s;
+  color: #333;
+}
+
+.favorite-city-name:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+.remove-favorite {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  box-shadow: none;
+  color: #999;
+}
+
+.remove-favorite:hover {
+  transform: scale(1.1);
+  background: none;
+  box-shadow: none;
+  color: #ff4444;
+}
+
+.no-favorites {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ============================================
+   ERROR
+   ============================================ */
+.error {
+  color: #d32f2f;
+  font-size: 1rem;
+  margin-top: 20px;
+  background: #ffebee;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.7;
+  border-top: 1px solid #ddd;
+  color: #666;
+}
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .weather-card-modern {
+    margin-bottom: 20px;
+  }
+  
+  .weather-details-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-two-columns {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    padding: 15px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .temp-value {
+    font-size: 3rem;
+  }
+  
+  .weather-details-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .sun-times {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .favorites-section {
+    margin: 15px;
+  }
+
+  /* Estilos responsivos para el indicador de temperatura */
+  .temperature-indicator {
+    margin: 15px 0;
+    padding: 10px;
+  }
+  
+  .temp-range-bar {
+    height: 20px;
+  }
+  
+  .temp-marks {
+    font-size: 7px;
+  }
+  
+  .temp-mark {
+    font-size: 7px;
+  }
+  
+  .temp-pointer-value {
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+  
+  .temp-pointer-arrow {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid currentColor;
+  }
+  
+  .temp-hint {
+    font-size: 9px;
+    margin-top: 20px;
+  }
+}
