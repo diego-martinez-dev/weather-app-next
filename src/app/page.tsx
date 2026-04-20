@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
@@ -8,7 +8,7 @@ import WeatherClient from '@/components/WeatherClient';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 
-export default function HomePage() {
+function HomeContent() {
   const searchParams = useSearchParams();
   const cityFromUrl = searchParams.get('city');
   
@@ -27,10 +27,8 @@ export default function HomePage() {
         let weatherRes;
         
         if (cityName) {
-          // Buscar por ciudad
           weatherRes = await fetch(`/api/weather?city=${encodeURIComponent(cityName)}`);
         } else if (lat && lon) {
-          // Buscar por coordenadas
           weatherRes = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
         } else {
           throw new Error('No se proporcionaron datos de búsqueda');
@@ -41,13 +39,10 @@ export default function HomePage() {
         if (weatherData.cod === 200) {
           setWeather(weatherData);
           
-          // Calidad del aire (si tenemos coordenadas)
-          const coords = { lat: weatherData.coord.lat, lon: weatherData.coord.lon };
-          const airRes = await fetch(`/api/weather?type=air&lat=${coords.lat}&lon=${coords.lon}`);
+          const airRes = await fetch(`/api/weather?type=air&lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}`);
           const airData = await airRes.json();
           setAirQuality(airData);
           
-          // Pronóstico
           const forecastRes = await fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}`);
           const forecastData = await forecastRes.json();
           setForecast(forecastData);
@@ -64,10 +59,8 @@ export default function HomePage() {
 
     const getWeatherByLocation = () => {
       if (cityFromUrl) {
-        // Si hay ciudad en la URL, buscar por ciudad
         fetchWeatherData(cityFromUrl);
       } else {
-        // Si no, usar geolocalización
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -90,24 +83,32 @@ export default function HomePage() {
   }, [cityFromUrl]);
 
   return (
-    <SettingsProvider>
-      <div>
-        <TopMenu />
-        <div className="home-two-columns">
-          <h1>🌤️ Clima Hoy</h1>
-          {loading && <LoadingSpinner />}
-          {error && <p className="error">{error}</p>}
-          {weather && (
-            <WeatherClient 
-              weather={weather}
-              tempCelsius={weather.main?.temp}
-              airQuality={airQuality}
-              forecast={forecast}
-            />
-          )}
-        </div>
-        <Footer />
+    <div>
+      <TopMenu />
+      <div className="home-two-columns">
+        <h1>🌤️ Clima Hoy</h1>
+        {loading && <LoadingSpinner />}
+        {error && <p className="error">{error}</p>}
+        {weather && (
+          <WeatherClient 
+            weather={weather}
+            tempCelsius={weather.main?.temp}
+            airQuality={airQuality}
+            forecast={forecast}
+          />
+        )}
       </div>
+      <Footer />
+    </div>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <SettingsProvider>
+      <Suspense fallback={<LoadingSpinner />}>
+        <HomeContent />
+      </Suspense>
     </SettingsProvider>
   );
 }
