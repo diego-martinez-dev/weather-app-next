@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clima-hoy.com/sitemap.xml
+Sitemap: https://www.clima-hoy.com/sitemap.xml
+Host: https://www.clima-hoy.com

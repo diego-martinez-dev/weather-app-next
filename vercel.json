@@ -25,8 +25,25 @@
   ],
   "redirects": [
     {
-      "source": "/clima/(.*)",
-      "destination": "/clima/$1",
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "clima-hoy.com"
+        }
+      ],
+      "destination": "https://www.clima-hoy.com",
+      "permanent": true
+    },
+    {
+      "source": "/((?!api/).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "clima-hoy.com"
+        }
+      ],
+      "destination": "https://www.clima-hoy.com/$1",
       "permanent": true
     }
   ]
