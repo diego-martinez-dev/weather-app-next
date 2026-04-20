@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
+import './Footer.css';
 
 export default function Footer() {
   const { t } = useTranslation();

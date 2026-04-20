@@ -5,6 +5,7 @@ footer {
   font-size: 12px;
   opacity: 0.8;
   border-top: 1px solid #ddd;
+  background: white;
 }
 
 .footer-links {
@@ -24,4 +25,16 @@ footer {
 .footer-copyright {
   font-size: 11px;
   color: #666;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  footer {
+    padding: 15px;
+  }
+  
+  .footer-links a {
+    display: inline-block;
+    margin: 5px 8px;
+  }
 }
