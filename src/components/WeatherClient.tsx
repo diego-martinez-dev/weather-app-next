@@ -4,7 +4,6 @@ import WeatherCard from './WeatherCard';
 import WeatherMapWrapper from './WeatherMapWrapper';
 import Forecast from './Forecast';
 import HourlyForecast from './HourlyForecast';
-import TemperatureIndicator from './TemperatureIndicator';
 import { useSettings } from '@/contexts/SettingsContext';
 
 interface WeatherClientProps {
@@ -56,11 +55,6 @@ export default function WeatherClient({
         </div>
       </div>
       
-      <TemperatureIndicator
-        tempCelsius={tempCelsius}
-        tempDisplay={tempDisplay}
-      />
-
       {forecast?.list && <HourlyForecast forecastData={forecast} />}
 
       <Forecast cityName={weather.name} forecastData={forecast} />
