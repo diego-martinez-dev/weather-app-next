@@ -1,0 +1,109 @@
+'use client';
+
+import { Suspense, useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
+import TopMenu from '@/components/TopMenu';
+import Footer from '@/components/Footer';
+import WeatherClient from '@/components/WeatherClient';
+import { SettingsProvider } from '@/contexts/SettingsContext';
+
+function slugToCity(slug: string): string {
+  return slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+function SkeletonLoader() {
+  return (
+    <div>
+      <TopMenu />
+      <div className="home-two-columns">
+        <div className="skeleton weather-card-skeleton"></div>
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+function CityContent() {
+  const params = useParams<{ slug: string }>();
+  const cityName = slugToCity(params.slug ?? '');
+
+  const [weather, setWeather] = useState<any>(null);
+  const [airQuality, setAirQuality] = useState<any>(null);
+  const [forecast, setForecast] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [isFavorite] = useState(false);
+
+  const fetchWeatherData = async (city: string) => {
+    setLoading(true);
+    setError('');
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+    try {
+      const weatherRes = await fetch(
+        `/api/weather?city=${encodeURIComponent(city)}`,
+        { signal: controller.signal }
+      );
+      clearTimeout(timeoutId);
+      const weatherData = await weatherRes.json();
+
+      if (weatherData.cod === 200) {
+        setWeather(weatherData);
+
+        const [airRes, forecastRes] = await Promise.all([
+          fetch(`/api/weather?type=air&lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}`),
+          fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}`),
+        ]);
+        setAirQuality(await airRes.json());
+        setForecast(await forecastRes.json());
+      } else {
+        setError(weatherData.message || 'Ciudad no encontrada');
+      }
+    } catch {
+      setError('No se pudo obtener el clima');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (cityName) fetchWeatherData(cityName);
+  }, [cityName]);
+
+  if (loading) return <SkeletonLoader />;
+
+  return (
+    <div>
+      <TopMenu />
+      <div className="home-two-columns">
+        <h1>🌤️ {weather?.name ?? cityName}</h1>
+        {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
+        {weather && (
+          <WeatherClient
+            weather={weather}
+            tempCelsius={weather.main?.temp}
+            airQuality={airQuality}
+            forecast={forecast}
+            onAddFavorite={() => {}}
+            isFavorite={isFavorite}
+          />
+        )}
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+export default function CityPage() {
+  return (
+    <SettingsProvider>
+      <Suspense fallback={<SkeletonLoader />}>
+        <CityContent />
+      </Suspense>
+    </SettingsProvider>
+  );
+}

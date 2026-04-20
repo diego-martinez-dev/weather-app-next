@@ -34,6 +34,7 @@ export default function WeatherMap({
 }: WeatherMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
+  const markerRef = useRef<L.Marker | null>(null);
 
   useEffect(() => {
     if (!lat || !lon || !mapRef.current) return;
@@ -69,12 +70,17 @@ export default function WeatherMap({
         iconAnchor: [6, 6]
       });
       
-      L.marker([lat, lon], { icon: customIcon })
+      markerRef.current = L.marker([lat, lon], { icon: customIcon })
         .bindPopup(`<b>${cityName}</b><br/>🌡️ ${tempDisplay}`)
         .addTo(mapInstanceRef.current)
         .openPopup();
     } else {
       mapInstanceRef.current.setView([lat, lon], 6);
+      if (markerRef.current) {
+        markerRef.current.setLatLng([lat, lon]);
+        markerRef.current.setPopupContent(`<b>${cityName}</b><br/>🌡️ ${tempDisplay}`);
+        markerRef.current.openPopup();
+      }
     }
   }, [lat, lon, cityName, tempDisplay]);
 
