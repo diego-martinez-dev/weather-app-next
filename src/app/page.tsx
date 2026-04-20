@@ -6,40 +6,23 @@ import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
-import LoadingSpinner from '@/components/LoadingSpinner';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 
-// Componente de contenido estático para SEO (visible para Googlebot)
-function StaticHomeContent() {
+// Skeleton loader para mostrar mientras carga
+function SkeletonLoader() {
   return (
     <div>
       <TopMenu />
       <div className="home-two-columns">
-        <h1>🌤️ Clima Hoy - Tu aplicación del clima en tiempo real</h1>
-        <p>Consulta el clima actual, pronóstico y mapa de temperatura para cualquier ciudad del mundo.</p>
-        
-        <h2>🌡️ Características principales</h2>
-        <ul>
-          <li>Temperatura actual y sensación térmica</li>
-          <li>Humedad y calidad del aire</li>
-          <li>Amanecer y atardecer</li>
-          <li>Mapa meteorológico con temperatura superficial</li>
-          <li>Pronóstico para 5 días</li>
-          <li>Ciudades favoritas</li>
-        </ul>
-        
-        <h2>🏙️ Ciudades principales</h2>
-        <div className="cities-grid">
-          <a href="/clima/bogota" className="city-card">🌆 Bogotá</a>
-          <a href="/clima/medellin" className="city-card">🌆 Medellín</a>
-          <a href="/clima/cali" className="city-card">🌆 Cali</a>
-          <a href="/clima/barranquilla" className="city-card">🌆 Barranquilla</a>
-          <a href="/clima/cartagena" className="city-card">🌆 Cartagena</a>
-          <a href="/clima/madrid" className="city-card">🌍 Madrid</a>
-          <a href="/clima/barcelona" className="city-card">🌍 Barcelona</a>
-          <a href="/clima/london" className="city-card">🌍 Londres</a>
-          <a href="/clima/paris" className="city-card">🌍 París</a>
-          <a href="/clima/new-york" className="city-card">🌍 Nueva York</a>
+        <h1>🌤️ Clima Hoy</h1>
+        <div className="skeleton favorites-skeleton"></div>
+        <div className="two-column-layout">
+          <div className="left-column">
+            <div className="skeleton weather-card-skeleton"></div>
+          </div>
+          <div className="right-column">
+            <div className="skeleton map-skeleton"></div>
+          </div>
         </div>
       </div>
       <Footer />
@@ -58,12 +41,8 @@ function HomeContent() {
   const [error, setError] = useState('');
   const [favorites, setFavorites] = useState<string[]>([]);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
+  // Cargar favoritos desde localStorage
   useEffect(() => {
     const savedFavorites = localStorage.getItem('favoriteCities');
     if (savedFavorites) {
@@ -71,10 +50,12 @@ function HomeContent() {
     }
   }, []);
 
+  // Guardar favoritos en localStorage cuando cambien
   useEffect(() => {
     localStorage.setItem('favoriteCities', JSON.stringify(favorites));
   }, [favorites]);
 
+  // Actualizar estado isFavorite cuando cambia el clima
   useEffect(() => {
     if (weather && weather.name) {
       setIsFavorite(favorites.includes(weather.name));
@@ -91,30 +72,41 @@ function HomeContent() {
     setFavorites(favorites.filter(city => city !== cityName));
   };
 
+  // Función mejorada con timeout y mejor manejo de errores
   const fetchWeatherData = async (cityName?: string, lat?: number, lon?: number) => {
     setLoading(true);
     setError('');
     
+    // Timeout de 8 segundos para la petición
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    
     try {
       let weatherRes;
+      let url = '';
       
       if (cityName) {
-        weatherRes = await fetch(`/api/weather?city=${encodeURIComponent(cityName)}`);
+        url = `/api/weather?city=${encodeURIComponent(cityName)}`;
       } else if (lat && lon) {
-        weatherRes = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
+        url = `/api/weather?lat=${lat}&lon=${lon}`;
       } else {
         throw new Error('No se proporcionaron datos de búsqueda');
       }
+      
+      weatherRes = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
       
       const weatherData = await weatherRes.json();
       
       if (weatherData.cod === 200) {
         setWeather(weatherData);
         
+        // Calidad del aire
         const airRes = await fetch(`/api/weather?type=air&lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}`);
         const airData = await airRes.json();
         setAirQuality(airData);
         
+        // Pronóstico
         const forecastRes = await fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}`);
         const forecastData = await forecastRes.json();
         setForecast(forecastData);
@@ -122,8 +114,15 @@ function HomeContent() {
         throw new Error(weatherData.message || 'Error al obtener clima');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Error fetching weather:', err);
       setError('No se pudo obtener el clima');
+      // Fallback a Bogotá solo si no es una ciudad específica que falló
+      if (!cityName && !lat) {
+        fetchWeatherData('Bogota');
+      } else if (cityName && cityName !== 'Bogota') {
+        // Si falló una ciudad específica, intentar con Bogotá como respaldo
+        fetchWeatherData('Bogota');
+      }
     } finally {
       setLoading(false);
     }
@@ -141,7 +140,6 @@ function HomeContent() {
               fetchWeatherData(undefined, latitude, longitude);
             },
             () => {
-              // Fallback a Bogotá en lugar de mostrar error
               fetchWeatherData('Bogota');
             }
           );
@@ -154,17 +152,8 @@ function HomeContent() {
     getWeatherByLocation();
   }, [cityFromUrl]);
 
-  // Para Googlebot y SSR: mostrar contenido estático
-  if (!isClient) {
-    return <StaticHomeContent />;
-  }
-
   if (loading) {
-    return <StaticHomeContent />;
-  }
-
-  if (error && !weather) {
-    return <StaticHomeContent />;
+    return <SkeletonLoader />;
   }
 
   return (
@@ -197,7 +186,7 @@ function HomeContent() {
 export default function HomePage() {
   return (
     <SettingsProvider>
-      <Suspense fallback={<StaticHomeContent />}>
+      <Suspense fallback={<SkeletonLoader />}>
         <HomeContent />
       </Suspense>
     </SettingsProvider>

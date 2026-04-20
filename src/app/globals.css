@@ -353,3 +353,35 @@ footer {
     font-size: 14px;
   }
 }
+
+/* ============================================
+   SKELETON LOADER
+   ============================================ */
+.skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 12px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.favorites-skeleton {
+  height: 80px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.weather-card-skeleton {
+  height: 500px;
+  width: 100%;
+}
+
+.map-skeleton {
+  height: 500px;
+  width: 100%;
+}
