@@ -59,11 +59,6 @@
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   text-align: center;
-  transition: transform 0.2s;
-}
-
-.hourly-card:hover {
-  transform: translateY(-2px);
 }
 
 /* Rain-highlighted card */

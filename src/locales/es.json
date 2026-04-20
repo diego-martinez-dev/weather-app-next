@@ -38,7 +38,7 @@
       "rain_probability": "Lluvia"
     },
     "hourly": {
-      "title": "Próximas 24 horas",
+      "title": "Próximas 12 horas",
       "next_hours_rain": "Posible lluvia en las próximas {{count}} horas",
       "loading": "Cargando...",
       "rain_probability": "Lluvia"
