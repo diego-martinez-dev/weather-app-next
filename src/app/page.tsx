@@ -9,22 +9,40 @@ import Favorites from '@/components/Favorites';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 
-// Componente de contenido estático para SEO
+// Componente de contenido estático para SEO (visible para Googlebot)
 function StaticHomeContent() {
   return (
-    <div className="home-two-columns">
-      <h1>🌤️ Clima Hoy - Tu aplicación del clima en tiempo real</h1>
-      <p>Consulta el clima actual, pronóstico y mapa de temperatura para cualquier ciudad del mundo.</p>
-      <p>Características:</p>
-      <ul>
-        <li>🌡️ Temperatura actual y sensación térmica</li>
-        <li>💧 Humedad y calidad del aire</li>
-        <li>🌅 Amanecer y atardecer</li>
-        <li>🗺️ Mapa meteorológico con temperatura superficial</li>
-        <li>📅 Pronóstico para 5 días</li>
-        <li>⭐ Ciudades favoritas</li>
-      </ul>
-      <p>Ejemplo: <a href="/clima/bogota">Clima en Bogotá</a> | <a href="/clima/medellin">Clima en Medellín</a> | <a href="/clima/cali">Clima en Cali</a></p>
+    <div>
+      <TopMenu />
+      <div className="home-two-columns">
+        <h1>🌤️ Clima Hoy - Tu aplicación del clima en tiempo real</h1>
+        <p>Consulta el clima actual, pronóstico y mapa de temperatura para cualquier ciudad del mundo.</p>
+        
+        <h2>🌡️ Características principales</h2>
+        <ul>
+          <li>Temperatura actual y sensación térmica</li>
+          <li>Humedad y calidad del aire</li>
+          <li>Amanecer y atardecer</li>
+          <li>Mapa meteorológico con temperatura superficial</li>
+          <li>Pronóstico para 5 días</li>
+          <li>Ciudades favoritas</li>
+        </ul>
+        
+        <h2>🏙️ Ciudades principales</h2>
+        <div className="cities-grid">
+          <a href="/clima/bogota" className="city-card">🌆 Bogotá</a>
+          <a href="/clima/medellin" className="city-card">🌆 Medellín</a>
+          <a href="/clima/cali" className="city-card">🌆 Cali</a>
+          <a href="/clima/barranquilla" className="city-card">🌆 Barranquilla</a>
+          <a href="/clima/cartagena" className="city-card">🌆 Cartagena</a>
+          <a href="/clima/madrid" className="city-card">🌍 Madrid</a>
+          <a href="/clima/barcelona" className="city-card">🌍 Barcelona</a>
+          <a href="/clima/london" className="city-card">🌍 Londres</a>
+          <a href="/clima/paris" className="city-card">🌍 París</a>
+          <a href="/clima/new-york" className="city-card">🌍 Nueva York</a>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }
@@ -42,12 +60,10 @@ function HomeContent() {
   const [isFavorite, setIsFavorite] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
-  // Marcar cuando estamos en el cliente
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Cargar favoritos desde localStorage
   useEffect(() => {
     const savedFavorites = localStorage.getItem('favoriteCities');
     if (savedFavorites) {
@@ -55,12 +71,10 @@ function HomeContent() {
     }
   }, []);
 
-  // Guardar favoritos en localStorage cuando cambien
   useEffect(() => {
     localStorage.setItem('favoriteCities', JSON.stringify(favorites));
   }, [favorites]);
 
-  // Actualizar estado isFavorite cuando cambia el clima
   useEffect(() => {
     if (weather && weather.name) {
       setIsFavorite(favorites.includes(weather.name));
@@ -127,13 +141,12 @@ function HomeContent() {
               fetchWeatherData(undefined, latitude, longitude);
             },
             () => {
-              setError('No se pudo obtener tu ubicación. Busca una ciudad.');
-              setLoading(false);
+              // Fallback a Bogotá en lugar de mostrar error
+              fetchWeatherData('Bogota');
             }
           );
         } else {
-          setError('Geolocalización no soportada. Busca una ciudad.');
-          setLoading(false);
+          fetchWeatherData('Bogota');
         }
       }
     };
@@ -141,8 +154,16 @@ function HomeContent() {
     getWeatherByLocation();
   }, [cityFromUrl]);
 
-  // Mostrar contenido estático mientras carga o en el servidor
-  if (!isClient || loading) {
+  // Para Googlebot y SSR: mostrar contenido estático
+  if (!isClient) {
+    return <StaticHomeContent />;
+  }
+
+  if (loading) {
+    return <StaticHomeContent />;
+  }
+
+  if (error && !weather) {
     return <StaticHomeContent />;
   }
 
@@ -157,7 +178,6 @@ function HomeContent() {
           onRemoveFavorite={removeFavorite}
         />
         
-        {error && <p className="error">{error}</p>}
         {weather && (
           <WeatherClient 
             weather={weather}
