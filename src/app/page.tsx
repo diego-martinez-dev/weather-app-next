@@ -72,6 +72,17 @@ function HomeContent() {
     setFavorites(favorites.filter(city => city !== cityName));
   };
 
+  const handleLocationClick = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => fetchWeatherData(undefined, pos.coords.latitude, pos.coords.longitude),
+        () => fetchWeatherData('Bogota')
+      );
+    } else {
+      fetchWeatherData('Bogota');
+    }
+  };
+
   // Función mejorada con timeout y mejor manejo de errores
   const fetchWeatherData = async (cityName?: string, lat?: number, lon?: number) => {
     setLoading(true);
@@ -168,13 +179,14 @@ function HomeContent() {
         />
         
         {weather && (
-          <WeatherClient 
+          <WeatherClient
             weather={weather}
             tempCelsius={weather.main?.temp}
             airQuality={airQuality}
             forecast={forecast}
             onAddFavorite={addFavorite}
             isFavorite={isFavorite}
+            onLocationClick={handleLocationClick}
           />
         )}
       </div>

@@ -14,15 +14,17 @@ interface WeatherClientProps {
   forecast?: any;
   onAddFavorite: () => void;
   isFavorite: boolean;
+  onLocationClick?: () => void;
 }
 
-export default function WeatherClient({ 
-  weather, 
-  tempCelsius, 
-  airQuality, 
-  forecast, 
-  onAddFavorite, 
-  isFavorite 
+export default function WeatherClient({
+  weather,
+  tempCelsius,
+  airQuality,
+  forecast,
+  onAddFavorite,
+  isFavorite,
+  onLocationClick,
 }: WeatherClientProps) {
   const { convertTemp, getTempSymbol } = useSettings();
   const tempDisplay = `${convertTemp(tempCelsius)}${getTempSymbol()}`;
@@ -43,13 +45,13 @@ export default function WeatherClient({
         </div>
         
         <div className="right-column">
-          <WeatherMapWrapper 
+          <WeatherMapWrapper
             lat={weather.coord.lat}
             lon={weather.coord.lon}
             cityName={weather.name}
             tempCelsius={tempCelsius}
             tempDisplay={tempDisplay}
-            onLocationClick={() => {}}
+            onLocationClick={onLocationClick ?? (() => {})}
           />
         </div>
       </div>

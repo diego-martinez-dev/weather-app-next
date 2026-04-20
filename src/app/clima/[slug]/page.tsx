@@ -1,10 +1,11 @@
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
+import Favorites from '@/components/Favorites';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 
 function slugToCity(slug: string): string {
@@ -19,6 +20,7 @@ function SkeletonLoader() {
     <div>
       <TopMenu />
       <div className="home-two-columns">
+        <div className="skeleton favorites-skeleton"></div>
         <div className="skeleton weather-card-skeleton"></div>
       </div>
       <Footer />
@@ -28,6 +30,7 @@ function SkeletonLoader() {
 
 function CityContent() {
   const params = useParams<{ slug: string }>();
+  const router = useRouter();
   const cityName = slugToCity(params.slug ?? '');
 
   const [weather, setWeather] = useState<any>(null);
@@ -35,7 +38,31 @@ function CityContent() {
   const [forecast, setForecast] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [isFavorite] = useState(false);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('favoriteCities');
+    if (saved) setFavorites(JSON.parse(saved));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('favoriteCities', JSON.stringify(favorites));
+  }, [favorites]);
+
+  useEffect(() => {
+    if (weather?.name) setIsFavorite(favorites.includes(weather.name));
+  }, [weather, favorites]);
+
+  const addFavorite = () => {
+    if (weather?.name && !favorites.includes(weather.name)) {
+      setFavorites(prev => [...prev, weather.name]);
+    }
+  };
+
+  const removeFavorite = (city: string) => {
+    setFavorites(prev => prev.filter(c => c !== city));
+  };
 
   const fetchWeatherData = async (city: string) => {
     setLoading(true);
@@ -53,7 +80,6 @@ function CityContent() {
 
       if (weatherData.cod === 200) {
         setWeather(weatherData);
-
         const [airRes, forecastRes] = await Promise.all([
           fetch(`/api/weather?type=air&lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}`),
           fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}`),
@@ -74,6 +100,9 @@ function CityContent() {
     if (cityName) fetchWeatherData(cityName);
   }, [cityName]);
 
+  // El botón de ubicación navega al home que auto-detecta la ubicación
+  const handleLocationClick = () => router.push('/');
+
   if (loading) return <SkeletonLoader />;
 
   return (
@@ -81,6 +110,12 @@ function CityContent() {
       <TopMenu />
       <div className="home-two-columns">
         <h1>🌤️ {weather?.name ?? cityName}</h1>
+
+        <Favorites
+          favorites={favorites}
+          onRemoveFavorite={removeFavorite}
+        />
+
         {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
         {weather && (
           <WeatherClient
@@ -88,8 +123,9 @@ function CityContent() {
             tempCelsius={weather.main?.temp}
             airQuality={airQuality}
             forecast={forecast}
-            onAddFavorite={() => {}}
+            onAddFavorite={addFavorite}
             isFavorite={isFavorite}
+            onLocationClick={handleLocationClick}
           />
         )}
       </div>
