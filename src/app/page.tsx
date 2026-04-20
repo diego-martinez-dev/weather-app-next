@@ -9,6 +9,26 @@ import Favorites from '@/components/Favorites';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 
+// Componente de contenido estático para SEO
+function StaticHomeContent() {
+  return (
+    <div className="home-two-columns">
+      <h1>🌤️ Clima Hoy - Tu aplicación del clima en tiempo real</h1>
+      <p>Consulta el clima actual, pronóstico y mapa de temperatura para cualquier ciudad del mundo.</p>
+      <p>Características:</p>
+      <ul>
+        <li>🌡️ Temperatura actual y sensación térmica</li>
+        <li>💧 Humedad y calidad del aire</li>
+        <li>🌅 Amanecer y atardecer</li>
+        <li>🗺️ Mapa meteorológico con temperatura superficial</li>
+        <li>📅 Pronóstico para 5 días</li>
+        <li>⭐ Ciudades favoritas</li>
+      </ul>
+      <p>Ejemplo: <a href="/clima/bogota">Clima en Bogotá</a> | <a href="/clima/medellin">Clima en Medellín</a> | <a href="/clima/cali">Clima en Cali</a></p>
+    </div>
+  );
+}
+
 function HomeContent() {
   const searchParams = useSearchParams();
   const cityFromUrl = searchParams.get('city');
@@ -20,6 +40,12 @@ function HomeContent() {
   const [error, setError] = useState('');
   const [favorites, setFavorites] = useState<string[]>([]);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Marcar cuando estamos en el cliente
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Cargar favoritos desde localStorage
   useEffect(() => {
@@ -115,6 +141,11 @@ function HomeContent() {
     getWeatherByLocation();
   }, [cityFromUrl]);
 
+  // Mostrar contenido estático mientras carga o en el servidor
+  if (!isClient || loading) {
+    return <StaticHomeContent />;
+  }
+
   return (
     <div>
       <TopMenu />
@@ -126,7 +157,6 @@ function HomeContent() {
           onRemoveFavorite={removeFavorite}
         />
         
-        {loading && <LoadingSpinner />}
         {error && <p className="error">{error}</p>}
         {weather && (
           <WeatherClient 
@@ -147,7 +177,7 @@ function HomeContent() {
 export default function HomePage() {
   return (
     <SettingsProvider>
-      <Suspense fallback={<LoadingSpinner />}>
+      <Suspense fallback={<StaticHomeContent />}>
         <HomeContent />
       </Suspense>
     </SettingsProvider>
