@@ -15,7 +15,14 @@ interface WeatherClientProps {
   isFavorite: boolean;
 }
 
-export default function WeatherClient({ weather, tempCelsius, airQuality, forecast, onAddFavorite, isFavorite }: WeatherClientProps) {
+export default function WeatherClient({ 
+  weather, 
+  tempCelsius, 
+  airQuality, 
+  forecast, 
+  onAddFavorite, 
+  isFavorite 
+}: WeatherClientProps) {
   const { convertTemp, getTempSymbol } = useSettings();
   const tempDisplay = `${convertTemp(tempCelsius)}${getTempSymbol()}`;
 
@@ -41,7 +48,6 @@ export default function WeatherClient({ weather, tempCelsius, airQuality, foreca
             cityName={weather.name}
             tempCelsius={tempCelsius}
             tempDisplay={tempDisplay}
-            API_KEY=""
             onLocationClick={() => {}}
           />
         </div>

@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 
-// Importar dinámicamente para evitar SSR
 const WeatherMap = dynamic(
   () => import('./WeatherMap'),
   { 
@@ -29,7 +28,6 @@ interface WeatherMapWrapperProps {
   cityName: string;
   tempCelsius: number;
   tempDisplay: string;
-  API_KEY: string;
   onLocationClick: () => void;
 }
 
