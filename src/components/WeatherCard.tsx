@@ -1,10 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getAirQuality } from '@/services/weatherAPI';
 import { getWeatherBackground, getOverlayColor } from '@/services/backgroundService';
 import './WeatherCard.css';
-import axios from 'axios';
 
 interface WeatherCardProps {
   weather: any;
@@ -12,16 +10,11 @@ interface WeatherCardProps {
   getTempSymbol: () => string;
   onAddFavorite: (cityName: string) => void;
   isFavorite: boolean;
+  airQuality?: any;
+  forecast?: any;
 }
 
-interface AirQualityInfo {
-  main: {
-    aqi: number;
-  };
-}
-
-function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFavorite }: WeatherCardProps) {
-  const [airQuality, setAirQuality] = useState<AirQualityInfo | null>(null);
+function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFavorite, airQuality, forecast }: WeatherCardProps) {
   const [currentTime, setCurrentTime] = useState('');
   const [backgroundImage, setBackgroundImage] = useState('');
   const [overlayColor, setOverlayColor] = useState('');
@@ -29,61 +22,6 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
   const [timezone, setTimezone] = useState<number | null>(null);
   const [dayTemp, setDayTemp] = useState<number | null>(null);
   const [nightTemp, setNightTemp] = useState<number | null>(null);
-  
-  const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY || '';
-
-  // Obtener calidad del aire
-  useEffect(() => {
-    if (weather && weather.coord) {
-      const fetchAirQuality = async () => {
-        try {
-          const data = await getAirQuality(weather.coord.lat, weather.coord.lon);
-          setAirQuality(data.list[0]);
-        } catch (error) {
-          console.error('Error fetching air quality:', error);
-        }
-      };
-      fetchAirQuality();
-    }
-  }, [weather]);
-
-  // Obtener pronóstico para temperatura de día/noche
-  useEffect(() => {
-    if (weather && weather.name) {
-      const fetchForecast = async () => {
-        try {
-          const response = await axios.get(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${weather.name}&appid=${API_KEY}&units=metric&lang=es`
-          );
-          
-          const forecasts = response.data.list;
-          const dayForecasts = forecasts.filter((f: any) => {
-            const hour = new Date(f.dt * 1000).getHours();
-            return hour >= 12 && hour <= 15;
-          });
-          const nightForecasts = forecasts.filter((f: any) => {
-            const hour = new Date(f.dt * 1000).getHours();
-            return hour >= 0 && hour <= 3;
-          });
-          
-          if (dayForecasts.length > 0) {
-            const avgDayTemp = dayForecasts.reduce((sum: number, f: any) => sum + f.main.temp, 0) / dayForecasts.length;
-            setDayTemp(Math.round(avgDayTemp));
-          }
-          
-          if (nightForecasts.length > 0) {
-            const avgNightTemp = nightForecasts.reduce((sum: number, f: any) => sum + f.main.temp, 0) / nightForecasts.length;
-            setNightTemp(Math.round(avgNightTemp));
-          }
-        } catch (error) {
-          console.error('Error fetching forecast:', error);
-          setDayTemp(Math.round(weather.main.temp_max));
-          setNightTemp(Math.round(weather.main.temp_min));
-        }
-      };
-      fetchForecast();
-    }
-  }, [weather, API_KEY]);
 
   // Obtener la zona horaria de la ciudad
   useEffect(() => {
@@ -96,6 +34,34 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
       }
     }
   }, [weather]);
+
+  // Procesar pronóstico si viene como prop
+  useEffect(() => {
+    if (forecast && forecast.list) {
+      const forecasts = forecast.list;
+      const dayForecasts = forecasts.filter((f: any) => {
+        const hour = new Date(f.dt * 1000).getHours();
+        return hour >= 12 && hour <= 15;
+      });
+      const nightForecasts = forecasts.filter((f: any) => {
+        const hour = new Date(f.dt * 1000).getHours();
+        return hour >= 0 && hour <= 3;
+      });
+      
+      if (dayForecasts.length > 0) {
+        const avgDayTemp = dayForecasts.reduce((sum: number, f: any) => sum + f.main.temp, 0) / dayForecasts.length;
+        setDayTemp(Math.round(avgDayTemp));
+      }
+      
+      if (nightForecasts.length > 0) {
+        const avgNightTemp = nightForecasts.reduce((sum: number, f: any) => sum + f.main.temp, 0) / nightForecasts.length;
+        setNightTemp(Math.round(avgNightTemp));
+      }
+    } else {
+      setDayTemp(Math.round(weather.main.temp_max));
+      setNightTemp(Math.round(weather.main.temp_min));
+    }
+  }, [forecast, weather]);
 
   // Actualizar hora local de la ciudad
   useEffect(() => {
@@ -138,7 +104,7 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
     return `${hours}:${minutes}`;
   };
 
-  // Obtener mensaje de calidad del aire
+  // Obtener mensaje de calidad del aire (manejando datos faltantes)
   const getAirQualityMessage = (aqi: number) => {
     switch (aqi) {
       case 1: return { text: 'Excelente', color: '#00e400' };
@@ -152,8 +118,12 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
 
   if (!weather) return null;
 
-  const airQualityInfo = airQuality ? getAirQualityMessage(airQuality.main.aqi) : null;
-  
+  // Manejar calidad del aire de forma segura
+  let airQualityInfo = null;
+  if (airQuality && airQuality.list && airQuality.list[0] && airQuality.list[0].main) {
+    airQualityInfo = getAirQualityMessage(airQuality.list[0].main.aqi);
+  }
+
   const displayDayTemp = dayTemp !== null ? dayTemp : Math.round(weather.main.temp_max);
   const displayNightTemp = nightTemp !== null ? nightTemp : Math.round(weather.main.temp_min);
 
@@ -230,7 +200,7 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
             <span className="detail-icon">🌬️</span>
             <span className="detail-label">Calidad del aire</span>
             <span className="detail-value" style={{ color: airQualityInfo?.color }}>
-              {airQualityInfo?.text || 'Cargando...'}
+              {airQualityInfo?.text || 'No disponible'}
             </span>
           </div>
         </div>

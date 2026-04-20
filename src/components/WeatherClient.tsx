@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import WeatherCard from './WeatherCard';
 import WeatherMapWrapper from './WeatherMapWrapper';
 import Forecast from './Forecast';
@@ -10,10 +9,11 @@ import { useSettings } from '@/contexts/SettingsContext';
 interface WeatherClientProps {
   weather: any;
   tempCelsius: number;
-  API_KEY: string;
+  airQuality?: any;
+  forecast?: any;
 }
 
-export default function WeatherClient({ weather, tempCelsius, API_KEY }: WeatherClientProps) {
+export default function WeatherClient({ weather, tempCelsius, airQuality, forecast }: WeatherClientProps) {
   const { convertTemp, getTempSymbol } = useSettings();
   const tempDisplay = `${convertTemp(tempCelsius)}${getTempSymbol()}`;
   const noop = () => {};
@@ -28,6 +28,8 @@ export default function WeatherClient({ weather, tempCelsius, API_KEY }: Weather
             getTempSymbol={getTempSymbol}
             onAddFavorite={noop}
             isFavorite={false}
+            airQuality={airQuality}
+            forecast={forecast}
           />
         </div>
         
@@ -38,7 +40,7 @@ export default function WeatherClient({ weather, tempCelsius, API_KEY }: Weather
             cityName={weather.name}
             tempCelsius={tempCelsius}
             tempDisplay={tempDisplay}
-            API_KEY={API_KEY}
+            API_KEY=""
             onLocationClick={noop}
           />
         </div>

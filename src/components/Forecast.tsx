@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { API_KEY } from '@/config';
+import './forecast.css';
 
 interface ForecastProps {
   cityName: string;
@@ -12,14 +11,11 @@ interface ForecastItem {
   dt: number;
   main: {
     temp: number;
-    feels_like: number;
-    humidity: number;
   };
   weather: Array<{
     icon: string;
     description: string;
   }>;
-  dt_txt: string;
 }
 
 export default function Forecast({ cityName }: ForecastProps) {
@@ -33,28 +29,32 @@ export default function Forecast({ cityName }: ForecastProps) {
       
       try {
         setLoading(true);
-        const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric&lang=es`
-        );
-        // Tomar solo los primeros 5 días (cada 8 intervalos de 3 horas = 24 horas)
-        const dailyForecast = response.data.list.filter((_: any, index: number) => index % 8 === 0);
-        setForecast(dailyForecast.slice(0, 5));
-        setError('');
+        const response = await fetch(`/api/weather?type=forecast&city=${encodeURIComponent(cityName)}`);
+        const data = await response.json();
+        
+        if (data.cod === '200' || data.cod === 200) {
+          // Tomar solo los primeros 5 días (cada 8 intervalos de 3 horas = 24 horas)
+          const dailyForecast = data.list.filter((_: any, index: number) => index % 8 === 0);
+          setForecast(dailyForecast.slice(0, 5));
+        } else {
+          setError('No se pudo cargar el pronóstico');
+        }
       } catch (err) {
         setError('Error al cargar el pronóstico');
-        console.error(err);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchForecast();
+    if (cityName) {
+      fetchForecast();
+    }
   }, [cityName]);
 
   if (loading) {
     return (
       <div className="forecast-container">
-        <h3>Pronóstico 5 días</h3>
+        <h3>📅 Pronóstico 5 días</h3>
         <p>Cargando pronóstico...</p>
       </div>
     );
@@ -63,7 +63,7 @@ export default function Forecast({ cityName }: ForecastProps) {
   if (error) {
     return (
       <div className="forecast-container">
-        <h3>Pronóstico 5 días</h3>
+        <h3>📅 Pronóstico 5 días</h3>
         <p className="error">{error}</p>
       </div>
     );

@@ -7,10 +7,10 @@ import WeatherClient from '@/components/WeatherClient';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 
-const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY || '';
-
 export default function HomePage() {
   const [weather, setWeather] = useState<any>(null);
+  const [airQuality, setAirQuality] = useState<any>(null);
+  const [forecast, setForecast] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -21,39 +21,40 @@ export default function HomePage() {
           async (position) => {
             const { latitude, longitude } = position.coords;
             try {
-              const res = await fetch(
-                `/api/weather?lat=${latitude}&lon=${longitude}`
-              );
-              if (!res.ok) throw new Error('Error al obtener el clima');
-              const data = await res.json();
-              setWeather(data);
+              // Clima actual
+              const weatherRes = await fetch(`/api/weather?lat=${latitude}&lon=${longitude}`);
+              const weatherData = await weatherRes.json();
+              
+              if (weatherData.cod === 200) {
+                setWeather(weatherData);
+                
+                // Calidad del aire
+                const airRes = await fetch(`/api/weather?type=air&lat=${latitude}&lon=${longitude}`);
+                const airData = await airRes.json();
+                setAirQuality(airData);
+                
+                // Pronóstico
+                const forecastRes = await fetch(`/api/weather?type=forecast&lat=${latitude}&lon=${longitude}`);
+                const forecastData = await forecastRes.json();
+                setForecast(forecastData);
+              } else {
+                throw new Error('Error al obtener clima');
+              }
             } catch (err) {
+              console.error(err);
               setError('No se pudo obtener el clima');
-              // Fallback
-              const fallbackRes = await fetch('/api/weather?city=Bogota');
-              const fallbackData = await fallbackRes.json();
-              setWeather(fallbackData);
             } finally {
               setLoading(false);
             }
           },
-          async () => {
-            setError('Usando ubicación por defecto: Bogotá');
-            const fallbackRes = await fetch('/api/weather?city=Bogota');
-            const fallbackData = await fallbackRes.json();
-            setWeather(fallbackData);
+          () => {
+            setError('No se pudo obtener tu ubicación');
             setLoading(false);
           }
         );
       } else {
-        setError('Geolocalización no soportada. Usando Bogotá.');
-        const fetchDefault = async () => {
-          const res = await fetch('/api/weather?city=Bogota');
-          const data = await res.json();
-          setWeather(data);
-          setLoading(false);
-        };
-        fetchDefault();
+        setError('Geolocalización no soportada');
+        setLoading(false);
       }
     };
 
@@ -71,8 +72,9 @@ export default function HomePage() {
           {weather && (
             <WeatherClient 
               weather={weather}
-              tempCelsius={weather.main.temp}
-              API_KEY={API_KEY}
+              tempCelsius={weather.main?.temp}
+              airQuality={airQuality}
+              forecast={forecast}
             />
           )}
         </div>
