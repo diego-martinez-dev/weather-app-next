@@ -1,5 +1,25 @@
 /* ============================================
-   RESET Y VARIABLES GLOBALES
+   VARIABLES GLOBALES
+   ============================================ */
+:root {
+  --color-bg: #eef2f7;
+  --color-surface: #ffffff;
+  --color-primary: #1a56db;
+  --color-primary-dark: #1043a0;
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+  --color-shadow-md: 0 4px 12px rgba(0,0,0,0.09), 0 2px 6px rgba(0,0,0,0.05);
+  --color-shadow-lg: 0 10px 30px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   RESET
    ============================================ */
 * {
   margin: 0;
@@ -11,37 +31,47 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background: var(--color-bg);
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  background: #f5f5f5;
-  color: #333;
+  background: var(--color-bg);
+  color: var(--color-text);
   padding: 0;
   margin: 0;
 }
 
+/* ============================================
+   TIPOGRAFÍA
+   ============================================ */
 h1 {
   margin: 0;
-  padding: 20px;
-  font-size: 2.5rem;
-  color: #222;
+  padding: 28px 20px 12px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
 }
 
-/* Estilos globales para mapas y marcadores */
+/* ============================================
+   MAPA / LEAFLET
+   ============================================ */
 .custom-marker {
   background: transparent;
   border: none;
 }
 
-/* Asegurar que el mapa se vea correctamente */
 .leaflet-container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
+  border-radius: var(--radius-md);
 }
 
-/* Mejorar la legibilidad del popup */
 .leaflet-popup-content {
   font-size: 13px;
   line-height: 1.4;
@@ -49,19 +79,19 @@ h1 {
 }
 
 /* ============================================
-   LAYOUT DE DOS COLUMNAS
+   LAYOUT PRINCIPAL
    ============================================ */
 .home-two-columns {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 24px 40px;
 }
 
 .two-column-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: 20px;
+  gap: 24px;
+  margin-top: 16px;
 }
 
 .left-column,
@@ -69,74 +99,90 @@ h1 {
   width: 100%;
 }
 
-
 /* ============================================
    SECCIÓN DE FAVORITOS
    ============================================ */
 .favorites-section {
-  background: white;
-  border-radius: 15px;
-  padding: 15px;
-  margin: 20px auto;
-  max-width: 800px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  color: #333;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin: 0 auto 8px;
+  max-width: 900px;
+  box-shadow: var(--color-shadow-sm);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
 }
 
 .favorites-section h3 {
   margin: 0 0 10px 0;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .favorites-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  gap: 8px;
 }
 
 .favorite-item {
-  background: #f0f0f0;
-  border-radius: 20px;
-  padding: 5px 10px 5px 15px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  padding: 5px 8px 5px 14px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: background 0.15s;
+}
+
+.favorite-item:hover {
+  background: #e2e8f0;
 }
 
 .favorite-city-name {
   cursor: pointer;
-  transition: transform 0.2s;
-  color: #333;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.15s;
 }
 
 .favorite-city-name:hover {
-  transform: scale(1.05);
-  text-decoration: underline;
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 .remove-favorite {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 11px;
   padding: 0;
-  margin: 0;
-  width: auto;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #94a3b8;
   box-shadow: none;
-  color: #999;
+  transition: color 0.15s, background 0.15s;
 }
 
 .remove-favorite:hover {
-  transform: scale(1.1);
-  background: none;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  transform: none;
   box-shadow: none;
-  color: #ff4444;
 }
 
 .no-favorites {
-  font-size: 0.9rem;
-  opacity: 0.7;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
@@ -144,13 +190,14 @@ h1 {
    ERROR
    ============================================ */
 .error {
-  color: #d32f2f;
-  font-size: 1rem;
-  margin-top: 20px;
-  background: #ffebee;
+  color: #b91c1c;
+  font-size: 0.9rem;
+  margin-top: 16px;
+  background: #fef2f2;
   display: inline-block;
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid #fecaca;
 }
 
 /* ============================================
@@ -158,12 +205,12 @@ h1 {
    ============================================ */
 footer {
   margin-top: 40px;
-  padding: 20px;
+  padding: 24px 20px;
   text-align: center;
   font-size: 12px;
-  opacity: 0.7;
-  border-top: 1px solid #ddd;
-  color: #666;
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
 }
 
 /* ============================================
@@ -178,12 +225,12 @@ footer {
 }
 
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid #e0e0e0;
-  border-top: 4px solid #007bff;
+  width: 44px;
+  height: 44px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid var(--color-primary);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
@@ -192,188 +239,87 @@ footer {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ============================================
-   RESPONSIVE
+   CIUDADES (hub)
    ============================================ */
-@media (max-width: 900px) {
-  .two-column-layout {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .weather-card-modern {
-    margin-bottom: 20px;
-  }
-  
-  .weather-details-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .home-two-columns {
-    padding: 15px;
-  }
-  
-  h1 {
-    font-size: 1.8rem;
-    padding: 15px;
-  }
-  
-  .card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  
-  .header-right {
-    width: 100%;
-    justify-content: space-between;
-  }
-  
-  .temp-value {
-    font-size: 3rem;
-  }
-  
-  .weather-details-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  
-  .sun-times {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .favorites-section {
-    margin: 15px;
-  }
-
-  /* Estilos responsivos para el indicador de temperatura */
-  .temperature-indicator {
-    margin: 15px 0;
-    padding: 10px;
-  }
-  
-  .temp-range-bar {
-    height: 20px;
-  }
-  
-  .temp-marks {
-    font-size: 7px;
-  }
-  
-  .temp-mark {
-    font-size: 7px;
-  }
-  
-  .temp-pointer-value {
-    font-size: 9px;
-    padding: 2px 5px;
-  }
-  
-  .temp-pointer-arrow {
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 10px solid currentColor;
-  }
-  
-  .temp-hint {
-    font-size: 9px;
-    margin-top: 20px;
-  }
-}
-/* Página hub de ciudades */
 .cities-section {
   margin: 40px 0;
 }
 
 .cities-section h2 {
-  color: #333;
+  color: var(--color-text);
   margin-bottom: 20px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .cities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
+  gap: 12px;
 }
 
 .city-card {
-  background: white;
-  padding: 15px 20px;
-  border-radius: 12px;
+  background: var(--color-surface);
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
   text-align: center;
   text-decoration: none;
-  color: #333;
+  color: var(--color-text);
   font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--color-shadow-sm);
+  border: 1px solid var(--color-border);
 }
 
 .city-card:hover {
-  background: #007bff;
+  background: var(--color-primary);
   color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 86, 219, 0.25);
+  border-color: transparent;
 }
 
 .search-section {
-  background: white;
+  background: var(--color-surface);
   padding: 30px;
-  border-radius: 15px;
+  border-radius: var(--radius-md);
   text-align: center;
   margin: 40px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--color-shadow-sm);
+  border: 1px solid var(--color-border);
 }
 
 .search-section p {
-  color: #666;
+  color: var(--color-text-secondary);
   margin-top: 10px;
-}
-
-@media (max-width: 600px) {
-  .cities-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  }
-  
-  .city-card {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
 }
 
 /* ============================================
    SKELETON LOADER
    ============================================ */
 .skeleton {
-  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
   background-size: 200% 100%;
-  animation: skeleton-loading 1.5s infinite;
-  border-radius: 12px;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: var(--radius-md);
 }
 
 @keyframes skeleton-loading {
-  0% { background-position: 200% 0; }
+  0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
 .favorites-skeleton {
-  height: 80px;
+  height: 72px;
   width: 100%;
-  max-width: 400px;
-  margin: 20px auto;
+  max-width: 900px;
+  margin: 0 auto 8px;
 }
 
 .weather-card-skeleton {
@@ -384,4 +330,71 @@ footer {
 .map-skeleton {
   height: 500px;
   width: 100%;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .weather-card-modern {
+    margin-bottom: 0;
+  }
+
+  .weather-details-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-two-columns {
+    padding: 12px 16px 32px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    padding: 20px 16px 8px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .temp-value {
+    font-size: 3.2rem;
+  }
+
+  .weather-details-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .sun-times {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .favorites-section {
+    margin: 0 0 8px;
+  }
+
+  .cities-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .city-card {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
 }

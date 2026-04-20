@@ -1,6 +1,6 @@
-/* Top Menu - Estilo The Weather Channel */
+/* Top Menu */
 .top-menu {
-  background: #000000;
+  background: #0f172a;
   padding: 0;
   position: sticky;
   top: 0;
@@ -9,27 +9,27 @@
   margin: 0;
   left: 0;
   right: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .top-menu-container-full {
   width: 100%;
-  margin: 0;
-  padding: 12px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  background: #000000;
   box-sizing: border-box;
 }
 
-/* Eliminar cualquier margen del body que pueda estar causando espacio */
 body {
   margin: 0;
   padding: 0;
 }
 
-/* Asegurar que el contenedor principal también ocupe todo el ancho */
 #root, .App {
   margin: 0;
   padding: 0;
@@ -37,39 +37,42 @@ body {
 
 /* Logo */
 .menu-logo {
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: white;
   text-decoration: none;
   white-space: nowrap;
+  letter-spacing: -0.3px;
   transition: opacity 0.2s;
 }
 
 .menu-logo:hover {
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 /* Barra de búsqueda */
 .menu-search {
   flex: 1;
-  max-width: 400px;
+  max-width: 380px;
   display: flex;
   align-items: center;
-  background: #333;
-  border-radius: 25px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.2s ease;
 }
 
 .menu-search:focus-within {
-  background: #444;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  box-shadow: 0 0 0 3px rgba(26,86,219,0.35);
 }
 
 .menu-search-input {
   flex: 1;
-  padding: 10px 16px;
-  font-size: 14px;
+  padding: 9px 14px;
+  font-size: 13.5px;
   background: transparent;
   border: none;
   color: white;
@@ -77,23 +80,24 @@ body {
 }
 
 .menu-search-input::placeholder {
-  color: #aaa;
+  color: rgba(255,255,255,0.4);
 }
 
 .menu-search-button {
   background: transparent;
   border: none;
-  padding: 8px 16px;
+  padding: 8px 14px;
   cursor: pointer;
-  font-size: 16px;
-  color: white;
-  transition: background 0.2s;
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s;
   border-radius: 0;
   box-shadow: none;
 }
 
 .menu-search-button:hover {
-  background: #444;
+  color: white;
+  background: transparent;
   transform: none;
   box-shadow: none;
 }
@@ -102,13 +106,13 @@ body {
 .menu-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 6px;
 }
 
 /* Items del menú */
 .menu-item {
-  font-size: 14px;
-  color: white;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.8);
   cursor: pointer;
 }
 
@@ -124,72 +128,77 @@ body {
 
 .dropdown-trigger {
   cursor: pointer;
-  padding: 5px 8px;
-  border-radius: 5px;
-  transition: background 0.2s;
-  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+  transition: background 0.15s, color 0.15s;
 }
 
 .dropdown-trigger:hover {
-  background: #333;
+  background: rgba(255,255,255,0.1);
+  color: white;
 }
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 6px);
   right: 0;
-  margin-top: 5px;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
   min-width: 160px;
   overflow: hidden;
   z-index: 1001;
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
 .dropdown-item {
   padding: 10px 16px;
   cursor: pointer;
-  transition: background 0.2s;
+  font-size: 13.5px;
+  transition: background 0.15s;
   white-space: nowrap;
-  color: #333;
+  color: #1e293b;
 }
 
 .dropdown-item:hover {
-  background: #f5f5f5;
+  background: #f1f5f9;
 }
 
 .dropdown-item.active {
-  background: #e3f2fd;
-  color: #007bff;
+  background: #eff6ff;
+  color: #1a56db;
+  font-weight: 600;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .top-menu-container-full {
     flex-wrap: wrap;
+    height: auto;
     padding: 10px 16px;
     gap: 10px;
   }
-  
+
   .menu-logo {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
-  
+
   .menu-search {
     order: 3;
     max-width: 100%;
     width: 100%;
   }
-  
+
   .menu-right {
-    gap: 12px;
+    gap: 4px;
   }
-  
+
   .menu-item {
     font-size: 12px;
   }
-  
+
   .dropdown-item {
     padding: 8px 12px;
     font-size: 13px;
@@ -200,15 +209,11 @@ body {
   .top-menu-container-full {
     padding: 8px 12px;
   }
-  
+
   .menu-logo {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
-  
-  .menu-right {
-    gap: 8px;
-  }
-  
+
   .country-code {
     font-size: 11px;
   }
