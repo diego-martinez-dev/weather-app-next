@@ -12,11 +12,23 @@
       "feels_like": "Sensação",
       "humidity": "Umidade",
       "wind": "Vento",
-      "loading": "Carregando..."
+      "loading": "Carregando...",
+      "air_quality": "Qualidade do ar",
+      "sunrise": "Nascer do sol",
+      "sunset": "Pôr do sol",
+      "local_time": "Hora local",
+      "day": "Dia",
+      "night": "Noite",
+      "aqi_excellent": "Excelente",
+      "aqi_good": "Boa",
+      "aqi_moderate": "Moderada",
+      "aqi_bad": "Ruim",
+      "aqi_very_bad": "Muito ruim",
+      "aqi_unknown": "Desconhecida"
     },
     "favorites": {
-      "title": "⭐ Cidades favoritas",
-      "empty": "Você ainda não tem cidades favoritas. Clique em ⭐ para adicionar.",
+      "title": "Cidades favoritas",
+      "empty": "Você ainda não tem cidades favoritas.",
       "remove": "Remover dos favoritos",
       "add": "Adicionar aos favoritos"
     },

@@ -72,10 +72,24 @@ function HomeContent() {
     setFavorites(favorites.filter(city => city !== cityName));
   };
 
+  const getWeatherByCoords = async (lat: number, lon: number) => {
+    try {
+      const geoRes = await fetch(`/api/weather?type=geocode&lat=${lat}&lon=${lon}`);
+      const geoData = await geoRes.json();
+      if (Array.isArray(geoData) && geoData.length > 0 && geoData[0].name) {
+        fetchWeatherData(geoData[0].name);
+      } else {
+        fetchWeatherData(undefined, lat, lon);
+      }
+    } catch {
+      fetchWeatherData(undefined, lat, lon);
+    }
+  };
+
   const handleLocationClick = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (pos) => fetchWeatherData(undefined, pos.coords.latitude, pos.coords.longitude),
+        (pos) => getWeatherByCoords(pos.coords.latitude, pos.coords.longitude),
         () => fetchWeatherData('Bogota')
       );
     } else {
@@ -148,7 +162,7 @@ function HomeContent() {
           navigator.geolocation.getCurrentPosition(
             (position) => {
               const { latitude, longitude } = position.coords;
-              fetchWeatherData(undefined, latitude, longitude);
+              getWeatherByCoords(latitude, longitude);
             },
             () => {
               fetchWeatherData('Bogota');
@@ -177,7 +191,9 @@ function HomeContent() {
         />
 
         <h1>🌤️ {weather?.name ?? 'Clima Hoy'}</h1>
-        
+
+        {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
+
         {weather && (
           <WeatherClient
             weather={weather}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getWeatherBackground, getOverlayColor } from '@/services/backgroundService';
 import './WeatherCard.css';
 
@@ -15,6 +16,7 @@ interface WeatherCardProps {
 }
 
 function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFavorite, airQuality, forecast }: WeatherCardProps) {
+  const { t } = useTranslation();
   const [currentTime, setCurrentTime] = useState('');
   const [backgroundImage, setBackgroundImage] = useState('');
   const [overlayColor, setOverlayColor] = useState('');
@@ -107,12 +109,12 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
   // Obtener mensaje de calidad del aire
   const getAirQualityMessage = (aqi: number) => {
     switch (aqi) {
-      case 1: return { text: 'Excelente', color: '#00e400' };
-      case 2: return { text: 'Buena', color: '#ffff00' };
-      case 3: return { text: 'Moderada', color: '#ff7e00' };
-      case 4: return { text: 'Mala', color: '#ff0000' };
-      case 5: return { text: 'Muy mala', color: '#8f3f97' };
-      default: return { text: 'Desconocida', color: '#999' };
+      case 1: return { text: t('app.weather.aqi_excellent'), color: '#00e400' };
+      case 2: return { text: t('app.weather.aqi_good'), color: '#ffff00' };
+      case 3: return { text: t('app.weather.aqi_moderate'), color: '#ff7e00' };
+      case 4: return { text: t('app.weather.aqi_bad'), color: '#ff0000' };
+      case 5: return { text: t('app.weather.aqi_very_bad'), color: '#8f3f97' };
+      default: return { text: t('app.weather.aqi_unknown'), color: '#999' };
     }
   };
 
@@ -155,14 +157,14 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
           <div>
             <h2 className="city-name">{weather.name}, {weather.sys.country}</h2>
             <div className="city-timezone">
-              Hora local: {currentTime || '--:--'}
+              {t('app.weather.local_time')}: {currentTime || '--:--'}
             </div>
           </div>
           <div className="header-right">
             <button 
               onClick={() => onAddFavorite(weather.name)}
               className={`favorite-btn-modern ${isFavorite ? 'active' : ''}`}
-              title={isFavorite ? 'Eliminar de favoritos' : 'Agregar a favoritos'}
+              title={isFavorite ? t('app.favorites.remove') : t('app.favorites.add')}
             >
               {isFavorite ? '⭐' : '☆'}
             </button>
@@ -181,24 +183,24 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
         </div>
 
         <div className="temp-range">
-          <span>☀️ Día: {convertTemp(displayDayTemp)}{getTempSymbol()}</span>
-          <span>🌙 Noche: {convertTemp(displayNightTemp)}{getTempSymbol()}</span>
+          <span>☀️ {t('app.weather.day')}: {convertTemp(displayDayTemp)}{getTempSymbol()}</span>
+          <span>🌙 {t('app.weather.night')}: {convertTemp(displayNightTemp)}{getTempSymbol()}</span>
         </div>
 
         <div className="weather-details-grid">
           <div className="detail-item">
             <span className="detail-icon">🌡️</span>
-            <span className="detail-label">Sensación</span>
+            <span className="detail-label">{t('app.weather.feels_like')}</span>
             <span className="detail-value">{convertTemp(weather.main.feels_like)}{getTempSymbol()}</span>
           </div>
           <div className="detail-item">
             <span className="detail-icon">💧</span>
-            <span className="detail-label">Humedad</span>
+            <span className="detail-label">{t('app.weather.humidity')}</span>
             <span className="detail-value">{weather.main.humidity}%</span>
           </div>
           <div className="detail-item">
             <span className="detail-icon">🌬️</span>
-            <span className="detail-label">Calidad del aire</span>
+            <span className="detail-label">{t('app.weather.air_quality')}</span>
             <span className="detail-value" style={{ color: airQualityInfo?.color }}>
               {airQualityInfo?.text || 'No disponible'}
             </span>
@@ -208,11 +210,11 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
         <div className="sun-times">
           <div className="sun-item">
             <span className="sun-icon">🌅</span>
-            <span>Amanecer: {formatSunTime(weather.sys.sunrise)}</span>
+            <span>{t('app.weather.sunrise')}: {formatSunTime(weather.sys.sunrise)}</span>
           </div>
           <div className="sun-item">
             <span className="sun-icon">🌇</span>
-            <span>Atardecer: {formatSunTime(weather.sys.sunset)}</span>
+            <span>{t('app.weather.sunset')}: {formatSunTime(weather.sys.sunset)}</span>
           </div>
         </div>
       </div>

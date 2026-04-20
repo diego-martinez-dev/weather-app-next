@@ -12,11 +12,23 @@
       "feels_like": "Gefühlt wie",
       "humidity": "Luftfeuchtigkeit",
       "wind": "Wind",
-      "loading": "Laden..."
+      "loading": "Laden...",
+      "air_quality": "Luftqualität",
+      "sunrise": "Sonnenaufgang",
+      "sunset": "Sonnenuntergang",
+      "local_time": "Ortszeit",
+      "day": "Tag",
+      "night": "Nacht",
+      "aqi_excellent": "Ausgezeichnet",
+      "aqi_good": "Gut",
+      "aqi_moderate": "Mäßig",
+      "aqi_bad": "Schlecht",
+      "aqi_very_bad": "Sehr schlecht",
+      "aqi_unknown": "Unbekannt"
     },
     "favorites": {
-      "title": "⭐ Lieblingsstädte",
-      "empty": "Sie haben noch keine Lieblingsstädte. Klicken Sie auf ⭐ um hinzuzufügen.",
+      "title": "Lieblingsstädte",
+      "empty": "Sie haben noch keine Lieblingsstädte.",
       "remove": "Aus Favoriten entfernen",
       "add": "Zu Favoriten hinzufügen"
     },

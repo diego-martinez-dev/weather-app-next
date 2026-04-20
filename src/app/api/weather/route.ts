@@ -12,7 +12,13 @@ export async function GET(request: NextRequest) {
   let url = '';
 
   // Determinar qué tipo de datos solicitar
-  if (type === 'air') {
+  if (type === 'geocode') {
+    if (!lat || !lon) {
+      return NextResponse.json({ error: 'Se requieren lat y lon para geocoding' }, { status: 400 });
+    }
+    url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${API_KEY}`;
+  }
+  else if (type === 'air') {
     if (!lat || !lon) {
       return NextResponse.json({ error: 'Se requieren lat y lon para calidad del aire' }, { status: 400 });
     }
