@@ -1,10 +1,12 @@
 'use client';
 
-function Favorites({ favorites, onSelectCity, onRemoveFavorite }: { 
-  favorites: string[]; 
-  onSelectCity: (city: string) => void; 
+interface FavoritesProps {
+  favorites: string[];
+  onSelectCity: (city: string) => void;
   onRemoveFavorite: (city: string) => void;
-}) {
+}
+
+export default function Favorites({ favorites, onSelectCity, onRemoveFavorite }: FavoritesProps) {
   if (favorites.length === 0) {
     return (
       <div className="favorites-section">
@@ -36,5 +38,3 @@ function Favorites({ favorites, onSelectCity, onRemoveFavorite }: {
     </div>
   );
 }
-
-export default Favorites;

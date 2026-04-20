@@ -104,7 +104,7 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
     return `${hours}:${minutes}`;
   };
 
-  // Obtener mensaje de calidad del aire (manejando datos faltantes)
+  // Obtener mensaje de calidad del aire
   const getAirQualityMessage = (aqi: number) => {
     switch (aqi) {
       case 1: return { text: 'Excelente', color: '#00e400' };

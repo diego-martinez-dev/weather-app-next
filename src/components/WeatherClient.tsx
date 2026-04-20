@@ -11,12 +11,13 @@ interface WeatherClientProps {
   tempCelsius: number;
   airQuality?: any;
   forecast?: any;
+  onAddFavorite: () => void;
+  isFavorite: boolean;
 }
 
-export default function WeatherClient({ weather, tempCelsius, airQuality, forecast }: WeatherClientProps) {
+export default function WeatherClient({ weather, tempCelsius, airQuality, forecast, onAddFavorite, isFavorite }: WeatherClientProps) {
   const { convertTemp, getTempSymbol } = useSettings();
   const tempDisplay = `${convertTemp(tempCelsius)}${getTempSymbol()}`;
-  const noop = () => {};
 
   return (
     <>
@@ -26,8 +27,8 @@ export default function WeatherClient({ weather, tempCelsius, airQuality, foreca
             weather={weather}
             convertTemp={convertTemp}
             getTempSymbol={getTempSymbol}
-            onAddFavorite={noop}
-            isFavorite={false}
+            onAddFavorite={onAddFavorite}
+            isFavorite={isFavorite}
             airQuality={airQuality}
             forecast={forecast}
           />
@@ -41,7 +42,7 @@ export default function WeatherClient({ weather, tempCelsius, airQuality, foreca
             tempCelsius={tempCelsius}
             tempDisplay={tempDisplay}
             API_KEY=""
-            onLocationClick={noop}
+            onLocationClick={() => {}}
           />
         </div>
       </div>
