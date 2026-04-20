@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next';
 
-// Lista de ciudades (puedes expandirla)
+// Lista de ciudades principales (puedes expandirla)
 const cities = [
   'bogota', 'medellin', 'cali', 'barranquilla', 'cartagena',
   'madrid', 'barcelona', 'london', 'paris', 'new-york',
   'tokyo', 'berlin', 'rome', 'buenos-aires', 'mexico-city',
-  'santiago', 'lima', 'quito', 'montevideo', 'brasilia'
+  'santiago', 'lima', 'quito', 'montevideo', 'brasilia',
+  'bucaramanga', 'pereira', 'manizales', 'cucuta', 'ibague',
+  'santa-marta', 'sincelejo', 'valledupar', 'rio-hacha', 'quibdo'
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

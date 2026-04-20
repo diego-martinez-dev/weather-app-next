@@ -7,7 +7,24 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Clima Hoy - Tu aplicación del clima en tiempo real',
-  description: 'Consulta el clima actual, pronóstico y mapa de temperatura para cualquier ciudad del mundo.',
+  description: 'Consulta el clima actual, pronóstico y mapa de temperatura para cualquier ciudad del mundo. Actualizado en tiempo real.',
+  keywords: 'clima, tiempo, temperatura, pronóstico, lluvia, viento',
+  authors: [{ name: 'Clima Hoy' }],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://www.clima-hoy.com',
+  },
+  openGraph: {
+    title: 'Clima Hoy - Tu aplicación del clima',
+    description: 'Consulta el clima actual para cualquier ciudad',
+    url: 'https://www.clima-hoy.com',
+    siteName: 'Clima Hoy',
+    locale: 'es_CO',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +34,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <link rel="canonical" href="https://www.clima-hoy.com" />
+      </head>
       <body className={inter.className}>
         <SettingsProvider>
           {children}
