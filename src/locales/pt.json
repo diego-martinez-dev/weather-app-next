@@ -30,6 +30,18 @@
     "menu": {
       "celsius": "Celsius",
       "fahrenheit": "Fahrenheit"
+    },
+    "forecast": {
+      "title": "Previsão 5 dias",
+      "loading": "Carregando previsão...",
+      "error": "Não foi possível carregar a previsão",
+      "rain_probability": "Chuva"
+    },
+    "hourly": {
+      "title": "Próximas 24 horas",
+      "next_hours_rain": "Possível chuva nas próximas {{count}} horas",
+      "loading": "Carregando...",
+      "rain_probability": "Chuva"
     }
   },
   "legal": {

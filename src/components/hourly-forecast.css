@@ -1,0 +1,107 @@
+.hourly-forecast-container {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.hourly-forecast-container h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Rain alert banner */
+.hourly-rain-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border-left: 3px solid #4a90d9;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  color: #1565c0;
+  font-weight: 600;
+}
+
+/* Horizontal scroll track */
+.hourly-scroll-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+.hourly-scroll-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.hourly-scroll-track::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+/* Individual card */
+.hourly-card {
+  flex: 0 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px;
+  background: linear-gradient(135deg, #f8f9fa, #f0f2f5);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.hourly-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Rain-highlighted card */
+.hourly-card--rainy {
+  background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+  border-color: rgba(74, 144, 217, 0.3);
+}
+
+/* Skeleton placeholder */
+.hourly-card--skeleton {
+  opacity: 0.25;
+  background: #e0e0e0;
+  min-height: 110px;
+}
+
+.hourly-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: #444;
+}
+
+.hourly-temp {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+}
+
+.hourly-pop {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #4a90d9;
+}
+
+@media (max-width: 600px) {
+  .hourly-card {
+    flex: 0 0 72px;
+  }
+}
