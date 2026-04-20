@@ -51,11 +51,6 @@ function HomeContent() {
     setFavorites(favorites.filter(city => city !== cityName));
   };
 
-  const selectFavoriteCity = (cityName: string) => {
-    // Actualizar URL y recargar datos
-    window.location.href = `/?city=${encodeURIComponent(cityName)}`;
-  };
-
   const fetchWeatherData = async (cityName?: string, lat?: number, lon?: number) => {
     setLoading(true);
     setError('');
@@ -128,7 +123,6 @@ function HomeContent() {
         
         <Favorites 
           favorites={favorites}
-          onSelectCity={selectFavoriteCity}
           onRemoveFavorite={removeFavorite}
         />
         
