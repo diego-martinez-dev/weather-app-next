@@ -19,7 +19,6 @@ export default function TopMenu() {
   const unitRef = useRef<HTMLDivElement>(null);
   const languageRef = useRef<HTMLDivElement>(null);
 
-  // Evitar hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -60,10 +59,12 @@ export default function TopMenu() {
     return found ? found.flag : '🌍';
   };
 
+  // Redirigir a URL limpia /clima/ciudad
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchCity.trim()) {
-      router.push(`/?city=${encodeURIComponent(searchCity)}`);
+      const citySlug = searchCity.trim().toLowerCase().replace(/ /g, '-');
+      router.push(`/clima/${citySlug}`);
       setSearchCity('');
     }
   };
@@ -72,7 +73,6 @@ export default function TopMenu() {
     router.push('/');
   };
 
-  // Renderizar versión estática mientras no está montado
   if (!mounted) {
     return (
       <div className="top-menu">

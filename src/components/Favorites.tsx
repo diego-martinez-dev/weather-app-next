@@ -1,12 +1,20 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 interface FavoritesProps {
   favorites: string[];
-  onSelectCity: (city: string) => void;
   onRemoveFavorite: (city: string) => void;
 }
 
-export default function Favorites({ favorites, onSelectCity, onRemoveFavorite }: FavoritesProps) {
+export default function Favorites({ favorites, onRemoveFavorite }: FavoritesProps) {
+  const router = useRouter();
+
+  const selectFavoriteCity = (cityName: string) => {
+    const citySlug = cityName.toLowerCase().replace(/ /g, '-');
+    router.push(`/clima/${citySlug}`);
+  };
+
   if (favorites.length === 0) {
     return (
       <div className="favorites-section">
@@ -22,7 +30,7 @@ export default function Favorites({ favorites, onSelectCity, onRemoveFavorite }:
       <div className="favorites-list">
         {favorites.map((city, index) => (
           <div key={index} className="favorite-item">
-            <span onClick={() => onSelectCity(city)} className="favorite-city-name">
+            <span onClick={() => selectFavoriteCity(city)} className="favorite-city-name">
               🌆 {city}
             </span>
             <button 
