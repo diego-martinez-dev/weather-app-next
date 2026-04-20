@@ -171,12 +171,12 @@ function HomeContent() {
     <div>
       <TopMenu />
       <div className="home-two-columns">
-        <h1>🌤️ Clima Hoy</h1>
-        
-        <Favorites 
+        <Favorites
           favorites={favorites}
           onRemoveFavorite={removeFavorite}
         />
+
+        <h1>🌤️ {weather?.name ?? 'Clima Hoy'}</h1>
         
         {weather && (
           <WeatherClient

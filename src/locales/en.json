@@ -38,7 +38,7 @@
       "rain_probability": "Rain"
     },
     "hourly": {
-      "title": "Next 12 Hours",
+      "title": "Hourly Forecast",
       "next_hours_rain": "Possible rain in the next {{count}} hours",
       "loading": "Loading...",
       "rain_probability": "Rain"

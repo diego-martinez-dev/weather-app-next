@@ -38,7 +38,7 @@
       "rain_probability": "Pioggia"
     },
     "hourly": {
-      "title": "Prossime 12 ore",
+      "title": "Previsioni orarie",
       "next_hours_rain": "Possibile pioggia nelle prossime {{count}} ore",
       "loading": "Caricamento...",
       "rain_probability": "Pioggia"
