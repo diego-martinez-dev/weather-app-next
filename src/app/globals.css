@@ -293,3 +293,63 @@ footer {
     margin-top: 20px;
   }
 }
+/* Página hub de ciudades */
+.cities-section {
+  margin: 40px 0;
+}
+
+.cities-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.city-card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.city-card:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.search-section {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 40px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-section p {
+  color: #666;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .cities-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  
+  .city-card {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
