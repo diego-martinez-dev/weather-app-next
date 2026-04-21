@@ -111,15 +111,15 @@ function CityContent() {
     <div>
       <TopMenu />
       <div className="home-two-columns">
-        <h1>
-          {(() => { const I = weather?.weather?.[0]?.icon ? getWeatherIcon(weather.weather[0].icon) : SunIcon; return <I style={{ width: '1.5rem', height: '1.5rem', display: 'inline', verticalAlign: '-0.15em', color: 'black' }} />; })()}
-          {weather?.name ?? cityName}
-        </h1>
-
         <Favorites
           favorites={favorites}
           onRemoveFavorite={removeFavorite}
         />
+
+        <h1>
+          {(() => { const I = weather?.weather?.[0]?.icon ? getWeatherIcon(weather.weather[0].icon) : SunIcon; return <I style={{ width: '1.5rem', height: '1.5rem', display: 'inline', verticalAlign: '-0.15em', color: 'black' }} />; })()}
+          {weather?.name ?? cityName}
+        </h1>
 
         {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
         {weather && (
