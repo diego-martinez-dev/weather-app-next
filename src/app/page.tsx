@@ -65,7 +65,10 @@ function HomeContent() {
   }, [weather, favorites]);
 
   const addFavorite = () => {
-    if (weather && weather.name && !favorites.includes(weather.name)) {
+    if (!weather?.name) return;
+    if (favorites.includes(weather.name)) {
+      setFavorites(favorites.filter(city => city !== weather.name));
+    } else {
       setFavorites([...favorites, weather.name]);
     }
   };
