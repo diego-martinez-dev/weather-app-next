@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
@@ -36,7 +36,8 @@ function HomeContent() {
   const searchParams = useSearchParams();
   const cityFromUrl = searchParams.get('city');
   const { language } = useSettings();
-  
+  const lastFetchedLang = useRef<string>('');
+
   const [weather, setWeather] = useState<any>(null);
   const [airQuality, setAirQuality] = useState<any>(null);
   const [forecast, setForecast] = useState<any>(null);
@@ -105,6 +106,7 @@ function HomeContent() {
 
   // Función mejorada con timeout y mejor manejo de errores
   const fetchWeatherData = async (cityName?: string, lat?: number, lon?: number) => {
+    lastFetchedLang.current = language;
     setLoading(true);
     setError('');
     
@@ -160,11 +162,11 @@ function HomeContent() {
   };
 
   useEffect(() => {
-    if (weather?.name) {
+    if (weather?.name && lastFetchedLang.current !== language) {
       fetchWeatherData(weather.name);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language]);
+  }, [weather, language]);
 
   useEffect(() => {
     const getWeatherByLocation = () => {
