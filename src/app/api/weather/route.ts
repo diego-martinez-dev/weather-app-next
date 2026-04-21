@@ -8,6 +8,7 @@ export async function GET(request: NextRequest) {
   const city = searchParams.get('city');
   const lat = searchParams.get('lat');
   const lon = searchParams.get('lon');
+  const lang = searchParams.get('lang') || 'es';
 
   let url = '';
 
@@ -26,9 +27,9 @@ export async function GET(request: NextRequest) {
   } 
   else if (type === 'forecast') {
     if (city) {
-      url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=es`;
+      url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=${lang}`;
     } else if (lat && lon) {
-      url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=es`;
+      url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=${lang}`;
     } else {
       return NextResponse.json({ error: 'Se requieren city o lat/lon para pronóstico' }, { status: 400 });
     }
@@ -36,9 +37,9 @@ export async function GET(request: NextRequest) {
   else {
     // Clima actual (default)
     if (city) {
-      url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=es`;
+      url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=${lang}`;
     } else if (lat && lon) {
-      url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=es`;
+      url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=${lang}`;
     } else {
       return NextResponse.json({ error: 'Se requieren city o lat/lon' }, { status: 400 });
     }

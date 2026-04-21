@@ -86,7 +86,7 @@ export default function Forecast({ cityName, forecastData }: ForecastProps) {
     const fetchForecast = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`/api/weather?type=forecast&city=${encodeURIComponent(cityName)}`);
+        const res = await fetch(`/api/weather?type=forecast&city=${encodeURIComponent(cityName)}&lang=${language}`);
         const data: ForecastData = await res.json();
         if (data.cod === '200' || data.cod === 200) {
           setInternalList(data.list);
@@ -101,7 +101,7 @@ export default function Forecast({ cityName, forecastData }: ForecastProps) {
     };
 
     fetchForecast();
-  }, [cityName, forecastData, t]);
+  }, [cityName, forecastData, language, t]);
 
   const rawList = forecastData?.list ?? internalList;
   const days = rawList.length > 0 ? aggregateDays(rawList) : [];

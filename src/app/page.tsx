@@ -6,7 +6,7 @@ import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
-import { SettingsProvider } from '@/contexts/SettingsContext';
+import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { SunIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
 
@@ -35,6 +35,7 @@ function SkeletonLoader() {
 function HomeContent() {
   const searchParams = useSearchParams();
   const cityFromUrl = searchParams.get('city');
+  const { language } = useSettings();
   
   const [weather, setWeather] = useState<any>(null);
   const [airQuality, setAirQuality] = useState<any>(null);
@@ -116,9 +117,9 @@ function HomeContent() {
       let url = '';
       
       if (cityName) {
-        url = `/api/weather?city=${encodeURIComponent(cityName)}`;
+        url = `/api/weather?city=${encodeURIComponent(cityName)}&lang=${language}`;
       } else if (lat && lon) {
-        url = `/api/weather?lat=${lat}&lon=${lon}`;
+        url = `/api/weather?lat=${lat}&lon=${lon}&lang=${language}`;
       } else {
         throw new Error('No se proporcionaron datos de búsqueda');
       }
@@ -137,7 +138,7 @@ function HomeContent() {
         setAirQuality(airData);
         
         // Pronóstico
-        const forecastRes = await fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}`);
+        const forecastRes = await fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}&lang=${language}`);
         const forecastData = await forecastRes.json();
         setForecast(forecastData);
       } else {
@@ -157,6 +158,13 @@ function HomeContent() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (weather?.name) {
+      fetchWeatherData(weather.name);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language]);
 
   useEffect(() => {
     const getWeatherByLocation = () => {
