@@ -272,15 +272,28 @@
     font-size: 0.7rem;
   }
 
-  /* FIX: Estrella en esquina superior derecha */
+  /* FIX: Estrella siempre en esquina superior derecha */
   .card-header {
-    align-items: center;
-    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .card-header > div:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .city-name {
+    word-break: break-word;
   }
 
   .header-right {
+    flex-shrink: 0;
+    margin-left: 0;
     align-self: flex-start;
-    margin-left: auto;
   }
 
   .favorite-btn-modern {
@@ -321,12 +334,12 @@
     gap: 8px;
   }
 
-  /* FIX: estrella arriba a la derecha en móvil muy pequeño */
   .card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: nowrap;
+    gap: 6px;
   }
 
   .card-header > div:first-child {
@@ -335,12 +348,17 @@
   }
 
   .city-name {
+    font-size: 0.9rem;
     word-break: break-word;
+  }
+
+  .city-timezone {
+    font-size: 0.6rem;
   }
 
   .header-right {
     flex-shrink: 0;
-    margin-left: 8px;
+    align-self: flex-start;
   }
 
   .favorite-btn-modern {
