@@ -188,9 +188,11 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
         </div>
 
         <div className="temp-range">
-          <span><CloudArrowDownIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.rain_next_3h')}: {Math.round((forecast?.list?.[0]?.pop ?? 0) * 100)}%</span>
-          <span><SunIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.day')}: {convertTemp(displayDayTemp)}{getTempSymbol()}</span>
-          <span><MoonIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.night')}: {convertTemp(displayNightTemp)}{getTempSymbol()}</span>
+          <span className="temp-range__rain"><CloudArrowDownIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.rain_next_3h')}: {Math.round((forecast?.list?.[0]?.pop ?? 0) * 100)}%</span>
+          <div className="temp-range__day-night">
+            <span><SunIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.day')}: {convertTemp(displayDayTemp)}{getTempSymbol()}</span>
+            <span><MoonIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.night')}: {convertTemp(displayNightTemp)}{getTempSymbol()}</span>
+          </div>
         </div>
 
         <div className="weather-details-grid">

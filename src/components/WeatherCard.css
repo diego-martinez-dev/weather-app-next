@@ -156,14 +156,25 @@
 /* Rango de temperatura */
 .temp-range {
   display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   margin: 12px 0;
   font-size: 0.88rem;
   font-weight: 500;
   padding: 9px 16px;
   border-radius: 12px;
+}
+
+.temp-range__rain {
+  width: 100%;
+  text-align: center;
+}
+
+.temp-range__day-night {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
 }
 
 /* Grid de detalles */
@@ -269,9 +280,13 @@
   }
 
   .temp-range {
-    gap: 16px;
+    gap: 4px;
     font-size: 0.75rem;
     padding: 6px 12px;
+  }
+
+  .temp-range__day-night {
+    gap: 14px;
   }
 
   .weather-details-grid {
