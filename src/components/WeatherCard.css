@@ -34,7 +34,6 @@
   background: rgba(0, 0, 0, 0.22);
 }
 
-/* Header */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -42,6 +41,12 @@
   margin-bottom: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 12px;
+}
+
+.card-header > div:first-child {
+  flex: 1;
+  min-width: 0;
 }
 
 .city-name {
@@ -49,6 +54,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.3px;
+  word-break: break-word;
 }
 
 .city-timezone {
@@ -62,6 +68,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .current-time {
@@ -70,6 +77,32 @@
   background: rgba(0, 0, 0, 0.28);
   padding: 5px 12px;
   border-radius: 999px;
+}
+
+.favorite-btn-modern {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 22px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  color: white;
+  flex-shrink: 0;
+}
+
+.favorite-btn-modern:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: scale(1.08);
+}
+
+.favorite-btn-modern.active {
+  background: rgba(255, 210, 0, 0.28);
+  border-color: rgba(255, 210, 0, 0.4);
 }
 
 /* Botón favorito */
@@ -216,6 +249,7 @@
 }
 
 /* Móviles */
+/* Móviles */
 @media (max-width: 600px) {
   .weather-card-modern {
     padding: 16px;
@@ -223,7 +257,7 @@
   }
 
   .city-name {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .city-timezone {
@@ -272,12 +306,11 @@
     font-size: 0.7rem;
   }
 
-  /* FIX: Estrella siempre en esquina superior derecha */
+  /* FIX definitivo: estrella en esquina superior derecha */
   .card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: nowrap;
     gap: 8px;
   }
 
@@ -287,13 +320,17 @@
   }
 
   .city-name {
-    word-break: break-word;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .city-timezone {
+    font-size: 0.6rem;
   }
 
   .header-right {
     flex-shrink: 0;
-    margin-left: 0;
-    align-self: flex-start;
+    margin-top: 0;
   }
 
   .favorite-btn-modern {
@@ -310,7 +347,7 @@
   }
 
   .city-name {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .temp-value {
@@ -335,30 +372,15 @@
   }
 
   .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: nowrap;
     gap: 6px;
   }
 
-  .card-header > div:first-child {
-    flex: 1;
-    min-width: 0;
-  }
-
   .city-name {
-    font-size: 0.9rem;
-    word-break: break-word;
+    font-size: 0.85rem;
   }
 
   .city-timezone {
-    font-size: 0.6rem;
-  }
-
-  .header-right {
-    flex-shrink: 0;
-    align-self: flex-start;
+    font-size: 0.55rem;
   }
 
   .favorite-btn-modern {
