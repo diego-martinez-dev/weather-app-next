@@ -15,12 +15,25 @@ export default function TopMenu() {
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [searchCity, setSearchCity] = useState('');
   const [mounted, setMounted] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const unitRef = useRef<HTMLDivElement>(null);
   const languageRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Cerrar menú móvil al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   useEffect(() => {
@@ -59,34 +72,31 @@ export default function TopMenu() {
     return found ? found.flag : '🌍';
   };
 
-  // Redirigir a URL limpia /clima/ciudad
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchCity.trim()) {
       const citySlug = searchCity.trim().toLowerCase().replace(/ /g, '-');
       router.push(`/clima/${citySlug}`);
       setSearchCity('');
+      setMobileMenuOpen(false);
     }
   };
 
   const handleLogoClick = () => {
     router.push('/');
+    setMobileMenuOpen(false);
   };
 
   if (!mounted) {
     return (
       <div className="top-menu">
         <div className="top-menu-container-full">
-          <div className="menu-logo">🌤️ WeatherApp</div>
+          <div className="menu-logo">🌤️ Clima Hoy</div>
           <div className="menu-search">
             <input type="text" placeholder="Buscar ciudad..." className="menu-search-input" />
             <button className="menu-search-button">🔍</button>
           </div>
-          <div className="menu-right">
-            <div className="menu-item">🌍 CO</div>
-            <div className="menu-item">°C</div>
-            <div className="menu-item">🇪🇸 Español</div>
-          </div>
+          <button className="mobile-menu-btn">☰</button>
         </div>
       </div>
     );
@@ -95,10 +105,12 @@ export default function TopMenu() {
   return (
     <div className="top-menu">
       <div className="top-menu-container-full">
+        {/* Logo */}
         <div className="menu-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
           🌤️ WeatherApp
         </div>
 
+        {/* Barra de búsqueda - visible siempre */}
         <form className="menu-search" onSubmit={handleSearch}>
           <input
             type="text"
@@ -112,7 +124,17 @@ export default function TopMenu() {
           </button>
         </form>
 
-        <div className="menu-right">
+        {/* Botón menú hamburguesa (solo móvil) */}
+        <button 
+          className="mobile-menu-btn" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Menú"
+        >
+          ☰
+        </button>
+
+        {/* Menú desktop (visible en desktop, oculto en móvil) */}
+        <div className="menu-right desktop-only">
           <div className="menu-item">
             <span className="country-code">
               {getCountryFlag()} {country}
@@ -167,6 +189,57 @@ export default function TopMenu() {
           </div>
         </div>
       </div>
+
+      {/* Menú lateral móvil */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu-overlay">
+          <div className="mobile-menu-panel" ref={mobileMenuRef}>
+            <div className="mobile-menu-header">
+              <span>Configuración</span>
+              <button className="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}>✕</button>
+            </div>
+            <div className="mobile-menu-items">
+              <div className="mobile-menu-item">
+                <span className="mobile-item-label">📍 País</span>
+                <span className="mobile-item-value">{getCountryFlag()} {country}</span>
+              </div>
+              
+              <div className="mobile-menu-item">
+                <span className="mobile-item-label">🌡️ Temperatura</span>
+                <div className="mobile-item-options">
+                  <button 
+                    className={`mobile-option ${unit === 'celsius' ? 'active' : ''}`}
+                    onClick={() => { setUnit('celsius'); setMobileMenuOpen(false); }}
+                  >
+                    °C
+                  </button>
+                  <button 
+                    className={`mobile-option ${unit === 'fahrenheit' ? 'active' : ''}`}
+                    onClick={() => { setUnit('fahrenheit'); setMobileMenuOpen(false); }}
+                  >
+                    °F
+                  </button>
+                </div>
+              </div>
+              
+              <div className="mobile-menu-item">
+                <span className="mobile-item-label">🌐 Idioma</span>
+                <div className="mobile-item-options mobile-lang-options">
+                  {languages.map((lang) => (
+                    <button 
+                      key={lang.code}
+                      className={`mobile-option ${language === lang.code ? 'active' : ''}`}
+                      onClick={() => { setLanguage(lang.code); setMobileMenuOpen(false); }}
+                    >
+                      {lang.flag} {lang.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
