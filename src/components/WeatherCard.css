@@ -301,17 +301,21 @@
   }
 
   .card-header {
-    position: relative;
-    padding-right: 46px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 8px;
   }
 
   .card-header > div:first-child {
-    width: 100%;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .city-name {
     font-size: 1rem;
     line-height: 1.3;
+    word-break: break-word;
   }
 
   .city-timezone {
@@ -319,9 +323,7 @@
   }
 
   .header-right {
-    position: absolute;
-    top: 0;
-    right: 0;
+    align-self: start;
   }
 
   .favorite-btn-modern {
