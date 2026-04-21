@@ -1,34 +1,34 @@
-// Mapeo de condiciones climáticas a imágenes
+// Mapeo de condiciones climáticas a imágenes (paisajes, sin personas)
 const weatherBackgrounds: Record<string, Record<string, string>> = {
-  // Soleado / Despejado
+  // Soleado / Despejado — montaña desierto / vía láctea
   clear: {
-    day: 'https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-VVqOZcAKm24?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-BTuQv_g2Bw8?w=1200&h=800&fit=crop',
   },
-  // Nublado
+  // Nublado — montañas bajo cielo encapotado / nubes nocturnas
   clouds: {
-    day: 'https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-1506703398816-2d4be0bd48d8?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-gF8tDxbpgX0?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-DsxD_bTq8x0?w=1200&h=800&fit=crop',
   },
-  // Lluvia
+  // Lluvia — ventana con lluvia y ciudad / calle mojada nocturna
   rain: {
-    day: 'https://images.unsplash.com/photo-1519692933481-e162a3d672be?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-1501691223387-dd050040307c?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-gtG0y9CUgcA?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-hQOct36DUSY?w=1200&h=800&fit=crop',
   },
-  // Tormenta
+  // Tormenta — relámpago sobre paisaje
   thunderstorm: {
-    day: 'https://images.unsplash.com/photo-1605727216801-e27ce1d0cc84?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-1599934793601-f8d96f3d6f27?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-in9-n0JwgZ0?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-od0R_9e_aqA?w=1200&h=800&fit=crop',
   },
-  // Nieve
+  // Nieve — paisaje nevado con montañas / luna llena sobre nieve
   snow: {
-    day: 'https://images.unsplash.com/photo-1478265409131-1f65c88f965c?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-we4enFZr0aA?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-jDVzoU86g8c?w=1200&h=800&fit=crop',
   },
-  // Niebla
+  // Niebla — bosque brumoso al amanecer / luna entre nubes
   mist: {
-    day: 'https://images.unsplash.com/photo-1487621167305-5d248087c724?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-1545713480-40005e1f8ac9?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-FItOgF4jrBA?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-ve_uN9V8xqU?w=1200&h=800&fit=crop',
   },
 };
 
