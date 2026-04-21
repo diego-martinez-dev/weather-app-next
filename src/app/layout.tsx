@@ -38,6 +38,8 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <link rel="canonical" href="https://www.clima-hoy.com" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
         <SettingsProvider>
