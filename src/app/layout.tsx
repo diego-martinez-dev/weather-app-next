@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { SettingsProvider } from '@/contexts/SettingsContext';
+import CookieBanner from '@/components/CookieBanner';
+import AnalyticsConsent from '@/components/AnalyticsConsent';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -42,8 +43,9 @@ export default function RootLayout({
         <SettingsProvider>
           {children}
         </SettingsProvider>
+        <CookieBanner />
+        <AnalyticsConsent />
       </body>
-      <GoogleAnalytics gaId="G-3WVK1Y18H6" />
     </html>
   );
 }

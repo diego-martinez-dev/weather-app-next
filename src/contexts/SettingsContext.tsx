@@ -79,6 +79,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
   };
 
   const detectCountryByIP = async () => {
+    if (localStorage.getItem('cookieConsent') !== 'all') return;
     try {
       const response = await fetch('https://ipapi.co/json/');
       const data = await response.json();
