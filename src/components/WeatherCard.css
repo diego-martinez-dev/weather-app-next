@@ -5,12 +5,18 @@
   border-radius: 20px;
   padding: 24px;
   color: white;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28), 0 4px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28), 0 4px 12px rgba(0, 0, 0, 0.12);
   min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .weather-card-modern .card-header,
@@ -28,6 +34,7 @@
   background: rgba(0, 0, 0, 0.22);
 }
 
+/* Header */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -65,9 +72,10 @@
   border-radius: 999px;
 }
 
+/* Botón favorito */
 .favorite-btn-modern {
   background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   font-size: 22px;
   cursor: pointer;
   width: 40px;
@@ -87,9 +95,10 @@
 
 .favorite-btn-modern.active {
   background: rgba(255, 210, 0, 0.28);
-  border-color: rgba(255,210,0,0.4);
+  border-color: rgba(255, 210, 0, 0.4);
 }
 
+/* Temperatura principal */
 .main-temp {
   text-align: center;
   margin: 16px 0;
@@ -117,6 +126,7 @@
   opacity: 0.92;
 }
 
+/* Rango de temperatura */
 .temp-range {
   display: flex;
   justify-content: center;
@@ -128,6 +138,7 @@
   border-radius: 12px;
 }
 
+/* Grid de detalles */
 .weather-details-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -162,6 +173,7 @@
   font-weight: 700;
 }
 
+/* Amanecer / Atardecer */
 .sun-times {
   display: flex;
   justify-content: space-between;
@@ -181,4 +193,159 @@
 
 .sun-icon {
   font-size: 1.1rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .weather-card-modern {
+    min-height: 480px;
+    padding: 20px;
+  }
+
+  .temp-value {
+    font-size: 4rem;
+  }
+
+  .weather-details-grid {
+    gap: 10px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .weather-card-modern {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .city-name {
+    font-size: 1.2rem;
+  }
+
+  .city-timezone {
+    font-size: 0.65rem;
+  }
+
+  .temp-value {
+    font-size: 3.5rem;
+    letter-spacing: -2px;
+  }
+
+  .weather-description {
+    font-size: 0.9rem;
+  }
+
+  .temp-range {
+    gap: 16px;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .weather-details-grid {
+    gap: 8px;
+    padding: 10px 8px;
+  }
+
+  .detail-icon {
+    font-size: 1.1rem;
+  }
+
+  .detail-label {
+    font-size: 0.6rem;
+  }
+
+  .detail-value {
+    font-size: 0.8rem;
+  }
+
+  .sun-times {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .sun-item {
+    font-size: 0.7rem;
+  }
+
+  /* FIX: Estrella en esquina superior derecha */
+  .card-header {
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header-right {
+    align-self: flex-start;
+    margin-left: auto;
+  }
+
+  .favorite-btn-modern {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+  .weather-card-modern {
+    padding: 14px;
+  }
+
+  .city-name {
+    font-size: 1rem;
+  }
+
+  .temp-value {
+    font-size: 3rem;
+  }
+
+  .temp-range {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .weather-details-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .sun-times {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* FIX: estrella arriba a la derecha en móvil muy pequeño */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .card-header > div:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .city-name {
+    word-break: break-word;
+  }
+
+  .header-right {
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  .favorite-btn-modern {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 }
