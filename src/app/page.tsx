@@ -8,6 +8,7 @@ import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 import { SunIcon } from '@heroicons/react/24/outline';
+import { getWeatherIcon } from '@/lib/weatherIcons';
 
 // Skeleton loader para mostrar mientras carga
 function SkeletonLoader() {
@@ -192,10 +193,7 @@ function HomeContent() {
         />
 
         <h1>
-          {weather?.weather?.[0]?.icon
-            ? <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} style={{ width: '2rem', height: '2rem', display: 'inline', verticalAlign: 'middle', filter: 'brightness(0)' }} />
-            : <SunIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} />
-          }
+          {(() => { const I = weather?.weather?.[0]?.icon ? getWeatherIcon(weather.weather[0].icon) : SunIcon; return <I style={{ width: '1.5rem', height: '1.5rem', display: 'inline', verticalAlign: '-0.15em', color: 'black' }} />; })()}
           {weather?.name ?? 'Clima Hoy'}
         </h1>
 

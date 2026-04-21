@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getWeatherBackground, getOverlayColor } from '@/services/backgroundService';
 import { StarIcon as StarSolid } from '@heroicons/react/24/solid';
-import { StarIcon, SunIcon, MoonIcon, FireIcon, BeakerIcon, CloudIcon, CloudArrowDownIcon, BoltIcon, ArrowUpCircleIcon, ArrowDownCircleIcon } from '@heroicons/react/24/outline';
+import { StarIcon, SunIcon, MoonIcon, FireIcon, BeakerIcon, CloudIcon, ArrowUpCircleIcon, ArrowDownCircleIcon } from '@heroicons/react/24/outline';
+import { getWeatherIcon } from '@/lib/weatherIcons';
 import './WeatherCard.css';
 
 interface WeatherCardProps {
@@ -118,15 +119,6 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
       case 5: return { text: t('app.weather.aqi_very_bad'), color: '#8f3f97' };
       default: return { text: t('app.weather.aqi_unknown'), color: '#999' };
     }
-  };
-
-  const getWeatherIcon = (iconCode: string): React.ElementType => {
-    const prefix = iconCode.slice(0, 2);
-    const isDay = iconCode.endsWith('d');
-    if (prefix === '01') return isDay ? SunIcon : MoonIcon;
-    if (['09', '10'].includes(prefix)) return CloudArrowDownIcon;
-    if (prefix === '11') return BoltIcon;
-    return CloudIcon;
   };
 
   if (!weather) return null;
