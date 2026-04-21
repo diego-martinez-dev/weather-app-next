@@ -191,7 +191,13 @@ function HomeContent() {
           onRemoveFavorite={removeFavorite}
         />
 
-        <h1><SunIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} /> {weather?.name ?? 'Clima Hoy'}</h1>
+        <h1>
+          {weather?.weather?.[0]?.icon
+            ? <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} style={{ width: '2rem', height: '2rem', display: 'inline', verticalAlign: 'middle' }} />
+            : <SunIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} />
+          }
+          {weather?.name ?? 'Clima Hoy'}
+        </h1>
 
         {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
 
