@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getWeatherBackground, getOverlayColor } from '@/services/backgroundService';
 import { StarIcon as StarSolid } from '@heroicons/react/24/solid';
-import { StarIcon, SunIcon, MoonIcon, FireIcon, BeakerIcon, CloudIcon, ArrowUpCircleIcon, ArrowDownCircleIcon } from '@heroicons/react/24/outline';
+import { StarIcon, SunIcon, MoonIcon, FireIcon, BeakerIcon, CloudIcon, ArrowUpCircleIcon, ArrowDownCircleIcon, CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
 import './WeatherCard.css';
 
@@ -188,6 +188,7 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
         </div>
 
         <div className="temp-range">
+          <span><CloudArrowDownIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.rain_next_3h')}: {Math.round((forecast?.list?.[0]?.pop ?? 0) * 100)}%</span>
           <span><SunIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.day')}: {convertTemp(displayDayTemp)}{getTempSymbol()}</span>
           <span><MoonIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.night')}: {convertTemp(displayNightTemp)}{getTempSymbol()}</span>
         </div>

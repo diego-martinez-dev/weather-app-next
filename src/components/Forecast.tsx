@@ -149,6 +149,7 @@ export default function Forecast({ cityName, forecastData }: ForecastProps) {
                 width={50}
                 height={50}
               />
+              <div className="forecast-desc">{day.description}</div>
               <div className="forecast-temp-range">
                 <span className="forecast-temp-min">{convertTemp(day.minTemp)}{getTempSymbol()}</span>
                 <div className="forecast-range-bar-track">
@@ -165,7 +166,6 @@ export default function Forecast({ cityName, forecastData }: ForecastProps) {
                   <span>{Math.round(day.maxPop * 100)}%</span>
                 </div>
               )}
-              <div className="forecast-desc">{day.description}</div>
             </div>
           );
         })}

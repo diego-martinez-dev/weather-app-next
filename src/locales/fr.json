@@ -19,6 +19,7 @@
       "local_time": "Heure locale",
       "day": "Jour",
       "night": "Nuit",
+      "rain_next_3h": "Prob. de pluie proch. 3H",
       "aqi_excellent": "Excellent",
       "aqi_good": "Bonne",
       "aqi_moderate": "Modérée",
@@ -44,13 +45,13 @@
       "fahrenheit": "Fahrenheit"
     },
     "forecast": {
-      "title": "Prévisions 5 jours",
+      "title": "Prévisions des 5 prochains jours",
       "loading": "Chargement des prévisions...",
       "error": "Impossible de charger les prévisions",
       "rain_probability": "Pluie"
     },
     "hourly": {
-      "title": "Prévisions horaires",
+      "title": "Prévisions horaires et probabilité de pluie",
       "next_hours_rain": "Pluie possible dans les {{count}} prochaines heures",
       "loading": "Chargement...",
       "rain_probability": "Pluie"

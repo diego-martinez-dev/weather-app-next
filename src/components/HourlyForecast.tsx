@@ -123,6 +123,7 @@ export default function HourlyForecast({ forecastData }: HourlyForecastProps) {
               width={40}
               height={40}
             />
+            <div className="hourly-label">{slot.description}</div>
             <div className="hourly-temp">
               {convertTemp(slot.temp)}{getTempSymbol()}
             </div>

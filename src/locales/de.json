@@ -19,6 +19,7 @@
       "local_time": "Ortszeit",
       "day": "Tag",
       "night": "Nacht",
+      "rain_next_3h": "Regenwahrsch. nächste 3H",
       "aqi_excellent": "Ausgezeichnet",
       "aqi_good": "Gut",
       "aqi_moderate": "Mäßig",
@@ -44,13 +45,13 @@
       "fahrenheit": "Fahrenheit"
     },
     "forecast": {
-      "title": "5-Tage-Vorhersage",
+      "title": "Vorhersage der nächsten 5 Tage",
       "loading": "Vorhersage wird geladen...",
       "error": "Vorhersage konnte nicht geladen werden",
       "rain_probability": "Regen"
     },
     "hourly": {
-      "title": "Stündliche Vorhersage",
+      "title": "Stündliche Vorhersage & Regenwahrscheinlichkeit",
       "next_hours_rain": "Möglicher Regen in den nächsten {{count}} Stunden",
       "loading": "Laden...",
       "rain_probability": "Regen"

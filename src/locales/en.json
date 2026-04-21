@@ -19,6 +19,7 @@
       "local_time": "Local time",
       "day": "Day",
       "night": "Night",
+      "rain_next_3h": "Rain prob. next 3H",
       "aqi_excellent": "Excellent",
       "aqi_good": "Good",
       "aqi_moderate": "Moderate",
@@ -44,13 +45,13 @@
       "fahrenheit": "Fahrenheit"
     },
     "forecast": {
-      "title": "5-Day Forecast",
+      "title": "Next 5-Day Forecast",
       "loading": "Loading forecast...",
       "error": "Could not load forecast",
       "rain_probability": "Rain"
     },
     "hourly": {
-      "title": "Hourly Forecast",
+      "title": "Hourly Forecast & Rain Probability",
       "next_hours_rain": "Possible rain in the next {{count}} hours",
       "loading": "Loading...",
       "rain_probability": "Rain"
