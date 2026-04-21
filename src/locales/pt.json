@@ -55,6 +55,11 @@
       "next_hours_rain": "Possível chuva nas próximas {{count}} horas",
       "loading": "Carregando...",
       "rain_probability": "Chuva"
+    },
+    "auth": {
+      "login": "Entrar",
+      "logout": "Sair",
+      "account": "Conta"
     }
   },
   "legal": {

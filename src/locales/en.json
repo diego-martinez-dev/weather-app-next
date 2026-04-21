@@ -55,6 +55,11 @@
       "next_hours_rain": "Possible rain in the next {{count}} hours",
       "loading": "Loading...",
       "rain_probability": "Rain"
+    },
+    "auth": {
+      "login": "Sign in",
+      "logout": "Sign out",
+      "account": "Account"
     }
   },
   "legal": {

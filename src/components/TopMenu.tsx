@@ -3,13 +3,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';
+import { useSession, signIn, signOut } from 'next-auth/react';
 import { useSettings } from '@/contexts/SettingsContext';
-import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 import './TopMenu.css';
 
 export default function TopMenu() {
   const { t } = useTranslation();
   const router = useRouter();
+  const { data: session } = useSession();
   const { unit, setUnit, language, setLanguage, country, getTempSymbol } = useSettings();
   
   const [showUnitDropdown, setShowUnitDropdown] = useState(false);
@@ -168,7 +170,7 @@ export default function TopMenu() {
           </div>
 
           <div className="menu-item dropdown" ref={languageRef}>
-            <span 
+            <span
               className="dropdown-trigger"
               onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
             >
@@ -177,15 +179,33 @@ export default function TopMenu() {
             {showLanguageDropdown && (
               <div className="dropdown-menu">
                 {languages.map((lang) => (
-                  <div 
-                    key={lang.code} 
-                    className={`dropdown-item ${language === lang.code ? 'active' : ''}`} 
+                  <div
+                    key={lang.code}
+                    className={`dropdown-item ${language === lang.code ? 'active' : ''}`}
                     onClick={() => { setLanguage(lang.code); setShowLanguageDropdown(false); }}
                   >
                     {lang.flag} {lang.name}
                   </div>
                 ))}
               </div>
+            )}
+          </div>
+
+          <div className="menu-item">
+            {session?.user ? (
+              <div className="user-menu">
+                {session.user.image
+                  ? <img src={session.user.image} alt={session.user.name ?? ''} className="user-avatar" referrerPolicy="no-referrer" />
+                  : <UserCircleIcon style={{ width: '1.6rem', height: '1.6rem' }} />
+                }
+                <button className="auth-btn auth-btn--logout" onClick={() => signOut()}>
+                  {t('app.auth.logout')}
+                </button>
+              </div>
+            ) : (
+              <button className="auth-btn auth-btn--login" onClick={() => signIn('google')}>
+                <UserCircleIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} /> {t('app.auth.login')}
+              </button>
             )}
           </div>
         </div>
@@ -227,7 +247,7 @@ export default function TopMenu() {
                 <span className="mobile-item-label"><GlobeAltIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> Idioma</span>
                 <div className="mobile-item-options mobile-lang-options">
                   {languages.map((lang) => (
-                    <button 
+                    <button
                       key={lang.code}
                       className={`mobile-option ${language === lang.code ? 'active' : ''}`}
                       onClick={() => { setLanguage(lang.code); setMobileMenuOpen(false); }}
@@ -236,6 +256,22 @@ export default function TopMenu() {
                     </button>
                   ))}
                 </div>
+              </div>
+
+              <div className="mobile-menu-item">
+                <span className="mobile-item-label"><UserCircleIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.auth.account')}</span>
+                {session?.user ? (
+                  <div className="mobile-user-info">
+                    <span className="mobile-user-name">{session.user.name}</span>
+                    <button className="auth-btn auth-btn--logout" onClick={() => { signOut(); setMobileMenuOpen(false); }}>
+                      {t('app.auth.logout')}
+                    </button>
+                  </div>
+                ) : (
+                  <button className="auth-btn auth-btn--login" onClick={() => { signIn('google'); setMobileMenuOpen(false); }}>
+                    {t('app.auth.login')}
+                  </button>
+                )}
               </div>
             </div>
           </div>

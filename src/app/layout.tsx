@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { SettingsProvider } from '@/contexts/SettingsContext';
+import AuthProvider from '@/components/AuthProvider';
 import CookieBanner from '@/components/CookieBanner';
 import AnalyticsConsent from '@/components/AnalyticsConsent';
 
@@ -42,9 +43,11 @@ export default function RootLayout({
         <link rel="alternate icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        <SettingsProvider>
-          {children}
-        </SettingsProvider>
+        <AuthProvider>
+          <SettingsProvider>
+            {children}
+          </SettingsProvider>
+        </AuthProvider>
         <CookieBanner />
         <AnalyticsConsent />
       </body>

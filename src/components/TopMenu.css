@@ -330,3 +330,58 @@
     width: 260px;
   }
 }
+
+/* Auth buttons */
+.auth-btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.auth-btn--login {
+  background: #4285f4;
+  color: #fff;
+}
+
+.auth-btn--login:hover {
+  background: #3367d6;
+}
+
+.auth-btn--logout {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.auth-btn--logout:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mobile-user-name {
+  font-size: 0.8rem;
+  color: #e2e8f0;
+}
