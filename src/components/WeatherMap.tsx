@@ -42,7 +42,7 @@ export default function WeatherMap({
 
     if (!mapInstanceRef.current) {
       // Inicializar mapa
-      mapInstanceRef.current = L.map(mapRef.current).setView([lat, lon], 6);
+      mapInstanceRef.current = L.map(mapRef.current).setView([lat, lon], 5);
       
       // Capa base (CartoDB)
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
