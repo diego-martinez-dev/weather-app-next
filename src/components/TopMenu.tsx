@@ -108,7 +108,7 @@ export default function TopMenu() {
       <div className="top-menu-container-full">
         {/* Logo */}
         <div className="menu-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-          <SunIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.15em' }} /> WeatherApp
+          <SunIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.15em' }} /> Clima Hoy
         </div>
 
         {/* Barra de búsqueda - visible siempre */}
