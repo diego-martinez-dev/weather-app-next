@@ -67,6 +67,42 @@
   backdrop-filter: blur(10px);
 }
 
+/* Popup de la ciudad — mismo estilo que el indicador de temperatura */
+.leaflet-popup-content-wrapper {
+  background: rgba(30, 30, 30, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px !important;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  border: none;
+}
+
+.leaflet-popup-content {
+  color: #ffffff;
+  margin: 10px 14px;
+}
+
+.leaflet-popup-content b {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.leaflet-popup-tip {
+  background: rgba(30, 30, 30, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.leaflet-popup-close-button {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 18px !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #ffffff !important;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .map-location-button {
