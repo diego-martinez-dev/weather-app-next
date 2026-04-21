@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { MapPinIcon } from '@heroicons/react/24/outline';
 import TemperatureIndicator from './TemperatureIndicator';
 import './WeatherMap.css';
 
@@ -71,14 +72,14 @@ export default function WeatherMap({
       });
       
       markerRef.current = L.marker([lat, lon], { icon: customIcon })
-        .bindPopup(`<b>${cityName}</b><br/>🌡️ ${tempDisplay}`)
+        .bindPopup(`<b>${cityName}</b><br/>${tempDisplay}`)
         .addTo(mapInstanceRef.current)
         .openPopup();
     } else {
       mapInstanceRef.current.setView([lat, lon], 6);
       if (markerRef.current) {
         markerRef.current.setLatLng([lat, lon]);
-        markerRef.current.setPopupContent(`<b>${cityName}</b><br/>🌡️ ${tempDisplay}`);
+        markerRef.current.setPopupContent(`<b>${cityName}</b><br/>${tempDisplay}`);
         markerRef.current.openPopup();
       }
     }
@@ -88,7 +89,7 @@ export default function WeatherMap({
     <div className="weather-map-container">
       <div ref={mapRef} className="weather-map" style={{ height: '500px', width: '100%' }} />
       <button className="map-location-button" onClick={onLocationClick}>
-        📍
+        <MapPinIcon style={{ width: '1.4rem', height: '1.4rem' }} />
       </button>
       <div className="weather-map-indicator">
         <TemperatureIndicator 

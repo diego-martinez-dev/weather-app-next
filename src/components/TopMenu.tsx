@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';
 import { useSettings } from '@/contexts/SettingsContext';
+import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import './TopMenu.css';
 
 export default function TopMenu() {
@@ -69,7 +70,7 @@ export default function TopMenu() {
 
   const getCountryFlag = () => {
     const found = countries.find(c => c.code === country);
-    return found ? found.flag : '🌍';
+    return found ? found.flag : '';
   };
 
   const handleSearch = (e: React.FormEvent) => {
@@ -91,12 +92,12 @@ export default function TopMenu() {
     return (
       <div className="top-menu">
         <div className="top-menu-container-full">
-          <div className="menu-logo">🌤️ Clima Hoy</div>
+          <div className="menu-logo"><SunIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.15em' }} /> Clima Hoy</div>
           <div className="menu-search">
             <input type="text" placeholder="Buscar ciudad..." className="menu-search-input" />
-            <button className="menu-search-button">🔍</button>
+            <button className="menu-search-button"><MagnifyingGlassIcon style={{ width: '1.1em', height: '1.1em' }} /></button>
           </div>
-          <button className="mobile-menu-btn">☰</button>
+          <button className="mobile-menu-btn"><Bars3Icon style={{ width: '1.3em', height: '1.3em' }} /></button>
         </div>
       </div>
     );
@@ -107,7 +108,7 @@ export default function TopMenu() {
       <div className="top-menu-container-full">
         {/* Logo */}
         <div className="menu-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-          🌤️ WeatherApp
+          <SunIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.15em' }} /> WeatherApp
         </div>
 
         {/* Barra de búsqueda - visible siempre */}
@@ -120,7 +121,7 @@ export default function TopMenu() {
             className="menu-search-input"
           />
           <button type="submit" className="menu-search-button">
-            🔍
+            <MagnifyingGlassIcon style={{ width: '1.1em', height: '1.1em' }} />
           </button>
         </form>
 
@@ -130,7 +131,7 @@ export default function TopMenu() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menú"
         >
-          ☰
+          <Bars3Icon style={{ width: '1.3em', height: '1.3em' }} />
         </button>
 
         {/* Menú desktop (visible en desktop, oculto en móvil) */}
@@ -154,13 +155,13 @@ export default function TopMenu() {
                   className={`dropdown-item ${unit === 'celsius' ? 'active' : ''}`}
                   onClick={() => { setUnit('celsius'); setShowUnitDropdown(false); }}
                 >
-                  🌡️ {t('app.menu.celsius')} (°C)
+                  <FireIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.menu.celsius')} (°C)
                 </div>
                 <div 
                   className={`dropdown-item ${unit === 'fahrenheit' ? 'active' : ''}`}
                   onClick={() => { setUnit('fahrenheit'); setShowUnitDropdown(false); }}
                 >
-                  🌡️ {t('app.menu.fahrenheit')} (°F)
+                  <FireIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.menu.fahrenheit')} (°F)
                 </div>
               </div>
             )}
@@ -196,16 +197,16 @@ export default function TopMenu() {
           <div className="mobile-menu-panel" ref={mobileMenuRef}>
             <div className="mobile-menu-header">
               <span>Configuración</span>
-              <button className="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}>✕</button>
+              <button className="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}><XMarkIcon style={{ width: '1.2em', height: '1.2em' }} /></button>
             </div>
             <div className="mobile-menu-items">
               <div className="mobile-menu-item">
-                <span className="mobile-item-label">📍 País</span>
+                <span className="mobile-item-label"><MapPinIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> País</span>
                 <span className="mobile-item-value">{getCountryFlag()} {country}</span>
               </div>
               
               <div className="mobile-menu-item">
-                <span className="mobile-item-label">🌡️ Temperatura</span>
+                <span className="mobile-item-label"><FireIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> Temperatura</span>
                 <div className="mobile-item-options">
                   <button 
                     className={`mobile-option ${unit === 'celsius' ? 'active' : ''}`}
@@ -223,7 +224,7 @@ export default function TopMenu() {
               </div>
               
               <div className="mobile-menu-item">
-                <span className="mobile-item-label">🌐 Idioma</span>
+                <span className="mobile-item-label"><GlobeAltIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> Idioma</span>
                 <div className="mobile-item-options mobile-lang-options">
                   {languages.map((lang) => (
                     <button 

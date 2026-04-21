@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const popularCities = ['Madrid', 'Barcelona', 'London', 'Paris', 'New York', 'Tokyo', 'Berlin', 'Rome', 'Buenos Aires', 'Mexico City', 'Bogota', 'Santiago'];
 
@@ -65,7 +66,7 @@ function SearchBox({ city, setCity, onSearch }: SearchBoxProps) {
         <div className="suggestions-dropdown">
           {suggestions.map((suggestion, index) => (
             <div key={index} className="suggestion-item" onClick={() => selectSuggestion(suggestion)}>
-              <span className="suggestion-icon">🔍</span>
+              <MagnifyingGlassIcon className="suggestion-icon" style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} />
               <span className="suggestion-text">{suggestion}</span>
             </div>
           ))}

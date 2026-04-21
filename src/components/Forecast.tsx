@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSettings } from '@/contexts/SettingsContext';
+import { CalendarDaysIcon, CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import './forecast.css';
 
 interface ForecastListItem {
@@ -112,7 +113,7 @@ export default function Forecast({ cityName, forecastData }: ForecastProps) {
   if (!mounted || (loading && !forecastData)) {
     return (
       <div className="forecast-container">
-        <h3>📅 {t('app.forecast.title')}</h3>
+        <h3><CalendarDaysIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.forecast.title')}</h3>
         <p className="forecast-loading">{t('app.forecast.loading')}</p>
       </div>
     );
@@ -121,7 +122,7 @@ export default function Forecast({ cityName, forecastData }: ForecastProps) {
   if (error) {
     return (
       <div className="forecast-container">
-        <h3>📅 {t('app.forecast.title')}</h3>
+        <h3><CalendarDaysIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.forecast.title')}</h3>
         <p className="forecast-error">{error}</p>
       </div>
     );
@@ -129,7 +130,7 @@ export default function Forecast({ cityName, forecastData }: ForecastProps) {
 
   return (
     <div className="forecast-container">
-      <h3>📅 {t('app.forecast.title')}</h3>
+      <h3><CalendarDaysIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.forecast.title')}</h3>
       <div className="forecast-list">
         {days.map((day) => {
           const date = new Date(day.dateKey + 'T00:00:00Z');
@@ -160,7 +161,7 @@ export default function Forecast({ cityName, forecastData }: ForecastProps) {
               </div>
               {day.maxPop >= 0.05 && (
                 <div className="forecast-pop">
-                  <span>💧</span>
+                  <CloudArrowDownIcon style={{ width: '1em', height: '1em' }} />
                   <span>{Math.round(day.maxPop * 100)}%</span>
                 </div>
               )}

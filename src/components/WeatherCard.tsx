@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getWeatherBackground, getOverlayColor } from '@/services/backgroundService';
+import { StarIcon as StarSolid } from '@heroicons/react/24/solid';
+import { StarIcon, SunIcon, MoonIcon, FireIcon, BeakerIcon, CloudIcon, ArrowUpCircleIcon, ArrowDownCircleIcon } from '@heroicons/react/24/outline';
 import './WeatherCard.css';
 
 interface WeatherCardProps {
@@ -166,7 +168,10 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
               className={`favorite-btn-modern ${isFavorite ? 'active' : ''}`}
               title={isFavorite ? t('app.favorites.remove') : t('app.favorites.add')}
             >
-              {isFavorite ? '⭐' : '☆'}
+              {isFavorite
+                ? <StarSolid style={{ width: '1.5rem', height: '1.5rem', color: '#f59e0b' }} />
+                : <StarIcon style={{ width: '1.5rem', height: '1.5rem' }} />
+              }
             </button>
           </div>
         </div>
@@ -183,23 +188,23 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
         </div>
 
         <div className="temp-range">
-          <span>☀️ {t('app.weather.day')}: {convertTemp(displayDayTemp)}{getTempSymbol()}</span>
-          <span>🌙 {t('app.weather.night')}: {convertTemp(displayNightTemp)}{getTempSymbol()}</span>
+          <span><SunIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.day')}: {convertTemp(displayDayTemp)}{getTempSymbol()}</span>
+          <span><MoonIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.weather.night')}: {convertTemp(displayNightTemp)}{getTempSymbol()}</span>
         </div>
 
         <div className="weather-details-grid">
           <div className="detail-item">
-            <span className="detail-icon">🌡️</span>
+            <FireIcon className="detail-icon" style={{ width: '1.3rem', height: '1.3rem' }} />
             <span className="detail-label">{t('app.weather.feels_like')}</span>
             <span className="detail-value">{convertTemp(weather.main.feels_like)}{getTempSymbol()}</span>
           </div>
           <div className="detail-item">
-            <span className="detail-icon">💧</span>
+            <BeakerIcon className="detail-icon" style={{ width: '1.3rem', height: '1.3rem' }} />
             <span className="detail-label">{t('app.weather.humidity')}</span>
             <span className="detail-value">{weather.main.humidity}%</span>
           </div>
           <div className="detail-item">
-            <span className="detail-icon">🌬️</span>
+            <CloudIcon className="detail-icon" style={{ width: '1.3rem', height: '1.3rem' }} />
             <span className="detail-label">{t('app.weather.air_quality')}</span>
             <span className="detail-value" style={{ color: airQualityInfo?.color }}>
               {airQualityInfo?.text || 'No disponible'}
@@ -209,11 +214,11 @@ function WeatherCard({ weather, convertTemp, getTempSymbol, onAddFavorite, isFav
 
         <div className="sun-times">
           <div className="sun-item">
-            <span className="sun-icon">🌅</span>
+            <ArrowUpCircleIcon className="sun-icon" style={{ width: '1.4rem', height: '1.4rem' }} />
             <span>{t('app.weather.sunrise')}: {formatSunTime(weather.sys.sunrise)}</span>
           </div>
           <div className="sun-item">
-            <span className="sun-icon">🌇</span>
+            <ArrowDownCircleIcon className="sun-icon" style={{ width: '1.4rem', height: '1.4rem' }} />
             <span>{t('app.weather.sunset')}: {formatSunTime(weather.sys.sunset)}</span>
           </div>
         </div>

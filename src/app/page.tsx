@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import { SettingsProvider } from '@/contexts/SettingsContext';
+import { SunIcon } from '@heroicons/react/24/outline';
 
 // Skeleton loader para mostrar mientras carga
 function SkeletonLoader() {
@@ -14,7 +15,7 @@ function SkeletonLoader() {
     <div>
       <TopMenu />
       <div className="home-two-columns">
-        <h1>🌤️ Clima Hoy</h1>
+        <h1><SunIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} /> Clima Hoy</h1>
         <div className="skeleton favorites-skeleton"></div>
         <div className="two-column-layout">
           <div className="left-column">
@@ -190,7 +191,7 @@ function HomeContent() {
           onRemoveFavorite={removeFavorite}
         />
 
-        <h1>🌤️ {weather?.name ?? 'Clima Hoy'}</h1>
+        <h1><SunIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} /> {weather?.name ?? 'Clima Hoy'}</h1>
 
         {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
 

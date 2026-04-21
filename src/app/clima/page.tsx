@@ -1,6 +1,7 @@
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { SunIcon, BuildingOffice2Icon, GlobeAmericasIcon, GlobeAltIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const popularCities = [
   { name: 'Bogotá', slug: 'bogota' },
@@ -37,33 +38,33 @@ export default function ClimaHubPage() {
     <div>
       <TopMenu />
       <div className="home-two-columns">
-        <h1>🌤️ Clima en todas las ciudades</h1>
+        <h1><SunIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} /> Clima en todas las ciudades</h1>
         <p>Consulta el clima actual en cualquier ciudad del mundo.</p>
         
         <section className="cities-section">
-          <h2>🇨🇴 Ciudades de Colombia</h2>
+          <h2>Ciudades de Colombia</h2>
           <div className="cities-grid">
             {popularCities.map((city) => (
               <Link key={city.slug} href={`/clima/${city.slug}`} className="city-card">
-                🌆 {city.name}
+                <BuildingOffice2Icon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {city.name}
               </Link>
             ))}
           </div>
         </section>
         
         <section className="cities-section">
-          <h2>🌎 Ciudades internacionales</h2>
+          <h2><GlobeAmericasIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em' }} /> Ciudades internacionales</h2>
           <div className="cities-grid">
             {internationalCities.map((city) => (
               <Link key={city.slug} href={`/clima/${city.slug}`} className="city-card">
-                🌍 {city.name}
+                <GlobeAltIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {city.name}
               </Link>
             ))}
           </div>
         </section>
         
         <section className="search-section">
-          <h2>🔍 Buscar otra ciudad</h2>
+          <h2><MagnifyingGlassIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em' }} /> Buscar otra ciudad</h2>
           <p>Usa el buscador en la parte superior para encontrar el clima de cualquier ciudad.</p>
         </section>
       </div>

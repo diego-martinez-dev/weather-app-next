@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSettings } from '@/contexts/SettingsContext';
+import { ClockIcon, CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import './hourly-forecast.css';
 
 interface ForecastListItem {
@@ -88,7 +89,7 @@ export default function HourlyForecast({ forecastData }: HourlyForecastProps) {
   if (!mounted) {
     return (
       <div className="hourly-forecast-container">
-        <h3>⏱️ {t('app.hourly.title')}</h3>
+        <h3><ClockIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.hourly.title')}</h3>
         <div className="hourly-scroll-track">
           {Array.from({ length: HOURS_TO_SHOW }).map((_, i) => (
             <div key={i} className="hourly-card hourly-card--skeleton" />
@@ -100,11 +101,11 @@ export default function HourlyForecast({ forecastData }: HourlyForecastProps) {
 
   return (
     <div className="hourly-forecast-container">
-      <h3>⏱️ {t('app.hourly.title')}</h3>
+      <h3><ClockIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.hourly.title')}</h3>
 
       {hasImmediateRain && (
         <div className="hourly-rain-alert">
-          <span>🌧️</span>
+          <CloudArrowDownIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.2em' }} />
           <span>{t('app.hourly.next_hours_rain', { count: RAIN_ALERT_HOURS })}</span>
         </div>
       )}
@@ -127,7 +128,7 @@ export default function HourlyForecast({ forecastData }: HourlyForecastProps) {
             </div>
             {slot.pop >= 0.05 && (
               <div className="hourly-pop">
-                <span>💧</span>
+                <CloudArrowDownIcon style={{ width: '1em', height: '1em' }} />
                 <span>{Math.round(slot.pop * 100)}%</span>
               </div>
             )}

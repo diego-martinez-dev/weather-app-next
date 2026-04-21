@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 interface FavoritesProps {
   favorites: string[];
@@ -52,7 +53,7 @@ export default function Favorites({ favorites, onRemoveFavorite }: FavoritesProp
               className="remove-favorite"
               title={t('app.favorites.remove')}
             >
-              ❌
+              <XMarkIcon style={{ width: '1em', height: '1em' }} />
             </button>
           </div>
         ))}

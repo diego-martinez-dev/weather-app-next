@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { SunIcon } from '@heroicons/react/24/outline';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -13,7 +14,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <Link href="/" className="nav-logo">
-          🌤️ WeatherApp
+          <SunIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.15em' }} /> WeatherApp
         </Link>
         <ul className="nav-menu">
           <li className="nav-item">

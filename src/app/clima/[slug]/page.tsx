@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import { SettingsProvider } from '@/contexts/SettingsContext';
+import { SunIcon } from '@heroicons/react/24/outline';
 
 function slugToCity(slug: string): string {
   return slug
@@ -109,7 +110,7 @@ function CityContent() {
     <div>
       <TopMenu />
       <div className="home-two-columns">
-        <h1>🌤️ {weather?.name ?? cityName}</h1>
+        <h1><SunIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} /> {weather?.name ?? cityName}</h1>
 
         <Favorites
           favorites={favorites}
