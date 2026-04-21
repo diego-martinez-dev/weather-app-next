@@ -59,7 +59,7 @@ export const getWeatherBackground = (
     return weatherBackgrounds.clear.day;
   }
   
-  const condition = getWeatherCondition(weather.weather[0].description);
+  const condition = getWeatherCondition(weather.weather[0].main ?? weather.weather[0].description);
   const timeOfDay = isDay ? 'day' : 'night';
   
   return weatherBackgrounds[condition][timeOfDay];

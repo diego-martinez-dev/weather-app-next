@@ -1,12 +1,12 @@
 'use client';
 
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
-import { SettingsProvider } from '@/contexts/SettingsContext';
+import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { SunIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
 
@@ -34,6 +34,8 @@ function CityContent() {
   const params = useParams<{ slug: string }>();
   const router = useRouter();
   const cityName = slugToCity(params.slug ?? '');
+  const { language } = useSettings();
+  const lastFetchedLang = useRef<string>('');
 
   const [weather, setWeather] = useState<any>(null);
   const [airQuality, setAirQuality] = useState<any>(null);
@@ -57,7 +59,10 @@ function CityContent() {
   }, [weather, favorites]);
 
   const addFavorite = () => {
-    if (weather?.name && !favorites.includes(weather.name)) {
+    if (!weather?.name) return;
+    if (favorites.includes(weather.name)) {
+      setFavorites(prev => prev.filter(c => c !== weather.name));
+    } else {
       setFavorites(prev => [...prev, weather.name]);
     }
   };
@@ -67,6 +72,7 @@ function CityContent() {
   };
 
   const fetchWeatherData = async (city: string) => {
+    lastFetchedLang.current = language;
     setLoading(true);
     setError('');
     const controller = new AbortController();
@@ -74,7 +80,7 @@ function CityContent() {
 
     try {
       const weatherRes = await fetch(
-        `/api/weather?city=${encodeURIComponent(city)}`,
+        `/api/weather?city=${encodeURIComponent(city)}&lang=${language}`,
         { signal: controller.signal }
       );
       clearTimeout(timeoutId);
@@ -84,7 +90,7 @@ function CityContent() {
         setWeather(weatherData);
         const [airRes, forecastRes] = await Promise.all([
           fetch(`/api/weather?type=air&lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}`),
-          fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}`),
+          fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}&lang=${language}`),
         ]);
         setAirQuality(await airRes.json());
         setForecast(await forecastRes.json());
@@ -100,7 +106,15 @@ function CityContent() {
 
   useEffect(() => {
     if (cityName) fetchWeatherData(cityName);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cityName]);
+
+  useEffect(() => {
+    if (weather?.name && lastFetchedLang.current !== language) {
+      fetchWeatherData(weather.name);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [weather, language]);
 
   // El botón de ubicación navega al home que auto-detecta la ubicación
   const handleLocationClick = () => router.push('/');
