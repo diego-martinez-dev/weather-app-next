@@ -87,7 +87,7 @@ export default function WeatherMap({
 
   return (
     <div className="weather-map-container">
-      <div ref={mapRef} className="weather-map" style={{ height: '500px', width: '100%' }} />
+      <div ref={mapRef} className="weather-map" style={{ height: '470px', width: '100%' }} />
       <button className="map-location-button" onClick={onLocationClick}>
         <MapPinIcon style={{ width: '1.4rem', height: '1.4rem' }} />
       </button>
