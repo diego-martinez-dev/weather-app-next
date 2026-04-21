@@ -2,33 +2,33 @@
 const weatherBackgrounds: Record<string, Record<string, string>> = {
   // Soleado / Despejado — montaña desierto / vía láctea
   clear: {
-    day: 'https://images.unsplash.com/photo-VVqOZcAKm24?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-BTuQv_g2Bw8?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-1615286628718-4a4c8924d0eb?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-1647941953367-6ff24a0e5857?w=1200&h=800&fit=crop',
   },
   // Nublado — montañas bajo cielo encapotado / nubes nocturnas
   clouds: {
-    day: 'https://images.unsplash.com/photo-gF8tDxbpgX0?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-DsxD_bTq8x0?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-1626373032927-0526a740b091?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-1661543405382-86d8433707bb?w=1200&h=800&fit=crop',
   },
   // Lluvia — ventana con lluvia y ciudad / calle mojada nocturna
   rain: {
-    day: 'https://images.unsplash.com/photo-gtG0y9CUgcA?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-hQOct36DUSY?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-1646830428221-e9db117787c3?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-1570731618429-1c4ef33ea65f?w=1200&h=800&fit=crop',
   },
   // Tormenta — relámpago sobre paisaje
   thunderstorm: {
-    day: 'https://images.unsplash.com/photo-in9-n0JwgZ0?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-od0R_9e_aqA?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-1598254222583-66e6e5f846d0?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-1673446705499-0eaaecf46737?w=1200&h=800&fit=crop',
   },
   // Nieve — paisaje nevado con montañas / luna llena sobre nieve
   snow: {
-    day: 'https://images.unsplash.com/photo-we4enFZr0aA?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-jDVzoU86g8c?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-zSA0ByrONc8?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-1573506715256-fd46f5a21d4a?w=1200&h=800&fit=crop',
   },
   // Niebla — bosque brumoso al amanecer / luna entre nubes
   mist: {
-    day: 'https://images.unsplash.com/photo-FItOgF4jrBA?w=1200&h=800&fit=crop',
-    night: 'https://images.unsplash.com/photo-ve_uN9V8xqU?w=1200&h=800&fit=crop',
+    day: 'https://images.unsplash.com/photo-1584823501335-10b246a774b1?w=1200&h=800&fit=crop',
+    night: 'https://images.unsplash.com/photo-1677126577072-a52772eb7769?w=1200&h=800&fit=crop',
   },
 };
 
