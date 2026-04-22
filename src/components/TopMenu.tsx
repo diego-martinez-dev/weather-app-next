@@ -204,7 +204,7 @@ export default function TopMenu() {
               </div>
             ) : (
               <button className="auth-btn auth-btn--login" onClick={() => signIn('google')}>
-                <UserCircleIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} /> {t('app.auth.login')}
+                {t('app.auth.login')}
               </button>
             )}
           </div>
