@@ -1,14 +1,5 @@
-'use client';
-
-import { Suspense, useState, useEffect, useRef } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import TopMenu from '@/components/TopMenu';
-import Footer from '@/components/Footer';
-import WeatherClient from '@/components/WeatherClient';
-import Favorites from '@/components/Favorites';
-import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
-import { SunIcon } from '@heroicons/react/24/outline';
-import { getWeatherIcon } from '@/lib/weatherIcons';
+import type { Metadata } from 'next';
+import CityPageClient from './CityPageClient';
 
 function slugToCity(slug: string): string {
   return slug
@@ -17,148 +8,86 @@ function slugToCity(slug: string): string {
     .join(' ');
 }
 
-function SkeletonLoader() {
-  return (
-    <div>
-      <TopMenu />
-      <div className="home-two-columns">
-        <div className="skeleton favorites-skeleton"></div>
-        <div className="skeleton weather-card-skeleton"></div>
-      </div>
-      <Footer />
-    </div>
-  );
+export const topCities = [
+  // Colombia
+  'bogota', 'medellin', 'cali', 'barranquilla', 'cartagena',
+  'bucaramanga', 'pereira', 'manizales', 'cucuta', 'ibague',
+  'santa-marta', 'villavicencio', 'armenia', 'pasto', 'monteria',
+  'sincelejo', 'valledupar', 'neiva', 'popayan', 'tunja',
+  // España
+  'madrid', 'barcelona', 'valencia', 'sevilla', 'bilbao',
+  'malaga', 'zaragoza', 'alicante', 'granada', 'murcia',
+  // Latinoamérica
+  'mexico-city', 'buenos-aires', 'santiago', 'lima', 'bogota',
+  'caracas', 'quito', 'montevideo', 'asuncion', 'la-paz',
+  'brasilia', 'sao-paulo', 'rio-de-janeiro', 'guadalajara', 'monterrey',
+  'havana', 'santo-domingo', 'san-jose', 'panama-city', 'managua',
+  // Mundo
+  'new-york', 'london', 'paris', 'tokyo', 'berlin',
+  'rome', 'amsterdam', 'dubai', 'sydney', 'toronto',
+];
+
+export async function generateStaticParams() {
+  return topCities.map(slug => ({ slug }));
 }
 
-function CityContent() {
-  const params = useParams<{ slug: string }>();
-  const router = useRouter();
-  const cityName = slugToCity(params.slug ?? '');
-  const { language } = useSettings();
-  const lastFetchedLang = useRef<string>('');
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const { slug } = await params;
+  const city = slugToCity(slug);
 
-  const [weather, setWeather] = useState<any>(null);
-  const [airQuality, setAirQuality] = useState<any>(null);
-  const [forecast, setForecast] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-  const [favorites, setFavorites] = useState<string[]>([]);
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('favoriteCities');
-    if (saved) setFavorites(JSON.parse(saved));
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('favoriteCities', JSON.stringify(favorites));
-  }, [favorites]);
-
-  useEffect(() => {
-    if (weather?.name) setIsFavorite(favorites.includes(weather.name));
-  }, [weather, favorites]);
-
-  const addFavorite = () => {
-    if (!weather?.name) return;
-    if (favorites.includes(weather.name)) {
-      setFavorites(prev => prev.filter(c => c !== weather.name));
-    } else {
-      setFavorites(prev => [...prev, weather.name]);
-    }
+  return {
+    title: `Clima en ${city} hoy | Temperatura y pronóstico - Clima Hoy`,
+    description: `Consulta el clima actual en ${city}: temperatura, humedad, viento y pronóstico de 5 días. Información actualizada en tiempo real.`,
+    alternates: {
+      canonical: `https://www.clima-hoy.com/clima/${slug}`,
+    },
+    openGraph: {
+      title: `Clima en ${city} hoy - Clima Hoy`,
+      description: `Temperatura actual, lluvia y pronóstico del tiempo en ${city}.`,
+      url: `https://www.clima-hoy.com/clima/${slug}`,
+      siteName: 'Clima Hoy',
+      locale: 'es_CO',
+      type: 'website',
+    },
   };
-
-  const removeFavorite = (city: string) => {
-    setFavorites(prev => prev.filter(c => c !== city));
-  };
-
-  const fetchWeatherData = async (city: string) => {
-    lastFetchedLang.current = language;
-    setLoading(true);
-    setError('');
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000);
-
-    try {
-      const weatherRes = await fetch(
-        `/api/weather?city=${encodeURIComponent(city)}&lang=${language}`,
-        { signal: controller.signal }
-      );
-      clearTimeout(timeoutId);
-      const weatherData = await weatherRes.json();
-
-      if (weatherData.cod === 200) {
-        setWeather(weatherData);
-        const [airRes, forecastRes] = await Promise.all([
-          fetch(`/api/weather?type=air&lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}`),
-          fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}&lang=${language}`),
-        ]);
-        setAirQuality(await airRes.json());
-        setForecast(await forecastRes.json());
-      } else {
-        setError(weatherData.message || 'Ciudad no encontrada');
-      }
-    } catch {
-      setError('No se pudo obtener el clima');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (cityName) fetchWeatherData(cityName);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cityName]);
-
-  useEffect(() => {
-    if (weather?.name && lastFetchedLang.current !== language) {
-      fetchWeatherData(weather.name);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [weather, language]);
-
-  // El botón de ubicación navega al home que auto-detecta la ubicación
-  const handleLocationClick = () => router.push('/');
-
-  if (loading) return <SkeletonLoader />;
-
-  return (
-    <div>
-      <TopMenu />
-      <div className="home-two-columns">
-        <Favorites
-          favorites={favorites}
-          onRemoveFavorite={removeFavorite}
-        />
-
-        <h1>
-          {(() => { const I = weather?.weather?.[0]?.icon ? getWeatherIcon(weather.weather[0].icon) : SunIcon; return <I style={{ width: '1.5rem', height: '1.5rem', display: 'inline', verticalAlign: '-0.15em', color: 'black' }} />; })()}
-          {weather?.name ?? cityName}
-        </h1>
-
-        {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
-        {weather && (
-          <WeatherClient
-            weather={weather}
-            tempCelsius={weather.main?.temp}
-            airQuality={airQuality}
-            forecast={forecast}
-            onAddFavorite={addFavorite}
-            isFavorite={isFavorite}
-            onLocationClick={handleLocationClick}
-          />
-        )}
-      </div>
-      <Footer />
-    </div>
-  );
 }
 
-export default function CityPage() {
+export default async function CityPage(
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  const { slug } = await params;
+  const city = slugToCity(slug);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `Clima en ${city} hoy`,
+    description: `Temperatura actual y pronóstico del tiempo en ${city}. Actualizado en tiempo real.`,
+    url: `https://www.clima-hoy.com/clima/${slug}`,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Clima Hoy',
+      url: 'https://www.clima-hoy.com',
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.clima-hoy.com' },
+        { '@type': 'ListItem', position: 2, name: 'Clima', item: 'https://www.clima-hoy.com/clima' },
+        { '@type': 'ListItem', position: 3, name: city, item: `https://www.clima-hoy.com/clima/${slug}` },
+      ],
+    },
+  };
+
   return (
-    <SettingsProvider>
-      <Suspense fallback={<SkeletonLoader />}>
-        <CityContent />
-      </Suspense>
-    </SettingsProvider>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <CityPageClient slug={slug} />
+    </>
   );
 }
