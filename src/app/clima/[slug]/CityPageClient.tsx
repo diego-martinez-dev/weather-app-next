@@ -30,7 +30,7 @@ function SkeletonLoader() {
   );
 }
 
-function CityContent({ slug }: { slug: string }) {
+function CityContent({ slug, description }: { slug: string; description?: string | null }) {
   const router = useRouter();
   const cityName = slugToCity(slug);
   const { language } = useSettings();
@@ -140,17 +140,22 @@ function CityContent({ slug }: { slug: string }) {
             onLocationClick={handleLocationClick}
           />
         )}
+        {description && (
+          <p style={{ maxWidth: 700, margin: '24px auto', padding: '0 16px', fontSize: '0.95rem', lineHeight: 1.7, color: '#475569', textAlign: 'center' }}>
+            {description}
+          </p>
+        )}
       </div>
       <Footer />
     </div>
   );
 }
 
-export default function CityPageClient({ slug }: { slug: string }) {
+export default function CityPageClient({ slug, description }: { slug: string; description?: string | null }) {
   return (
     <SettingsProvider>
       <Suspense fallback={<SkeletonLoader />}>
-        <CityContent slug={slug} />
+        <CityContent slug={slug} description={description} />
       </Suspense>
     </SettingsProvider>
   );
