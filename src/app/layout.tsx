@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 import AuthProvider from '@/components/AuthProvider';
@@ -43,6 +44,12 @@ export default function RootLayout({
         <link rel="alternate icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
         <AuthProvider>
           <SettingsProvider>
             {children}

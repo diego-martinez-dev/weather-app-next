@@ -4,6 +4,7 @@ import WeatherCard from './WeatherCard';
 import WeatherMapWrapper from './WeatherMapWrapper';
 import Forecast from './Forecast';
 import HourlyForecast from './HourlyForecast';
+import AdUnit from './AdUnit';
 import { useSettings } from '@/contexts/SettingsContext';
 
 interface WeatherClientProps {
@@ -55,7 +56,11 @@ export default function WeatherClient({
         </div>
       </div>
       
+      <AdUnit slot="1111111111" format="horizontal" />
+
       {forecast?.list && <HourlyForecast forecastData={forecast} />}
+
+      <AdUnit slot="2222222222" format="auto" />
 
       <Forecast cityName={weather.name} forecastData={forecast} />
     </>
