@@ -42,6 +42,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.clima-hoy.com" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="alternate icon" href="/favicon.ico" />
+        <meta name="google-adsense-account" content="ca-pub-1859146451941420" />
       </head>
       <body className={inter.className}>
         <Script
