@@ -38,6 +38,10 @@ export const topCities = [
   // Mundo
   'new-york', 'london', 'paris', 'tokyo', 'berlin',
   'rome', 'amsterdam', 'dubai', 'sydney', 'toronto',
+  // Estados Unidos adicional
+  'los-angeles', 'chicago', 'miami', 'san-francisco',
+  // Canadá adicional
+  'vancouver', 'montreal', 'calgary', 'ottawa',
 ];
 
 export async function generateStaticParams() {
