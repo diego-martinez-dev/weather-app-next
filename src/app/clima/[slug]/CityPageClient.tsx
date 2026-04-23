@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
-import { SunIcon } from '@heroicons/react/24/outline';
+import { SunIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
 
 function slugToCity(slug: string): string {
@@ -128,6 +128,12 @@ function CityContent({ slug, description }: { slug: string; description?: string
           {(() => { const I = weather?.weather?.[0]?.icon ? getWeatherIcon(weather.weather[0].icon) : SunIcon; return <I style={{ width: '1.5rem', height: '1.5rem', display: 'inline', verticalAlign: '-0.15em', color: 'black' }} />; })()}
           {weather?.name ?? cityName}
         </h1>
+        {description && (
+          <p style={{ maxWidth: 700, margin: '8px auto 20px', padding: '10px 16px', fontSize: '0.9rem', lineHeight: 1.7, color: '#475569', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0' }}>
+            <LightBulbIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em', marginRight: 6 }} />
+            <strong>Tip:</strong> {description}
+          </p>
+        )}
         {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
         {weather && (
           <WeatherClient
@@ -139,11 +145,6 @@ function CityContent({ slug, description }: { slug: string; description?: string
             isFavorite={isFavorite}
             onLocationClick={handleLocationClick}
           />
-        )}
-        {description && (
-          <p style={{ maxWidth: 700, margin: '24px auto', padding: '0 16px', fontSize: '0.95rem', lineHeight: 1.7, color: '#475569', textAlign: 'center' }}>
-            {description}
-          </p>
         )}
       </div>
       <Footer />
