@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import CityPageClient from './CityPageClient';
-import { getCityDescription } from '@/data/cityDescriptions';
+import { getCityDescription, getCityTouristTip } from '@/data/cityDescriptions';
 
 function slugToCity(slug: string): string {
   return slug
@@ -88,7 +88,7 @@ export default async function CityPage(
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <CityPageClient slug={slug} description={getCityDescription(slug)} />
+      <CityPageClient slug={slug} description={getCityDescription(slug)} touristTip={getCityTouristTip(slug)} />
     </>
   );
 }

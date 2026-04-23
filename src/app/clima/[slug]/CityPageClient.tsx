@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
-import { SunIcon, LightBulbIcon } from '@heroicons/react/24/outline';
+import { SunIcon, LightBulbIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
 
 function slugToCity(slug: string): string {
@@ -30,7 +30,7 @@ function SkeletonLoader() {
   );
 }
 
-function CityContent({ slug, description }: { slug: string; description?: string | null }) {
+function CityContent({ slug, description, touristTip }: { slug: string; description?: string | null; touristTip?: string | null }) {
   const router = useRouter();
   const cityName = slugToCity(slug);
   const { language } = useSettings();
@@ -134,6 +134,12 @@ function CityContent({ slug, description }: { slug: string; description?: string
             <strong>Tip:</strong> {description}
           </p>
         )}
+        {touristTip && (
+          <p style={{ maxWidth: 700, margin: '8px auto 20px', padding: '10px 16px', fontSize: '0.9rem', lineHeight: 1.7, color: '#475569', background: '#fffbeb', borderRadius: 8, border: '1px solid #fde68a' }}>
+            <UserGroupIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em', marginRight: 6 }} />
+            <strong>Tip para turistas:</strong> {touristTip}
+          </p>
+        )}
         {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
         {weather && (
           <WeatherClient
@@ -152,11 +158,11 @@ function CityContent({ slug, description }: { slug: string; description?: string
   );
 }
 
-export default function CityPageClient({ slug, description }: { slug: string; description?: string | null }) {
+export default function CityPageClient({ slug, description, touristTip }: { slug: string; description?: string | null; touristTip?: string | null }) {
   return (
     <SettingsProvider>
       <Suspense fallback={<SkeletonLoader />}>
-        <CityContent slug={slug} description={description} />
+        <CityContent slug={slug} description={description} touristTip={touristTip} />
       </Suspense>
     </SettingsProvider>
   );
