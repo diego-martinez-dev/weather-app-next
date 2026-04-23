@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
-import { SunIcon, LightBulbIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import { SunIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
 
 function slugToCity(slug: string): string {
@@ -128,17 +128,21 @@ function CityContent({ slug, description, touristTip }: { slug: string; descript
           {(() => { const I = weather?.weather?.[0]?.icon ? getWeatherIcon(weather.weather[0].icon) : SunIcon; return <I style={{ width: '1.5rem', height: '1.5rem', display: 'inline', verticalAlign: '-0.15em', color: 'black' }} />; })()}
           {weather?.name ?? cityName}
         </h1>
-        {description && (
-          <p style={{ maxWidth: 700, margin: '8px auto 20px', padding: '10px 16px', fontSize: '0.9rem', lineHeight: 1.7, color: '#475569', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0' }}>
-            <LightBulbIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em', marginRight: 6 }} />
-            <strong>Tip:</strong> {description}
-          </p>
-        )}
-        {touristTip && (
-          <p style={{ maxWidth: 700, margin: '8px auto 20px', padding: '10px 16px', fontSize: '0.9rem', lineHeight: 1.7, color: '#475569', background: '#fffbeb', borderRadius: 8, border: '1px solid #fde68a' }}>
-            <UserGroupIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em', marginRight: 6 }} />
-            <strong>Tip para turistas:</strong> {touristTip}
-          </p>
+        {(description || touristTip) && (
+          <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+            {description && (
+              <p style={{ margin: touristTip ? '0 0 12px 0' : '0' }}>
+                <LightBulbIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.2em', marginRight: 6 }} />
+                <strong>Tip:</strong> {description}
+              </p>
+            )}
+            {touristTip && (
+              <p style={{ margin: '0' }}>
+                <LightBulbIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.2em', marginRight: 6 }} />
+                <strong>Tip para turistas:</strong> {touristTip}
+              </p>
+            )}
+          </div>
         )}
         {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
         {weather && (

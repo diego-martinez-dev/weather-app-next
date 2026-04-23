@@ -115,6 +115,12 @@ const toggleFavorite = () => {
 
 ---
 
+## Recomendaciones para próximos proyectos
+
+- **Stack recomendado:** Next.js + Tailwind + shadcn/ui. shadcn es una librería de componentes pre-construidos con Tailwind que incluye botones, modales, dropdowns, etc. listos para personalizar — es la combinación más productiva actualmente.
+
+---
+
 ## Convenciones de código
 
 - No uses comentarios salvo que el motivo sea no obvio
@@ -123,6 +129,7 @@ const toggleFavorite = () => {
 - No crees archivos de documentación ni README adicionales
 - Prefiere editar archivos existentes a crear nuevos
 - Para rutas dinámicas sigue el patrón: `src/app/clima/[slug]/page.tsx`
+- **La última línea del footer siempre debe decir:** "Website creado por [cracksdigitales.com](https://cracksdigitales.com)" — con enlace, `target="_blank"` y `rel="noopener noreferrer"`
 
 ---
 
