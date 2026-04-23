@@ -36,6 +36,7 @@ export default function Footer() {
         <Link href="/data-sources">{t('app.footer.data_sources')}</Link>
       </div>
       <div className="footer-copyright">{t('app.footer.copyright')}</div>
+      <div className="footer-copyright">Website creado por <a href="https://cracksdigitales.com" target="_blank" rel="noopener noreferrer">cracksdigitales.com</a></div>
     </footer>
   );
 }
