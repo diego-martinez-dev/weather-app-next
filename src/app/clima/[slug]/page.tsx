@@ -23,6 +23,18 @@ export const topCities = [
   'caracas', 'quito', 'montevideo', 'asuncion', 'la-paz',
   'brasilia', 'sao-paulo', 'rio-de-janeiro', 'guadalajara', 'monterrey',
   'havana', 'santo-domingo', 'san-jose', 'panama-city', 'managua',
+  // Argentina adicional
+  'cordoba', 'rosario', 'mendoza',
+  // Chile adicional
+  'valparaiso', 'concepcion', 'antofagasta',
+  // Brasil adicional
+  'salvador',
+  // Perú
+  'arequipa', 'cusco', 'trujillo',
+  // Ecuador
+  'guayaquil', 'cuenca', 'manta',
+  // México adicional
+  'puebla',
   // Mundo
   'new-york', 'london', 'paris', 'tokyo', 'berlin',
   'rome', 'amsterdam', 'dubai', 'sydney', 'toronto',

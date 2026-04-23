@@ -33,6 +33,32 @@ const descriptions: Record<string, string> = {
   'granada': 'Granada tiene un clima continental mediterráneo, con inviernos fríos por su altitud y veranos muy calurosos que superan los 35°C. La ciudad es única por poder disfrutar de la playa y la nieve de Sierra Nevada el mismo día.',
   'murcia': 'Murcia tiene un clima semiárido mediterráneo, siendo una de las ciudades más secas y calurosas de España. Los veranos superan fácilmente los 38°C y las precipitaciones anuales son muy escasas, convirtiendo la región en la más árida de Europa occidental.',
 
+  // Argentina
+  'cordoba': 'Córdoba tiene un clima continental con veranos calurosos que superan los 35°C e inviernos suaves con temperaturas que raramente bajan de 0°C. Las lluvias son moderadas y se concentran principalmente en verano, mientras que el otoño y la primavera son las estaciones más agradables del año.',
+  'rosario': 'Rosario tiene un clima templado y húmedo con veranos cálidos (28-35°C) e inviernos frescos (5-15°C). La humedad del Río Paraná intensifica tanto el calor del verano como el frío invernal, haciendo que las temperaturas se sientan más extremas de lo que el termómetro indica.',
+  'mendoza': 'Mendoza tiene un clima semiárido con veranos muy calurosos (hasta 40°C) e inviernos fríos y secos con heladas frecuentes. Es una de las ciudades más soleadas de Argentina, con más de 300 días de sol al año, lo que la convierte en el principal productor de vino del país.',
+
+  // Chile
+  'valparaiso': 'Valparaíso tiene un clima mediterráneo costero, más fresco y húmedo que Santiago gracias a la influencia del Océano Pacífico y la Corriente de Humboldt. Los veranos son secos y suaves (18-22°C) y los inviernos lluviosos y fríos (8-14°C), con frecuentes neblinas matutinas.',
+  'concepcion': 'Concepción tiene un clima oceánico húmedo y lluvioso, siendo una de las ciudades más lluviosas de Chile con precipitaciones en más de 130 días al año. Los veranos son frescos (18-22°C) y los inviernos fríos y grises (5-12°C), con lluvias frecuentes de mayo a agosto.',
+  'antofagasta': 'Antofagasta tiene un clima desértico costero, siendo una de las ciudades más áridas del mundo con precipitaciones prácticamente nulas (menos de 5mm anuales). La temperatura es estable todo el año entre 14°C y 22°C, refrescada constantemente por el viento del Pacífico y la neblina costera.',
+
+  // Brasil
+  'salvador': 'Salvador tiene un clima tropical cálido y húmedo durante todo el año, con temperaturas entre 23°C y 32°C. La temporada de lluvias va de abril a julio; los meses de septiembre a marzo son los más secos y soleados, perfectos para disfrutar las playas del litoral bahiano.',
+
+  // Perú
+  'arequipa': 'Arequipa, la "Ciudad Blanca", tiene un clima seco y soleado casi todo el año gracias a su altitud de 2.335 metros. Las temperaturas son agradables (10-22°C), pero la temporada de lluvias de enero a marzo puede traer aguaceros intensos que interrumpen la actividad turística.',
+  'cusco': 'Cusco, la antigua capital del Imperio Inca, tiene un clima frío de alta montaña a 3.400 metros de altitud, con temperaturas entre 4°C y 18°C. La temporada seca (mayo-octubre) es soleada y fresca, ideal para visitar Machu Picchu; la lluviosa (noviembre-abril) trae lluvias casi diarias en las tardes.',
+  'trujillo': 'Trujillo tiene un clima desértico costero con temperaturas muy estables entre 16°C y 25°C durante todo el año y precipitaciones prácticamente nulas. La neblina marina de las mañanas y la brisa del Pacífico mantienen un ambiente refrescante que contrasta con el calor del interior del país.',
+
+  // Ecuador
+  'guayaquil': 'Guayaquil tiene un clima tropical húmedo con dos estaciones marcadas: la lluviosa y calurosa (enero-abril, hasta 33°C) y la seca y fresca llamada "garúa" (mayo-diciembre, 22-28°C). La humedad es alta durante todo el año, especialmente en la temporada lluviosa.',
+  'cuenca': 'Cuenca, la "Atenas del Ecuador", tiene un clima templado y agradable gracias a su altitud de 2.550 metros, con temperaturas entre 10°C y 22°C durante todo el año. Las lluvias son frecuentes pero cortas, y el cielo puede cambiar de soleado a nublado varias veces en el mismo día.',
+  'manta': 'Manta tiene un clima cálido y costero con temperaturas entre 22°C y 30°C, con temporada lluviosa de enero a abril y seca el resto del año. La brisa marina constante hace el calor más llevadero que en ciudades del interior, siendo uno de los puertos más soleados del Ecuador.',
+
+  // México adicional
+  'puebla': 'Puebla tiene un clima templado de montaña gracias a su altitud de 2.135 metros, con temperaturas promedio de 17°C durante todo el año. Las lluvias se concentran de junio a octubre, mientras que la temporada seca es soleada y con noches frescas que invitan a recorrer su centro histórico.',
+
   // Latinoamérica
   'mexico-city': 'Ciudad de México tiene un clima templado de montaña gracias a su altitud de 2.240 metros, con temperaturas promedio de 16°C durante todo el año. Las lluvias se concentran de junio a octubre, mientras que la temporada seca es soleada y con noches frescas.',
   'buenos-aires': 'Buenos Aires tiene un clima templado oceánico, con veranos cálidos y húmedos (25-35°C) e inviernos frescos y lluviosos (8-15°C). La ciudad experimenta precipitaciones distribuidas durante todo el año, sin una estación seca definida.',
@@ -90,6 +116,32 @@ const touristTips: Record<string, string> = {
   'alicante': 'Alicante tiene veranos muy calurosos pero sin la humedad agobiante de otras ciudades mediterráneas. Lo que pocos saben es que en invierno puede hacer mucho viento frío del norte que contrasta con el sol brillante; lleva siempre una chaqueta aunque el cielo esté despejado.',
   'granada': 'Granada tiene uno de los climas más extremos de España: veranos de 38°C e inviernos con nieves frecuentes en Sierra Nevada. En primavera puedes disfrutar de temperaturas perfectas en la ciudad y nieve a solo 30 minutos; es el destino ideal para quienes quieren dos experiencias en un mismo viaje.',
   'murcia': 'Murcia es una de las ciudades más calurosas de Europa en verano, con olas de calor que pueden durar semanas. Lo que sorprende es que en invierno las mañanas pueden ser frías con niebla espesa sobre la huerta, aunque las tardes soleadas son siempre agradables.',
+
+  // Argentina
+  'cordoba': 'Córdoba sorprende a sus visitantes con tormentas eléctricas de verano: intensas, aparatosas y frecuentes entre diciembre y marzo. Son espectaculares pero cortas; los días después de una tormenta suelen ser frescos y despejados, perfectos para explorar la ciudad y las sierras cercanas.',
+  'rosario': 'La Sudestada puede bajar la temperatura de Rosario en pocos minutos, especialmente entre mayo y agosto. Es un viento frío y húmedo del sureste que trae lluvias persistentes y convierte un día aparentemente templado en frío rápidamente; lleva siempre una chaqueta de otoño aunque el día amanezca soleado.',
+  'mendoza': 'El verano mendocino esconde el efecto Zonda: un viento seco y caliente que baja de los Andes y puede elevar la temperatura 10°C en pocas horas. Sin embargo, la vendimia en marzo es el momento ideal para visitar — clima agradable, uvas maduras y el famoso Festival Nacional de la Vendimia.',
+
+  // Chile
+  'valparaiso': 'La neblina marina de Valparaíso puede hacer que el verano se sienta fresco incluso cuando Santiago está a 35°C. No te confíes por el cielo nublado: el sol filtra fuerte aunque no se vea directamente, usa protector solar. Y lleva siempre una chaqueta liviana porque las noches costeras son frescas todo el año.',
+  'concepcion': 'Concepción llueve mucho más que Santiago y muchos turistas llegan sin el equipo adecuado. Un impermeable y zapatos resistentes al agua son casi obligatorios si visitas entre mayo y agosto; incluso en verano las lluvias vespertinas son comunes. El buen tiempo, cuando llega, hace que toda la región brille de verde.',
+  'antofagasta': 'La ausencia total de lluvia sorprende a casi todos: Antofagasta es literalmente uno de los lugares más secos de la Tierra. Lo que pocos anticipan es el viento frío del Pacífico que hace las mañanas y noches bastante frescas pese a estar en pleno desierto; lleva siempre una chaqueta aunque el sol brille con fuerza.',
+
+  // Brasil
+  'salvador': 'El Carnaval de Salvador en febrero es el más grande del mundo por asistentes, pero coincide con el verano tropical: 32°C con humedad alta y multitudes masivas. La hidratación constante es clave; el calor combinado con el baile y el ambiente festivo puede ser agotador si no te preparas bien.',
+
+  // Perú
+  'arequipa': 'El sol de Arequipa es muy intenso por la altitud y el clima seco: la radiación UV es significativamente más alta que a nivel del mar. El protector solar factor 50+ es imprescindible incluso en días nublados, y la temporada de lluvias (enero-marzo) puede interrumpir excursiones al Cañón del Colca con poca anticipación.',
+  'cusco': 'El "soroche" o mal de altura es la principal sorpresa para turistas en Cusco: mareos, dolor de cabeza y fatiga son comunes las primeras 24-48 horas a 3.400 metros. Llega sin actividad física intensa, toma mucha agua y té de coca, evita el alcohol los primeros días y no planifiques el Camino Inca el primer día de llegada.',
+  'trujillo': 'Trujillo tiene un sol engañoso: la neblina matutina oculta una radiación UV muy alta por estar en pleno desierto costero. Usa protector solar aunque el cielo parezca nublado y lleva una chaqueta liviana para las noches, que pueden ser sorprendentemente frescas gracias a la brisa marina.',
+
+  // Ecuador
+  'guayaquil': 'El calor y la humedad de Guayaquil en temporada lluviosa (enero-abril) pueden ser agotadores para los no acostumbrados. Las tardes traen tormentas eléctricas intensas; planifica el Malecón 2000 y el barrio Las Peñas en las mañanas, cuando el calor es más llevadero y el cielo suele estar despejado.',
+  'cuenca': 'Cuenca tiene el fenómeno de "llueve todos los días un poco" durante gran parte del año, lo que sorprende a quienes esperan sol constante. Un paraguas compacto es el accesorio más útil que puedes llevar; los aguaceros suelen ser breves y el sol regresa en 30 minutos, así que no canceles planes por la lluvia.',
+  'manta': 'Manta tiene una de las playas más soleadas del Ecuador, pero la radiación UV al mediodía es extremadamente alta al estar cerca del ecuador geográfico. Usa protector solar factor 50+ y evita el sol entre las 11am y las 3pm; las mañanas y tardes son perfectas para la playa con mucho menos riesgo.',
+
+  // México adicional
+  'puebla': 'Puebla tiene tormentas eléctricas espectaculares en verano que muchos turistas no anticipan, especialmente de julio a septiembre. Son intensas pero rápidas; lo que sorprende más es el granizo que ocasionalmente acompaña estas tormentas, algo inusual para una ciudad de clima templado.',
 
   // Latinoamérica
   'mexico-city': 'Ciudad de México tiene lluvias casi diarias de junio a octubre, especialmente en las tardes. Lo que sorprende es que estas lluvias son puntuales e intensas: en 30 minutos puede caer una cantidad impresionante de agua y luego despejarse; lleva impermeable liviano en temporada de lluvias.',
