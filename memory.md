@@ -26,7 +26,8 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 - **Estilos:** CSS plano por componente. Tailwind está instalado pero NO se usa.
 - **Auth:** Google OAuth con NextAuth v5 beta. Sin formularios de contraseña. Funcionando en producción.
 - **Sesiones:** JWT (no database sessions), aunque hay PrismaAdapter configurado.
-- **BD:** Supabase + Prisma v5 instalados y configurados en código — pendiente conectar con URLs reales de Supabase.
+- **BD:** Supabase + Prisma v5. URLs configuradas en `.env.local`, `.env` y Vercel. Project ref: `rhoqbvppawkkitjvlppu`. **Migración completada** — tablas User, Account, Session y VerificationToken creadas en Supabase.
+- **MCP Supabase:** Configurado en `~/.mcp.json` (no en settings.json). `settings.json` tiene `enableAllProjectMcpServers: true`. Token activo regenerado.
 - **API del clima:** OpenWeatherMap vía proxy interno (`/api/weather`). La API key está hardcodeada en el route, no en env vars.
 - **Idioma en API:** Siempre pasar `&lang=${language}` para que las descripciones del clima sean localizadas.
 - **Fondo según clima:** Usar `weather.weather[0].main` (siempre en inglés) para detectar la condición, no `.description` (localizado).
@@ -70,8 +71,7 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 ## Pendientes
 
 - **AdSense:** Cuando llegue la aprobación, reemplazar los slot IDs placeholder (`1111111111`, `2222222222`) en `src/components/AdUnit.tsx` por los IDs reales de cada unidad.
-- **Supabase:** Obtener `DATABASE_URL` y `DIRECT_URL` desde Supabase → Settings → Database → Connection string, agregarlas a `.env.local` y a Vercel como variables de entorno.
-- **Migración BD:** Correr `npx prisma migrate dev` una vez configuradas las URLs de Supabase.
+- **AdSense:** Cuando llegue la aprobación, reemplazar los slot IDs placeholder (`1111111111`, `2222222222`) en `src/components/AdUnit.tsx` por los IDs reales de cada unidad.
 - **SEO:** Agregar tips y contenido estático para ciudades en inglés (London, Tokyo, New York, etc.).
 - **SEO:** Considerar agregar más ciudades hispanohablantes al listado de `topCities` en `page.tsx`.
 - **AdSense:** Evaluar agregar un tercer anuncio encima del fold para aumentar ingresos.
