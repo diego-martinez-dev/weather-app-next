@@ -74,13 +74,23 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 
 ## Páginas de confianza para AdSense (implementadas jun-2026)
 
+### Fase 1 (commit 08678aa)
 - `/acerca` — Server Component con contenido original sobre Clima Hoy (es + en)
 - `/contacto` — Server Component con email `contacto@clima-hoy.com` (mailto:)
 - `/guias` — índice de 8 artículos + `/guias/[slug]` con JSON-LD Article
-- Footer actualizado con links a las 3 páginas nuevas en los 6 idiomas
+- Footer actualizado con links a Acerca, Contacto, Guías en los 6 idiomas
 - `cityDescriptions.ts` — tips agregados para London, Paris, Berlin, Rome, Amsterdam, Dubai, Sydney, Brasilia, São Paulo, Río de Janeiro, Riohacha
 - `WeatherClient.tsx` — AdUnits placeholder eliminados (slots 1111111111 y 2222222222)
 - Sitemap actualizado con todas las rutas nuevas
+
+### Fase 2 (commit f547e74)
+- `/glosario` — 27 términos meteorológicos con JSON-LD DefinedTermSet, ordenados alfabéticamente
+- `/faq` — 14 preguntas frecuentes con JSON-LD FAQPage (rich snippets para Google)
+- 8 guías adicionales en `src/data/guides.ts` → total 16 guías pre-generadas (SSG)
+- `TopMenu.tsx` — Glosario agregado al nav desktop y panel móvil
+- Footer + TopMenu + Sitemap integrados con `/glosario` y `/faq`
+- Claves i18n `app.footer.glossary` y `app.footer.faq` en los 6 idiomas
+
 - **Diego debe:** configurar reenvío `contacto@clima-hoy.com → diego2392martinez@gmail.com` (Cloudflare Email Routing o ImprovMX) y solicitar nueva revisión en el panel de AdSense una vez que el deploy esté live.
 
 ## Pendientes
@@ -88,4 +98,5 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 - **AdSense:** Cuando llegue la aprobación, reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
 - **AdSense:** Diego debe solicitar la nueva revisión en el panel de AdSense (Sites → solicitar revisión).
 - **Email:** Diego debe configurar reenvío `contacto@clima-hoy.com` en Cloudflare Email Routing o ImprovMX.
+- **SEO:** Agregar tips en inglés para ciudades como London, Tokyo, New York en `cityDescriptions.ts`.
 - **SEO:** Considerar agregar más ciudades hispanohablantes al listado de `topCities` en `page.tsx`.
