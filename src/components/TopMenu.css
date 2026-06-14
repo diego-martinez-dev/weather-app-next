@@ -114,6 +114,50 @@
   gap: 6px;
 }
 
+/* Barra de navegación (segunda fila) */
+.top-nav-bar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 44px;
+  gap: 28px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
+}
+
+.top-nav-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.top-nav-link:hover {
+  color: white;
+}
+
+/* Navegación en panel móvil */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.mobile-nav-link {
+  padding: 12px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-nav-link:hover {
+  color: rgba(255,255,255,0.7);
+}
+
 /* Items del menú desktop */
 .menu-item {
   font-size: 13.5px;

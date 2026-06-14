@@ -63,6 +63,9 @@
       "login": "Sign in",
       "logout": "Sign out",
       "account": "Account"
+    },
+    "nav": {
+      "home": "Home"
     }
   },
   "legal": {

@@ -119,6 +119,11 @@ if (!mounted) return <SkeletonOPlaceholder />;
 - Permite consultar deployments, logs, dominios y variables de entorno de Vercel directamente desde Claude Code
 - Si el token expira, regenerarlo en Vercel → Settings → Tokens y actualizar `VERCEL_API_TOKEN` en `~/.mcp.json`
 
+### Skills de agente
+- Skills propios en `.agents/skills/web-page-creator/` y `.agents/skills/web-page-inspector/`
+- Skills de Supabase en `.agents/skills/supabase/` y `.agents/skills/supabase-postgres-best-practices/`
+- Para nuevos proyectos: copiar la carpeta `.agents/` completa
+
 ---
 
 ## Patrones de código establecidos

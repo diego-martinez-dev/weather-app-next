@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useSettings } from '@/contexts/SettingsContext';
@@ -211,6 +212,14 @@ export default function TopMenu() {
         </div>
       </div>
 
+      {/* Barra de navegación (desktop) */}
+      <nav className="top-nav-bar desktop-only">
+        <Link href="/" className="top-nav-link">{t('app.nav.home')}</Link>
+        <Link href="/guias" className="top-nav-link">{t('app.footer.guides')}</Link>
+        <Link href="/acerca" className="top-nav-link">{t('app.footer.about')}</Link>
+        <Link href="/contacto" className="top-nav-link">{t('app.footer.contact')}</Link>
+      </nav>
+
       {/* Menú lateral móvil */}
       {mobileMenuOpen && (
         <div className="mobile-menu-overlay">
@@ -220,6 +229,13 @@ export default function TopMenu() {
               <button className="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}><XMarkIcon style={{ width: '1.2em', height: '1.2em' }} /></button>
             </div>
             <div className="mobile-menu-items">
+              <nav className="mobile-nav">
+                <Link href="/" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.nav.home')}</Link>
+                <Link href="/guias" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.guides')}</Link>
+                <Link href="/acerca" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.about')}</Link>
+                <Link href="/contacto" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.contact')}</Link>
+              </nav>
+
               <div className="mobile-menu-item">
                 <span className="mobile-item-label"><MapPinIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> País</span>
                 <span className="mobile-item-value">{getCountryFlag()} {country}</span>

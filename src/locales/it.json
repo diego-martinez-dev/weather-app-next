@@ -63,6 +63,9 @@
       "login": "Accedi",
       "logout": "Esci",
       "account": "Account"
+    },
+    "nav": {
+      "home": "Home"
     }
   },
   "legal": {

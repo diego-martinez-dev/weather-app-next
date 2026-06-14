@@ -63,6 +63,9 @@
       "login": "Entrar",
       "logout": "Sair",
       "account": "Conta"
+    },
+    "nav": {
+      "home": "Início"
     }
   },
   "legal": {

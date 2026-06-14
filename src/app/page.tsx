@@ -7,8 +7,9 @@ import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
-import { SunIcon } from '@heroicons/react/24/outline';
+import { SunIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
+import { getCityDescription, getCityTouristTip } from '@/data/cityDescriptions';
 
 // Skeleton loader para mostrar mientras carga
 function SkeletonLoader() {
@@ -209,6 +210,29 @@ function HomeContent() {
           {(() => { const I = weather?.weather?.[0]?.icon ? getWeatherIcon(weather.weather[0].icon) : SunIcon; return <I style={{ width: '1.5rem', height: '1.5rem', display: 'inline', verticalAlign: '-0.15em', color: 'black' }} />; })()}
           {weather?.name ?? 'Clima Hoy'}
         </h1>
+
+        {weather?.name && (() => {
+          const slug = weather.name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+          const description = getCityDescription(slug);
+          const touristTip = getCityTouristTip(slug);
+          if (!description && !touristTip) return null;
+          return (
+            <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+              {description && (
+                <p style={{ margin: touristTip ? '0 0 12px 0' : '0' }}>
+                  <LightBulbIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.2em', marginRight: 6 }} />
+                  <strong>Tip:</strong> {description}
+                </p>
+              )}
+              {touristTip && (
+                <p style={{ margin: '0' }}>
+                  <LightBulbIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.2em', marginRight: 6 }} />
+                  <strong>Tip para turistas:</strong> {touristTip}
+                </p>
+              )}
+            </div>
+          );
+        })()}
 
         {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
 

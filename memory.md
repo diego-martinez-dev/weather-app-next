@@ -27,12 +27,16 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 - **Auth:** Google OAuth con NextAuth v5 beta. Sin formularios de contraseña. Funcionando en producción.
 - **Sesiones:** JWT (no database sessions), aunque hay PrismaAdapter configurado.
 - **BD:** Supabase + Prisma v5. URLs configuradas en `.env.local`, `.env` y Vercel. Project ref: `rhoqbvppawkkitjvlppu`. **Migración completada** — tablas User, Account, Session y VerificationToken creadas en Supabase.
-- **MCP Supabase:** Configurado en `~/.mcp.json` (no en settings.json). `settings.json` tiene `enableAllProjectMcpServers: true`. Token activo regenerado.
+- **MCP Supabase:** Configurado en `~/.mcp.json`. Token activo regenerado tras recrear el proyecto.
+- **MCP Vercel:** Configurado en `~/.mcp.json` con `@vercel/mcp-adapter`. Token activo.
+- **Supabase — pooler:** El hostname del Transaction pooler es `aws-1-us-east-1.pooler.supabase.com` (no `aws-0`). `DATABASE_URL` debe incluir `?pgbouncer=true`. Siempre copiar el connection string exacto desde el dashboard.
+- **Auth:** `AUTH_URL=https://clima-hoy.com` configurado en Vercel. `NEXTAUTH_URL` eliminado (deprecado en NextAuth v5).
 - **API del clima:** OpenWeatherMap vía proxy interno (`/api/weather`). La API key está hardcodeada en el route, no en env vars.
 - **Idioma en API:** Siempre pasar `&lang=${language}` para que las descripciones del clima sean localizadas.
 - **Fondo según clima:** Usar `weather.weather[0].main` (siempre en inglés) para detectar la condición, no `.description` (localizado).
 - **Prisma:** Usar v5 (no v7) — v7 es incompatible con `@auth/prisma-adapter`. El build requiere `prisma generate && next build`.
 - **Páginas de ciudad:** Separadas en `page.tsx` (Server Component con SEO) y `CityPageClient.tsx` (Client Component con UI). No mezclar.
+- **Tips en homepage:** La homepage muestra tips de `cityDescriptions.ts` una vez detectada la ciudad — el slug se deriva normalizando `weather.name` (lowercase, sin acentos, espacios → guiones).
 
 ---
 
@@ -68,10 +72,20 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 
 ---
 
+## Páginas de confianza para AdSense (implementadas jun-2026)
+
+- `/acerca` — Server Component con contenido original sobre Clima Hoy (es + en)
+- `/contacto` — Server Component con email `contacto@clima-hoy.com` (mailto:)
+- `/guias` — índice de 8 artículos + `/guias/[slug]` con JSON-LD Article
+- Footer actualizado con links a las 3 páginas nuevas en los 6 idiomas
+- `cityDescriptions.ts` — tips agregados para London, Paris, Berlin, Rome, Amsterdam, Dubai, Sydney, Brasilia, São Paulo, Río de Janeiro, Riohacha
+- `WeatherClient.tsx` — AdUnits placeholder eliminados (slots 1111111111 y 2222222222)
+- Sitemap actualizado con todas las rutas nuevas
+- **Diego debe:** configurar reenvío `contacto@clima-hoy.com → diego2392martinez@gmail.com` (Cloudflare Email Routing o ImprovMX) y solicitar nueva revisión en el panel de AdSense una vez que el deploy esté live.
+
 ## Pendientes
 
-- **AdSense:** Cuando llegue la aprobación, reemplazar los slot IDs placeholder (`1111111111`, `2222222222`) en `src/components/AdUnit.tsx` por los IDs reales de cada unidad.
-- **AdSense:** Cuando llegue la aprobación, reemplazar los slot IDs placeholder (`1111111111`, `2222222222`) en `src/components/AdUnit.tsx` por los IDs reales de cada unidad.
-- **SEO:** Agregar tips y contenido estático para ciudades en inglés (London, Tokyo, New York, etc.).
+- **AdSense:** Cuando llegue la aprobación, reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
+- **AdSense:** Diego debe solicitar la nueva revisión en el panel de AdSense (Sites → solicitar revisión).
+- **Email:** Diego debe configurar reenvío `contacto@clima-hoy.com` en Cloudflare Email Routing o ImprovMX.
 - **SEO:** Considerar agregar más ciudades hispanohablantes al listado de `topCities` en `page.tsx`.
-- **AdSense:** Evaluar agregar un tercer anuncio encima del fold para aumentar ingresos.

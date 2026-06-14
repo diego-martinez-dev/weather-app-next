@@ -63,6 +63,9 @@
       "login": "Anmelden",
       "logout": "Abmelden",
       "account": "Konto"
+    },
+    "nav": {
+      "home": "Startseite"
     }
   },
   "legal": {

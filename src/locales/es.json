@@ -63,6 +63,9 @@
       "login": "Iniciar sesión",
       "logout": "Cerrar sesión",
       "account": "Cuenta"
+    },
+    "nav": {
+      "home": "Inicio"
     }
   },
   "legal": {
