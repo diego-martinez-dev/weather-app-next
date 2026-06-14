@@ -216,6 +216,7 @@ export default function TopMenu() {
       <nav className="top-nav-bar desktop-only">
         <Link href="/" className="top-nav-link">{t('app.nav.home')}</Link>
         <Link href="/guias" className="top-nav-link">{t('app.footer.guides')}</Link>
+        <Link href="/glosario" className="top-nav-link">{t('app.footer.glossary')}</Link>
         <Link href="/acerca" className="top-nav-link">{t('app.footer.about')}</Link>
         <Link href="/contacto" className="top-nav-link">{t('app.footer.contact')}</Link>
       </nav>
@@ -232,6 +233,7 @@ export default function TopMenu() {
               <nav className="mobile-nav">
                 <Link href="/" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.nav.home')}</Link>
                 <Link href="/guias" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.guides')}</Link>
+                <Link href="/glosario" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.glossary')}</Link>
                 <Link href="/acerca" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.about')}</Link>
                 <Link href="/contacto" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.contact')}</Link>
               </nav>

@@ -806,6 +806,661 @@ Extreme heat kills more people than any other weather phenomenon in many countri
 **During a heat wave**: stay in cool or air-conditioned places between 11 a.m. and 6 p.m.; drink water even if you don't feel thirsty; close blinds during the day; ventilate the house before dawn; check on elderly people, children, and those with chronic illness — they are the most vulnerable.`,
     },
   },
+  // --- Guías Fase 2 ---
+  {
+    slug: 'como-protegerte-durante-una-ola-de-calor',
+    title: {
+      es: 'Cómo protegerte durante una ola de calor',
+      en: 'How to Protect Yourself During a Heat Wave',
+    },
+    description: {
+      es: 'Las olas de calor matan más personas que cualquier otro fenómeno meteorológico. Esta guía te explica qué hacer antes, durante y después, y a quiénes cuidar especialmente.',
+      en: 'Heat waves kill more people than any other weather phenomenon. This guide explains what to do before, during, and after a heat wave, and who to protect most.',
+    },
+    date: '2026-06-14',
+    body: {
+      es: `Una ola de calor no es simplemente un día muy caluroso. Es un período de varios días consecutivos en que las temperaturas superan significativamente los promedios históricos y, crucialmente, tampoco bajan de noche. Esa combinación —calor extremo sostenido sin recuperación nocturna— es lo que convierte una ola de calor en una emergencia de salud pública. En Europa, la ola de 2003 mató a más de 70.000 personas. En Argentina, las de 2013 y 2023 dejaron decenas de muertos en pocas semanas. El calor extremo es el peligro meteorológico más subestimado que existe.
+
+## Por qué el calor extremo es tan peligroso
+
+El cuerpo humano mantiene su temperatura interna alrededor de 37°C. Para lograrlo, elimina el exceso de calor principalmente a través del sudor: el líquido se evapora en la piel y esa evaporación enfría. Cuando la temperatura ambiente supera los 35°C y la humedad es alta (más del 60–70%), la evaporación del sudor se vuelve ineficiente y el cuerpo empieza a acumular calor interno.
+
+El golpe de calor ocurre cuando la temperatura corporal supera los 40°C. El sistema nervioso central colapsa, los órganos empiezan a fallar y puede sobrevenir la muerte en horas si no se actúa. La diferencia entre el agotamiento por calor (grave pero tratable) y el golpe de calor (emergencia potencialmente fatal) es a veces una cuestión de una hora o dos.
+
+## Antes de que llegue la ola de calor
+
+La preparación marca la diferencia. Cuando el pronóstico anuncia temperaturas extremas para los próximos días:
+
+- Comprá o prepará suministros de agua suficientes para varios días. Durante una ola de calor, la demanda de agua potable puede superar la capacidad de distribución en algunas zonas.
+- Identificá los espacios más frescos de tu hogar: generalmente son los cuartos orientados al norte o al este, o los subsuelos. Organizá tu espacio para dormir ahí.
+- Comprá o prepará un ventilador o aire acondicionado portátil si no tenés refrigeración fija. El aire acondicionado salva vidas literalmente durante una ola.
+- Identificá dónde están los lugares con aire acondicionado en tu barrio: centros comerciales, bibliotecas, hospitales, centros comunitarios. Son refugios reales en emergencias.
+- Avisá a los vecinos mayores que viven solos. Un control diario durante la ola puede marcar la diferencia entre la vida y la muerte.
+
+## Durante la ola de calor
+
+**Hidratación**: Bebé agua aunque no sientas sed. El mecanismo de la sed es imperfecto, especialmente en adultos mayores que lo tienen menos desarrollado. Entre 2 y 3 litros por día mínimo; más si hacés esfuerzo físico. Evitá el alcohol y las bebidas con mucha cafeína porque aceleran la deshidratación.
+
+**Actividad física**: Cancelá o postponé el ejercicio intenso al aire libre. Si es inevitable, hacelo antes de las 9 de la mañana o después de las 19 horas. Nunca en las horas centrales del día.
+
+**Ventilación del hogar**: Cerrá persianas, cortinas y ventanas durante el día, especialmente las orientadas al sol. Abrí puertas y ventanas de madrugada (entre las 2 y las 6 am) cuando el exterior es más fresco que el interior, para ventilar el calor acumulado. Apagá las luces incandescentes y los electrodomésticos que generen calor.
+
+**Refrescarte activamente**: Mojate la nuca, las muñecas y las sienes con agua fría: son zonas donde los vasos sanguíneos están cercanos a la superficie. Un trapo húmedo en la cabeza reduce la temperatura percibida. Un baño o ducha fresca durante el pico de calor es una de las medidas más efectivas.
+
+**Ropa**: Vestí ropa suelta, liviana y de colores claros. Los colores oscuros absorben más radiación solar. El algodón y el lino permiten mejor circulación de aire que las fibras sintéticas.
+
+## Señales de alarma: cuándo llamar a emergencias
+
+El agotamiento por calor se manifiesta con sudoración abundante, piel pálida y fría al tacto, debilidad muscular, náuseas, mareos y dolor de cabeza. La persona todavía suda (mecanismo de refrigeración activo). Llevala a un lugar fresco, hacela recostar con los pies elevados, dale agua en sorbos pequeños y aplicá compresas frías.
+
+El golpe de calor es una emergencia médica. Sus señales: piel caliente y seca (ya no suda, el mecanismo falló), temperatura corporal por encima de 39–40°C, confusión mental, delirio, pérdida de conciencia. Llamá al servicio de emergencias inmediatamente. Mientras llegan, enfriá a la persona por todos los medios disponibles: agua fría sobre la piel, hielo en axilas y cuello, ventilador directo.
+
+## Los grupos más vulnerables
+
+Adultos mayores de 65 años —especialmente los que viven solos— tienen menor respuesta del sistema de regulación térmica y detectan peor la sed. Niños menores de 4 años no pueden comunicar que tienen calor y se deshidratan rápidamente. Personas con enfermedades cardiovasculares, respiratorias o renales tienen menor margen antes de que el calor les cause daño orgánico. Personas con obesidad también tienen mayor riesgo porque el tejido adiposo actúa como aislante térmico.
+
+Si conocés personas en estos grupos, un llamado diario o una visita durante los días de calor extremo es una acción concreta que puede salvar vidas.
+
+## Después de la ola de calor
+
+La recuperación del organismo después de varios días de estrés térmico puede tardar uno o dos días. Seguí bebiendo suficiente agua. Reiniciá gradualmente el ejercicio. Si notás fatiga inusual, dificultades para concentrarte o irregularidades cardíacas en los días siguientes, consultá un médico: el estrés térmico puede tener efectos que se manifiestan con demora.`,
+      en: `A heat wave is not simply a very hot day. It is a period of several consecutive days when temperatures significantly exceed historical averages and, crucially, also fail to drop at night. That combination — sustained extreme heat with no nighttime recovery — is what turns a heat wave into a public health emergency. In Europe, the 2003 heat wave killed over 70,000 people. Heat waves are the most underestimated meteorological hazard that exists.
+
+## Why extreme heat is so dangerous
+
+The human body maintains its internal temperature around 37°C. It eliminates excess heat mainly through sweat: liquid evaporates on the skin and that evaporation cools the body. When ambient temperature exceeds 35°C and humidity is high (above 60–70%), sweat evaporation becomes inefficient and the body begins accumulating internal heat.
+
+Heat stroke occurs when body temperature exceeds 40°C. The central nervous system collapses, organs begin to fail, and death can occur within hours without intervention. The difference between heat exhaustion (serious but treatable) and heat stroke (potentially fatal emergency) is sometimes a matter of one or two hours.
+
+## During the heat wave
+
+**Hydration**: Drink water even if you don't feel thirsty. The thirst mechanism is imperfect, especially in older adults who experience it less. At least 2–3 liters per day; more if you're physically active. Avoid alcohol and highly caffeinated beverages.
+
+**Physical activity**: Cancel or postpone intense outdoor exercise. If unavoidable, do it before 9 a.m. or after 7 p.m.
+
+**Home ventilation**: Close blinds, curtains, and sun-facing windows during the day. Open doors and windows in the early morning hours (2–6 a.m.) when the outside is cooler than the inside to ventilate accumulated heat.
+
+**Active cooling**: Wet your neck, wrists, and temples with cold water. A cool shower during the peak heat hours is one of the most effective measures.
+
+## Warning signs: when to call emergency services
+
+Heat exhaustion: profuse sweating, pale and cool skin, muscle weakness, nausea, dizziness, headache. The person is still sweating (cooling mechanism active). Move them to a cool place, have them lie down with feet elevated, give water in small sips, apply cold compresses.
+
+Heat stroke is a medical emergency: hot and dry skin (no longer sweating), body temperature above 39–40°C, mental confusion, delirium, loss of consciousness. Call emergency services immediately. While waiting, cool the person by all available means: cold water on the skin, ice on armpits and neck, direct fan.`,
+    },
+  },
+  {
+    slug: 'que-ropa-llevar-segun-el-clima',
+    title: {
+      es: 'Qué ropa llevar según el clima y la estación',
+      en: 'What Clothes to Wear According to the Weather and Season',
+    },
+    description: {
+      es: 'Una guía práctica para vestirte según la temperatura, la humedad y el tipo de actividad. El sistema de capas, qué materiales funcionan en el calor y en el frío, y cómo prepararte para climas variables.',
+      en: 'A practical guide to dressing for temperature, humidity, and activity type. The layering system, which materials work in heat and cold, and how to prepare for variable climates.',
+    },
+    date: '2026-06-14',
+    body: {
+      es: `Saber qué ponerse según el clima parece algo básico, pero hay mucha gente que toma decisiones de ropa basándose solo en la temperatura y luego termina empapada de lluvia, helada de viento o deshidratada de calor. La ropa correcta no solo hace que estés más cómodo: en condiciones extremas puede ser la diferencia entre una experiencia agradable y una emergencia médica.
+
+## El sistema de capas: la base para climas fríos y variables
+
+El sistema de tres capas es el método más eficiente para manejar el frío y la variabilidad climática:
+
+**Primera capa (base layer)**: va directo sobre la piel y su función es evacuar la humedad del sudor hacia afuera para mantener la piel seca. Los materiales ideales son la lana merina o las fibras sintéticas (poliéster, polipropileno). El algodón es el peor material para esta capa: cuando se moja, queda húmedo y pegado, lo que puede causar hipotermia en condiciones frías.
+
+**Segunda capa (aislante)**: retiene el calor corporal. El polar (fleece) es el material más versátil: liviano, aislante incluso húmedo, y de secado rápido. Para frío extremo, el plumón (down) es más cálido por gramo de peso, pero pierde casi toda su capacidad aislante cuando se moja.
+
+**Tercera capa (capa exterior)**: protege del viento, la lluvia y la nieve. Debe ser impermeable o al menos resistente al agua, y permeable al vapor (breathable) para que la humedad del sudor pueda salir. Las membranas Gore-Tex y similares son el estándar de referencia. Una capa exterior impermeable que no sea permeable al vapor te hace sudar y terminar igual de mojado que sin ella.
+
+## Temperatura y ropa: una guía práctica
+
+**Por encima de 25°C**: ropa ligera, suelta y de colores claros. El algodón y el lino funcionan bien porque absorben el sudor. Protección solar (sombrero, mangas largas si hay sol intenso, protector solar en piel expuesta).
+
+**15–25°C**: una capa liviana suele ser suficiente. En el límite inferior o con viento, agrega una segunda capa o una chaqueta liviana. Si hay probabilidad de lluvia, llevá siempre un impermeable compacto o poncho.
+
+**5–15°C**: sistema de dos capas. Base layer que evacue la humedad y una capa media aislante. Si salís en moto, al viento o con actividad baja, la sensación puede ser mucho menor; sumá la capa exterior.
+
+**0–5°C**: las tres capas completas. Prestá especial atención a las extremidades: guantes, gorro o gorra que cubra las orejas, y calcetines de lana. El frío en las manos reduce la destreza motora rápidamente.
+
+**Por debajo de 0°C**: ropa técnica térmica. A estos niveles, el algodón en cualquier capa es peligroso. Los guantes deben ser impermeables si hay nieve o lluvia. El pasamontañas protege la cara del viento y de la pérdida de calor.
+
+## Humedad: el factor que cambia todo
+
+Con humedad alta (por encima del 70%), el calor se siente más intenso y la ropa que "respira" se vuelve crítica. Las fibras sintéticas que evacuan la humedad son mejores que el algodón en actividades físicas porque se secan rápido. Con humedad baja (menos del 30%), como en los desiertos o en inviernos continentales secos, la piel se reseca y los labios se agrietan; una crema hidratante liviana es un "accesorio" climático real.
+
+## El viento multiplica el efecto del frío y del calor
+
+Con viento, la sensación térmica puede ser varios grados menor. Una capa cortavientos (windbreaker) fina puede equivaler en términos de calor percibido a una capa aislante completa. En verano, el viento fresco puede compensar temperaturas de 30°C y hacer el ambiente perfectamente confortable sin ropa especial; pero el mismo viento frío en invierno a 10°C puede hacer que la sensación caiga a 3–4°C.
+
+## Climas variables: el arte de las capas desmontables
+
+En climas donde la temperatura cambia drásticamente entre la mañana y la tarde —como en muchas ciudades andinas, en las zonas de montaña, o en primaveras y otoños variables— la clave es la modularidad. Vestite en capas que puedas sacarte y ponerte fácilmente. Una mochila pequeña o una bolsa de tela sirven para guardar la ropa que vas sacando. Quito, Bogotá, Medellín en temporada de lluvia, o cualquier ciudad de montaña en otoño, son ejemplos donde este enfoque es invaluable.
+
+## Para la lluvia: impermeabilidad vs. resistencia al agua
+
+No todos los "impermeables" son iguales. Un chubasquero resistente al agua (water resistant) resiste la lluvia leve por un tiempo, pero se satura con lluvias intensas o prolongadas. Un impermeable técnico con soldadura de costuras y membrana es completamente estanco incluso bajo lluvia torrencial. Para viajes, el nivel de impermeabilidad depende del destino: un viaje a Bogotá o Medellín justifica un impermeable de calidad; para una caminata en el desierto, basta con el resistente al agua.
+
+## Cuidado de la ropa técnica
+
+La ropa técnica (gore-tex, polar, lana merina) requiere cuidados específicos para mantener sus propiedades. El polar se lava al revés para proteger las fibras. El gore-tex necesita detergente especial (sin suavizantes que taponan la membrana). La lana merina puede lavarse en ciclo delicado o a mano con agua fría. Secar siempre al aire o en tendedero; la secadora daña la membrana de los impermeables técnicos.`,
+      en: `Knowing what to wear according to the weather seems basic, but many people make clothing decisions based only on temperature and end up soaked in rain, frozen by wind, or dehydrated from heat. The right clothing not only makes you more comfortable: in extreme conditions, it can be the difference between a pleasant experience and a medical emergency.
+
+## The layering system: the foundation for cold and variable climates
+
+The three-layer system is the most efficient method for managing cold and weather variability.
+
+**Base layer**: goes directly on the skin, its function is to move sweat moisture outward to keep skin dry. Ideal materials: merino wool or synthetic fibers (polyester, polypropylene). Cotton is the worst material for this layer: when wet, it stays damp and clammy, which can cause hypothermia in cold conditions.
+
+**Mid layer (insulator)**: retains body heat. Fleece is the most versatile: lightweight, insulating even when wet, and fast-drying. For extreme cold, down is warmer per gram of weight, but loses almost all insulating ability when wet.
+
+**Outer layer (shell)**: protects from wind, rain, and snow. Must be waterproof or at least water-resistant, and vapor-permeable so sweat moisture can escape.
+
+## Temperature and clothing: a practical guide
+
+**Above 25°C**: light, loose, light-colored clothing. **15–25°C**: one light layer usually suffices; add a windbreaker if there's a chance of rain. **5–15°C**: two-layer system. **0–5°C**: all three layers, plus gloves and hat. **Below 0°C**: technical thermal clothing, no cotton in any layer.
+
+## Humidity changes everything
+
+With high humidity (above 70%), heat feels more intense and moisture-wicking synthetics outperform cotton during physical activity. With low humidity (below 30%), skin dries out quickly; a light moisturizer becomes a genuine climate accessory.`,
+    },
+  },
+  {
+    slug: 'como-preparar-tu-casa-para-la-temporada-de-lluvias',
+    title: {
+      es: 'Cómo preparar tu casa para la temporada de lluvias',
+      en: 'How to Prepare Your Home for Rainy Season',
+    },
+    description: {
+      es: 'Antes de que lleguen las lluvias intensas, hay medidas concretas que podés tomar para proteger tu hogar de filtraciones, inundaciones y daños. Una guía práctica, habitación por habitación.',
+      en: 'Before heavy rains arrive, there are concrete steps you can take to protect your home from leaks, flooding, and damage. A practical room-by-room guide.',
+    },
+    date: '2026-06-14',
+    body: {
+      es: `La temporada de lluvias llega puntualmente cada año, pero cada año hay casas que se inundan, techos que gotean y sótanos que se anegan como si fuera la primera vez. La diferencia entre una casa bien preparada y una mal preparada puede ser la diferencia entre inconveniencias menores y pérdidas materiales significativas. La buena noticia: la mayoría de las medidas de preparación son accesibles y no requieren conocimientos técnicos especializados.
+
+## Cuándo prepararte
+
+El mejor momento es cuatro a seis semanas antes del inicio de la temporada de lluvias en tu región. En Colombia, las dos temporadas lluviosas principales van de marzo a mayo y de septiembre a noviembre, con variaciones por región. En Ciudad de México, de junio a octubre. En Buenos Aires, las lluvias son más distribuidas pero los eventos intensos se concentran en primavera-verano. Revisá el calendario de tu región y marcá la fecha en que debés empezar la revisión.
+
+## Techo y canaletas: la primera línea de defensa
+
+El techo es la parte más crítica de la preparación. Un techo que gotea puede arruinar paredes, pisos, muebles y hasta la estructura en semanas.
+
+- Revisá las tejas, chapas o láminas del techo buscando grietas, piezas rotas o desplazadas, y juntas en mal estado. En techos planos, buscá burbujas, despegues o zonas donde el agua se acumule.
+- Limpiá las canaletas y bajadas de agua antes de la temporada. Las hojas, ramas y suciedad acumuladas pueden tapar el sistema de drenaje y hacer que el agua se desborde hacia las paredes o los cimientos.
+- Verificá que los desagotes de los techos planos estén libres de obstrucciones. Un techo plano que no drena puede acumular cientos de litros de agua y llegar a colapsar.
+
+## Ventanas y puertas: sellar las filtraciones
+
+Las filtraciones por ventanas y puertas son el problema más frecuente en lluvias intensas con viento.
+
+- Revisá los burletes (cauchos de sellado) alrededor de ventanas y puertas. Si están agrietados, secos o despegados, cambialos: son baratos y se colocan fácilmente.
+- Aplicá sellador de silicona en las juntas entre el marco y la pared, especialmente en ventanas de orientación norte o sur que reciben viento diagonal.
+- En balcones y terrazas, verificá que los desagotes estén despejados: un balcón inundado puede filtrar agua hacia el interior más rápido que cualquier gotera.
+
+## Sótanos y plantas bajas: preparación contra inundaciones
+
+Si tu casa tiene sótano o planta baja que ha tenido problemas de humedad en el pasado:
+
+- Instalá o verificá el correcto funcionamiento de una bomba de achique (sump pump). En zonas con alto riesgo de inundación, tener una con batería de respaldo es una inversión que se paga sola con un solo evento.
+- Sellá las grietas en las paredes del sótano con sellador hidráulico. Aunque no resuelve problemas estructurales de larga data, reduce significativamente la filtración pasiva durante lluvia intensa.
+- Elevá los objetos de valor del piso del sótano: estantes metálicos, tarimas de madera o plástico dan unos centímetros de margen que pueden salvar equipos electrónicos, archivos o muebles en un evento de inundación.
+- Identificá la llave general de agua y la ubicación del tablero eléctrico. En caso de inundación, cortar la electricidad antes de que el agua llegue al tablero es fundamental para evitar cortocircuitos y riesgos eléctricos.
+
+## Sistema de drenaje externo
+
+El entorno inmediato de la casa es tan importante como la estructura misma.
+
+- Verificá que el terreno alrededor de la casa tenga pendiente hacia afuera, alejando el agua de los cimientos. Si el terreno es plano o inclina hacia la casa, el agua de lluvia se acumula contra los muros y filtra.
+- Limpiá las cunetas y desagotes de la calle frente a tu casa. Si están tapados, el agua de lluvia puede superar el nivel de la entrada y comenzar a ingresar.
+- Verificá los pozos de drenaje del jardín y la entrada del vehículo. Las hojas y sedimentos se acumulan rápidamente durante la lluvia.
+
+## Electrodomésticos y circuito eléctrico
+
+El agua y la electricidad son una combinación peligrosa. Algunas medidas preventivas:
+
+- Revisá el estado de los disyuntores y la puesta a tierra del tablero eléctrico. Si hay humedad en el tablero o cables oxidados, llamá a un electricista antes de que lleguen las lluvias.
+- Desconectá los electrodomésticos de las tomas de corriente durante tormentas eléctricas intensas. Los rayos pueden viajar por la red eléctrica y dañar aparatos aunque caigan a kilómetros de distancia.
+- Si tenés bombas de agua, calefón o caldera en el exterior, verificá que el gabinete esté bien cerrado y sea resistente al agua.
+
+## Plan de emergencia familiar
+
+Más allá de la preparación física, tener un plan claro para cuando llegue una emergencia climática vale tanto como cualquier medida estructural.
+
+- Identificá las zonas de mayor riesgo de tu casa (el rincón donde siempre gotea, el sótano que se anegó hace dos años).
+- Acordá con la familia quién hace qué en caso de emergencia: quién corta la electricidad, quién saca a las mascotas, quién tiene a mano los documentos importantes.
+- Guardá en una bolsa impermeable los documentos básicos (documentos de identidad, escrituras, seguros) en un lugar accesible y elevado.
+- Tené a mano el número de emergencias de tu municipio, empresa de agua y distribuidora eléctrica.
+
+La preparación no elimina el riesgo: una lluvia torrencial extraordinaria puede superar cualquier barrera. Pero sí reduce drásticamente los daños en el 80–90% de los eventos habituales de la temporada.`,
+      en: `Rainy season arrives punctually every year, but every year there are houses that flood, roofs that leak, and basements that fill with water as if it were the first time. The difference between a well-prepared home and an unprepared one can mean the difference between minor inconveniences and significant material losses.
+
+## Roof and gutters: the first line of defense
+
+- Inspect roof tiles or panels for cracks, broken or displaced pieces, and damaged joints.
+- Clean gutters and downspouts before the season. Accumulated leaves and debris can block the drainage system.
+- Verify that flat-roof drains are clear of obstructions.
+
+## Windows and doors: sealing leaks
+
+- Check seals and weatherstripping around windows and doors. If cracked, dry, or peeling, replace them.
+- Apply silicone sealant at junctions between frames and walls, especially on windward-facing windows.
+
+## Basements and ground floors: flood preparation
+
+- Install or verify a functioning sump pump. In high-flood-risk areas, one with a battery backup is an investment that pays for itself.
+- Seal cracks in basement walls with hydraulic sealant.
+- Elevate valuables off the basement floor on metal shelving or plastic pallets.
+- Know where the main water shutoff and electrical panel are located.
+
+## Emergency family plan
+
+- Identify the highest-risk areas of your home.
+- Agree on who does what in an emergency: who cuts electricity, who gets pets, who has documents.
+- Store essential documents in a waterproof bag in an accessible, elevated location.`,
+    },
+  },
+  {
+    slug: 'como-elegir-epoca-del-ano-para-viajar-segun-el-clima',
+    title: {
+      es: 'Cómo elegir la mejor época del año para viajar según el clima',
+      en: 'How to Choose the Best Time of Year to Travel Based on the Weather',
+    },
+    description: {
+      es: 'El clima es el factor más importante que nadie planifica. Esta guía te enseña a investigar el clima de tu destino, entender las temporadas y evitar los errores más comunes de los viajeros.',
+      en: 'Weather is the most important factor nobody plans for. This guide teaches you how to research your destination\'s climate, understand seasons, and avoid the most common traveler mistakes.',
+    },
+    date: '2026-06-14',
+    body: {
+      es: `El clima puede arruinar el mejor itinerario de viaje o hacer que un destino aparentemente secundario se convierta en una experiencia inolvidable. La diferencia está en investigarlo bien antes de comprar el pasaje. Y sin embargo, el clima es el factor que más frecuentemente se ignora al planificar un viaje.
+
+## Temporada alta, temporada baja y temporada de hombro
+
+Casi todos los destinos turísticos tienen tres temporadas desde el punto de vista climático y turístico:
+
+**Temporada alta**: la de mejor clima. Es también la más cara y concurrida. Hoteles llenos, precios inflados, colas largas y menos posibilidad de improvisación. Para destinos de sol y playa en el hemisferio norte, suele ser julio-agosto; para el sur, diciembre-febrero.
+
+**Temporada baja**: la de peor clima o la temporada de lluvias. Precios mucho más bajos, prácticamente sin turistas, pero con posibilidad real de que el clima arruine actividades al aire libre. En el Caribe, coincide con la temporada de huracanes (junio-noviembre).
+
+**Temporada de hombro (shoulder season)**: las semanas o meses entre las dos anteriores. Suelen ser la mejor opción relación calidad-precio: el clima es razonablemente bueno, los precios son moderados y hay menos turistas. Por ejemplo, mayo-junio y septiembre-octubre en Europa; abril-mayo y noviembre en el sureste asiático.
+
+## Cómo investigar el clima de tu destino
+
+**Datos históricos, no pronósticos**: para planificar un viaje con meses de anticipación, los pronósticos no sirven porque no existen a ese plazo. Lo que sí sirve son los promedios históricos: temperatura media, días de lluvia por mes, probabilidad de tormenta. Buscá "clima promedio en [ciudad] por mes" para obtener estos datos.
+
+**Temperatura media vs. temperatura máxima**: la temperatura media puede ser agradable (20°C) pero si las máximas llegan a 38°C al mediodía, el paseo por el centro histórico puede ser agotador. Revisá tanto el promedio como los extremos esperados.
+
+**Días de lluvia vs. milímetros de lluvia**: una ciudad puede tener 20 días de lluvia al mes pero si son lloviznas de media hora que terminan con sol, es perfectamente compatible con el turismo. Otra puede tener solo 10 días de lluvia pero con 200 mm distribuidos en esos días (lluvias torrenciales que duran horas). Los milímetros mensuales dan mejor idea del impacto real.
+
+**Hora del día en que llueve**: en muchas zonas tropicales, las lluvias son vespertinas y bastante predecibles. En el Amazonas, en Centroamérica o en zonas de los Andes, las mañanas suelen ser despejadas y las lluvias llegan entre las 14 y las 18 horas. Podés planificar actividades al aire libre en las mañanas y museos o descanso por la tarde sin problema.
+
+## Errores frecuentes por región
+
+**Europa en verano**: el error más común es visitar ciudades del sur de Europa (Sevilla, Atenas, Roma) en julio-agosto esperando el calor mediterráneo y no anticipar que puede haber 40°C con sol aplastante al mediodía. La solución: salir muy temprano, descansar entre las 12 y las 16 horas y aprovechar las noches largas y cálidas para el turismo nocturno.
+
+**Caribe en temporada de huracanes**: visitar el Caribe entre agosto y octubre puede salir muy barato, pero el riesgo de un huracán es real. Si aun así vas, comprá un seguro de viaje que cubra cancelaciones por clima y no pagues tarifas no reembolsables.
+
+**Machu Picchu en temporada de lluvias**: la temporada seca (mayo-octubre) es ideal; la lluviosa (noviembre-abril) trae niebla y lluvias diarias. Lo que muchos no saben: en mayo las lluvias terminan, el paisaje está verde y exuberante, los turistas son muchos menos que en junio-agosto, y el precio del alojamiento en Aguas Calientes es considerablemente menor.
+
+**Tailandia y el sureste asiático en monzón**: el monzón (junio-octubre en Tailandia) no significa lluvia todo el día. En muchas zonas, las mañanas son soleadas y las lluvias se concentran en las tardes. El costo del viaje puede ser 40–50% menor que en temporada alta y las playas están prácticamente vacías.
+
+## El concepto de "mejor época" es relativo al viajero
+
+Para un mochilero que busca economizar, la temporada baja tiene sus ventajas. Para una familia con niños pequeños, la previsibilidad del buen tiempo es prioritaria. Para un fotógrafo, la luz de la temporada baja (nubes altas, cielos dramáticos, neblina en las montañas) puede ser mejor que el cielo azul perfecto de la temporada alta.
+
+La pregunta correcta no es "¿cuándo hace mejor clima?" sino "¿qué clima es compatible con lo que quiero hacer y con las condiciones que estoy dispuesto a tolerar?"
+
+## Herramientas útiles para la investigación climática
+
+Además de las apps del tiempo como Clima Hoy, para planificar viajes con anticipación son útiles los gráficos climáticos mensuales (climograms) que muestran temperatura y precipitación promedio mes a mes. También sirve el índice de turismo climático, que pondera temperatura, lluvia, sol y viento para dar un puntaje de "confort turístico" por mes en cada destino. Y, sobre todo, los blogs y relatos de viajeros que estuvieron en el destino exactamente en el mes que vos querés ir: ningún gráfico reemplaza la experiencia directa.`,
+      en: `Weather can ruin the best travel itinerary or turn a seemingly secondary destination into an unforgettable experience. The difference lies in researching it well before buying the ticket.
+
+## High season, low season, and shoulder season
+
+**High season**: best weather, also most expensive and crowded. **Low season**: worst weather or rainy season, much lower prices but real risk of weather disrupting outdoor activities. **Shoulder season**: the weeks between the other two, usually the best value: reasonably good weather, moderate prices, fewer tourists.
+
+## How to research your destination's weather
+
+Use historical averages, not forecasts — forecasts don't exist months out. Look at average temperature, rainy days per month, and storm probability. Check both averages and expected maximums. Note whether rainfall is distributed throughout the day or concentrated in brief afternoon showers.
+
+## Common mistakes by region
+
+**Europe in summer**: don't expect comfortable Mediterranean heat in southern Europe in July–August; temperatures can reach 40°C with crushing midday sun. Plan for early starts, midday rest, and evening tourism.
+
+**Caribbean during hurricane season**: visiting between August and October is cheap, but hurricane risk is real. Buy travel insurance covering weather cancellations.
+
+**Southeast Asia in monsoon**: the monsoon doesn't mean rain all day. In many areas, mornings are sunny and rain concentrates in afternoons. Travel costs can be 40–50% lower than high season.`,
+    },
+  },
+  {
+    slug: 'ciudades-mas-lluviosas-de-colombia',
+    title: {
+      es: 'Las ciudades más lluviosas de Colombia (y por qué llueve tanto)',
+      en: 'The Rainiest Cities in Colombia (and Why It Rains So Much)',
+    },
+    description: {
+      es: 'Colombia es uno de los países más lluviosos del mundo. Descubrí cuáles son las ciudades y regiones con más precipitaciones, por qué llueve tanto y cómo adaptarse a esa realidad climática.',
+      en: 'Colombia is one of the rainiest countries in the world. Discover which cities and regions receive the most rainfall, why it rains so much, and how to adapt to that climate reality.',
+    },
+    date: '2026-06-14',
+    body: {
+      es: `Colombia es, por múltiples razones geográficas, uno de los países más lluviosos del planeta. Ocupa el tercer lugar en el mundo por volumen total de precipitaciones anuales. Algunas de sus regiones reciben más de 10.000 mm de lluvia al año —para referencia, Madrid recibe unos 450 mm anuales, y se considera una ciudad relativamente seca. Entender por qué llueve tanto en Colombia, y dónde llueve más, ayuda a planificar viajes, actividades y hasta decisiones de vida.
+
+## Por qué Colombia es tan lluviosa
+
+Colombia es el único país de América del Sur con costa tanto en el Océano Pacífico como en el Mar Caribe, y además está atravesado de norte a sur por tres cordilleras que superan los 3.000–5.000 metros de altitud. Esta combinación crea las condiciones perfectas para precipitaciones extremas:
+
+**La Zona de Convergencia Intertropical (ZCIT)**: Colombia está ubicada sobre el ecuador climático, donde los vientos alisios del hemisferio norte y del hemisferio sur convergen. Este encuentro fuerza el ascenso de grandes masas de aire húmedo, que al enfriarse producen lluvias intensas. La ZCIT se desplaza norte-sur a lo largo del año, lo que explica las dos temporadas de lluvia que tiene la mayor parte del país.
+
+**Las tres cordilleras**: los Andes colombianos forman tres ramales que actúan como barreras para los vientos húmedos. Cuando el aire cargado de humedad del Pacífico o del Amazonas choca con las cordilleras, asciende, se enfría y precipita. Las vertientes occidentales de las cordilleras son significativamente más lluviosas que las orientales.
+
+**La influencia amazónica**: la región de la Amazonia colombiana recibe humedad de la selva brasileña que circula en forma de "ríos aéreos" a través de la región. Esta humedad adicional se suma a la propia de la Amazonia colombiana.
+
+## Las regiones más lluviosas de Colombia
+
+**El Pacífico colombiano**: la región más lluviosa del país y una de las más lluviosas del mundo. El municipio de Lloró (Chocó) tiene un promedio histórico de 12.000–13.000 mm anuales, lo que lo coloca entre los lugares con más lluvia del planeta. Quibdó, capital del Chocó, supera los 8.000 mm anuales. La razón: los vientos del Pacífico traen humedad masiva que impacta de frente la cordillera Occidental, generando lluvias casi permanentes.
+
+**El piedemonte amazónico**: la zona donde la selva amazónica empieza a subir hacia los Andes recibe lluvias extraordinarias. Puerto Asís (Putumayo), Mocoa y Florencia (Caquetá) tienen precipitaciones anuales entre 3.500 y 5.000 mm, con lluvias frecuentes durante casi todos los meses del año.
+
+**El sur de Colombia**: Nariño y Putumayo tienen climas de alta pluviosidad influenciados tanto por el Pacífico como por el Amazonas. La ciudad de Tumaco tiene más de 3.000 mm anuales y registra lluvias en más de 200 días del año.
+
+## Las ciudades principales y sus lluvias
+
+Entre las grandes ciudades del país, la distribución de lluvias varía considerablemente:
+
+**Medellín**: unos 1.600–1.700 mm anuales, con dos temporadas de lluvia bien marcadas (abril-mayo y octubre-noviembre). Las tardes lluviosas son parte de la identidad de la ciudad, especialmente en esos meses.
+
+**Bogotá**: 800–1.000 mm anuales distribuidos en sus dos temporadas húmedas. Los meses más lluviosos son abril y octubre. Aunque no llueve tanto en volumen, la frecuencia de días lluviosos o parcialmente nublados es alta.
+
+**Cali**: 1.000–1.200 mm anuales. Tiene dos temporadas secas bastante marcadas (diciembre-febrero y julio-agosto) que la hacen más agradable en esos meses.
+
+**Barranquilla**: 800 mm anuales, pero concentrados en la temporada lluviosa (mayo-noviembre). La temporada seca (diciembre-abril) es calurosa y predominantemente soleada con los vientos alisios del norte.
+
+**Cartagena**: similar a Barranquilla, con 900–1.000 mm anuales, temporada seca de diciembre a abril y lluviosa el resto del año.
+
+## Cómo adaptarse a la realidad lluviosa colombiana
+
+Los colombianos tienen estrategias culturales de adaptación a la lluvia que vale la pena imitar:
+
+**La "camándula"**: en muchas ciudades colombianas, especialmente Medellín, el impermeable liviano o el paraguas compacto es un accesorio permanente, como las llaves de casa.
+
+**La hora de la lluvia**: en la mayoría de las ciudades andinas y del interior, las lluvias son más frecuentes en la tarde (entre las 14 y las 18 horas). Planificar actividades al aire libre en las mañanas es un ajuste simple pero efectivo.
+
+**Las temporadas secas**: las temporadas secas (verano en Colombia) son preciadas para actividades al aire libre, excursiones y turismo rural. Planificar viajes de senderismo, visitas al Cocora o al Parque Tayrona para estas ventanas climáticas hace una diferencia enorme en la experiencia.
+
+La lluvia en Colombia no es un obstáculo: es parte del paisaje, de la exuberancia de la vegetación, del caudal de los ríos y de la fertilidad del suelo cafetero. Pero como cualquier elemento climático, entenderla y planificar en función de ella hace que la experiencia sea mucho más disfrutable.`,
+      en: `Colombia is one of the world's rainiest countries, ranking third globally by total annual precipitation. Some regions receive over 10,000 mm of rain per year — for reference, Madrid receives about 450 mm annually.
+
+## Why Colombia is so rainy
+
+Colombia is the only South American country with coastline on both the Pacific Ocean and the Caribbean Sea, and is crossed from north to south by three mountain ranges exceeding 3,000–5,000 meters. This creates perfect conditions for extreme rainfall.
+
+The Intertropical Convergence Zone (ITCZ) sits over Colombia where trade winds from both hemispheres meet, forcing large humid air masses upward, which cool and produce intense rain. The three Andean ranges act as barriers for humid winds from the Pacific and Amazon.
+
+## The rainiest regions
+
+**The Colombian Pacific**: Lloró (Chocó) averages 12,000–13,000 mm annually, placing it among the rainiest places on Earth. Quibdó exceeds 8,000 mm annually.
+
+**The Amazon piedmont**: Puerto Asís, Mocoa, and Florencia receive 3,500–5,000 mm annually with frequent rain nearly year-round.
+
+## Major cities and their rainfall
+
+**Medellín**: 1,600–1,700 mm annually with two marked rainy seasons. **Bogotá**: 800–1,000 mm in two wet seasons. **Barranquilla**: 800 mm concentrated in the rainy season (May–November). **Cartagena**: 900–1,000 mm with a dry season from December to April.
+
+## How to adapt
+
+Plan outdoor activities for mornings in most Andean cities, where afternoon rains (2–6 p.m.) are common. Schedule hikes and outdoor tourism during dry seasons. Carry a compact umbrella as a permanent accessory.`,
+    },
+  },
+  {
+    slug: 'ciudades-con-el-mejor-clima-de-latinoamerica',
+    title: {
+      es: 'Ciudades con el mejor clima de Latinoamérica',
+      en: 'Cities with the Best Climate in Latin America',
+    },
+    description: {
+      es: 'Un ranking argumentado de las ciudades latinoamericanas con clima más agradable y equilibrado: temperatura, humedad, lluvias, sol y calidad del aire como criterios.',
+      en: 'A reasoned ranking of Latin American cities with the most pleasant and balanced climate: temperature, humidity, rainfall, sun, and air quality as criteria.',
+    },
+    date: '2026-06-14',
+    body: {
+      es: `Hablar del "mejor clima" implica definir qué se entiende por mejor. Para algunos es calor y sol constante; para otros, temperatura fresca y estable; para muchos, lo ideal es una primavera eterna sin calores extremos ni frío excesivo. Acá tomamos como criterios: temperatura promedio anual entre 18°C y 25°C, baja amplitud térmica entre el día y la noche, pocas semanas de calor extremo o frío intenso, precipitaciones moderadas sin sequía ni inundaciones, y buena calidad del aire.
+
+## Medellín, Colombia: la ciudad de la eterna primavera (con matices)
+
+Medellín tiene fama mundial de clima perfecto y en gran parte la merece: temperatura promedio de 22°C durante todo el año, sin inviernos fríos ni veranos sofocantes. La altitud de 1.495 metros sobre el nivel del mar suaviza el calor que correspondería a una ciudad tropical. Las noches son agradables (15–18°C) y los días son cálidos pero no agobiantes (25–28°C).
+
+Los "matices": las temporadas de lluvia (abril-mayo y octubre-noviembre) traen aguaceros frecuentes en las tardes, y la humedad puede estar por encima del 70% en esos meses. Pero incluso así, las mañanas suelen estar despejadas. Para quienes no tienen intolerancia a la lluvia ocasional, Medellín tiene pocos rivales en Latinoamérica en cuanto a balance climático.
+
+## Guadalajara, México: la eterna primavera mexicana
+
+Guadalajara tiene una temperatura promedio de 20°C, con veranos moderados (máximas de 28–30°C) gracias a las lluvias de julio-agosto que refrescan la ciudad. Los inviernos son suaves y secos (días de 22°C, noches de 8–12°C). La Ciudad Tapatía tiene más de 2.700 horas de sol al año y las lluvias, aunque frecuentes en verano, son generalmente por las tardes y de corta duración.
+
+## San José, Costa Rica: tropical de montaña sin extremos
+
+San José, a 1.170 metros de altitud, tiene una temperatura constante de 22–23°C durante todo el año. A diferencia de las ciudades costeras costarricenses, el calor nunca es sofocante y el frío nunca es real. La temporada lluviosa (mayo-noviembre) trae lluvias regulares en las tardes, pero las mañanas son soleadas y los días siguen siendo agradables.
+
+## Asunción del Sol, España (Canarias) — fuera de Latinoamérica pero referencia
+
+Las Islas Canarias son el patrón de oro del clima perfecto con temperaturas entre 18°C y 25°C durante todo el año, sin temporadas de lluvia intensas y con mucho sol. Si buscamos algo similar en Latinoamérica, el Valle del Cauca en Colombia (Cali) y algunas zonas de Jalisco (México) se acercan.
+
+## Cali, Colombia: calor agradable con temporada seca prolongada
+
+Cali tiene un clima cálido y estable (25°C de promedio) con dos temporadas secas bien definidas: diciembre-febrero y julio-agosto. En esos meses, el sol predomina y las temperaturas son cómodas. Las temporadas de lluvia son moderadas en comparación con otras ciudades colombianas. Las noches son frescas gracias a la brisa del Pacífico y el viento que los caleños llaman "viento de Cali" o "fresco caleño". La humedad es más baja que en ciudades costeras del Caribe.
+
+## Mendoza, Argentina: el Sol cuyana
+
+Mendoza tiene más de 300 días de sol al año, un dato que poca gente en el resto de Latinoamérica conoce. El clima es árido continental: veranos calurosos (hasta 38°C, pero calor seco que se tolera mejor que el húmedo), otoños y primaveras espléndidos (15–25°C), e inviernos fríos pero secos. La vendimia de marzo es el momento ideal: clima de otoño perfecto, uvas maduras y la ciudad en modo festivo. La calidad del aire es muy buena al no haber industria pesada y estar a los pies de los Andes.
+
+## Valdivia y el sur de Chile: para los amantes del verde y la lluvia
+
+Si el "buen clima" incluye vegetación exuberante, temperaturas frescas y un ambiente permanentemente verde, el sur de Chile —especialmente Valdivia— tiene un encanto climático específico. Con 2.200–2.500 mm de lluvia anuales y temperaturas que raramente superan los 25°C en verano o bajan de 0°C en invierno, es el paraíso para quienes disfrutan de climas oceánicos.
+
+## Los criterios que más pesan según el tipo de habitante
+
+Para trabajadores remotos y nómadas digitales que buscan calidad de vida cotidiana: Medellín y San José son las elecciones más frecuentes, combinando clima agradable con infraestructura moderna.
+
+Para jubilados latinoamericanos y europeos: Guadalajara, Cali y algunas ciudades del centro-sur de Chile como Temuco ofrecen clima equilibrado, bajo costo de vida y calidad de servicios.
+
+Para viajeros de paso: el "mejor clima" depende del mes de visita y la actividad. En los Andes, la temporada seca es universalmente mejor para cualquier tipo de turismo. En el Caribe y el Pacífico colombiano, la temporada seca (diciembre-abril) transforma radicalmente la experiencia.
+
+El clima perfecto no existe, pero la combinación de altitud moderada, latitud tropical y ausencia de océanos cercanos que amplifiquen el calor produce algunos de los microclimas más habitables del mundo en Latinoamérica.`,
+      en: `Defining the "best climate" requires criteria. Here we use: average annual temperature between 18°C and 25°C, low daily temperature range, few weeks of extreme heat or cold, moderate precipitation without drought or flooding, and good air quality.
+
+## Medellín, Colombia: the city of eternal spring
+
+Medellín's reputation is largely deserved: 22°C average year-round, no cold winters or suffocating summers. At 1,495 meters above sea level, altitude softens the tropical heat. Caveats: two rainy seasons (April–May and October–November) bring frequent afternoon showers with humidity above 70%, but mornings are usually clear.
+
+## Guadalajara, Mexico: Mexico's eternal spring
+
+20°C average, moderate summers (28–30°C peaks) thanks to July–August rains, mild dry winters (22°C days, 8–12°C nights), over 2,700 annual sunshine hours.
+
+## San José, Costa Rica: tropical highland without extremes
+
+At 1,170 meters, San José has a constant 22–23°C year-round. Heat is never suffocating, cold is never real. Regular afternoon rains in the wet season (May–November) but sunny mornings throughout.
+
+## Cali, Colombia: pleasant warmth with extended dry season
+
+25°C average with two well-defined dry seasons (December–February and July–August). Lower humidity than Caribbean coast cities, with the characteristic fresh evening breeze locals call "viento de Cali."
+
+## Mendoza, Argentina: over 300 sunny days per year
+
+Arid continental climate: hot dry summers (up to 38°C, but dry heat is more tolerable), spectacular spring and fall (15–25°C), cold dry winters. Excellent air quality. The March grape harvest season offers perfect fall weather.`,
+    },
+  },
+  {
+    slug: 'clima-de-colombia-regiones-y-temporadas',
+    title: {
+      es: 'Clima de Colombia: regiones naturales y temporadas de lluvia',
+      en: 'Colombia\'s Climate: Natural Regions and Rainy Seasons',
+    },
+    description: {
+      es: 'Colombia tiene seis regiones naturales con climas completamente distintos. Esta guía explica qué tiempo hace en cada una, cuándo son las temporadas de lluvia y cómo afectan a la vida cotidiana.',
+      en: 'Colombia has six natural regions with completely different climates. This guide explains what the weather is like in each, when the rainy seasons are, and how they affect daily life.',
+    },
+    date: '2026-06-14',
+    body: {
+      es: `Colombia es uno de los países con mayor diversidad climática del mundo. A diferencia de la mayoría de los países, que tienen un clima dominante con variaciones, Colombia tiene seis regiones naturales con condiciones meteorológicas completamente distintas, algunas de las cuales coexisten a pocos kilómetros de distancia. Subir de Medellín a Bogotá en auto (unos 450 km) es pasar de una ciudad de eterna primavera a una capital fría y nublada que a veces luce más a Manchester que a Latinoamérica.
+
+## La Zona Andina: la región más poblada y la más variable
+
+Los Andes colombianos se dividen en tres cordilleras (Occidental, Central y Oriental) que crean una variedad altitudinal enorme. La regla general: por cada 1.000 metros de altitud, la temperatura disminuye unos 6°C.
+
+**Bogotá (2.600 m)**: temperatura entre 7°C y 19°C todo el año, con dos temporadas húmedas (marzo-mayo y septiembre-noviembre) y dos secas (diciembre-febrero y junio-agosto). La "temporada seca de verano" de diciembre-enero es soleada y agradable, aunque con noches frías.
+
+**Medellín (1.495 m)**: 22°C de promedio, dos temporadas de lluvia similares a Bogotá pero menos intensas. El clima más equilibrado del país.
+
+**Cali (995 m)**: más cálida que Medellín con 25°C de promedio. Sus temporadas secas son más marcadas (diciembre-febrero y junio-agosto).
+
+**Manizales, Pereira, Armenia (1.400–2.100 m)**: el Eje Cafetero tiene precipitaciones casi todo el año, con lluvias en más de 200 días anuales en algunas zonas. La exuberancia del Paisaje Cultural Cafetero se explica en parte por esta humedad constante.
+
+## La Región Caribe: calor, vientos alisios y temporada seca prolongada
+
+La Costa Caribe colombiana tiene un clima tropical árido o semiárido con temperaturas de 28–35°C y una temporada seca bien definida de diciembre a abril impulsada por los vientos alisios del norte. La temporada de lluvias va de mayo a noviembre.
+
+**Barranquilla y Cartagena**: calor intenso todo el año. La diferencia entre la temporada seca y la lluviosa es dramática: en diciembre-enero, el cielo es azul y el viento alisio refresca; en octubre, la humedad y el calor son sofocantes.
+
+**La Guajira**: la zona más seca de Colombia con precipitaciones inferiores a 500 mm anuales en algunas zonas. El desierto de La Guajira es un contraste radical con las selvas del Pacífico.
+
+**Santa Marta**: tiene la Sierra Nevada de Santa Marta a pocos kilómetros, lo que crea microclimas que van desde el desierto hasta las nieves perpetuas de los picos más altos.
+
+## La Región del Pacífico: la más lluviosa del país
+
+La Costa Pacífica colombiana es una de las regiones más lluviosas del planeta. Quibdó, capital del Chocó, tiene precipitaciones de 8.000–9.000 mm anuales. La razón: los vientos del Pacífico sur llevan humedad masiva que choca con la Cordillera Occidental, forzando ascenso continuo del aire y lluvia casi permanente.
+
+La biodiversidad excepcional de esta región —el Chocó biogeográfico es uno de los puntos de mayor biodiversidad del planeta— se explica en gran parte por esta disponibilidad permanente de agua.
+
+## Los Llanos Orientales: dos estaciones extremas
+
+La Orinoquía colombiana tiene un clima tropical con dos estaciones muy marcadas: lluvia (abril-octubre) y seca (noviembre-marzo). En temporada de lluvias, los Llanos se inundan parcialmente y la sabana se transforma en espejo de agua. En temporada seca, el paisaje se vuelve amarillo y árido. El turismo de observación de fauna (especialmente aves y caimanes) es mejor en la transición entre ambas estaciones.
+
+## La Amazonia: lluvia distribuida todo el año
+
+La Amazonia colombiana (Amazonas, Vaupés, Guainía) tiene lluvias abundantes durante todo el año, sin temporada seca definida. Las precipitaciones pueden superar los 3.000–4.000 mm anuales y la temperatura es alta (28–32°C) y estable. La humedad es permanentemente alta. Esta combinación de calor y humedad constantes crea el ecosistema de selva tropical más biodiverso del mundo.
+
+## La zona Insular: el Caribe perfecto
+
+Las Islas del Rosario, San Bernardo y el Archipiélago de San Andrés tienen el clima caribeño insular: temperaturas de 27–30°C, brisas marinas constantes y lluvias moderadas. San Andrés tiene temporada seca de enero a abril, que es cuando las playas de Seven Colors están en su mejor momento.
+
+## Las dos temporadas de lluvia del interior del país
+
+A diferencia de muchos países tropicales con un solo monzón, Colombia tiene dos temporadas de lluvia en el interior gracias al doble paso anual de la Zona de Convergencia Intertropical (ZCIT): una vez hacia el norte (marzo-mayo) y otra hacia el sur (septiembre-noviembre). Esta doble temporada es característica del norte de Sudamérica y permite que muchos cultivos se den dos veces al año.
+
+Para el turismo, las temporadas secas colombianas (diciembre-febrero y junio-agosto) son generalmente las mejores para actividades al aire libre en la región Andina y Caribe. En el Pacífico y la Amazonia, no hay temporada seca real, pero las lluvias son parte inherente de la experiencia.`,
+      en: `Colombia is one of the world's most climatically diverse countries, with six natural regions of completely different meteorological conditions that can coexist just kilometers apart. Driving from Medellín to Bogotá (about 450 km) means going from a city of eternal spring to a cold, cloudy capital.
+
+## The Andean Region: most populated and most variable
+
+The rule: for every 1,000 meters of altitude, temperature drops about 6°C. Bogotá (2,600 m): 7–19°C year-round with two wet seasons (March–May and September–November). Medellín (1,495 m): 22°C average, the most balanced climate in the country. Cali (995 m): 25°C average with well-defined dry seasons.
+
+## The Caribbean Region: heat, trade winds, and extended dry season
+
+Tropical arid or semi-arid climate with temperatures of 28–35°C. A well-defined dry season from December to April driven by northerly trade winds. La Guajira is Colombia's driest zone with under 500 mm annually in some areas.
+
+## The Pacific Region: the country's rainiest
+
+Quibdó averages 8,000–9,000 mm of annual rainfall. Humid winds from the Pacific hit the western Andes and produce near-permanent rain. This explains the extraordinary biodiversity of the Chocó biogeographic region.
+
+## The Eastern Plains (Llanos): two extreme seasons
+
+Tropical climate with two very marked seasons: rain (April–October) when the plains partially flood, and dry (November–March) when the landscape turns yellow and arid.
+
+## Colombia's two inland rainy seasons
+
+Unlike most tropical countries with a single monsoon, Colombia has two inland rainy seasons due to the ITCZ passing twice per year: northward (March–May) and southward (September–November). This allows many crops to be harvested twice annually.`,
+    },
+  },
+  {
+    slug: 'estaciones-del-ano-en-argentina',
+    title: {
+      es: 'Las estaciones del año en Argentina: qué esperar en cada una',
+      en: 'The Seasons of the Year in Argentina: What to Expect in Each One',
+    },
+    description: {
+      es: 'Argentina es el segundo país más grande de América del Sur y tiene climas muy distintos según la región. Esta guía explica las cuatro estaciones con datos reales de temperatura, lluvias y qué hacer en cada época.',
+      en: 'Argentina is the second largest country in South America and has very different climates by region. This guide explains the four seasons with real temperature data, rainfall, and what to do in each period.',
+    },
+    date: '2026-06-14',
+    body: {
+      es: `Argentina se extiende desde los trópicos del norte hasta la Patagonia casi antártica del sur, con más de 3.000 km de distancia vertical. A diferencia de los países del trópico, Argentina tiene cuatro estaciones bien definidas en la mayor parte del país, aunque la amplitud climática entre el norte y el sur hace que prácticamente hablar de "las estaciones de Argentina" sea hablar de al menos cuatro climas distintos superpuestos.
+
+## El hemisferio sur invierte el calendario
+
+El primer dato que confunde a los visitantes del hemisferio norte: las estaciones están invertidas. En Argentina, el verano es diciembre-febrero, el otoño es marzo-mayo, el invierno es junio-agosto y la primavera es septiembre-noviembre. Esto tiene consecuencias prácticas enormes: las vacaciones de verano argentinas son en enero, la Semana de Turismo es en otoño (abril), y las vacaciones de invierno son en julio.
+
+## Verano (diciembre – febrero): calor para todos (más o menos)
+
+El verano argentino es el período de máximas temperaturas y también el de mayor actividad turística interna. Las diferencias regionales son extremas:
+
+**Buenos Aires y la Pampa**: temperaturas de 28–38°C con humedad alta. Las tormentas eléctricas de verano son frecuentes e intensas, especialmente en enero y febrero. La combinación de calor húmedo puede hacer que la temperatura sensible supere los 42–44°C. Las madrugadas en verano raramente bajan de 22–24°C, lo que hace que el descanso nocturno sea difícil sin aire acondicionado.
+
+**Córdoba y las Sierras**: calor similar al de Buenos Aires en los valles (32–37°C) pero más tolerable en las zonas altas (25–30°C). Las tormentas de tarde son espectaculares y características del verano cordobés.
+
+**Mendoza y Cuyo**: verano muy caluroso y seco (hasta 40°C) con vientos Zonda ocasionales que suben la temperatura abruptamente. A diferencia del verano húmedo pampeano, el calor cuyana es seco y se tolera mejor a la sombra.
+
+**Patagonia norte**: temporada turística máxima en los Lagos (Bariloche, Villa La Angostura). Temperaturas agradables de 20–28°C, noches frescas y los días más largos del año (el sol puede ponerse cerca de las 22 horas en enero).
+
+**Patagonia sur y Tierra del Fuego**: el verano patagónico es fresco (12–18°C en Ushuaia) y con muchas horas de luz pero viento constante e intenso. El período de diciembre a febrero es el único en que el turismo del fin del mundo es realmente confortable.
+
+## Otoño (marzo – mayo): el secreto mejor guardado de Argentina
+
+El otoño argentino es la estación menos conocida y probablemente la mejor para viajar en muchas regiones. Las temperaturas son perfectas, los turistas son muchos menos que en verano y los paisajes tienen colores únicos.
+
+**Buenos Aires**: temperaturas de 18–26°C con cielos despejados en abril. La ciudad en otoño es perfecta para caminar: sin el calor agobiante del verano ni el frío del invierno.
+
+**Mendoza**: la vendimia, el festival de la cosecha de uva, ocurre en marzo. El campo está lleno de viñas en sus colores más intensos, la temperatura es ideal (15–25°C) y el precio del alojamiento es menor que en el verano.
+
+**Patagonia**: el otoño es la estación de los colores. Los álamos y las hayas australes (lengas y ñires) se vuelven amarillos y rojos en marzo-abril, creando paisajes que compiten con los de Canadá o el norte de EE.UU. en otoño. El turismo es menor que en verano y las condiciones climáticas aún son buenas.
+
+## Invierno (junio – agosto): nieve, frío y deportes de montaña
+
+El invierno es la estación más contrastante del país: del frío subtropical templado del norte al frío extremo del sur.
+
+**Buenos Aires y la Pampa**: inviernos frescos y húmedos (7–15°C), raramente con heladas en la capital. El frío porteño no es extremo en temperatura absoluta pero la humedad lo hace sentir más intenso. Las lluvias invernales son frecuentes y las noches grises son características.
+
+**Mendoza**: frío seco con heladas nocturnas (hasta -8°C en la ciudad) pero días soleados. El invierno mendocino es espectacular para el esquí: Las Leñas y Los Penitentes son centros de esquí de clase mundial.
+
+**Bariloche y la Patagonia norte**: la temporada de esquí (julio-agosto) es el período de mayor turismo. Los cerros Catedral (Bariloche) y Chapelco (San Martín de los Andes) reciben buenos volúmenes de nieve en inviernos típicos.
+
+**Tierra del Fuego**: el invierno austral en Ushuaia es oscuro (pocas horas de luz), frío (temperaturas de -5 a 5°C) y con nieve frecuente. El Canal Beagle puede congelarse parcialmente y el viento patagónico es constante e intenso.
+
+## Primavera (septiembre – noviembre): flores, lluvias y transición
+
+La primavera argentina es la estación de la renovación y también de la inestabilidad meteorológica. Las temperaturas suben progresivamente pero el tiempo es variable, con días muy cálidos intercalados con lluvias y descensos bruscos de temperatura.
+
+**Buenos Aires**: septiembre y octubre tienen el problema de los "días de un minuto de cada estación": puede amanecer con 8°C y terminar con 28°C, o al revés. Las lluvias primaverales en la Pampa pueden ser intensas. La floración de los jacarandás en noviembre es uno de los eventos naturales más fotografiados del país.
+
+**Patagonia**: la primavera patagónica (octubre-noviembre) es la de los campos de flores silvestres y las cascadas en su máximo caudal por el deshielo. Los vientos son intensos pero el turismo ya es posible y los precios son más accesibles que en verano.
+
+Conocer las estaciones argentinas permite planificar un viaje que aproveche lo mejor de cada región y cada época del año, desde la vendimia mendocina hasta los días más largos de Ushuaia, pasando por el otoño patagónico y la primavera porteña de los jacarandás.`,
+      en: `Argentina extends from tropical regions in the north to near-Antarctic Patagonia in the south — over 3,000 km of vertical distance. Unlike tropical countries, Argentina has four well-defined seasons in most of the country.
+
+## The Southern Hemisphere inverts the calendar
+
+The first fact that confuses Northern Hemisphere visitors: seasons are reversed. In Argentina, summer is December–February, fall is March–May, winter is June–August, and spring is September–November.
+
+## Summer (December – February): heat for all (more or less)
+
+**Buenos Aires and the Pampas**: 28–38°C with high humidity. Frequent intense thunderstorms in January–February. Heat index can exceed 42–44°C. Nights rarely drop below 22–24°C, making rest difficult without air conditioning.
+
+**Mendoza**: very hot, dry summers (up to 40°C) with occasional Zonda winds that abruptly raise temperature. Dry heat is more tolerable than humid Pampas heat.
+
+**Patagonia north**: peak tourist season at the Lakes (Bariloche). Pleasant 20–28°C with cool nights and the longest days of the year.
+
+## Fall (March – May): Argentina's best-kept secret
+
+Fall is the least-known and probably the best season to travel. Perfect temperatures, far fewer tourists than summer, unique foliage colors. Mendoza's grape harvest festival occurs in March. Patagonian larches (lengas and ñires) turn yellow and red, creating landscapes rivaling Canadian or New England fall foliage.
+
+## Winter (June – August): snow, cold, and mountain sports
+
+**Buenos Aires**: cool and humid winters (7–15°C), rarely freezing. **Mendoza**: dry cold with overnight frost (down to -8°C) but sunny days; world-class ski resorts. **Bariloche**: ski season (July–August) is peak tourism period. **Tierra del Fuego**: dark, cold (-5 to 5°C), frequent snow, and constant Patagonian wind.
+
+## Spring (September – November): flowers, rain, and transition
+
+Variable weather: very warm days mixed with rain and sudden temperature drops. Buenos Aires jacaranda blooming in November is one of the country's most photographed natural events. Patagonian spring brings wildflower fields and waterfalls at peak flow from snowmelt.`,
+    },
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {

@@ -20,6 +20,8 @@ export default function Footer() {
           <a>Acerca de</a>
           <a>Contacto</a>
           <a>Guías</a>
+          <a>Glosario</a>
+          <a>FAQ</a>
           <a>Términos de uso</a>
           <a>Política de privacidad</a>
           <a>Política de cookies</a>
@@ -36,6 +38,8 @@ export default function Footer() {
         <Link href="/acerca">{t('app.footer.about')}</Link>
         <Link href="/contacto">{t('app.footer.contact')}</Link>
         <Link href="/guias">{t('app.footer.guides')}</Link>
+        <Link href="/glosario">{t('app.footer.glossary')}</Link>
+        <Link href="/faq">{t('app.footer.faq')}</Link>
         <Link href="/terms">{t('app.footer.terms')}</Link>
         <Link href="/privacy">{t('app.footer.privacy')}</Link>
         <Link href="/cookies">{t('app.footer.cookies')}</Link>

@@ -1,0 +1,30 @@
+.glossary-list {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.glossary-item {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.glossary-term {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.glossary-definition {
+  margin: 0;
+  color: #444;
+  line-height: 1.65;
+  font-size: 0.97rem;
+}
+
+.glossary-link {
+  display: inline;
+  font-size: 0.9rem;
+  color: #1a73e8;
+}
