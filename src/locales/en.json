@@ -38,6 +38,9 @@
       "privacy": "Privacy policy",
       "cookies": "Cookie policy",
       "data_sources": "Data sources",
+      "about": "About",
+      "contact": "Contact",
+      "guides": "Guides",
       "copyright": "Weather data © OpenWeather | © 2026 WeatherApp - Your real-time weather"
     },
     "menu": {

@@ -90,6 +90,27 @@ const descriptions: Record<string, string> = {
   'san-jose': 'San José tiene un clima tropical de montaña agradable gracias a su altitud de 1.170 metros, con temperaturas promedio de 22°C. La temporada lluviosa va de mayo a noviembre y la seca de diciembre a abril.',
   'panama-city': 'Ciudad de Panamá tiene un clima tropical húmedo con temperaturas constantes de 25-32°C durante todo el año. La temporada de lluvias va de mayo a diciembre, siendo una de las ciudades más lluviosas de Centroamérica.',
   'managua': 'Managua tiene un clima tropical cálido con temperaturas que oscilan entre 27°C y 35°C. La ciudad experimenta una temporada seca de noviembre a abril y lluvias intensas de mayo a octubre.',
+
+  // Colombia adicional
+  'riohacha': 'Riohacha, capital de La Guajira, tiene uno de los climas más áridos y calurosos de Colombia, con temperaturas que superan los 35°C y muy escasas precipitaciones durante casi todo el año. Los vientos alisios del norte soplan con fuerza entre diciembre y abril, creando condiciones semidesérticas características de la Península de La Guajira.',
+
+  // Europa
+  'london': 'Londres tiene un clima oceánico templado y húmedo, con temperaturas suaves durante todo el año: entre 4°C y 10°C en invierno y 18°C a 24°C en verano. La lluvia es frecuente y distribuida en todos los meses, aunque los veranos pueden ser sorprendentemente agradables con días soleados. La niebla, aunque menos frecuente que en el pasado, sigue siendo parte del paisaje invernal.',
+  'paris': 'París tiene un clima oceánico continental, con inviernos fríos (2°C-8°C), primaveras y otoños lluviosos y veranos cálidos que pueden superar los 35°C en los días de ola de calor. Las precipitaciones están distribuidas a lo largo del año sin una estación seca definida, aunque junio y julio suelen ser los meses más soleados.',
+  'berlin': 'Berlín tiene un clima continental húmedo, con inviernos fríos que pueden bajar a -10°C y veranos cálidos (20°C-30°C). Las nevadas son comunes entre diciembre y febrero. La primavera y el otoño son estaciones cortas pero agradables, con temperaturas suaves y cielos variables.',
+  'rome': 'Roma tiene un clima mediterráneo clásico, con veranos calurosos y secos (28°C-35°C) e inviernos suaves y lluviosos (6°C-14°C). Las lluvias se concentran en otoño e invierno; los meses de julio y agosto son los más secos y calurosos, con escasas precipitaciones.',
+  'amsterdam': 'Ámsterdam tiene un clima oceánico fresco y húmedo, con inviernos templados (2°C-8°C) y veranos frescos (18°C-22°C). La lluvia es frecuente durante todo el año y el cielo está nublado la mayor parte del tiempo. Los días de sol son preciados y el verano suele traer semanas agradables aunque no calurosas.',
+
+  // Oriente Medio
+  'dubai': 'Dubái tiene un clima desértico árido extremo, con veranos brutales en los que el termómetro supera los 45°C y el calor húmedo del Golfo Pérsico hace la sensación térmica insoportable. Los inviernos (noviembre-marzo) son cálidos y agradables (20°C-28°C), siendo la temporada más visitada. Las precipitaciones son escasísimas, con menos de 100mm anuales en años buenos.',
+
+  // Oceanía
+  'sydney': 'Sídney tiene un clima templado oceánico con veranos calurosos (22°C-28°C) e inviernos suaves y secos (8°C-17°C). Al estar en el hemisferio sur, el verano va de diciembre a febrero y el invierno de junio a agosto. Las lluvias se distribuyen durante todo el año, con mayor concentración en invierno y primavera.',
+
+  // Brasil
+  'brasilia': 'Brasilia tiene un clima tropical de sabana con dos estaciones marcadas: la seca (mayo-septiembre), con cielos despejados y baja humedad, y la lluviosa (octubre-abril), con precipitaciones diarias en las tardes. La temperatura es estable todo el año entre 15°C y 28°C gracias a su altitud de 1.170 metros.',
+  'sao-paulo': 'São Paulo tiene un clima subtropical húmedo, con temperaturas promedio de 22°C durante todo el año que pueden subir a 32°C en verano y bajar a 10°C en invierno. Las lluvias son abundantes, especialmente en verano (diciembre-marzo), y los microclimas entre barrios son notables por la extensión de la ciudad.',
+  'rio-de-janeiro': 'Río de Janeiro tiene un clima tropical húmedo con temperaturas entre 20°C y 40°C a lo largo del año. Los veranos (diciembre-marzo) son calurosos, húmedos y lluviosos; los inviernos son suaves y secos. La humedad alta hace que el calor estival se sienta más intenso de lo que indica el termómetro.',
 };
 
 export function getCityDescription(slug: string): string | null {
@@ -188,6 +209,27 @@ const touristTips: Record<string, string> = {
   'san-jose': 'San José es más fría y lluviosa de lo que los turistas esperan para ser una ciudad tropical. La temporada lluviosa (mayo-noviembre) trae aguaceros diarios en las tardes; sin embargo, las mañanas suelen estar despejadas, lo que permite planificar las actividades con inteligencia.',
   'panama-city': 'Panamá es uno de los países más lluviosos del mundo y su capital lo refleja con lluvias casi diarias de mayo a diciembre. Lo que pocos anticipan es la intensidad: en una hora puede caer más agua que en un mes entero en muchas ciudades europeas. Siempre lleva impermeable.',
   'managua': 'Managua tiene un calor seco e intenso en la temporada seca (noviembre-abril) que sorprende por su aridez. En la temporada lluviosa, las tormentas son dramáticas pero los precios bajan considerablemente y la naturaleza está en su mejor momento; es temporada baja pero muy recomendable para viajeros experimentados.',
+
+  // Colombia adicional
+  'riohacha': 'Riohacha sorprende a los visitantes con el viento constante y fuerte que baja las temperaturas sensibles varios grados, haciendo el calor más llevadero de lo que parece. Sin embargo, la arena de la Guajira vuela con esas ráfagas y puede irritar los ojos; lleva siempre gafas de sol y protector labial.',
+
+  // Europa
+  'london': 'Londres llueve mucho menos de lo que su fama sugiere, pero el cielo está nublado la mayor parte del año y el frío húmedo cala más que el frío seco. Lleva siempre un paraguas compacto y una chaqueta impermeable; el verano puede traer días espléndidos de 25°C que los londinenses celebran con picnics en los parques.',
+  'paris': 'París tiene veranos que pueden ser brutalmente calurosos: las olas de calor recientes han superado los 40°C en la ciudad. El metro y muchos edificios históricos no tienen aire acondicionado; si visitas en julio-agosto, busca alojamiento con climatización y planifica museos y galerías para las horas más calurosas.',
+  'berlin': 'Berlín tiene inviernos más fríos de lo que muchos visitantes europeos anticipan, y el viento hace que -5°C se sientan como -15°C. Lo que sorprende agradablemente son los veranos: largos días soleados con 25°C perfectos para explorar parques y terrazas. La primavera llega de golpe y es espectacular.',
+  'rome': 'Roma en agosto es una de las ciudades más calurosas de Europa, con pavimento que irradia calor hasta después del atardecer. Muchos romanos se van de vacaciones ese mes, y si bien hay menos gente local, el calor es considerable; visita las fuentes y las terrazas panorámicas en las últimas horas del día cuando el sol baja.',
+  'amsterdam': 'Ámsterdam es más fría y lluviosa de lo que la imagen de bicicletas al sol sugiere. Un impermeable liviano es casi obligatorio en cualquier época; incluso en verano, las tardes se enfrían rápidamente. Los días despejados de primavera (abril-mayo), cuando los tulipanes están en flor, son los más espectaculares del año.',
+
+  // Oriente Medio
+  'dubai': 'Los veranos de Dubái (junio-septiembre) son peligrosamente calurosos para actividades al aire libre: la combinación de 45°C y humedad del 80% puede causar golpes de calor en minutos. Los turistas más inteligentes visitan en invierno (noviembre-marzo), cuando el clima es perfecto. El shopping y las atracciones interiores con aire acondicionado son el refugio en verano.',
+
+  // Oceanía
+  'sydney': 'Sydney tiene veranos calurosos con radiación UV extremadamente alta en el hemisferio sur: el factor protector solar debe ser mínimo 50+ incluso en días parcialmente nublados. Los incendios forestales en enero-febrero pueden afectar la calidad del aire ocasionalmente. Los inviernos (junio-agosto) son suaves y perfectos para explorar la ciudad sin el calor estival.',
+
+  // Brasil
+  'brasilia': 'La temporada seca de Brasilia (mayo-septiembre) puede sorprender por la sequedad extrema del aire: la humedad baja a niveles similares al desierto. Los lugareños usan humidificadores, y los visitantes pueden sentir la garganta reseca y los labios agrietados; hidratarse constantemente y llevar crema hidratante es esencial.',
+  'sao-paulo': 'São Paulo tiene un tráfico y una densidad urbana que hacen que el calor se acumule en ciertas zonas, pero los cambios de temperatura bruscos son el dato que más sorprende: puede pasar de 30°C a 15°C en el mismo día por la llegada de frentes fríos llamados "friagem". Llevar una chaqueta en la bolsa es un consejo universal de los paulistanos.',
+  'rio-de-janeiro': 'Río de Janeiro tiene una humedad tropical que hace que el calor de verano sea agotador: 38°C con 90% de humedad es una experiencia física intensa. El Carnaval de febrero coincide con el pleno verano; disfrútalo pero hidratate constantemente. La radiación UV en las playas de Copacabana e Ipanema es muy alta; protector solar factor 50+ sin excepción.',
 };
 
 export function getCityTouristTip(slug: string): string | null {

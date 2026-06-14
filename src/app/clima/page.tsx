@@ -40,6 +40,22 @@ export default function ClimaHubPage() {
       <div className="home-two-columns">
         <h1><SunIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.15em' }} /> Clima en todas las ciudades</h1>
         <p>Consulta el clima actual en cualquier ciudad del mundo.</p>
+
+        <section className="cities-section">
+          <p>
+            En Clima Hoy encontrás el tiempo actual y el pronóstico de los próximos días para
+            cientos de ciudades en todo el mundo. Los datos se actualizan en tiempo real a partir
+            de OpenWeatherMap, que integra lecturas de estaciones meteorológicas oficiales, satélites
+            y radares. No necesitás registrarte ni instalar nada: buscás la ciudad y el resultado
+            aparece de inmediato con temperatura, sensación térmica, humedad, viento, probabilidad
+            de lluvia y calidad del aire.
+          </p>
+          <p>
+            Abajo encontrás listados de ciudades populares de Colombia y del mundo. Si tu ciudad no
+            aparece en la lista, usá el buscador en la parte superior — cubrimos prácticamente
+            cualquier localidad del planeta.
+          </p>
+        </section>
         
         <section className="cities-section">
           <h2>Ciudades de Colombia</h2>
