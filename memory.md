@@ -102,6 +102,14 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 - `topGlossaryTerms`: computed a nivel de módulo (sort alfabético, primeros 10)
 - Títulos de guías y términos son language-aware (es/en)
 
+### Fase 3 SEO + UX (commit 61d616a, jun-2026)
+- **Fix parpadeo header:** `TopMenu.tsx` ya NO tiene early return con placeholder mínimo. Logo + búsqueda + barra de nav (Guías/Glosario/FAQ) siempre se renderizan. Solo el bloque `menu-right` (settings/auth, depende de localStorage/session) se difiere con `visibility: hidden` → sin layout shift.
+- **HomeFaq:** nuevo componente `src/components/HomeFaq.{tsx,css}` — primeras 6 FAQs como `<details>/<summary>` accordion nativo + JSON-LD FAQPage. Insertado en homepage antes del Footer.
+- **Guías relacionadas:** cada página de guía muestra 3 guías al final. Si el campo `related[]` no está definido, usa fallback cíclico `(index + offset) % guides.length`.
+- **Canonical no-www:** `layout.tsx` tiene `metadataBase: new URL('https://clima-hoy.com')`. Todas las URLs canónicas, OG, sitemap y robots.txt apuntan a `https://clima-hoy.com` (sin www).
+- **SEO guías:** keywords, authors, publishedTime, BreadcrumbList JSON-LD (Article + BreadcrumbList por guía).
+- **i18n:** clave `app.home.faq_title` en los 6 idiomas (es/en/pt/fr/de/it).
+
 ## Pendientes
 
 - **AdSense:** Cuando llegue la aprobación, reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
