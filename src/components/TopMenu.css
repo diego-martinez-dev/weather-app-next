@@ -274,6 +274,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  overflow-y: auto;
 }
 
 .mobile-menu-item {
@@ -428,4 +429,132 @@
 .mobile-user-name {
   font-size: 0.8rem;
   color: #e2e8f0;
+}
+
+/* Nav bar submenus */
+.nav-item {
+  position: relative;
+}
+
+.nav-item-trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 4px 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.nav-item-trigger:hover,
+.nav-item-trigger.open {
+  color: white;
+}
+
+.nav-chevron {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.nav-item-trigger.open .nav-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-submenu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  min-width: 280px;
+  max-height: 440px;
+  overflow-y: auto;
+  z-index: 3000;
+}
+
+.nav-submenu-header {
+  display: block;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a56db;
+  text-decoration: none;
+  border-bottom: 1px solid #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #f8fafc;
+  transition: background 0.15s;
+  position: sticky;
+  top: 0;
+}
+
+.nav-submenu-header:hover {
+  background: #eff6ff;
+}
+
+.nav-submenu-item {
+  display: block;
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #334155;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.35;
+}
+
+.nav-submenu-item:hover {
+  background: #f8fafc;
+  color: #1a56db;
+}
+
+/* Mobile nav submenus */
+.mobile-nav-expand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.mobile-nav-expand:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+.mobile-nav-subitems {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+  border-left: 2px solid rgba(255,255,255,0.15);
+  margin-bottom: 4px;
+}
+
+.mobile-nav-subitem {
+  padding: 8px 6px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.mobile-nav-subitem:hover {
+  color: white;
 }

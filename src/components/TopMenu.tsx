@@ -6,30 +6,41 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useSettings } from '@/contexts/SettingsContext';
-import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { guides, Guide } from '@/data/guides';
+import { glossaryTerms, GlossaryTerm } from '@/data/glossary';
 import './TopMenu.css';
+
+const topGlossaryTerms = [...glossaryTerms]
+  .sort((a, b) => a.term.es.localeCompare(b.term.es, 'es'))
+  .slice(0, 10);
 
 export default function TopMenu() {
   const { t } = useTranslation();
   const router = useRouter();
   const { data: session } = useSession();
   const { unit, setUnit, language, setLanguage, country, getTempSymbol } = useSettings();
-  
+
   const [showUnitDropdown, setShowUnitDropdown] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+  const [showGuidesMenu, setShowGuidesMenu] = useState(false);
+  const [showGlosarioMenu, setShowGlosarioMenu] = useState(false);
   const [searchCity, setSearchCity] = useState('');
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+  const [showMobileGuides, setShowMobileGuides] = useState(false);
+  const [showMobileGlosario, setShowMobileGlosario] = useState(false);
+
   const unitRef = useRef<HTMLDivElement>(null);
   const languageRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const guidesMenuRef = useRef<HTMLDivElement>(null);
+  const glosarioMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Cerrar menú móvil al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
@@ -47,6 +58,12 @@ export default function TopMenu() {
       }
       if (languageRef.current && !languageRef.current.contains(event.target as Node)) {
         setShowLanguageDropdown(false);
+      }
+      if (guidesMenuRef.current && !guidesMenuRef.current.contains(event.target as Node)) {
+        setShowGuidesMenu(false);
+      }
+      if (glosarioMenuRef.current && !glosarioMenuRef.current.contains(event.target as Node)) {
+        setShowGlosarioMenu(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -75,6 +92,9 @@ export default function TopMenu() {
     const found = countries.find(c => c.code === country);
     return found ? found.flag : '';
   };
+
+  const getGuideTitle = (guide: Guide) => language === 'en' ? guide.title.en : guide.title.es;
+  const getTermLabel = (term: GlossaryTerm) => language === 'en' ? term.term.en : term.term.es;
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -114,7 +134,7 @@ export default function TopMenu() {
           <SunIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.15em' }} /> Clima Hoy
         </div>
 
-        {/* Barra de búsqueda - visible siempre */}
+        {/* Barra de búsqueda */}
         <form className="menu-search" onSubmit={handleSearch}>
           <input
             type="text"
@@ -129,8 +149,8 @@ export default function TopMenu() {
         </form>
 
         {/* Botón menú hamburguesa (solo móvil) */}
-        <button 
-          className="mobile-menu-btn" 
+        <button
+          className="mobile-menu-btn"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menú"
         >
@@ -146,7 +166,7 @@ export default function TopMenu() {
           </div>
 
           <div className="menu-item dropdown" ref={unitRef}>
-            <span 
+            <span
               className="dropdown-trigger"
               onClick={() => setShowUnitDropdown(!showUnitDropdown)}
             >
@@ -154,13 +174,13 @@ export default function TopMenu() {
             </span>
             {showUnitDropdown && (
               <div className="dropdown-menu">
-                <div 
+                <div
                   className={`dropdown-item ${unit === 'celsius' ? 'active' : ''}`}
                   onClick={() => { setUnit('celsius'); setShowUnitDropdown(false); }}
                 >
                   <FireIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {t('app.menu.celsius')} (°C)
                 </div>
-                <div 
+                <div
                   className={`dropdown-item ${unit === 'fahrenheit' ? 'active' : ''}`}
                   onClick={() => { setUnit('fahrenheit'); setShowUnitDropdown(false); }}
                 >
@@ -214,11 +234,53 @@ export default function TopMenu() {
 
       {/* Barra de navegación (desktop) */}
       <nav className="top-nav-bar desktop-only">
-        <Link href="/" className="top-nav-link">{t('app.nav.home')}</Link>
-        <Link href="/guias" className="top-nav-link">{t('app.footer.guides')}</Link>
-        <Link href="/glosario" className="top-nav-link">{t('app.footer.glossary')}</Link>
-        <Link href="/acerca" className="top-nav-link">{t('app.footer.about')}</Link>
-        <Link href="/contacto" className="top-nav-link">{t('app.footer.contact')}</Link>
+        {/* Guías con submenú */}
+        <div className="nav-item" ref={guidesMenuRef}>
+          <button
+            className={`nav-item-trigger ${showGuidesMenu ? 'open' : ''}`}
+            onClick={() => { setShowGuidesMenu(!showGuidesMenu); setShowGlosarioMenu(false); }}
+          >
+            {t('app.footer.guides')}
+            <ChevronDownIcon className="nav-chevron" />
+          </button>
+          {showGuidesMenu && (
+            <div className="nav-submenu">
+              <Link href="/guias" className="nav-submenu-header" onClick={() => setShowGuidesMenu(false)}>
+                Ver todas las guías →
+              </Link>
+              {guides.map(guide => (
+                <Link key={guide.slug} href={`/guias/${guide.slug}`} className="nav-submenu-item" onClick={() => setShowGuidesMenu(false)}>
+                  {getGuideTitle(guide)}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Glosario con submenú */}
+        <div className="nav-item" ref={glosarioMenuRef}>
+          <button
+            className={`nav-item-trigger ${showGlosarioMenu ? 'open' : ''}`}
+            onClick={() => { setShowGlosarioMenu(!showGlosarioMenu); setShowGuidesMenu(false); }}
+          >
+            {t('app.footer.glossary')}
+            <ChevronDownIcon className="nav-chevron" />
+          </button>
+          {showGlosarioMenu && (
+            <div className="nav-submenu">
+              <Link href="/glosario" className="nav-submenu-header" onClick={() => setShowGlosarioMenu(false)}>
+                Ver glosario completo →
+              </Link>
+              {topGlossaryTerms.map((term, i) => (
+                <Link key={i} href="/glosario" className="nav-submenu-item" onClick={() => setShowGlosarioMenu(false)}>
+                  {getTermLabel(term)}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <Link href="/faq" className="top-nav-link">FAQ</Link>
       </nav>
 
       {/* Menú lateral móvil */}
@@ -226,33 +288,71 @@ export default function TopMenu() {
         <div className="mobile-menu-overlay">
           <div className="mobile-menu-panel" ref={mobileMenuRef}>
             <div className="mobile-menu-header">
-              <span>Configuración</span>
+              <span>Menú</span>
               <button className="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}><XMarkIcon style={{ width: '1.2em', height: '1.2em' }} /></button>
             </div>
             <div className="mobile-menu-items">
               <nav className="mobile-nav">
-                <Link href="/" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.nav.home')}</Link>
-                <Link href="/guias" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.guides')}</Link>
-                <Link href="/glosario" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.glossary')}</Link>
-                <Link href="/acerca" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.about')}</Link>
-                <Link href="/contacto" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.contact')}</Link>
+                {/* Guías expandible */}
+                <button
+                  className="mobile-nav-expand"
+                  onClick={() => setShowMobileGuides(!showMobileGuides)}
+                >
+                  {t('app.footer.guides')}
+                  <ChevronDownIcon style={{ width: '1em', height: '1em', flexShrink: 0, transition: 'transform 0.2s', transform: showMobileGuides ? 'rotate(180deg)' : 'none' }} />
+                </button>
+                {showMobileGuides && (
+                  <div className="mobile-nav-subitems">
+                    <Link href="/guias" className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
+                      Ver todas las guías
+                    </Link>
+                    {guides.map(guide => (
+                      <Link key={guide.slug} href={`/guias/${guide.slug}`} className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
+                        {getGuideTitle(guide)}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {/* Glosario expandible */}
+                <button
+                  className="mobile-nav-expand"
+                  onClick={() => setShowMobileGlosario(!showMobileGlosario)}
+                >
+                  {t('app.footer.glossary')}
+                  <ChevronDownIcon style={{ width: '1em', height: '1em', flexShrink: 0, transition: 'transform 0.2s', transform: showMobileGlosario ? 'rotate(180deg)' : 'none' }} />
+                </button>
+                {showMobileGlosario && (
+                  <div className="mobile-nav-subitems">
+                    <Link href="/glosario" className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
+                      Ver glosario completo
+                    </Link>
+                    {topGlossaryTerms.map((term, i) => (
+                      <Link key={i} href="/glosario" className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
+                        {getTermLabel(term)}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                <Link href="/faq" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
               </nav>
 
               <div className="mobile-menu-item">
                 <span className="mobile-item-label"><MapPinIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> País</span>
                 <span className="mobile-item-value">{getCountryFlag()} {country}</span>
               </div>
-              
+
               <div className="mobile-menu-item">
                 <span className="mobile-item-label"><FireIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> Temperatura</span>
                 <div className="mobile-item-options">
-                  <button 
+                  <button
                     className={`mobile-option ${unit === 'celsius' ? 'active' : ''}`}
                     onClick={() => { setUnit('celsius'); setMobileMenuOpen(false); }}
                   >
                     °C
                   </button>
-                  <button 
+                  <button
                     className={`mobile-option ${unit === 'fahrenheit' ? 'active' : ''}`}
                     onClick={() => { setUnit('fahrenheit'); setMobileMenuOpen(false); }}
                   >
@@ -260,7 +360,7 @@ export default function TopMenu() {
                   </button>
                 </div>
               </div>
-              
+
               <div className="mobile-menu-item">
                 <span className="mobile-item-label"><GlobeAltIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> Idioma</span>
                 <div className="mobile-item-options mobile-lang-options">
