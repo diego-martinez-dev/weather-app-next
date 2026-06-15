@@ -8,12 +8,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import { useSettings } from '@/contexts/SettingsContext';
 import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { guides, Guide } from '@/data/guides';
-import { glossaryTerms, GlossaryTerm } from '@/data/glossary';
 import './TopMenu.css';
-
-const topGlossaryTerms = [...glossaryTerms]
-  .sort((a, b) => a.term.es.localeCompare(b.term.es, 'es'))
-  .slice(0, 10);
 
 export default function TopMenu() {
   const { t } = useTranslation();
@@ -24,18 +19,15 @@ export default function TopMenu() {
   const [showUnitDropdown, setShowUnitDropdown] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showGuidesMenu, setShowGuidesMenu] = useState(false);
-  const [showGlosarioMenu, setShowGlosarioMenu] = useState(false);
   const [searchCity, setSearchCity] = useState('');
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showMobileGuides, setShowMobileGuides] = useState(false);
-  const [showMobileGlosario, setShowMobileGlosario] = useState(false);
 
   const unitRef = useRef<HTMLDivElement>(null);
   const languageRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const guidesMenuRef = useRef<HTMLDivElement>(null);
-  const glosarioMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -61,9 +53,6 @@ export default function TopMenu() {
       }
       if (guidesMenuRef.current && !guidesMenuRef.current.contains(event.target as Node)) {
         setShowGuidesMenu(false);
-      }
-      if (glosarioMenuRef.current && !glosarioMenuRef.current.contains(event.target as Node)) {
-        setShowGlosarioMenu(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -94,7 +83,6 @@ export default function TopMenu() {
   };
 
   const getGuideTitle = (guide: Guide) => language === 'en' ? guide.title.en : guide.title.es;
-  const getTermLabel = (term: GlossaryTerm) => language === 'en' ? term.term.en : term.term.es;
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -234,7 +222,7 @@ export default function TopMenu() {
         <div className="nav-item" ref={guidesMenuRef}>
           <button
             className={`nav-item-trigger ${showGuidesMenu ? 'open' : ''}`}
-            onClick={() => { setShowGuidesMenu(!showGuidesMenu); setShowGlosarioMenu(false); }}
+            onClick={() => setShowGuidesMenu(!showGuidesMenu)}
             suppressHydrationWarning
           >
             {t('app.footer.guides')}
@@ -254,29 +242,7 @@ export default function TopMenu() {
           )}
         </div>
 
-        {/* Glosario con submenú */}
-        <div className="nav-item" ref={glosarioMenuRef}>
-          <button
-            className={`nav-item-trigger ${showGlosarioMenu ? 'open' : ''}`}
-            onClick={() => { setShowGlosarioMenu(!showGlosarioMenu); setShowGuidesMenu(false); }}
-            suppressHydrationWarning
-          >
-            {t('app.footer.glossary')}
-            <ChevronDownIcon className="nav-chevron" />
-          </button>
-          {showGlosarioMenu && (
-            <div className="nav-submenu">
-              <Link href="/glosario" className="nav-submenu-header" onClick={() => setShowGlosarioMenu(false)}>
-                Ver glosario completo →
-              </Link>
-              {topGlossaryTerms.map((term, i) => (
-                <Link key={i} href="/glosario" className="nav-submenu-item" onClick={() => setShowGlosarioMenu(false)}>
-                  {getTermLabel(term)}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
+        <Link href="/glosario" className="top-nav-link" suppressHydrationWarning>{t('app.footer.glossary')}</Link>
 
         <Link href="/faq" className="top-nav-link" suppressHydrationWarning>FAQ</Link>
       </nav>
@@ -314,26 +280,7 @@ export default function TopMenu() {
                   </div>
                 )}
 
-                {/* Glosario expandible */}
-                <button
-                  className="mobile-nav-expand"
-                  onClick={() => setShowMobileGlosario(!showMobileGlosario)}
-                >
-                  {t('app.footer.glossary')}
-                  <ChevronDownIcon style={{ width: '1em', height: '1em', flexShrink: 0, transition: 'transform 0.2s', transform: showMobileGlosario ? 'rotate(180deg)' : 'none' }} />
-                </button>
-                {showMobileGlosario && (
-                  <div className="mobile-nav-subitems">
-                    <Link href="/glosario" className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
-                      Ver glosario completo
-                    </Link>
-                    {topGlossaryTerms.map((term, i) => (
-                      <Link key={i} href="/glosario" className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
-                        {getTermLabel(term)}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                <Link href="/glosario" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.glossary')}</Link>
 
                 <Link href="/faq" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
               </nav>
