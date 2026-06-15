@@ -93,6 +93,15 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 
 - **Diego debe:** configurar reenvío `contacto@clima-hoy.com → diego2392martinez@gmail.com` (Cloudflare Email Routing o ImprovMX) y solicitar nueva revisión en el panel de AdSense una vez que el deploy esté live.
 
+### Nav bar (commit 5776728)
+- Eliminados del nav: Inicio (el logo ya navega a inicio), Acerca, Contacto
+- Guías: submenú click con los 16 artículos + "Ver todas las guías"
+- Glosario: submenú click con 10 términos top (alfabético) + "Ver glosario completo"
+- FAQ: link directo
+- Móvil: Guías y Glosario son secciones expandibles; FAQ link directo
+- `topGlossaryTerms`: computed a nivel de módulo (sort alfabético, primeros 10)
+- Títulos de guías y términos son language-aware (es/en)
+
 ## Pendientes
 
 - **AdSense:** Cuando llegue la aprobación, reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
