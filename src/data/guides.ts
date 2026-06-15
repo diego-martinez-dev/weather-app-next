@@ -1462,6 +1462,668 @@ Fall is the least-known and probably the best season to travel. Perfect temperat
 Variable weather: very warm days mixed with rain and sudden temperature drops. Buenos Aires jacaranda blooming in November is one of the country's most photographed natural events. Patagonian spring brings wildflower fields and waterfalls at peak flow from snowmelt.`,
     },
   },
+  // ── Guías Fase 4 ──────────────────────────────────────────────────────────
+  {
+    slug: 'por-que-llueve-mas-en-unas-ciudades-que-en-otras',
+    title: {
+      es: 'Por qué llueve más en unas ciudades que en otras',
+      en: 'Why Does It Rain More in Some Cities Than Others',
+    },
+    description: {
+      es: 'La precipitación no se distribuye de forma aleatoria por el planeta. Descubrí los factores geográficos, oceánicos y atmosféricos que hacen que algunas ciudades reciban lluvia todo el año y otras sean casi desérticas.',
+      en: 'Rainfall is not randomly distributed across the planet. Discover the geographical, oceanic, and atmospheric factors that make some cities rainy year-round and others nearly desert.',
+    },
+    date: '2026-06-15',
+    related: ['clima-de-colombia-regiones-y-temporadas', 'diferencia-entre-clima-y-tiempo', 'tipos-de-nubes-y-que-clima-anuncian'],
+    body: {
+      es: `Quibdó, en el Chocó colombiano, recibe más de 9.000 mm de lluvia al año. Antofagasta, en el norte de Chile, apenas supera los 2 mm anuales. Ambas ciudades están en el mismo continente y a latitudes similares. ¿Qué explica una diferencia de precipitación de más de 4.000 veces? La respuesta está en la combinación de cinco factores geográficos y atmosféricos que determinan cuánta lluvia cae sobre cualquier punto del planeta.
+
+## 1. La distancia al océano y la temperatura de las corrientes marinas
+
+Los océanos son la fuente principal de vapor de agua en la atmósfera. Las ciudades costeras o cercanas a mares cálidos tienden a recibir más precipitaciones porque el aire que llega del mar está cargado de humedad.
+
+Sin embargo, no todos los océanos producen el mismo efecto. La corriente de Humboldt, fría, que recorre el Pacífico sur de norte a sur, enfría el aire marino cerca de la costa occidental de Sudamérica. Ese aire frío no puede retener mucha humedad, y cuando llega a tierra firme no genera lluvias: por eso Lima recibe apenas 12 mm anuales y Antofagasta casi nada, pese a estar junto al océano.
+
+En contraste, el Golfo de México y el Atlántico tropical son mares cálidos que generan enormes cantidades de vapor. Ese vapor alimenta las lluvias del sur de EE.UU., Centroamérica, el Caribe y el norte de Sudamérica.
+
+## 2. La orografía: las montañas como fábricas de lluvia
+
+Cuando el viento cargado de humedad choca contra una cadena montañosa, el aire se ve forzado a ascender. Al subir, se enfría (a razón de unos 6°C por cada 1.000 metros). Al enfriarse, pierde su capacidad de retener vapor y ese vapor se condensa en nubes y lluvia. Este fenómeno se llama precipitación orográfica y explica por qué las laderas de barlovento (las que reciben el viento) son mucho más lluviosas que las de sotavento (las protegidas).
+
+Los Andes colombianos son el ejemplo más dramático de América Latina. Los vientos húmedos del Pacífico y del Amazonas chocan con las cordilleras y producen precipitaciones extremas en las vertientes occidentales y orientales. Las ciudades como Quibdó, en el flanco occidental de la Cordillera Occidental, reciben lluvia casi permanente.
+
+Por eso, ciudades que parecen estar "cerca" en el mapa pueden tener climas radicalmente distintos si una está en el lado mojado de la montaña y la otra en el seco.
+
+## 3. La latitud y la Zona de Convergencia Intertropical (ZCIT)
+
+Cerca del ecuador geográfico (entre los 10°N y 10°S aproximadamente), los vientos alisios de los dos hemisferios convergen. Ese encuentro fuerza el ascenso de grandes masas de aire húmedo tropical, que al enfriarse producen lluvias abundantes. Esta banda de ascenso se llama Zona de Convergencia Intertropical (ZCIT).
+
+La ZCIT no es fija: se desplaza hacia el norte en verano boreal y hacia el sur en verano austral, siguiendo la posición del sol. Por eso muchas regiones tropicales tienen dos temporadas de lluvia al año (cuando la ZCIT pasa por encima) y dos secas.
+
+Las ciudades situadas directamente bajo la ZCIT —Quibdó, Buenaventura, zonas de la Amazonia— tienen lluvia casi todo el año. Las ciudades a mayor latitud reciben la ZCIT solo brevemente, resultando en temporadas de lluvia más cortas.
+
+## 4. Los sistemas de presión dominantes
+
+Las zonas de alta presión atmosférica inhiben las lluvias. El aire en un sistema de alta presión desciende, y el aire descendente se comprime y calienta, lo que aumenta su capacidad de retener vapor en lugar de liberarlo. Por eso, las ciudades bajo la influencia de las grandes celdas de alta presión subtropical (alrededor de los 30° de latitud en ambos hemisferios) tienden a ser áridas.
+
+Los grandes desiertos del mundo —Sahara, Atacama, Sonora, australiano— están ubicados precisamente en estas latitudes de alta presión. Madrid, ubicada a 40°N pero dominada por la alta presión del Atlántico en verano, tiene veranos muy secos; Londres, a la misma latitud pero más influenciada por bajas presiones atlánticas, llueve durante todo el año.
+
+## 5. El contenido de humedad del viento dominante
+
+El origen del viento importa tanto como la orografía. Un viento que viene de un desierto trae aire seco; un viento que viene del océano trae aire húmedo. La ciudad de Zaragoza, en España, está en el interior del valle del Ebro y recibe el cierzo: un viento frío y seco que desciende de los Pirineos y del Macizo Central, sin pasar por el mar. Resultado: Zaragoza recibe apenas 316 mm anuales pese a estar a 41°N.
+
+En contraste, Bilbao, a solo 300 km al norte, está expuesta a los vientos atlánticos que llegan directamente del océano sin obstáculos. Recibe más de 1.200 mm anuales.
+
+## La combinación de factores produce resultados extremos
+
+Los lugares más lluviosos del mundo combinan varios de estos factores: están cerca del ecuador (ZCIT activa), tienen montañas que fuerzan el ascenso del aire, y están en la trayectoria de vientos oceánicos cálidos y húmedos. Quibdó y Cherrapunji (India) cumplen todos estos requisitos y compiten por el título de lugar más lluvioso del planeta.
+
+Los más secos, como el Desierto de Atacama, tienen lo opuesto: alta presión subtropical dominante, corriente oceánica fría que enfría el aire marino e impide las lluvias, y montañas que bloquean la humedad del otro lado del continente.`,
+      en: `Quibdó, in Colombia's Chocó region, receives over 9,000 mm of rain annually. Antofagasta, in northern Chile, barely exceeds 2 mm per year. Both cities are on the same continent at similar latitudes. What explains a more than 4,000-fold difference in precipitation? The answer lies in five geographical and atmospheric factors that determine how much rain falls on any point on Earth.
+
+## 1. Distance to the ocean and sea current temperatures
+
+Oceans are the primary source of atmospheric water vapor. Coastal cities or those near warm seas tend to receive more precipitation because the air arriving from the sea is moisture-laden.
+
+However, not all oceans produce the same effect. The cold Humboldt Current running along the Pacific coast of South America cools the marine air. That cool air can't hold much moisture, so when it reaches land it doesn't generate rainfall — that's why Lima receives barely 12 mm annually and Antofagasta almost nothing, despite being next to the ocean.
+
+## 2. Orography: mountains as rain factories
+
+When moisture-laden wind hits a mountain range, the air is forced upward. As it rises, it cools (about 6°C per 1,000 meters). As it cools, it loses its capacity to retain vapor, which condenses into clouds and rain. This is called orographic precipitation, and it explains why windward slopes are far rainier than leeward slopes.
+
+The Colombian Andes are the most dramatic example in Latin America. Humid winds from the Pacific and Amazon hit the mountain ranges and produce extreme precipitation on their western and eastern flanks.
+
+## 3. Latitude and the Intertropical Convergence Zone (ITCZ)
+
+Near the geographical equator, trade winds from both hemispheres converge, forcing large masses of humid tropical air upward, which produce abundant rainfall. This ascent band is called the ITCZ and migrates north and south following the sun's position. Cities directly under the ITCZ receive rain almost year-round.
+
+## 4. Dominant pressure systems
+
+High-pressure zones inhibit rainfall — descending air compresses and warms, increasing its capacity to retain vapor rather than release it. The great world deserts are located in these subtropical high-pressure latitudes.
+
+## 5. Wind humidity content
+
+A wind from a desert brings dry air; a wind from the ocean brings humid air. Zaragoza's cierzo wind descends from mountains without passing over the sea, giving the city just 316 mm annually. Bilbao, 300 km north, is exposed to direct Atlantic winds and receives over 1,200 mm annually.`,
+    },
+  },
+  {
+    slug: 'como-afecta-la-altitud-al-clima',
+    title: {
+      es: 'Cómo afecta la altitud al clima de una ciudad',
+      en: 'How Altitude Affects the Climate of a City',
+    },
+    description: {
+      es: 'La altitud es el factor que explica por qué Bogotá es fría, Medellín templada y Cali cálida estando las tres en el trópico colombiano. Descubrí cómo la elevación determina la temperatura, la lluvia, el viento y la radiación UV.',
+      en: 'Altitude explains why Bogotá is cold, Medellín temperate, and Cali warm while all three are in the Colombian tropics. Discover how elevation determines temperature, rain, wind, and UV radiation.',
+    },
+    date: '2026-06-15',
+    related: ['por-que-llueve-mas-en-unas-ciudades-que-en-otras', 'indice-uv-que-significa-cada-nivel', 'ciudades-con-el-mejor-clima-de-latinoamerica'],
+    body: {
+      es: `Si viajes desde Cali hasta Bogotá en carro, en menos de seis horas recorrés 460 kilómetros y subís de 995 a 2.600 metros sobre el nivel del mar. La temperatura media pasa de 25°C a 14°C. El paisaje cambia de vegetación tropical a pajonales andinos. La humedad, el tipo de lluvia, la intensidad del sol y hasta la velocidad del viento son completamente distintos. Todo eso lo explica un solo factor: la altitud.
+
+## El gradiente de temperatura: 6°C por cada 1.000 metros
+
+La regla básica de la altitud y la temperatura es el gradiente adiabático atmosférico: por cada 1.000 metros que ascendemos, la temperatura del aire desciende aproximadamente 6°C (en condiciones de aire seco) o 4–5°C (en condiciones de aire saturado). Este gradiente existe porque la presión atmosférica disminuye con la altitud, y el aire que asciende se expande y se enfría.
+
+Es por eso que se puede tener nieve en los picos de los Andes tropicales mientras que a sus pies hay selva amazónica. El Nevado del Huila (5.750 m) en Colombia o el Cotopaxi (5.897 m) en Ecuador tienen glaciares permanentes pese a estar a menos de 3° de latitud del ecuador.
+
+Esta regla explica las diferencias entre las grandes ciudades latinoamericanas ubicadas en el mismo trópico:
+
+- Cali (995 m): 25°C de promedio
+- Medellín (1.495 m): 22°C de promedio
+- Bogotá (2.600 m): 14°C de promedio
+- Quito (2.850 m): 15°C de promedio
+- La Paz (3.640 m): 10°C de promedio
+- Cusco (3.400 m): 12°C de promedio
+
+## Por qué en las ciudades de altura no hay verano ni invierno
+
+A latitudes tropicales (cerca del ecuador), la variación estacional de la temperatura es pequeña porque el ángulo del sol no cambia drásticamente a lo largo del año como sí ocurre en las latitudes medias. En Bogotá, la diferencia entre el mes más frío y el más cálido es de apenas 2–3°C. Lo que cambia son las temporadas de lluvia (controladas por la ZCIT), no la temperatura.
+
+En contraste, en Buenos Aires (34°S) la diferencia entre enero (verano) y julio (invierno) puede ser de 18–20°C. La altitud de Bogotá hace que el clima sea estable en temperatura pero variable en precipitaciones; la latitud de Buenos Aires hace que el clima cambie con las estaciones.
+
+## Altitud y presión atmosférica: el mal de altura
+
+Con la altitud, la presión del aire disminuye. A 3.000 metros, la presión es aproximadamente el 70% de la presión al nivel del mar. Esto significa que hay menos moléculas de oxígeno en cada litro de aire que se respira.
+
+Para la mayoría de las personas que viven a nivel del mar, llegar a altitudes de 2.500–3.500 metros produce el mal agudo de montaña (soroche): dolor de cabeza, náuseas, cansancio y falta de aire. El cuerpo puede adaptarse (aclimatarse) en 24–72 horas aumentando la frecuencia cardíaca y respiratoria y, a largo plazo, produciendo más glóbulos rojos.
+
+El límite superior para la vida humana permanente está aproximadamente en 5.100 metros (algunas comunidades andinas viven en el altiplano a esas alturas). Más arriba, el organismo no puede adaptarse de forma permanente.
+
+## Altitud y radiación UV: más sol que en la playa
+
+Cada 1.000 metros de altitud, la radiación UV aumenta entre un 10% y un 12% porque hay menos atmósfera para absorber o dispersar los rayos ultravioleta. A 3.000 metros, la radiación UV puede ser entre un 30% y un 40% más intensa que al nivel del mar bajo el mismo ángulo solar.
+
+Esto tiene consecuencias prácticas importantes:
+
+- El protector solar factor 50+ es esencial en ciudades como Quito, Bogotá o Cusco, incluso en días nublados.
+- La nieve en montaña amplifica aún más este efecto, reflejando hasta el 80% de la UV adicional.
+- En invierno en los Alpes o los Andes, un día nublado a 2.500 metros puede tener mayor riesgo de quemadura solar que un día soleado en la playa a nivel del mar.
+
+## Altitud y lluvia: las montañas hacen precipitaciones
+
+Las cadenas montañosas actúan como barreras que obligan al aire húmedo a ascender, enfriarse y precipitar (lluvia orográfica). Las laderas de barlovento —las que reciben el viento— son mucho más lluviosas que las de sotavento (protegidas). Esto crea diferencias enormes en muy cortas distancias.
+
+En los Andes colombianos, la vertiente occidental de la Cordillera Occidental (hacia el Pacífico) recibe más de 5.000 mm anuales. La misma cordillera en su vertiente oriental (hacia el Valle del Cauca) puede recibir menos de 1.500 mm. A veces llueve torrencialmente en un lado de la montaña mientras el otro está soleado.
+
+## Altitud y viento: más fuerte cuanto más alto
+
+La velocidad del viento aumenta con la altitud porque hay menos fricción superficial (menos árboles, edificios, rugosidad del terreno). En las cumbres andinas y en los páramos de Colombia y Ecuador, los vientos pueden ser muy intensos y fríos, haciendo la sensación térmica varios grados menor que la temperatura real.
+
+Los campesinos y comunidades andinas históricamente construían sus viviendas en zonas protegidas del viento, en valles o bajo escarpes naturales. Esa sabiduría climática precede en siglos a la meteorología moderna.`,
+      en: `Traveling from Cali to Bogotá by car covers 460 km and climbs from 995 to 2,600 meters above sea level in under six hours. The average temperature drops from 25°C to 14°C. Vegetation changes from tropical to Andean highland. All of this is explained by a single factor: altitude.
+
+## The temperature gradient: 6°C per 1,000 meters
+
+The basic rule of altitude and temperature is the atmospheric adiabatic lapse rate: for every 1,000 meters of ascent, air temperature drops approximately 6°C (in dry air) or 4–5°C (in saturated air). This is why glaciers exist on Andean peaks just 3° from the equator.
+
+This rule explains the differences between major Latin American cities in the same tropical zone: Cali (995 m) averages 25°C, Medellín (1,495 m) 22°C, Bogotá (2,600 m) 14°C, La Paz (3,640 m) 10°C.
+
+## Altitude and UV radiation: more sun than at the beach
+
+Every 1,000 meters of altitude increases UV radiation by 10–12% because there is less atmosphere to absorb or scatter ultraviolet rays. At 3,000 meters, UV can be 30–40% more intense than at sea level under the same solar angle. SPF 50+ sunscreen is essential in cities like Quito, Bogotá, or Cusco, even on cloudy days.
+
+## Altitude and pressure: altitude sickness
+
+At 3,000 meters, air pressure is about 70% of sea level pressure. For most people from lower elevations, arriving at 2,500–3,500 meters produces acute mountain sickness (soroche): headache, nausea, fatigue. The body can acclimatize in 24–72 hours.
+
+## Altitude and rain: mountains make precipitation
+
+Mountain ranges force humid air to ascend, cool, and precipitate (orographic rain). Windward slopes are far rainier than leeward slopes, creating enormous differences in very short distances.`,
+    },
+  },
+  {
+    slug: 'el-nino-la-nina-que-son-y-como-afectan-latinoamerica',
+    title: {
+      es: 'El Niño y La Niña: qué son y cómo afectan a Latinoamérica',
+      en: 'El Niño and La Niña: What They Are and How They Affect Latin America',
+    },
+    description: {
+      es: 'El Niño y La Niña son los fenómenos climáticos globales más importantes del planeta después del ciclo estacional. Descubrí cómo alteran las lluvias, las sequías y las temperaturas en toda Latinoamérica.',
+      en: 'El Niño and La Niña are the most important global climate phenomena on the planet after the seasonal cycle. Discover how they alter rain, droughts, and temperatures across Latin America.',
+    },
+    date: '2026-06-15',
+    related: ['diferencia-entre-clima-y-tiempo', 'ciudades-mas-lluviosas-de-colombia', 'como-elegir-epoca-del-ano-para-viajar-segun-el-clima'],
+    body: {
+      es: `Cada ciertos años, la temperatura de la superficie del Océano Pacífico tropical cambia de forma anómala y el clima de todo el planeta lo siente. Algunas regiones se secan mientras otras se inundan; algunas experimentan temperaturas inusualmente altas mientras otras tienen frío excepcional. Este ciclo climático de gran escala tiene nombre: el ENOS (El Niño–Oscilación del Sur), con sus dos fases: El Niño (calentamiento anómalo) y La Niña (enfriamiento anómalo).
+
+## Qué ocurre normalmente en el Pacífico tropical
+
+En condiciones normales, los vientos alisios soplan del este hacia el oeste a lo largo del ecuador en el Pacífico. Estos vientos empujan el agua superficial caliente hacia el Pacífico occidental (hacia Indonesia, Filipinas y Australia), haciendo que el nivel del mar sea unos 40–50 cm más alto al oeste que al este. En el Pacífico oriental (cerca de América del Sur) el agua fría de las profundidades sube a la superficie (surgencia), manteniedo la temperatura baja —de ahí la Corriente de Humboldt y los desiertos costeros de Chile y Perú.
+
+## El Niño: cuando el Pacífico se calienta
+
+En un episodio de El Niño, los vientos alisios se debilitan y en algunos casos se invierten. El agua caliente acumulada en el Pacífico occidental se desplaza hacia el este, elevando la temperatura superficial del Pacífico central y oriental entre 0,5°C y 3°C sobre los valores normales (en episodios extremos, como el de 1997–1998 o 2015–2016, puede superar los 4°C).
+
+Este calentamiento anómalo redistribuye los patrones de lluvia globales. Las zonas de convección (donde el aire cálido y húmedo asciende y produce lluvia) se desplazan hacia el Pacífico central y oriental, cambiando los patrones climatológicos en todo el planeta.
+
+**Efectos de El Niño en Latinoamérica:**
+
+- **Colombia, Venezuela, Centroamérica**: reducción de lluvias, sequías, mayor riesgo de incendios forestales y déficit hídrico. Los embalses bajan y la generación hidroeléctrica se ve afectada.
+- **Costa del Pacífico de Ecuador y norte de Perú**: lluvias excepcionalmente intensas, inundaciones y deslizamientos. El fenómeno es más violento en la costa ecuatoriana y peruana porque es donde el calentamiento del Pacífico es más intenso. El Niño de 1982–83 dejó 600 muertes y daños enormes en el norte de Perú.
+- **Argentina, Chile central y sur de Brasil**: precipitaciones superiores al promedio, con mayor riesgo de inundaciones en la cuenca del Plata.
+- **Nordeste de Brasil (región semiárida)**: sequías pronunciadas que pueden afectar el suministro de agua a millones de personas.
+- **Chile norte (Atacama)**: lluvias excepcionales en una de las zonas más áridas del mundo; en El Niño de 1997 florecieron las plantas del desierto de forma espectacular (el fenómeno del "desierto florido").
+
+## La Niña: el fenómeno opuesto
+
+La Niña ocurre cuando los vientos alisios se intensifican más de lo normal, empujando aún más agua caliente hacia el oeste y acentuando la surgencia de agua fría en el Pacífico oriental. La temperatura superficial en el Pacífico central y oriental cae por debajo del promedio.
+
+Los efectos son generalmente opuestos a El Niño pero no siempre simétricos:
+
+- **Colombia y Venezuela**: lluvias más abundantes que el promedio, mayor riesgo de inundaciones y deslizamientos. La Niña de 2010–2011 causó las peores inundaciones en la historia de Colombia, afectando a más de 2 millones de personas.
+- **Centroamérica y México (Pacífico)**: mayor actividad de huracanes en el Atlántico (La Niña suprime los vientos de corte en las capas altas que normalmente desmontarían los ciclones).
+- **Argentina, Chile y sur de Brasil**: condiciones más secas que el promedio.
+- **Australia, Indonesia y Filipinas**: lluvias excepcionales, inundaciones.
+
+## Por qué el ENOS importa más allá del clima
+
+El ENOS no es solo un fenómeno meteorológico: tiene consecuencias económicas y sociales de primera magnitud.
+
+En Colombia, los episodios de El Niño son sinónimo de sequías que afectan la generación hidroeléctrica (el 70% de la electricidad del país viene de represas) y el abastecimiento de agua en muchas ciudades. Los incendios forestales aumentan significativamente. La agricultura de regadío se ve afectada por la reducción de los caudales.
+
+La Niña, por el contrario, puede traer exceso de lluvias que inundan cultivos, derrumban vías y causan emergencias humanitarias en zonas rurales. El equilibrio entre los dos extremos define, en gran medida, la variabilidad climática interanual de la región andina.
+
+## Cómo saber si estamos en El Niño o La Niña
+
+Los servicios meteorológicos nacionales y la NOAA publican actualizaciones regulares sobre el estado del ENOS. El índice ONI (Oceanic Niño Index) mide la temperatura superficial del Pacífico ecuatorial (región Niño 3.4): si está 0,5°C o más por encima del promedio durante cinco trimestres consecutivos, se declara El Niño; si está 0,5°C o más por debajo, La Niña. Hay también fases de ENOS neutro, que son las "condiciones normales".
+
+Conocer la fase del ENOS con tres a seis meses de anticipación permite a los agricultores ajustar sus cultivos, a los gestores de represas planificar el almacenamiento de agua y a los organismos de protección civil prepararse para las emergencias más probables.`,
+      en: `Every few years, the surface temperature of the tropical Pacific Ocean changes anomalously and the entire planet feels it. Some regions dry out while others flood; some experience unusually high temperatures while others have exceptional cold. This large-scale climate cycle has a name: ENSO (El Niño–Southern Oscillation), with two phases: El Niño (anomalous warming) and La Niña (anomalous cooling).
+
+## What normally happens in the tropical Pacific
+
+Under normal conditions, trade winds blow from east to west along the equator across the Pacific, pushing warm surface water toward the western Pacific (Indonesia, Philippines, Australia). In the eastern Pacific (near South America), cold deep water rises to the surface (upwelling), keeping temperatures low — hence the Humboldt Current and the coastal deserts of Chile and Peru.
+
+## El Niño: when the Pacific warms
+
+In an El Niño episode, trade winds weaken or even reverse. Warm water accumulated in the western Pacific shifts eastward, raising eastern Pacific surface temperatures 0.5–3°C above normal. This redistributes global rainfall patterns.
+
+**El Niño effects in Latin America**: Colombia/Venezuela/Central America face drought and hydroelectric deficits; Ecuador's Pacific coast and northern Peru get exceptionally intense rain with flooding; Argentina/Chile get above-average precipitation; northeastern Brazil experiences pronounced drought.
+
+## La Niña: the opposite phenomenon
+
+La Niña intensifies trade winds, pushing more warm water west and amplifying cold upwelling. **La Niña effects**: Colombia gets above-average rain (the 2010–11 La Niña caused Colombia's worst flooding in history, affecting 2 million people); Atlantic hurricane activity increases; Argentina/Chile get drier conditions.
+
+## Why ENSO matters beyond climate
+
+In Colombia, El Niño episodes mean droughts affecting hydroelectric generation (70% of the country's electricity comes from dams). La Niña can bring excess rain that floods crops and causes humanitarian emergencies in rural areas. The balance between the two extremes largely defines the interannual climate variability of the Andean region.`,
+    },
+  },
+  {
+    slug: 'como-vestirse-segun-la-sensacion-termica',
+    title: {
+      es: 'Cómo vestirse según la sensación térmica (no solo la temperatura)',
+      en: 'How to Dress for the Feels-Like Temperature (Not Just the Thermometer)',
+    },
+    description: {
+      es: 'La temperatura del termómetro a veces engaña: el viento, la humedad y el sol cambian completamente lo que sientes. Esta guía práctica te dice exactamente qué ponerte según la sensación térmica real.',
+      en: 'The thermometer temperature can be misleading: wind, humidity, and sun completely change what you feel. This practical guide tells you exactly what to wear based on the real feels-like temperature.',
+    },
+    date: '2026-06-15',
+    related: ['que-es-la-sensacion-termica', 'que-ropa-llevar-segun-el-clima', 'humedad-relativa-como-afecta-tu-salud'],
+    body: {
+      es: `El mayor error que la gente comete al vestirse es mirar solo la temperatura del aire. Ese número —el que muestra el termómetro en sombra a 2 metros del suelo— no incluye el viento, la humedad, la radiación solar ni si vas a estar en movimiento o quieto. La sensación térmica puede estar 10–15°C por encima o por debajo de la temperatura medida, y vestirte para el número equivocado puede arruinar tu día o convertirse en un riesgo para tu salud.
+
+## Cuándo el frío se siente más frío: el viento
+
+El viento extrae calor de la piel más rápido de lo que el cuerpo puede reponerlo. A 10°C sin viento, la sensación es de 10°C; con viento de 30 km/h, la sensación térmica baja a unos 4°C; con 60 km/h, a -1°C. Con viento de 80 km/h y temperatura de 5°C, la piel sin protección puede sufrir congelación en minutos.
+
+La capa exterior cortavientos (windbreaker o shell impermeable) es el accesorio más eficiente en condiciones de viento: bloquea el intercambio de calor con el aire sin necesitar mucho espesor. Una chaqueta delgada cortavientos puede equivaler a dos capas de lana en términos de calor percibido cuando hay viento.
+
+## Cuándo el calor se siente más calor: la humedad
+
+Con temperaturas de 32–35°C y humedad por encima del 70%, el cuerpo no puede enfriar se eficientemente mediante la sudoración porque el aire ya está saturado. La sensación térmica puede llegar a 40–46°C. En estas condiciones, la ropa no puede "combatir" el calor: la única solución es reducir la actividad física, buscar sombra, hidratarse y, si es posible, aire acondicionado.
+
+Lo que sí ayuda es la ropa adecuada: suelta, de colores claros y de materiales que favorezcan la evaporación (lino, algodón liviano, tejidos técnicos de secado rápido). La ropa oscura y ajustada agrava el problema.
+
+## Guía práctica: qué ponerse según la sensación térmica
+
+**Sensación menor de -10°C**: ropa técnica térmica de tres capas; base layer de lana merina o sintético; mid-layer de plumón o polar grueso; outer-layer impermeable y cortavientos; gorro que cubra orejas; guantes impermeables; bufanda o pasamontañas; calcetines de lana.
+
+**Sensación de -10°C a 0°C**: tres capas completas; guantes necesarios; gorro recomendado; botas cálidas e impermeables.
+
+**Sensación de 0°C a 8°C**: chaqueta de abrigo o polar grueso + base layer; impermeable si hay lluvia; guantes en caso de viento.
+
+**Sensación de 8°C a 15°C**: chaqueta liviana o sudadera de polar; capa intermedia suficiente; impermeable compacto por si acaso.
+
+**Sensación de 15°C a 20°C**: ropa casual de entretiempo; pantalón largo ligero; una capa que puedas sacarte. Esta es la zona de mayor variabilidad: mañana fresca, tarde cálida.
+
+**Sensación de 20°C a 28°C**: ropa de verano liviana; protector solar si hay sol directo.
+
+**Sensación mayor de 28°C**: ropa suelta, colores claros, mínima exposición; hidratación constante; evitar actividad física intensa entre las 11 y las 16 horas.
+
+## El truco de las capas para climas variables
+
+Ciudades como Bogotá, Quito, Medellín en temporada de lluvia o Madrid en primavera y otoño tienen temperaturas que pueden variar 10–15°C entre la madrugada y la tarde. La solución no es llevar la ropa más abrigada ni la más liviana, sino ropa modular:
+
+- Sal con una capa base cómoda
+- Lleva encima una capa media fácil de quitar (suéter, polar liviano)
+- Tené una capa exterior impermeable en la mochila
+
+Ese sistema te permite responder a la variabilidad durante el día sin quedar atrapado en ropa inadecuada.
+
+## Un error frecuente: vestirse para la temperatura del mediodía
+
+En muchas ciudades, la diferencia entre la temperatura a las 7 am y a las 3 pm puede ser de 10–12°C. Si salís de casa a las 7 am vestido para la temperatura del mediodía (25°C) vas a pasar frío en el camino. Si salís abrigado para las 7 am (12°C), vas a sudar al mediodía.
+
+La solución: revisá la temperatura mínima y máxima prevista, no solo la actual. Vestite para la mínima y llevá capas que puedas ir sacando durante el día. Es el mismo principio del sistema de capas, aplicado a la rutina cotidiana.`,
+      en: `The biggest mistake people make when dressing is looking only at air temperature. That number — the thermometer reading in shade at 2 meters above the ground — doesn't include wind, humidity, solar radiation, or whether you'll be moving or stationary. Apparent temperature can be 10–15°C above or below the measured temperature.
+
+## When cold feels colder: wind
+
+Wind extracts heat from skin faster than the body can replace it. At 10°C with no wind, apparent temperature is 10°C; at 30 km/h wind, it drops to 4°C; at 60 km/h, to -1°C. A thin windbreaker shell can be as effective as two wool layers in windy conditions.
+
+## When heat feels hotter: humidity
+
+At 32–35°C with humidity above 70%, the body can't cool efficiently through sweating because the air is already saturated. Apparent temperature can reach 40–46°C. What helps is loose, light-colored clothing of materials that favor evaporation (linen, lightweight cotton, quick-dry technical fabrics).
+
+## Practical guide: what to wear by feels-like temperature
+
+Below -10°C: full three-layer technical system with waterproof gloves and balaclava. 0–8°C: full layering, gloves required. 8–15°C: light jacket or fleece, compact raincoat. 15–20°C: transitional clothing, one layer you can remove. 20–28°C: light summer clothing with sunscreen. Above 28°C: loose, light-colored clothes; constant hydration; avoid outdoor physical activity 11am–4pm.
+
+## The layering trick for variable climates
+
+Cities like Bogotá, Quito, or Madrid in spring and fall can vary 10–15°C between dawn and afternoon. Leave home with a base layer, bring a mid-layer that's easy to remove, and keep a waterproof outer layer in your bag.`,
+    },
+  },
+  {
+    slug: 'mejores-meses-para-viajar-a-la-playa-en-latinoamerica',
+    title: {
+      es: 'Los mejores meses para ir a la playa en Latinoamérica',
+      en: 'The Best Months to Go to the Beach in Latin America',
+    },
+    description: {
+      es: 'Con costas en el Caribe, el Pacífico y el Atlántico, Latinoamérica tiene playas espectaculares durante todo el año. Esta guía te dice cuándo ir a cada destino para evitar lluvias, huracanes y temporadas altas.',
+      en: 'With coasts on the Caribbean, Pacific, and Atlantic, Latin America has spectacular beaches year-round. This guide tells you when to go to each destination to avoid rain, hurricanes, and peak seasons.',
+    },
+    date: '2026-06-15',
+    related: ['como-elegir-epoca-del-ano-para-viajar-segun-el-clima', 'ciudades-con-el-mejor-clima-de-latinoamerica', 'el-nino-la-nina-que-son-y-como-afectan-latinoamerica'],
+    body: {
+      es: `Latinoamérica tiene más de 25.000 kilómetros de costa entre el Caribe, el Pacífico y el Atlántico sur. Lo que no está tan claro para muchos viajeros es que no todas esas playas son buenas en todos los meses: algunas están en temporada de huracanes, otras tienen lluvias diarias, otras tienen el mar revuelto por vientos estacionales. Saber cuándo ir a cada destino puede ser la diferencia entre unas vacaciones perfectas y un viaje arruinado por el clima.
+
+## Caribe colombiano (Cartagena, Santa Marta, San Andrés)
+
+**Mejor época**: diciembre a abril. La temporada seca del Caribe colombiano coincide con los meses de invierno en el hemisferio norte, que paradójicamente son los meses más soleados y con menos lluvias en la costa colombiana. Los vientos alisios mantienen el ambiente fresco (28–32°C) sin la humedad sofocante del resto del año.
+
+**Evitar**: septiembre y octubre son los meses más lluviosos e intensos. La temporada de huracanes del Atlántico (junio–noviembre) puede influir en el clima caribeño aunque los huracanes directos a Colombia son raros.
+
+**San Andrés y Providencia**: las islas tienen clima caribeño pero la temporada seca es similar a la del continente. El mar de los Siete Colores está en su mejor estado de enero a abril, cuando la visibilidad submarina es máxima.
+
+## Costa Pacífica de Colombia (Nuquí, Bahía Solano, Capurganá)
+
+**El Pacífico colombiano es uno de los lugares más lluviosos del mundo**: llueve en más de 250 días al año. Sin embargo, de enero a marzo hay una "temporada seca relativa" con algo menos de lluvia. Entre julio y octubre llegan las ballenas jorobadas para tener sus crías (la migración de ballenas es uno de los atractivos más especiales del Pacífico colombiano).
+
+**Consejo**: no vayas esperando playas de postal sin lluvia. El encanto del Pacífico colombiano es su selva, su biodiversidad y su aislamiento. Para eso, cualquier época funciona si aceptás la lluvia como parte de la experiencia.
+
+## México Pacífico (Puerto Vallarta, Los Cabos, Riviera Nayarit)
+
+**Mejor época**: noviembre a mayo. La temporada seca del Pacífico mexicano coincide con el invierno norteamericano, que es cuando llegan la mayoría de los turistas. Cielos despejados, temperaturas de 25–30°C, mar calmado.
+
+**Evitar**: junio a octubre es la temporada de lluvias y también la temporada de huracanes en el Pacífico mexicano. Los huracanes pueden ser intensos en septiembre y octubre.
+
+## México Caribe (Cancún, Riviera Maya, Tulum)
+
+**Mejor época**: diciembre a abril. Cielos azules, temperatura de 26–30°C y sin lluvias intensas.
+
+**Temporada de sargazo**: de mayo a octubre el sargazo (alga marina) puede invadir las playas del Caribe mexicano, cubriendo la arena y tiñendo el agua de marrón. La intensidad varía cada año. Si el sargazo es tu preocupación principal, infórmate sobre las condiciones específicas antes de reservar.
+
+**Temporada de huracanes**: junio a noviembre, con pico en septiembre. Los huracanes directos no son frecuentes pero el riesgo existe.
+
+## Brasil (Rio de Janeiro, Florianópolis, Salvador, Fortaleza)
+
+**Rio de Janeiro y sur de Brasil**: la temporada de playa es diciembre–febrero (verano austral), con temperaturas de 30–38°C y mucho calor. El carnaval de febrero es la gran fiesta veraniega. Junio–agosto (invierno austral) tiene temperaturas más frescas (20–25°C) pero mucho más agradables para conocer la ciudad sin el sofoco estival.
+
+**Fortaleza y Nordeste brasileño**: el Nordeste tiene su propia dinámica: la temporada seca va de agosto a enero, con condiciones perfectas de playa. La temporada de lluvias (febrero–julio) puede ser significativa. Jericoacoara y la Lagoa Azul son especialmente buenas en los meses secos.
+
+## Argentina (Mar del Plata, Pinamar, Punta del Este)
+
+**Temporada**: diciembre a marzo, el verano austral. La costa atlántica argentina tiene su temporada de playa concentrada en estos tres meses, con temperaturas de 25–30°C. Enero es el mes más caluroso y también el más concurrido.
+
+**Fuera de temporada**: entre abril y noviembre las playas están prácticamente vacías y los precios son mucho más bajos, pero el frío del Atlántico sur hace el baño prácticamente imposible.
+
+## Chile (Viña del Mar, La Serena)
+
+**Temporada**: diciembre a febrero, verano chileno. Viña del Mar y La Serena tienen playas en el Pacífico sur, con temperatura del agua fría (la Corriente de Humboldt) incluso en verano (16–18°C del mar). Para bañarse activamente, diciembre–febrero son los únicos meses viables.
+
+## Perú (Máncora, Punta Sal)
+
+**Mejor época**: diciembre a abril, el verano peruano del norte. Máncora, el único destino de playa "tropical" de Perú, tiene temperatura de agua de 22–25°C en esa época. El resto del año la costa peruana está dominada por la garúa y el mar frío.
+
+## El Pacífico de Centroamérica y Ecuador (Montañita, Guanacaste, Bocas del Toro)
+
+**Mejor época**: diciembre a abril (temporada seca), cuando el Pacífico de toda la región tiene condiciones ideales. En Ecuador, el norte de Manabí y el golfo de Guayaquil tienen buen clima de playas en esos meses.
+
+**Avistamiento de tortugas**: las tortugas llegan a desovar en distintas playas de Centroamérica y Ecuador según la especie, generalmente de junio a diciembre, que coincide con la temporada lluviosa. Es una experiencia espectacular pero requiere aceptar el clima húmedo.`,
+      en: `Latin America has over 25,000 kilometers of coastline across the Caribbean, Pacific, and South Atlantic. But not all those beaches are good in all months: some face hurricanes, others have daily rain, others have rough seas from seasonal winds.
+
+## Colombian Caribbean (Cartagena, Santa Marta, San Andrés)
+
+**Best time**: December–April. The Caribbean dry season coincides with North American winter, bringing blue skies and trade winds that keep temperatures comfortable (28–32°C).
+
+**Avoid**: September–October are the rainiest months. Hurricane season (June–November) can affect the Caribbean climate.
+
+## Mexico Pacific (Puerto Vallarta, Los Cabos)
+
+**Best time**: November–May. The dry season coincides with North American winter. June–October brings rain and Pacific hurricane season.
+
+## Mexico Caribbean (Cancún, Riviera Maya)
+
+**Best time**: December–April. May–October brings sargassum seaweed and hurricane risk, peaking in September.
+
+## Brazil (Rio, Florianópolis, Fortaleza)
+
+Rio's beach season is December–February (southern summer, 30–38°C). The Brazilian Northeast (Fortaleza, Jericoacoara) has a different calendar: best from August to January.
+
+## Argentina (Mar del Plata) and Chile (Viña del Mar)
+
+Southern hemisphere beaches: December–February only. The cold Humboldt Current keeps Chilean Pacific waters cold (16–18°C) even in summer.
+
+## Peru (Máncora)
+
+December–April is Peru's tropical north coast beach season, with water temperatures of 22–25°C. The rest of the year, Peru's coast is dominated by cold water and garúa.`,
+    },
+  },
+  {
+    slug: 'por-que-hace-mas-frio-en-la-montana',
+    title: {
+      es: 'Por qué hace más frío en la montaña si el sol está más cerca',
+      en: 'Why Is It Colder in the Mountains If You Are Closer to the Sun',
+    },
+    description: {
+      es: 'Una de las paradojas más comunes del clima: en las montañas estás más cerca del sol pero hace más frío. La explicación tiene que ver con la presión atmosférica, la densidad del aire y cómo se calienta la superficie terrestre.',
+      en: 'One of the most common climate paradoxes: in the mountains you are closer to the sun yet it is colder. The explanation involves atmospheric pressure, air density, and how the Earth\'s surface heats up.',
+    },
+    date: '2026-06-15',
+    related: ['como-afecta-la-altitud-al-clima', 'diferencia-entre-clima-y-tiempo', 'indice-uv-que-significa-cada-nivel'],
+    body: {
+      es: `Es una de las preguntas más comunes que hacen los niños y una que muchos adultos tampoco saben responder bien: si en la montaña estás más cerca del sol, ¿por qué hace más frío? La respuesta revela algo fundamental sobre cómo funciona realmente el calentamiento de la Tierra.
+
+## El sol no calienta el aire directamente
+
+El primer error de intuición es pensar que el sol calienta el aire por el que pasa. En realidad, la radiación solar atraviesa la atmósfera con muy poca pérdida de energía, especialmente la radiación visible (luz). La atmósfera es en gran parte transparente a estas longitudes de onda. Lo que calienta el aire es principalmente la superficie terrestre: el suelo, el agua y las rocas absorben la radiación solar, se calientan, y luego emiten esa energía como radiación infrarroja (calor) hacia el aire que está justo encima.
+
+En la montaña, esa superficie terrestre está más lejos. El aire en la cumbre no tiene suelo caliente debajo que lo caliente por conducción y convección. La altitud pone distancia entre el aire y la fuente de calor principal.
+
+## La densidad del aire: menos moléculas, menos calor retenido
+
+El aire está compuesto de moléculas que colisionan entre sí y se transfieren energía. En las capas bajas de la atmósfera, la presión es alta y las moléculas están más juntas: hay más moléculas por metro cúbico. Esas moléculas son buenas para retener y transmitir calor.
+
+En la montaña, la presión es más baja y el aire es más delgado (menos denso). Hay menos moléculas por metro cúbico, así que el aire tiene menor capacidad de retener calor. También hay menos vapor de agua, y el vapor de agua es uno de los principales gases de efecto invernadero naturales que mantienen el calor en la atmósfera baja.
+
+## El gradiente adiabático: el aire se enfría al subir
+
+Cuando una masa de aire asciende, la presión exterior sobre ella disminuye y el aire se expande. Esa expansión requiere energía, que se toma de la energía cinética de las moléculas: el resultado es que la temperatura del aire baja. Este proceso no requiere intercambio de calor con el entorno: ocurre solo por el cambio de presión.
+
+La tasa de enfriamiento es de aproximadamente 6°C por cada 1.000 metros para el aire seco (gradiente adiabático seco) o de 4–5°C para el aire saturado (gradiente adiabático húmedo, cuando hay condensación). Por eso, una masa de aire que sube desde el nivel del mar a 3.000 metros puede estar entre 12°C y 18°C más fría que al arrancar, incluso sin que haya ninguna fuente de frío en la montaña.
+
+## Pero el sol sí es más intenso en la montaña
+
+Aquí está la parte que confunde: el sol sí es más intenso en la montaña, en el sentido de que la radiación UV y visible es mayor porque hay menos atmósfera que la filtre. A 3.000 metros, la radiación UV puede ser un 30–40% más alta que al nivel del mar.
+
+Eso explica por qué podés quemarte fácilmente en los Andes o en los Alpes aunque haga frío: el sol quema la piel, pero la temperatura del aire es baja. Son dos fenómenos diferentes: la temperatura del aire (determinada por la presión, la densidad y el calentamiento de la superficie) y la intensidad de la radiación solar (determinada por el espesor de la atmósfera).
+
+Esto también explica la paradoja del alpinista que suda bajo el sol y tiene frío a la sombra: en plena montaña, la diferencia entre estar al sol y a la sombra puede ser de 15–20°C.
+
+## Los glaciares tropicales: el caso más extremo
+
+La mejor demostración de esta paradoja son los glaciares tropicales: masas de hielo permanente ubicadas cerca del ecuador geográfico (a latitudes donde el sol es más vertical y más intenso que en ningún otro lugar) pero que existen porque la altitud crea temperaturas bajo cero de forma permanente.
+
+El Nevado del Huila (5.750 m) en Colombia, el Cotopaxi (5.897 m) en Ecuador o el Antisana (5.758 m) tienen glaciares a latitudes tropicales. Lo que hace posible ese hielo no es la distancia al sol sino la altitud, que baja la temperatura del aire independientemente de cuánta radiación solar llegue.
+
+## Aplicación práctica: cómo prepararse para el clima de montaña
+
+Entender esto tiene consecuencias prácticas directas:
+
+- En la montaña, el frío puede ser severo incluso en días de sol intenso: no te fiés de que brilles el sol para no abrigarte.
+- El viento en altura amplia el efecto del frío: con viento de 40 km/h y -2°C, la sensación puede ser de -12°C o menos.
+- El sol de montaña quema la piel aunque haga frío: siempre lleva protector solar factor 50+ en excursiones de montaña.
+- La temperatura cae rápido al ponerse el sol en altitud: lleva ropa de abrigo adicional para la tarde y la noche, aunque la mañana haya sido cálida al sol.`,
+      en: `One of the most common questions children ask — and one many adults can't answer well: if mountains are closer to the sun, why is it colder there? The answer reveals something fundamental about how Earth's heating actually works.
+
+## The sun doesn't directly heat the air
+
+Solar radiation passes through the atmosphere with very little energy loss. The atmosphere is largely transparent to visible light. What heats the air is mainly the Earth's surface: ground, water, and rocks absorb solar radiation, warm up, and then emit that energy as infrared radiation (heat) to the air directly above them. In the mountains, that surface is far away.
+
+## Air density: fewer molecules, less retained heat
+
+At altitude, pressure is lower and air is thinner (less dense) — fewer molecules per cubic meter, less capacity to retain heat. There is also less water vapor, which is one of the main natural greenhouse gases that keep heat in the lower atmosphere.
+
+## The adiabatic gradient: air cools as it rises
+
+When air rises, external pressure decreases and the air expands. That expansion uses energy from the kinetic energy of molecules, lowering temperature — about 6°C per 1,000 meters of ascent for dry air. An air mass rising from sea level to 3,000 meters can be 12–18°C cooler, with no cold source in the mountain.
+
+## But the sun IS more intense in the mountains
+
+UV and visible radiation is 30–40% more intense at 3,000 meters because less atmosphere filters it. This explains a key paradox: you can get sunburned in cold mountain air. Temperature (determined by pressure, density, and surface heating) and solar radiation intensity (determined by atmospheric thickness) are different phenomena. The difference between sun and shade in the mountains can be 15–20°C.`,
+    },
+  },
+  {
+    slug: 'como-se-forman-las-tormentas-electricas',
+    title: {
+      es: 'Cómo se forman las tormentas eléctricas',
+      en: 'How Thunderstorms Form',
+    },
+    description: {
+      es: 'Las tormentas eléctricas son uno de los fenómenos meteorológicos más impresionantes y peligrosos. Descubrí cómo se forman los cumulonimbos, por qué caen los rayos y cuándo son más frecuentes.',
+      en: 'Thunderstorms are one of the most impressive and dangerous weather phenomena. Discover how cumulonimbus clouds form, why lightning occurs, and when storms are most frequent.',
+    },
+    date: '2026-06-15',
+    related: ['tipos-de-nubes-y-que-clima-anuncian', 'que-hacer-ante-alerta-de-tormenta-o-calor-extremo', 'como-se-mide-la-lluvia-y-probabilidades'],
+    body: {
+      es: `Cada día se producen aproximadamente 40.000 tormentas eléctricas en el mundo, y en cada momento hay unas 2.000 activas simultáneamente. En zonas tropicales como Colombia, Venezuela y el norte de Brasil, las tormentas son tan frecuentes que el cielo tiene actividad eléctrica en algún punto del territorio casi todos los días. Entender cómo se forman y por qué ocurren ayuda a anticiparlas, respetarlas y actuar de forma segura cuando se presentan.
+
+## Los ingredientes de una tormenta eléctrica
+
+Para que se forme una tormenta eléctrica se necesitan tres elementos esenciales:
+
+**1. Humedad abundante**: el vapor de agua es el combustible de las tormentas. Sin una reserva de vapor de agua suficiente en la atmósfera baja, no hay tormenta posible. Por eso las tormentas son más frecuentes en los trópicos y en las costas que en los desiertos.
+
+**2. Inestabilidad atmosférica**: el aire frío (más pesado) en las capas superiores y el aire cálido (más ligero) en las capas inferiores crea una situación inestable. Si el aire de abajo se calienta lo suficiente, asciende vigorosamente, como una burbuja de aceite que sube en agua.
+
+**3. Un mecanismo de disparo (lifting mechanism)**: algo que inicie el ascenso del aire. Puede ser el calentamiento diurno de la superficie (el suelo se calienta con el sol y el aire sobre él asciende), la llegada de un frente frío que empuja el aire caliente hacia arriba, o la orografía (una montaña que fuerza el ascenso del aire).
+
+## El ciclo de vida de una tormenta convectiva
+
+**Fase de cúmulo (10-30 minutos)**: el aire caliente y húmedo comienza a ascender. Al subir se enfría y el vapor de agua se condensa, formando un cúmulo que crece verticalmente hacia arriba. Esta es una fase de solo corrientes ascendentes: el aire sube pero no hay lluvia todavía.
+
+**Fase de madurez (15-30 minutos)**: el cumulonimbo alcanza su máximo desarrollo, a veces hasta 12–15 kilómetros de altura. La cima de la nube impacta la tropopausa (el techo de la troposfera) y se extiende horizontalmente en la característica forma de yunque. Se inician las corrientes descendentes (el aire frío de los niveles superiores desciende) que coexisten con las corrientes ascendentes. En esta fase ocurre la lluvia, el granizo, el trueno y los rayos. Es la fase más intensa y peligrosa.
+
+**Fase disipativa (15-30 minutos)**: las corrientes descendentes dominan y cortan el suministro de aire cálido y húmedo que alimentaba la tormenta. La lluvia decrece y la nube se disipa gradualmente.
+
+## Por qué caen los rayos
+
+El rayo es una descarga eléctrica producida por la separación de cargas dentro de la nube. En la fase de madurez del cumulonimbo, las partículas de agua y hielo colisionan violentamente en su interior debido a las corrientes ascendentes y descendentes. Estas colisiones producen una separación de cargas: las partículas más pesadas (granizo y gotas grandes) se cargan negativamente y caen, mientras las partículas más ligeras (cristales de hielo pequeños) se cargan positivamente y ascienden. El resultado es una nube con la base cargada negativamente y la cima positivamente.
+
+Esta acumulación de carga negativa en la base de la nube induce una carga positiva en el suelo debajo de ella. Cuando la diferencia de potencial entre nube y suelo supera los 300 millones de voltios, el aire entre ellos —normalmente mal conductor— se ioniza y permite la descarga: el rayo.
+
+Un rayo descarga hasta 1.000 millones de voltios en una fracción de segundo y puede calentar el canal de descarga a 30.000°C (cinco veces la temperatura de la superficie del sol). El trueno es la expansión explosiva del aire que rodea ese canal al calentarse instantáneamente.
+
+## Por qué las tormentas son más frecuentes en las tardes
+
+En zonas tropicales y continentales, las tormentas convectivas (generadas por el calentamiento diurno) son más frecuentes entre las 14 y las 20 horas locales. La razón: el suelo se calienta progresivamente con el sol a lo largo del día, y el máximo de temperatura —y por tanto el máximo de inestabilidad— se alcanza en las primeras horas de la tarde.
+
+Por la mañana, el aire todavía está relativamente frío y estable. A medida que avanza el día y el sol calienta la superficie, las columnas de aire caliente (térmicas) ascienden con más vigor. Hacia el mediodía y la tarde, si hay suficiente humedad y el techo atmosférico lo permite, esas térmicas llegan a la altura de formación de nubes y desencadenan la tormenta.
+
+## Las tormentas más violentas: las supercelda
+
+Las superceldas son tormentas particularmente organizadas en las que la corriente ascendente gira (presenta rotación). Esa rotación les permite durar mucho más que las tormentas convectivas normales (horas en lugar de minutos), producir granizo enorme y, en zonas favorables, tornados. Son más comunes en las Grandes Llanuras de EE.UU. (el "Tornado Alley"), pero también ocurren en el Litoral y la Pampa argentina y en algunas zonas de Brasil.
+
+## En qué diferencia el rayo de un relámpago
+
+Técnicamente, el **rayo** es la descarga eléctrica en sí (el canal de plasma). El **relámpago** es la luz producida por ese rayo. El **trueno** es el sonido producido por la expansión del aire calentado. La luz viaja a 300.000 km/s; el sonido a 340 m/s. Por eso se ve el relámpago antes de escuchar el trueno: la diferencia en segundos, multiplicada por 340, te da la distancia en metros. Si pasan 3 segundos entre el relámpago y el trueno, el rayo cayó a unos 1.000 metros.`,
+      en: `About 40,000 thunderstorms occur every day worldwide, with some 2,000 active simultaneously at any moment. In tropical zones like Colombia, Venezuela, and northern Brazil, storms are so frequent that lightning activity exists somewhere in the territory almost daily.
+
+## The ingredients of a thunderstorm
+
+**1. Abundant moisture**: water vapor is the fuel. That's why storms are more common in the tropics and coasts than in deserts. **2. Atmospheric instability**: cold (heavier) air aloft and warm (lighter) air below creates an unstable situation. **3. A lifting mechanism**: daytime surface heating, a cold front, or orography.
+
+## The life cycle of a convective storm
+
+**Cumulus phase (10–30 min)**: warm, humid air rises, cools, and water vapor condenses, building a cumulus growing vertically upward. Only updrafts; no rain yet.
+
+**Mature phase (15–30 min)**: the cumulonimbus reaches 12–15 km, its top spreading into the characteristic anvil shape. Downdrafts begin alongside updrafts. This is when rain, hail, thunder, and lightning occur — the most intense and dangerous phase.
+
+**Dissipative phase**: downdrafts dominate, cutting the warm humid air supply. Rain decreases and the cloud dissipates.
+
+## Why lightning falls
+
+Violent collisions inside the cumulonimbus separate electrical charges: heavier particles (hail) charge negatively and fall, lighter ice crystals charge positively and rise. When the potential difference between cloud base and ground exceeds 300 million volts, the air ionizes and a discharge occurs. A lightning bolt can reach 30,000°C — five times the temperature of the sun's surface.
+
+## Why storms peak in the afternoon
+
+Convective storms peak between 2–8 PM because the ground heats progressively through the day, reaching maximum temperature and instability in the early afternoon. Morning air is still stable; afternoon thermal columns trigger storms when they reach cloud-formation height.`,
+    },
+  },
+  {
+    slug: 'que-es-la-humedad-y-por-que-el-calor-humedo-agobia-mas',
+    title: {
+      es: 'Qué es la humedad y por qué el calor húmedo agobia más que el seco',
+      en: 'What Is Humidity and Why Humid Heat Is More Oppressive Than Dry Heat',
+    },
+    description: {
+      es: '32°C en Bogotá se sienten completamente distintos que 32°C en Cartagena. La diferencia está en la humedad. Entendé qué es, cómo se mide y por qué afecta tanto tu cuerpo, tu sueño y tu comodidad.',
+      en: '32°C in Bogotá feels completely different from 32°C in Cartagena. The difference is humidity. Understand what it is, how it is measured, and why it affects your body, sleep, and comfort so much.',
+    },
+    date: '2026-06-15',
+    related: ['humedad-relativa-como-afecta-tu-salud', 'que-es-la-sensacion-termica', 'como-vestirse-segun-la-sensacion-termica'],
+    body: {
+      es: `Si alguna vez visitaste Cartagena en septiembre y después pasaste unos días en Medellín, habrás notado que 28°C en Cartagena se sienten como un horno sofocante, mientras que 28°C en Medellín se sienten agradables. La temperatura del termómetro es la misma. Lo que cambia completamente es la humedad del aire. Entender por qué el calor húmedo es tan diferente del calor seco es entender uno de los factores más importantes para el bienestar humano.
+
+## Qué es el vapor de agua en el aire
+
+El aire siempre contiene vapor de agua, una cantidad que varía según la temperatura y la región. Ese vapor no es visible (las nubes y la niebla están formadas por gotas líquidas, no por vapor). El vapor de agua en el aire es simplemente agua en estado gaseoso, mezclada con el nitrógeno, el oxígeno y el argón que forman el resto de la atmósfera.
+
+La cantidad de vapor de agua que puede contener el aire es limitada y depende de la temperatura. A 30°C, el aire puede retener hasta 30 gramos de vapor de agua por kilogramo de aire. A 10°C, solo puede retener 7,6 gramos. El aire cálido tiene mucha más capacidad de contener vapor que el aire frío.
+
+## Humedad relativa vs. humedad absoluta
+
+La **humedad absoluta** es la cantidad real de vapor de agua en el aire (gramos por kilogramo o por metro cúbico). La **humedad relativa** —la que se muestra en las apps del tiempo— es un porcentaje: qué fracción de su capacidad máxima está siendo usada por el aire en ese momento.
+
+Un 80% de humedad relativa a 30°C significa que el aire contiene el 80% del vapor de agua que podría contener a esa temperatura. A 10°C, un 80% de humedad relativa significa mucho menos vapor en términos absolutos.
+
+Esto explica una paradoja: en invierno en los Andes, el aire puede estar al 80–90% de humedad relativa pero sentirse seco, porque la temperatura baja hace que la capacidad del aire sea tan pequeña que hay poco vapor en absoluto. En las costas tropicales, el 80% de humedad relativa a 30°C implica muchísimo más vapor en el aire, y ese vapor es el que interfiere con la termorregulación del cuerpo.
+
+## Por qué el cuerpo humano sufre más con la humedad alta
+
+El mecanismo de enfriamiento principal del cuerpo humano es la evaporación del sudor. Cuando sudamos, el líquido en la piel absorbe calor del cuerpo para evaporarse y se convierte en vapor de agua. Ese proceso de evaporación "roba" calor de la superficie de la piel y nos enfría.
+
+Pero ese proceso de evaporación solo funciona si el aire puede aceptar más vapor de agua, es decir, si la humedad relativa no está ya en niveles altos. Cuando la humedad relativa supera el 70–80%, el aire está casi saturado y la evaporación del sudor se vuelve lenta e ineficiente. El cuerpo sigue produciendo sudor (que puede correr por la piel sin evaporarse) pero ya no se enfría efectivamente.
+
+El resultado: el cuerpo empieza a acumular calor interno. La temperatura corporal sube. Si sube demasiado, sobreviene el agotamiento por calor y, en casos graves, el golpe de calor.
+
+Con humedad baja (como en los desiertos), la evaporación del sudor es casi instantánea. Aunque la temperatura del aire pueda ser 40°C, el cuerpo puede mantener su temperatura normal si hay suficiente agua para sudar. Por eso, 40°C en el desierto de Atacama es más tolerable que 35°C en la costa caribeña con 90% de humedad.
+
+## El índice de calor: la temperatura que siente tu cuerpo
+
+Para capturar el efecto combinado de temperatura y humedad, los servicios meteorológicos usan el **índice de calor** (heat index). Esta fórmula calcula una "temperatura aparente" que refleja cómo el cuerpo humano percibe el calor en función de ambas variables:
+
+- 32°C con 40% de humedad → sensación de 32°C (sin diferencia)
+- 32°C con 70% de humedad → sensación de 39°C
+- 32°C con 90% de humedad → sensación de 46°C o más
+- 38°C con 80% de humedad → sensación de más de 55°C (zona de peligro extremo)
+
+Los últimos dos escenarios ya no son solo incómodos: representan riesgo real de golpe de calor incluso para adultos sanos y activos.
+
+## Humedad, sueño y salud
+
+La humedad alta no solo hace el calor más incómodo durante el día: interfiere con la calidad del sueño. Para entrar en sueño profundo, el cuerpo necesita bajar su temperatura central unas décimas de grado. Lo hace parcialmente a través de la evaporación cutánea durante la noche. Con humedad alta, ese mecanismo no funciona bien, y el cuerpo permanece más caliente de lo que debería. El resultado es sueño fragmentado, sudoración nocturna y sensación de no haber descansado.
+
+La temperatura ideal para dormir es 16–20°C con humedad entre 50% y 60%. Por debajo del 30%, la sequedad reseca las mucosas y puede causar irritación de garganta. Por encima del 70%, la noche se vuelve difícil.
+
+## Cómo adaptar tu rutina al calor húmedo
+
+Cuando la humedad es alta, las reglas del calor seco no aplican:
+
+- La ducha fría ayuda, pero no dura: el sudor vuelve en minutos en ambientes muy húmedos.
+- Los ventiladores ayudan solo hasta cierto punto: con alta humedad y temperatura de más de 35°C, el ventilador mueve aire caliente húmedo que poco alivia.
+- El aire acondicionado no solo enfría, también deshumedece: es la herramienta más eficaz en climas muy húmedos.
+- Hidratate más de lo que crees necesario: con humedad alta y sudoración intensa, se pueden perder 2–3 litros por hora en actividades físicas moderadas.`,
+      en: `If you've visited Cartagena in September and then spent time in Medellín, you'll have noticed that 28°C in Cartagena feels like a suffocating oven while 28°C in Medellín feels pleasant. The thermometer temperature is the same. What changes completely is air humidity.
+
+## What is water vapor in the air
+
+Air always contains water vapor — invisible water in gaseous form. The amount it can hold depends on temperature. At 30°C, air can retain up to 30 g of water vapor per kg; at 10°C, only 7.6 g. Warm air has much greater capacity to hold moisture.
+
+## Relative vs. absolute humidity
+
+Relative humidity (what weather apps show) is a percentage of maximum capacity. 80% relative humidity at 30°C means much more actual vapor than 80% at 10°C — and that actual vapor is what interferes with the body's thermoregulation.
+
+## Why the body suffers more with high humidity
+
+The human body's main cooling mechanism is sweat evaporation. When humidity is above 70–80%, the air is nearly saturated and sweat evaporation becomes slow and inefficient. The body keeps producing sweat that runs off skin without evaporating, accumulating internal heat. The result: body temperature rises toward heat exhaustion and, in severe cases, heat stroke.
+
+With low humidity (deserts), sweat evaporates almost instantly. That's why 40°C in the Atacama Desert is more tolerable than 35°C on the Caribbean coast with 90% humidity.
+
+## The heat index: the temperature your body feels
+
+32°C with 40% humidity = apparent 32°C. 32°C with 70% humidity = apparent 39°C. 32°C with 90% humidity = apparent 46°C. 38°C with 80% humidity = apparent 55°C+ (extreme danger zone).
+
+## Humidity and sleep
+
+High humidity interferes with sleep. The body needs to lower its core temperature slightly to enter deep sleep, partly through nighttime skin evaporation. With high humidity, this mechanism fails, resulting in fragmented sleep and night sweats. Ideal sleep conditions: 16–20°C with 50–60% humidity.`,
+    },
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {

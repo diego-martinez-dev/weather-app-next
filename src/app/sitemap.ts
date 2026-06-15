@@ -27,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const cityMananaRoutes = topCities.map(city => ({
+    url: `${baseUrl}/clima/${city}/manana`,
+    lastModified: currentDate,
+    changeFrequency: 'daily' as const,
+    priority: 0.8,
+  }));
+
   const guideRoutes = guideSlugs.map(slug => ({
     url: `${baseUrl}/guias/${slug}`,
     lastModified: currentDate,
@@ -34,5 +41,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...cityRoutes, ...guideRoutes];
+  return [...staticRoutes, ...cityRoutes, ...cityMananaRoutes, ...guideRoutes];
 }

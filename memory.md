@@ -110,10 +110,31 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 - **SEO guías:** keywords, authors, publishedTime, BreadcrumbList JSON-LD (Article + BreadcrumbList por guía).
 - **i18n:** clave `app.home.faq_title` en los 6 idiomas (es/en/pt/fr/de/it).
 
+### Fase 4 SEO — Tráfico y rentabilidad (jun-2026)
+
+**Tarea 0:** Eliminado duplicado `'bogota'` en `topCities` (estaba en Colombia y LatAm a la vez).
+
+**Tier 1 — Profundidad de ciudad:**
+- `src/data/cityClimate.ts` (nuevo): interfaz `CityClimate` con `bestTimeToVisit`, `rainySeasons`, `avgTempRange`, `faq[]`. Cubre 81 ciudades con contenido original.
+- `clima/[slug]/page.tsx`: FAQPage JSON-LD, `relatedGuides` calculados por categoría (alta altitud/tropical/Colombia/Europa/LatAm/default). Pasa `climate` y `relatedGuides` a `CityPageClient`.
+- `clima/[slug]/CityPageClient.tsx`: tarjeta de info climática + FAQ `<details>/<summary>` + sección "Guías relacionadas" + links a glosario y FAQ.
+- Titles/descriptions actualizados a intención de búsqueda.
+
+**Tier 2b — 8 guías nuevas** en `src/data/guides.ts` (total: 24 guías):
+lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y ropa, playas en LatAm, frío en montaña, tormentas eléctricas, humedad y calor.
+
+**Tier 2a — Sub-rutas /manana:**
+- `clima/[slug]/manana/page.tsx` (Server): SEO propio, BreadcrumbList JSON-LD, 81 rutas SSG.
+- `clima/[slug]/manana/MananaCityClient.tsx` (Client): muestra pronóstico de mañana filtrado del forecast (min/max, condición, lluvia%, hora a hora).
+
+**Tier 3:** Sitemap con las 81 rutas `/manana` (priority 0.8). Verificado: sin URLs no-www. Build: 201 páginas SSG.
+
+**Host canónico desde Fase 4:** `https://www.clima-hoy.com` (CON www). El servidor redirige no-www → www. Toda canonical/OG/JSON-LD/sitemap usa www.
+
 ## Pendientes
 
 - **AdSense:** Cuando llegue la aprobación, reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
 - **AdSense:** Diego debe solicitar la nueva revisión en el panel de AdSense (Sites → solicitar revisión).
 - **Email:** Diego debe configurar reenvío `contacto@clima-hoy.com` en Cloudflare Email Routing o ImprovMX.
-- **SEO:** Agregar tips en inglés para ciudades como London, Tokyo, New York en `cityDescriptions.ts`.
-- **SEO:** Considerar agregar más ciudades hispanohablantes al listado de `topCities` en `page.tsx`.
+- **Vercel:** Confirmar que el redirect no-www → www sea permanente (308), no 307 temporal.
+- **Search Console:** Eliminar sitemaps viejos del Blogger anterior; dejar solo `www.clima-hoy.com/sitemap.xml`.
