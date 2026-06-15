@@ -9,7 +9,7 @@ export default function CookiesPage() {
       <div className="legal-page">
         <div className="legal-container">
           <h1>Política de Cookies</h1>
-          <p className="last-updated">Última actualización: 21 de abril de 2026</p>
+          <p className="last-updated">Última actualización: 14 de junio de 2026</p>
 
           <section>
             <h2>1. ¿Qué son las Cookies?</h2>
@@ -36,6 +36,9 @@ export default function CookiesPage() {
               <li><strong>ipapi.co</strong> — detecta tu país de origen por dirección IP para mostrar datos climáticos relevantes. Tu IP se envía a los servidores de ipapi.co únicamente si das consentimiento. <a href="https://ipapi.co/privacy/" target="_blank" rel="noopener noreferrer">Política de privacidad de ipapi.co</a>.</li>
             </ul>
 
+            <h3>Publicidad (Google AdSense)</h3>
+            <p>Este sitio muestra anuncios a través de <strong>Google AdSense</strong>. Google y sus socios utilizan cookies de publicidad —incluida la cookie de <strong>DoubleClick</strong>— para mostrar anuncios basados en tus visitas previas a este y otros sitios web. Puedes inhabilitar la publicidad personalizada en la <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Configuración de anuncios de Google</a> o gestionar las cookies de terceros en <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">aboutads.info</a>. Más detalles en la <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">política publicitaria de Google</a>.</p>
+
             <h3>Geolocalización del navegador</h3>
             <p>Si lo autorizas a través del diálogo del navegador, usamos la API de geolocalización (<code>navigator.geolocation</code>) para obtener el clima de tu ubicación actual. Esta autorización es gestionada por el navegador y puedes revocarla en cualquier momento desde la configuración del sitio.</p>
 
@@ -50,7 +53,7 @@ export default function CookiesPage() {
 
           <section>
             <h2>4. Tus derechos</h2>
-            <p>De acuerdo con el RGPD y la LSSI-CE, tienes derecho a acceder, rectificar y suprimir los datos que te conciernen. Dado que no recopilamos datos personales identificables en nuestros propios servidores, puedes ejercer estos derechos directamente borrando los datos locales de tu navegador o contactándonos en <a href="mailto:contacto@clima-hoy.com">contacto@clima-hoy.com</a>.</p>
+            <p>De acuerdo con el RGPD y la LSSI-CE, tienes derecho a acceder, rectificar y suprimir los datos que te conciernen. Salvo los datos de cuenta de quienes inician sesión con Google (nombre, correo y foto de perfil), no recopilamos datos personales identificables. Puedes ejercer estos derechos borrando los datos locales de tu navegador, solicitando la eliminación de tu cuenta o contactándonos en <a href="mailto:contacto@clima-hoy.com">contacto@clima-hoy.com</a>.</p>
           </section>
         </div>
       </div>
