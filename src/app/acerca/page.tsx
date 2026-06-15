@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Acerca de Clima Hoy — Tu pronóstico en tiempo real',
   description: 'Conoce qué es Clima Hoy, cómo funciona, qué datos ofrece y quién está detrás del proyecto. Información meteorológica actualizada en tiempo real para cualquier ciudad del mundo.',
   alternates: {
-    canonical: 'https://clima-hoy.com/acerca',
+    canonical: 'https://www.clima-hoy.com/acerca',
   },
 };
 

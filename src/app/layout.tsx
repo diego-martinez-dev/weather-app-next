@@ -14,18 +14,18 @@ export const metadata: Metadata = {
   description: 'Consulta el clima actual, pronóstico y mapa de temperatura para cualquier ciudad del mundo. Actualizado en tiempo real.',
   keywords: 'clima, tiempo, temperatura, pronóstico, lluvia, viento',
   authors: [{ name: 'Clima Hoy' }],
-  metadataBase: new URL('https://clima-hoy.com'),
+  metadataBase: new URL('https://www.clima-hoy.com'),
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://clima-hoy.com',
+    canonical: 'https://www.clima-hoy.com',
   },
   openGraph: {
     title: 'Clima Hoy - Tu aplicación del clima',
     description: 'Consulta el clima actual para cualquier ciudad',
-    url: 'https://clima-hoy.com',
+    url: 'https://www.clima-hoy.com',
     siteName: 'Clima Hoy',
     locale: 'es_CO',
     type: 'website',
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="canonical" href="https://clima-hoy.com" />
+        <link rel="canonical" href="https://www.clima-hoy.com" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="alternate icon" href="/favicon.ico" />
         <meta name="google-adsense-account" content="ca-pub-1859146451941420" />

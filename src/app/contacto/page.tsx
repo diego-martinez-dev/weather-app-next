@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Contacto — Clima Hoy',
   description: 'Ponete en contacto con el equipo de Clima Hoy. Respondemos consultas, sugerencias y reportes de errores.',
   alternates: {
-    canonical: 'https://clima-hoy.com/contacto',
+    canonical: 'https://www.clima-hoy.com/contacto',
   },
 };
 

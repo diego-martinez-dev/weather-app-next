@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Guías meteorológicas — Clima Hoy',
   description: 'Artículos originales sobre meteorología: cómo leer pronósticos, entender la sensación térmica, el índice UV, la humedad, los tipos de nubes y más.',
   alternates: {
-    canonical: 'https://clima-hoy.com/guias',
+    canonical: 'https://www.clima-hoy.com/guias',
   },
 };
 

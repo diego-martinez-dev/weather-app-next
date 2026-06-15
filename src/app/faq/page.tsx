@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Preguntas frecuentes sobre el clima — FAQ Clima Hoy',
   description: 'Respuestas a las preguntas más frecuentes sobre pronósticos del tiempo, sensación térmica, probabilidad de lluvia, calidad del aire y cómo usar Clima Hoy.',
   alternates: {
-    canonical: 'https://clima-hoy.com/faq',
+    canonical: 'https://www.clima-hoy.com/faq',
   },
 };
 

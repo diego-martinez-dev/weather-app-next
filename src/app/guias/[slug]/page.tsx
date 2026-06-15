@@ -29,12 +29,12 @@ export async function generateMetadata(
     keywords: `clima, meteorología, ${keywords}`,
     authors: [{ name: 'Clima Hoy' }],
     alternates: {
-      canonical: `https://clima-hoy.com/guias/${slug}`,
+      canonical: `https://www.clima-hoy.com/guias/${slug}`,
     },
     openGraph: {
       title: guide.title.es,
       description: guide.description.es,
-      url: `https://clima-hoy.com/guias/${slug}`,
+      url: `https://www.clima-hoy.com/guias/${slug}`,
       siteName: 'Clima Hoy',
       locale: 'es_CO',
       type: 'article',
@@ -65,27 +65,27 @@ export default async function GuiaPage(
     author: {
       '@type': 'Organization',
       name: 'Clima Hoy',
-      url: 'https://clima-hoy.com',
+      url: 'https://www.clima-hoy.com',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Clima Hoy',
-      url: 'https://clima-hoy.com',
+      url: 'https://www.clima-hoy.com',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://clima-hoy.com/guias/${slug}`,
+      '@id': `https://www.clima-hoy.com/guias/${slug}`,
     },
-    image: 'https://clima-hoy.com/favicon.svg',
+    image: 'https://www.clima-hoy.com/favicon.svg',
   };
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://clima-hoy.com' },
-      { '@type': 'ListItem', position: 2, name: 'Guías', item: 'https://clima-hoy.com/guias' },
-      { '@type': 'ListItem', position: 3, name: guide.title.es, item: `https://clima-hoy.com/guias/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.clima-hoy.com' },
+      { '@type': 'ListItem', position: 2, name: 'Guías', item: 'https://www.clima-hoy.com/guias' },
+      { '@type': 'ListItem', position: 3, name: guide.title.es, item: `https://www.clima-hoy.com/guias/${slug}` },
     ],
   };
 

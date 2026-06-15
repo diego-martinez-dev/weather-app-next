@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Glosario meteorológico — Clima Hoy',
   description: 'Definiciones claras de los términos meteorológicos más importantes: presión atmosférica, punto de rocío, frentes, índice UV, sensación térmica, ENSO y más.',
   alternates: {
-    canonical: 'https://clima-hoy.com/glosario',
+    canonical: 'https://www.clima-hoy.com/glosario',
   },
 };
 
@@ -18,7 +18,7 @@ const jsonLd = {
   '@type': 'DefinedTermSet',
   name: 'Glosario meteorológico — Clima Hoy',
   description: 'Definiciones de los términos meteorológicos más importantes para entender el tiempo y los pronósticos.',
-  url: 'https://clima-hoy.com/glosario',
+  url: 'https://www.clima-hoy.com/glosario',
 };
 
 export default function GlosarioPage() {
