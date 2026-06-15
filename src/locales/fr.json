@@ -68,6 +68,9 @@
     },
     "nav": {
       "home": "Accueil"
+    },
+    "home": {
+      "faq_title": "Questions fréquentes"
     }
   },
   "legal": {

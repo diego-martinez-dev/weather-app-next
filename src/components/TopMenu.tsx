@@ -111,21 +111,9 @@ export default function TopMenu() {
     setMobileMenuOpen(false);
   };
 
-  if (!mounted) {
-    return (
-      <div className="top-menu">
-        <div className="top-menu-container-full">
-          <div className="menu-logo"><SunIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.15em' }} /> Clima Hoy</div>
-          <div className="menu-search">
-            <input type="text" placeholder="Buscar ciudad..." className="menu-search-input" />
-            <button className="menu-search-button"><MagnifyingGlassIcon style={{ width: '1.1em', height: '1.1em' }} /></button>
-          </div>
-          <button className="mobile-menu-btn"><Bars3Icon style={{ width: '1.3em', height: '1.3em' }} /></button>
-        </div>
-      </div>
-    );
-  }
-
+  // Renderiza siempre la estructura completa para evitar parpadeo.
+  // Solo el bloque menu-right (settings/auth) se difiere tras mounted porque
+  // depende de localStorage (preferencias de idioma, unidad, sesión).
   return (
     <div className="top-menu">
       <div className="top-menu-container-full">
@@ -157,10 +145,15 @@ export default function TopMenu() {
           <Bars3Icon style={{ width: '1.3em', height: '1.3em' }} />
         </button>
 
-        {/* Menú desktop (visible en desktop, oculto en móvil) */}
-        <div className="menu-right desktop-only">
+        {/* menu-right: solo tras mount para evitar mismatch de hidratación
+            (depende de localStorage para país, unidad, idioma y de useSession para auth).
+            Se renderiza como bloque invisible para preservar el layout en desktop. */}
+        <div
+          className="menu-right desktop-only"
+          style={{ visibility: mounted ? 'visible' : 'hidden' }}
+        >
           <div className="menu-item">
-            <span className="country-code">
+            <span className="country-code" suppressHydrationWarning>
               {getCountryFlag()} {country}
             </span>
           </div>
@@ -169,6 +162,7 @@ export default function TopMenu() {
             <span
               className="dropdown-trigger"
               onClick={() => setShowUnitDropdown(!showUnitDropdown)}
+              suppressHydrationWarning
             >
               {getTempSymbol()} ▼
             </span>
@@ -194,6 +188,7 @@ export default function TopMenu() {
             <span
               className="dropdown-trigger"
               onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+              suppressHydrationWarning
             >
               {languages.find(l => l.code === language)?.flag || '🇪🇸'} {languages.find(l => l.code === language)?.name || 'Español'} ▼
             </span>
@@ -232,13 +227,15 @@ export default function TopMenu() {
         </div>
       </div>
 
-      {/* Barra de navegación (desktop) */}
+      {/* Barra de navegación — siempre renderizada para evitar el parpadeo estructural.
+          Los submenús arrancan cerrados (false) en SSR y CSR, sin mismatch. */}
       <nav className="top-nav-bar desktop-only">
         {/* Guías con submenú */}
         <div className="nav-item" ref={guidesMenuRef}>
           <button
             className={`nav-item-trigger ${showGuidesMenu ? 'open' : ''}`}
             onClick={() => { setShowGuidesMenu(!showGuidesMenu); setShowGlosarioMenu(false); }}
+            suppressHydrationWarning
           >
             {t('app.footer.guides')}
             <ChevronDownIcon className="nav-chevron" />
@@ -262,6 +259,7 @@ export default function TopMenu() {
           <button
             className={`nav-item-trigger ${showGlosarioMenu ? 'open' : ''}`}
             onClick={() => { setShowGlosarioMenu(!showGlosarioMenu); setShowGuidesMenu(false); }}
+            suppressHydrationWarning
           >
             {t('app.footer.glossary')}
             <ChevronDownIcon className="nav-chevron" />
@@ -280,10 +278,12 @@ export default function TopMenu() {
           )}
         </div>
 
-        <Link href="/faq" className="top-nav-link">FAQ</Link>
+        <Link href="/faq" className="top-nav-link" suppressHydrationWarning>FAQ</Link>
       </nav>
 
-      {/* Menú lateral móvil */}
+      {/* Panel móvil — solo cuando está abierto (mobileMenuOpen arranca en false,
+          no hay mismatch SSR). El contenido usa valores de settings que solo
+          se muestran tras la interacción del usuario (post-mount). */}
       {mobileMenuOpen && (
         <div className="mobile-menu-overlay">
           <div className="mobile-menu-panel" ref={mobileMenuRef}>

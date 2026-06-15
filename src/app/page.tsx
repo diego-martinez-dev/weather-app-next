@@ -6,6 +6,7 @@ import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
+import HomeFaq from '@/components/HomeFaq';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { SunIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
@@ -248,6 +249,7 @@ function HomeContent() {
           />
         )}
       </div>
+      <HomeFaq />
       <Footer />
     </div>
   );

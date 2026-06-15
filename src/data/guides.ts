@@ -3,6 +3,7 @@ export interface Guide {
   title: { es: string; en: string };
   description: { es: string; en: string };
   date: string;
+  related?: string[];
   body: { es: string; en: string };
 }
 

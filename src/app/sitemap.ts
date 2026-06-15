@@ -3,7 +3,7 @@ import { topCities } from './clima/[slug]/page';
 import { guideSlugs } from '@/data/guides';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.clima-hoy.com';
+  const baseUrl = 'https://clima-hoy.com';
   const currentDate = new Date();
 
   const staticRoutes = [
