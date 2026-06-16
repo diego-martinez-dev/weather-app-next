@@ -131,6 +131,16 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 
 **Host canónico desde Fase 4:** `https://www.clima-hoy.com` (CON www). El servidor redirige no-www → www. Toda canonical/OG/JSON-LD/sitemap usa www.
 
+### Fase 5 SEO — Contenido de ciudad renderizado en servidor (jun-2026)
+
+**Causa raíz resuelta:** las 72 páginas de ciudad estaban "Discovered - currently not indexed" en Search Console porque el contenido SEO (descripción, tips, bloque de clima, FAQ visible, guías relacionadas) vivía dentro de `CityPageClient.tsx` (Client Component) detrás de `if (loading) return <SkeletonLoader/>`. El HTML servido a Googlebot solo tenía el esqueleto vacío hasta que el JS del cliente terminaba el fetch.
+
+**Fix — separación server/client:**
+- `clima/[slug]/page.tsx` (Server Component) ahora renderiza directamente en el HTML: `<h1>` único ("Clima en {city} hoy"), bloque descripción/tip turístico, bloque de clima (temp típica/mejor época/lluvias), FAQ visible (`<details>/<summary>`, mismo markup que antes) y guías relacionadas + links a glosario/FAQ. También renderiza `TopMenu` y `Footer` directamente (son Client Components pero un Server Component puede importarlos y renderizarlos sin problema).
+- `clima/[slug]/CityPageClient.tsx` quedó reducido a solo el widget interactivo: `Favorites`, un `<h2>` con ícono+nombre de la ciudad (ya NO hay un segundo `<h1>`), y `WeatherClient` (tarjeta en vivo, pronóstico, mapa). Recibe solo `slug` y `cityName` como props (ya no recibe `description`, `touristTip`, `climate` ni `relatedGuides` — eso vive en el server). Su `if (loading) return <SkeletonLoader/>` ahora solo gatea ese widget, no el contenido SEO.
+- Verificado con `curl -A "Googlebot"` sobre `/clima/montevideo`, `/clima/bogota`, `/clima/madrid`, `/clima/santo-domingo`: "Mejor época para visitar" y la pregunta FAQ real aparecen en el HTML crudo (antes devolvía 0). Un solo `<h1>` por página.
+- **Patrón a seguir en futuras páginas dinámicas:** todo contenido SEO/textual que dependa solo de datos estáticos (no de la llamada al clima en vivo) debe vivir en el Server Component, nunca detrás de un `if (loading)` del cliente.
+
 ## Pendientes
 
 - **AdSense:** Cuando llegue la aprobación, reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
@@ -138,3 +148,5 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - **Email:** Diego debe configurar reenvío `contacto@clima-hoy.com` en Cloudflare Email Routing o ImprovMX.
 - **Vercel:** Confirmar que el redirect no-www → www sea permanente (308), no 307 temporal.
 - **Search Console:** Eliminar sitemaps viejos del Blogger anterior; dejar solo `www.clima-hoy.com/sitemap.xml`.
+- **Search Console (post-deploy Fase 5):** Diego debe pedir reindexación manual de `montevideo`, `bogota`, `medellin`, `santo-domingo` vía URL Inspection (cupo diario limitado), reenviar el sitemap, y monitorear el informe Pages 1-4 semanas para ver baja en "Discovered - currently not indexed".
+- **Home (`src/app/page.tsx`):** mismo patrón de tips renderizados en cliente — queda pendiente para una iteración futura (Tarea 4 del plan Fase 5, opcional/secundaria por ser geolocalización inherentemente dinámica).
