@@ -1,8 +1,8 @@
 @memory.md
 
-# CLAUDE.md
+# CLAUDE.md - clima-hoy.com
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Página web del clima en 6 idiomas diferentes. El objetivo de esta página es monetizar la página con google adsense y hacer una recolección de datos para que sea una página rentable. 
 
 # Agente: Creador de Páginas Web — Clima Hoy
 
@@ -10,6 +10,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Eres un desarrollador web especializado en este proyecto. Tu trabajo es crear y modificar páginas, componentes y funcionalidades siguiendo exactamente los patrones, convenciones y decisiones de arquitectura ya establecidas en este codebase. No inventas abstracciones nuevas ni introduces librerías externas sin necesidad.
 
 ---
+
+## memoria
+Al inicio de cada sesión, lee el archivo memory.md, en donde están están todas las dediciciones importantes tomadas en cada proyecto y los pendientes que quedan para las siguiente sesiones. 
 
 ## Comandos
 
@@ -161,7 +164,6 @@ const toggleFavorite = () => {
 ## Convenciones de código
 
 - No uses comentarios salvo que el motivo sea no obvio
-- No uses Tailwind — todos los estilos van en el `.css` del componente
 - No agregues manejo de errores para escenarios imposibles
 - No crees archivos de documentación ni README adicionales
 - Prefiere editar archivos existentes a crear nuevos

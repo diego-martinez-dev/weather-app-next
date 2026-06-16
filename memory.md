@@ -45,8 +45,9 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 - **Publisher ID:** `ca-pub-1859146451941420`
 - **ads.txt:** creado en `public/ads.txt`
 - **Meta tag de verificación:** agregado en `layout.tsx`
-- **Estado:** pendiente de aprobación por Google
+- **Estado:** **nueva revisión SOLICITADA** (jun-2026), tras corregir todos los problemas del primer rechazo ("contenido de poco valor"). A la espera de respuesta de Google.
 - **Unidades de anuncio:** 2 slots en `WeatherClient.tsx` con IDs placeholder (`1111111111`, `2222222222`) — reemplazar por IDs reales cuando AdSense apruebe.
+- **Disclosure legal (requisito de AdSense, commit 02cefce):** `/privacy` tiene sección "Publicidad (Google AdSense)" con cookies de DoubleClick + opt-out (Configuración de anuncios de Google / aboutads.info). `/cookies` tiene subsección equivalente. Se corrigió la imprecisión "no almacenamos datos en servidores externos" para reflejar el login con Google (nombre/email/foto en Supabase).
 
 ---
 
@@ -106,7 +107,7 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 - **Fix parpadeo header:** `TopMenu.tsx` ya NO tiene early return con placeholder mínimo. Logo + búsqueda + barra de nav (Guías/Glosario/FAQ) siempre se renderizan. Solo el bloque `menu-right` (settings/auth, depende de localStorage/session) se difiere con `visibility: hidden` → sin layout shift.
 - **HomeFaq:** nuevo componente `src/components/HomeFaq.{tsx,css}` — primeras 6 FAQs como `<details>/<summary>` accordion nativo + JSON-LD FAQPage. Insertado en homepage antes del Footer.
 - **Guías relacionadas:** cada página de guía muestra 3 guías al final. Si el campo `related[]` no está definido, usa fallback cíclico `(index + offset) % guides.length`.
-- **Canonical no-www:** `layout.tsx` tiene `metadataBase: new URL('https://clima-hoy.com')`. Todas las URLs canónicas, OG, sitemap y robots.txt apuntan a `https://clima-hoy.com` (sin www).
+- **Canonical (CORREGIDO después en jun-2026):** en Fase 3 se puso todo en no-www, pero se detectó que el servidor en producción redirige no-www → www (307) y Google ya tenía indexada la versión www. Se revirtió todo a **`https://www.clima-hoy.com` (CON www)** — ver sección "Fix host canónico www" más abajo. Ignorar la mención a "sin www" de esta línea.
 - **SEO guías:** keywords, authors, publishedTime, BreadcrumbList JSON-LD (Article + BreadcrumbList por guía).
 - **i18n:** clave `app.home.faq_title` en los 6 idiomas (es/en/pt/fr/de/it).
 
@@ -141,12 +142,57 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - Verificado con `curl -A "Googlebot"` sobre `/clima/montevideo`, `/clima/bogota`, `/clima/madrid`, `/clima/santo-domingo`: "Mejor época para visitar" y la pregunta FAQ real aparecen en el HTML crudo (antes devolvía 0). Un solo `<h1>` por página.
 - **Patrón a seguir en futuras páginas dinámicas:** todo contenido SEO/textual que dependa solo de datos estáticos (no de la llamada al clima en vivo) debe vivir en el Server Component, nunca detrás de un `if (loading)` del cliente.
 
+### Fix host canónico www (commit b6a70ca, jun-2026)
+- El servidor de producción **sirve `www`** (no-www hace 307 → www) y Google ya indexó la versión www.
+- Se revirtió todo el código de no-www a **`https://www.clima-hoy.com`** (layout, sitemap, robots, guías, glosario, faq, acerca, contacto; las páginas de ciudad ya estaban en www). **Regla: nunca reintroducir URLs sin www en canonical/OG/JSON-LD.**
+
+### Glosario como enlace simple (commit 3b8eb3c, jun-2026)
+- El submenú de Glosario en `TopMenu.tsx` se reemplazó por un **enlace directo** a `/glosario` (desktop + móvil), porque todas las opciones llevaban a la misma página. Guías mantiene su submenú (cada opción es un artículo distinto). Se eliminaron estado/refs/imports sin uso.
+
+### Email de contacto — CONFIGURADO Y FUNCIONANDO (jun-2026)
+- **DNS en AWS Route 53** (nameservers `awsdns-*`). El dominio apunta a Vercel para hosting (A `216.198.79.1`).
+- Reenvío con **ImprovMX (gratis)**: registros MX (`mx1`/`mx2.improvmx.com`, prio 10/20) + TXT SPF (`v=spf1 include:spf.improvmx.com ~all`) agregados en Route 53. Verificado con `dig` y probado: `contacto@clima-hoy.com` y `privacidad@clima-hoy.com` reenvían a `diego2392martinez@gmail.com`. (ImprovMX free solo recibe/reenvía, no envía.)
+
+### Search Console — estado al momento del reenvío a AdSense (jun-2026)
+- **Propiedad:** `clima-hoy.com` (tipo Dominio). Diego ya **eliminó los sitemaps viejos del Blogger** anterior (el dominio tuvo vida previa como blog Blogger: feeds `…/feeds/posts/default` de 2019, `sitemap-pages.xml` de 2023).
+- **Indexación:** 14 indexadas / ~76 no indexadas. Razón dominante: **72 "Discovered - currently not indexed"** + 1 "Crawled - not indexed" + 3 "Page with redirect" (el non-www, ya corregido). 0 errores 5xx, 0 404. → Causa raíz = contenido fino + client-rendering, resuelto en Fase 5.
+- **Rendimiento (3 meses):** 0 clics, 412 impresiones, posición media **56,7**. Aparece para las keywords correctas (mercado LatAm), pero en página 5-6.
+- **Top queries (validan la estrategia):** clima montevideo, clima santo domingo, clima hoy bogota, temperatura actual en montevideo, clima en medellin hoy, temperatura en bogotá, clima bogota, pronóstico del tiempo para hoy, clima montevideo hoy.
+
+### Lista priorizada para pedir indexación en Search Console (URL Inspection → Solicitar indexación)
+> Cupo ~10/día. Empezar por las que ya tienen impresiones. Prefijo: `https://www.clima-hoy.com`
+- **Día 1 (máxima prioridad — ya tienen tracción):** `/clima/montevideo`, `/clima/bogota`, `/clima/medellin`, `/clima/santo-domingo`, `/` (home), `/clima/lima`, `/clima/santiago`, `/clima/quito`, `/clima/guayaquil`, `/clima/caracas`
+- **Día 2 (LatAm Spanish alto volumen):** `/clima/buenos-aires`, `/clima/cordoba`, `/clima/rosario`, `/clima/mendoza`, `/clima/la-paz`, `/clima/asuncion`, `/clima/mexico-city`, `/clima/guadalajara`, `/clima/monterrey`, `/clima/puebla`
+- **Día 3:** `/clima/panama-city`, `/clima/san-jose`, `/clima/managua`, `/clima/havana`, `/clima/arequipa`, `/clima/cusco`, `/clima/trujillo`, `/clima/cuenca`, `/clima/manta`, `/clima/valparaiso`
+- **Día 4 (Colombia):** `/clima/cali`, `/clima/barranquilla`, `/clima/cartagena`, `/clima/bucaramanga`, `/clima/pereira`, `/clima/manizales`, `/clima/cucuta`, `/clima/ibague`, `/clima/santa-marta`, `/clima/villavicencio`
+- **Día 5 (Colombia + España):** `/clima/armenia`, `/clima/pasto`, `/clima/monteria`, `/clima/sincelejo`, `/clima/valledupar`, `/clima/madrid`, `/clima/barcelona`, `/clima/valencia`, `/clima/sevilla`, `/clima/bilbao`
+- **Día 6 (resto + páginas clave):** `/clima/malaga`, `/clima/zaragoza`, `/clima/alicante`, `/clima/granada`, `/clima/murcia`, `/guias`, `/glosario`, `/faq`, `/clima`, `/clima/neiva`
+- **Día 7+ (mundo/inglés, menor prioridad para mercado ES):** new-york, london, paris, tokyo, berlin, rome, etc., y las sub-rutas `/clima/{ciudad}/manana` de las ciudades top.
+
 ## Pendientes
 
-- **AdSense:** Cuando llegue la aprobación, reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
-- **AdSense:** Diego debe solicitar la nueva revisión en el panel de AdSense (Sites → solicitar revisión).
-- **Email:** Diego debe configurar reenvío `contacto@clima-hoy.com` en Cloudflare Email Routing o ImprovMX.
-- **Vercel:** Confirmar que el redirect no-www → www sea permanente (308), no 307 temporal.
-- **Search Console:** Eliminar sitemaps viejos del Blogger anterior; dejar solo `www.clima-hoy.com/sitemap.xml`.
-- **Search Console (post-deploy Fase 5):** Diego debe pedir reindexación manual de `montevideo`, `bogota`, `medellin`, `santo-domingo` vía URL Inspection (cupo diario limitado), reenviar el sitemap, y monitorear el informe Pages 1-4 semanas para ver baja en "Discovered - currently not indexed".
-- **Home (`src/app/page.tsx`):** mismo patrón de tips renderizados en cliente — queda pendiente para una iteración futura (Tarea 4 del plan Fase 5, opcional/secundaria por ser geolocalización inherentemente dinámica).
+### Hechos en esta sesión (jun-2026) ✓
+- ✓ Páginas de confianza, glosario, FAQ, guías (Fases 1-2).
+- ✓ Disclosure de AdSense en privacy/cookies (Fase legal).
+- ✓ Host canónico unificado a www.
+- ✓ Profundidad de ciudad + FAQ + /manana (Fase 4).
+- ✓ Contenido de ciudad renderizado en servidor (Fase 5) — verificado en HTML crudo.
+- ✓ Email `contacto@`/`privacidad@` reenviando a Gmail (ImprovMX).
+- ✓ Nueva revisión de AdSense solicitada.
+- ✓ Sitemaps viejos del Blogger eliminados en Search Console.
+
+### Pendiente inmediato (Diego, manual, esta semana)
+- **Search Console:** pedir indexación siguiendo la "Lista priorizada" de arriba (~10/día). Empezar por Día 1.
+- **Vercel:** confirmar que el redirect no-www → www sea **permanente (308)**, no 307 temporal (Settings → Domains).
+
+### Para la PRÓXIMA sesión (1-2 semanas después de respuesta de AdSense)
+1. **Revisar respuesta de AdSense:**
+   - Si **aprobó** → reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales (pedirlos en el panel de AdSense). Evaluar un 3er anuncio sobre el fold.
+   - Si **rechazó** → leer el motivo concreto del correo y resolver puntualmente.
+2. **Revisar Search Console:** ver evolución del informe Pages — debería subir "Indexed" y bajar "Discovered - currently not indexed". Revisar nuevas queries/posiciones en Performance para decidir qué ciudades reforzar.
+3. **Contenido pendiente de SEO (mejora continua):**
+   - `src/app/page.tsx` (home): mover los tips renderizados en cliente a server (mismo fix que Fase 5; opcional por ser geolocalización dinámica).
+   - Agregar descripción en prosa (`cityDescriptions.ts`) a ciudades de tráfico que aún no la tengan.
+   - Considerar más sub-rutas de cola larga (`/por-hora`, `/fin-de-semana`) si `/manana` rinde.
+   - Conseguir primeros backlinks para subir autoridad de dominio (mejora crawl budget e indexación).
+4. **Objetivo de fondo:** una vez con tráfico, empezar la captura de datos de usuarios (email marketing / alertas WhatsApp).
