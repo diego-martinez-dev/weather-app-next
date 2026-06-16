@@ -161,7 +161,7 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 
 ### Lista priorizada para pedir indexación en Search Console (URL Inspection → Solicitar indexación)
 > Cupo ~10/día. Empezar por las que ya tienen impresiones. Prefijo: `https://www.clima-hoy.com`
-- **Día 1 (máxima prioridad — ya tienen tracción):** `/clima/montevideo`, `/clima/bogota`, `/clima/medellin`, `/clima/santo-domingo`, `/` (home), `/clima/lima`, `/clima/santiago`, `/clima/quito`, `/clima/guayaquil`, `/clima/caracas`
+- **Día 1 ✓ HECHO (jun-2026):** `/clima/montevideo`, `/clima/bogota`, `/clima/medellin`, `/clima/santo-domingo`, `/` (home), `/clima/lima`, `/clima/santiago`, `/clima/quito`, `/clima/guayaquil`, `/clima/caracas`
 - **Día 2 (LatAm Spanish alto volumen):** `/clima/buenos-aires`, `/clima/cordoba`, `/clima/rosario`, `/clima/mendoza`, `/clima/la-paz`, `/clima/asuncion`, `/clima/mexico-city`, `/clima/guadalajara`, `/clima/monterrey`, `/clima/puebla`
 - **Día 3:** `/clima/panama-city`, `/clima/san-jose`, `/clima/managua`, `/clima/havana`, `/clima/arequipa`, `/clima/cusco`, `/clima/trujillo`, `/clima/cuenca`, `/clima/manta`, `/clima/valparaiso`
 - **Día 4 (Colombia):** `/clima/cali`, `/clima/barranquilla`, `/clima/cartagena`, `/clima/bucaramanga`, `/clima/pereira`, `/clima/manizales`, `/clima/cucuta`, `/clima/ibague`, `/clima/santa-marta`, `/clima/villavicencio`
@@ -182,7 +182,7 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ Sitemaps viejos del Blogger eliminados en Search Console.
 
 ### Pendiente inmediato (Diego, manual, esta semana)
-- **Search Console:** pedir indexación siguiendo la "Lista priorizada" de arriba (~10/día). Empezar por Día 1.
+- **Search Console:** pedir indexación siguiendo la "Lista priorizada" de arriba (~10/día). **Día 1 ya hecho** → continuar por Día 2.
 - **Vercel:** confirmar que el redirect no-www → www sea **permanente (308)**, no 307 temporal (Settings → Domains).
 
 ### Para la PRÓXIMA sesión (1-2 semanas después de respuesta de AdSense)
@@ -190,9 +190,14 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
    - Si **aprobó** → reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales (pedirlos en el panel de AdSense). Evaluar un 3er anuncio sobre el fold.
    - Si **rechazó** → leer el motivo concreto del correo y resolver puntualmente.
 2. **Revisar Search Console:** ver evolución del informe Pages — debería subir "Indexed" y bajar "Discovered - currently not indexed". Revisar nuevas queries/posiciones en Performance para decidir qué ciudades reforzar.
-3. **Contenido pendiente de SEO (mejora continua):**
+3. **⭐ Páginas-país (guía del clima por país) — idea de Diego, alta prioridad SEO:**
+   - Crear páginas tipo `/clima-pais/[pais]` (o `/clima/pais/[pais]`) — una por país — con: intro original sobre el clima del país (regiones, estaciones, temporada de lluvias) + **enlaces a todas las ciudades de ese país** que ya existen en `topCities`.
+   - **Por qué importa (validado con GSC):** crea *clusters temáticos* y **enlazado interno** hacia las páginas de ciudad. Esto ayuda a destrabar las "Discovered - currently not indexed" (Google rastrea más las páginas enlazadas desde contenido relevante) y reparte autoridad interna. Además es contenido propio nuevo (bueno para AdSense) y captura búsquedas tipo "clima en Colombia", "temperatura en México por ciudad".
+   - Patrón: Server Component con SEO + JSON-LD, agrupar `topCities` por país (ya están ordenadas por país en el array). Enlazar la página-país desde cada página de ciudad ("Ver clima de otras ciudades de {país}") y desde `/clima`. Agregar al sitemap.
+   - Países con más ciudades para empezar: Colombia (~20), España (~10), México, Argentina, luego el resto.
+4. **Contenido pendiente de SEO (mejora continua):**
    - `src/app/page.tsx` (home): mover los tips renderizados en cliente a server (mismo fix que Fase 5; opcional por ser geolocalización dinámica).
    - Agregar descripción en prosa (`cityDescriptions.ts`) a ciudades de tráfico que aún no la tengan.
    - Considerar más sub-rutas de cola larga (`/por-hora`, `/fin-de-semana`) si `/manana` rinde.
    - Conseguir primeros backlinks para subir autoridad de dominio (mejora crawl budget e indexación).
-4. **Objetivo de fondo:** una vez con tráfico, empezar la captura de datos de usuarios (email marketing / alertas WhatsApp).
+5. **Objetivo de fondo:** una vez con tráfico, empezar la captura de datos de usuarios (email marketing / alertas WhatsApp).
