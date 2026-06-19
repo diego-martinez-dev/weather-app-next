@@ -50,7 +50,7 @@ export default function RainRadarMap({ lat, lon, zoom = 7, cityName, showSearch 
 
   const [frames, setFrames] = useState<RainFrame[]>([]);
   const [currentFrame, setCurrentFrame] = useState(0);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [radarHost, setRadarHost] = useState('');
   const [searchInput, setSearchInput] = useState('');
   const [mapCenter, setMapCenter] = useState<[number, number]>([lat, lon]);

@@ -130,7 +130,7 @@ function CityContent({ slug, cityName }: { slug: string; cityName: string }) {
               <RainRadarMapWrapper
                 lat={weather.coord.lat}
                 lon={weather.coord.lon}
-                zoom={6}
+                zoom={9}
                 cityName={weather.name}
               />
             </div>
