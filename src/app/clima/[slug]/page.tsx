@@ -251,6 +251,24 @@ export default async function CityPage(
             </p>
           </div>
         )}
+
+        <div style={{ maxWidth: 900, margin: '16px auto 8px', padding: '16px 20px', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+          <h2 style={{ margin: '0 0 8px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+            <CloudIcon style={{ width: '1.2em', height: '1.2em' }} />
+            ¿Está lloviendo en {city}? Radar en vivo
+          </h2>
+          <p style={{ margin: '0 0 12px', fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--color-text)' }}>
+            Consulta el radar de lluvia en tiempo real para {city}: ve dónde está cayendo la lluvia
+            ahora mismo y cómo se moverá en los próximos 30 minutos. Útil para saber si salir con
+            paraguas o esperar a que escampe.
+          </p>
+          <Link
+            href={`/lluvia?ciudad=${slug}`}
+            style={{ display: 'inline-block', background: '#1a73e8', color: 'white', borderRadius: 8, padding: '8px 16px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}
+          >
+            Ver radar de lluvia en {city} →
+          </Link>
+        </div>
       </div>
       <Footer />
     </>

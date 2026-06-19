@@ -67,7 +67,8 @@
       "account": "Compte"
     },
     "nav": {
-      "home": "Accueil"
+      "home": "Accueil",
+      "rain_map": "Radar de pluie"
     },
     "home": {
       "faq_title": "Questions fréquentes"

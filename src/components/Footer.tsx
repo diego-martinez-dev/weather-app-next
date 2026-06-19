@@ -22,6 +22,7 @@ export default function Footer() {
           <a>Guías</a>
           <a>Glosario</a>
           <a>FAQ</a>
+          <a>Radar de lluvia</a>
           <a>Términos de uso</a>
           <a>Política de privacidad</a>
           <a>Política de cookies</a>
@@ -40,6 +41,7 @@ export default function Footer() {
         <Link href="/guias">{t('app.footer.guides')}</Link>
         <Link href="/glosario">{t('app.footer.glossary')}</Link>
         <Link href="/faq">{t('app.footer.faq')}</Link>
+        <Link href="/lluvia">{t('app.nav.rain_map')}</Link>
         <Link href="/terms">{t('app.footer.terms')}</Link>
         <Link href="/privacy">{t('app.footer.privacy')}</Link>
         <Link href="/cookies">{t('app.footer.cookies')}</Link>

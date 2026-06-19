@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useSettings } from '@/contexts/SettingsContext';
-import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon, ChevronDownIcon, CloudIcon } from '@heroicons/react/24/outline';
 import { guides, Guide } from '@/data/guides';
 import './TopMenu.css';
 
@@ -245,6 +245,11 @@ export default function TopMenu() {
         <Link href="/glosario" className="top-nav-link" suppressHydrationWarning>{t('app.footer.glossary')}</Link>
 
         <Link href="/faq" className="top-nav-link" suppressHydrationWarning>FAQ</Link>
+
+        <Link href="/lluvia" className="top-nav-link" suppressHydrationWarning>
+          <CloudIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em', marginRight: 4 }} />
+          {t('app.nav.rain_map')}
+        </Link>
       </nav>
 
       {/* Panel móvil — solo cuando está abierto (mobileMenuOpen arranca en false,
@@ -283,6 +288,11 @@ export default function TopMenu() {
                 <Link href="/glosario" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>{t('app.footer.glossary')}</Link>
 
                 <Link href="/faq" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
+
+                <Link href="/lluvia" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                  <CloudIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em', marginRight: 4 }} />
+                  {t('app.nav.rain_map')}
+                </Link>
               </nav>
 
               <div className="mobile-menu-item">

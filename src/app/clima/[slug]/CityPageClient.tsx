@@ -4,6 +4,7 @@ import { Suspense, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
+import RainRadarMapWrapper from '@/components/RainRadarMapWrapper';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { SunIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
@@ -114,15 +115,27 @@ function CityContent({ slug, cityName }: { slug: string; cityName: string }) {
       </h2>
       {error && <p style={{ textAlign: 'center', color: '#e53e3e' }}>{error}</p>}
       {weather && (
-        <WeatherClient
-          weather={weather}
-          tempCelsius={weather.main?.temp}
-          airQuality={airQuality}
-          forecast={forecast}
-          onAddFavorite={addFavorite}
-          isFavorite={isFavorite}
-          onLocationClick={handleLocationClick}
-        />
+        <>
+          <WeatherClient
+            weather={weather}
+            tempCelsius={weather.main?.temp}
+            airQuality={airQuality}
+            forecast={forecast}
+            onAddFavorite={addFavorite}
+            isFavorite={isFavorite}
+            onLocationClick={handleLocationClick}
+          />
+          {weather.coord?.lat && weather.coord?.lon && (
+            <div style={{ margin: '24px 0 8px' }}>
+              <RainRadarMapWrapper
+                lat={weather.coord.lat}
+                lon={weather.coord.lon}
+                zoom={8}
+                cityName={weather.name}
+              />
+            </div>
+          )}
+        </>
       )}
     </>
   );
