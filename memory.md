@@ -162,12 +162,21 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 ### Lista priorizada para pedir indexación en Search Console (URL Inspection → Solicitar indexación)
 > Cupo ~10/día. Empezar por las que ya tienen impresiones. Prefijo: `https://www.clima-hoy.com`
 - **Día 1 ✓ HECHO (jun-2026):** `/clima/montevideo`, `/clima/bogota`, `/clima/medellin`, `/clima/santo-domingo`, `/` (home), `/clima/lima`, `/clima/santiago`, `/clima/quito`, `/clima/guayaquil`, `/clima/caracas`
-- **Día 2 (LatAm Spanish alto volumen):** `/clima/buenos-aires`, `/clima/cordoba`, `/clima/rosario`, `/clima/mendoza`, `/clima/la-paz`, `/clima/asuncion`, `/clima/mexico-city`, `/clima/guadalajara`, `/clima/monterrey`, `/clima/puebla`
+- **Día 2 (LatAm Spanish alto volumen) ✓ HECHO (jun-2026):** `/clima/buenos-aires`, `/clima/cordoba`, `/clima/rosario`, `/clima/mendoza`, `/clima/la-paz`, `/clima/asuncion`, `/clima/mexico-city`, `/clima/guadalajara`, `/clima/monterrey`, `/clima/puebla`
 - **Día 3:** `/clima/panama-city`, `/clima/san-jose`, `/clima/managua`, `/clima/havana`, `/clima/arequipa`, `/clima/cusco`, `/clima/trujillo`, `/clima/cuenca`, `/clima/manta`, `/clima/valparaiso`
 - **Día 4 (Colombia):** `/clima/cali`, `/clima/barranquilla`, `/clima/cartagena`, `/clima/bucaramanga`, `/clima/pereira`, `/clima/manizales`, `/clima/cucuta`, `/clima/ibague`, `/clima/santa-marta`, `/clima/villavicencio`
 - **Día 5 (Colombia + España):** `/clima/armenia`, `/clima/pasto`, `/clima/monteria`, `/clima/sincelejo`, `/clima/valledupar`, `/clima/madrid`, `/clima/barcelona`, `/clima/valencia`, `/clima/sevilla`, `/clima/bilbao`
 - **Día 6 (resto + páginas clave):** `/clima/malaga`, `/clima/zaragoza`, `/clima/alicante`, `/clima/granada`, `/clima/murcia`, `/guias`, `/glosario`, `/faq`, `/clima`, `/clima/neiva`
 - **Día 7+ (mundo/inglés, menor prioridad para mercado ES):** new-york, london, paris, tokyo, berlin, rome, etc., y las sub-rutas `/clima/{ciudad}/manana` de las ciudades top.
+
+### Feature: Mapa de lluvia en tiempo real (radar) — PLAN escrito, por implementar
+- Idea de Diego: radar de lluvia **animado** (ver la lluvia moviéndose), para motociclistas/peatones, sobre todo en ciudades lluviosas (Bogotá, Medellín). Visita recurrente → bueno para AdSense.
+- **Decisiones tomadas:** fuente = **RainViewer** (gratis, sin API key, radar animado real); ubicación = **página dedicada `/lluvia`** + **integración por ciudad** (sección "¿Está lloviendo en {city}?" + enlace/mini-mapa).
+- Plan completo en `PLAN_MAPA_LLUVIA.md` (incluye API de RainViewer: `weather-maps.json`, formato de tiles `{host}{path}/256/{z}/{x}/{y}/4/1_1.png`, refresco ~5min, atribución obligatoria). Reusa Leaflet (patrón de `WeatherMap.tsx`).
+- **Futuro:** este mapa es candidato natural para alertas "está por llover en tu zona" (conecta con captura de usuarios / WhatsApp).
+
+### SEO titles de ciudad (commit 694b5d7, jun-2026)
+- GSC mostró que la gente busca variantes: **"el tiempo en {ciudad}"**, **"temperatura en {ciudad}"**, **"{ciudad} por horas"**, **"está lloviendo en {ciudad}"** (no solo "clima"). Se actualizaron title/description/OG + párrafo intro server-side de las páginas de ciudad para cubrirlas. Posición media subió de 56,7 → 43,2 y llegó el **primer clic** ("el tiempo en caracas").
 
 ## Pendientes
 
