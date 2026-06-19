@@ -164,6 +164,7 @@ const toggleFavorite = () => {
 ## Convenciones de código
 
 - No uses comentarios salvo que el motivo sea no obvio
+- No uses tailwind. El código de todo el website está en css. 
 - No agregues manejo de errores para escenarios imposibles
 - No crees archivos de documentación ni README adicionales
 - Prefiere editar archivos existentes a crear nuevos
