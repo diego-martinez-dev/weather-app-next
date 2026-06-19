@@ -270,6 +270,10 @@ export default function RainRadarMap({ lat, lon, zoom = 7, cityName, showSearch 
             <div className="rain-radar-legend-bar" />
             <span>Fuerte</span>
           </div>
+          <p className="rain-radar-hint">
+            Las zonas con lluvia se ven en colores. Si no ves colores, no está lloviendo en el área
+            visible en este momento. Aleja el mapa para ver la lluvia que se acerca.
+          </p>
         </div>
       )}
     </div>
