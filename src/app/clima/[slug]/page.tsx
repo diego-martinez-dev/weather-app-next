@@ -86,14 +86,14 @@ export async function generateMetadata(
   const city = slugToCity(slug);
 
   return {
-    title: `Clima en ${city} hoy — Pronóstico por hora y 7 días | Clima Hoy`,
-    description: `¿Qué temperatura hace en ${city} hoy? Consulta el pronóstico del tiempo actualizado: lluvia, viento, humedad y pronóstico para el fin de semana. Información en tiempo real.`,
+    title: `Clima en ${city} hoy: temperatura, el tiempo y pronóstico por hora`,
+    description: `El tiempo en ${city} hoy en tiempo real: temperatura actual, ¿va a llover?, viento, humedad y pronóstico por horas y para los próximos 7 días.`,
     alternates: {
       canonical: `https://www.clima-hoy.com/clima/${slug}`,
     },
     openGraph: {
-      title: `Clima en ${city} hoy - Clima Hoy`,
-      description: `Temperatura actual, lluvia y pronóstico del tiempo en ${city}.`,
+      title: `Clima y el tiempo en ${city} hoy`,
+      description: `Temperatura actual, lluvia y pronóstico por horas en ${city}.`,
       url: `https://www.clima-hoy.com/clima/${slug}`,
       siteName: 'Clima Hoy',
       locale: 'es_CO',
@@ -164,6 +164,12 @@ export default async function CityPage(
         <CityPageClient slug={slug} cityName={city} />
 
         <h1>Clima en {city} hoy</h1>
+
+        <p style={{ maxWidth: 900, margin: '0 auto 16px', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--color-text)', textAlign: 'center' }}>
+          Consulta el tiempo en {city} en tiempo real: temperatura actual, probabilidad de lluvia,
+          viento y humedad, además del pronóstico por horas y para los próximos días. ¿Va a llover
+          hoy en {city}? Mira la previsión actualizada del clima.
+        </p>
 
         {(description || touristTip) && (
           <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
