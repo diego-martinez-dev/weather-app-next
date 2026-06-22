@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
-import RainRadarMapWrapper from '@/components/RainRadarMapWrapper';
+import WindyMap from '@/components/WindyMap';
 
 export const metadata: Metadata = {
   title: 'Mapa de lluvia en tiempo real — Radar de lluvia animado | Clima Hoy',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Mapa de lluvia en tiempo real | Clima Hoy',
-    description: 'Radar de lluvia animado y en vivo. Consulta si está lloviendo ahora y la previsión de lluvia para los próximos 30 minutos.',
+    description: 'Mapa de lluvia animado e interactivo. Consulta si está lloviendo ahora y cómo evoluciona la lluvia en las próximas horas, con zoom hasta tu zona.',
     url: 'https://www.clima-hoy.com/lluvia',
     siteName: 'Clima Hoy',
     locale: 'es_CO',
@@ -26,26 +26,34 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '¿Con qué frecuencia se actualiza el radar de lluvia?',
+      name: '¿Qué muestra este mapa de lluvia?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El radar se actualiza aproximadamente cada 10 minutos. El mapa recarga los datos de RainViewer cada 5 minutos para mostrar siempre la información más reciente.',
+        text: 'Muestra dónde está lloviendo y cómo se moverá la lluvia, con una animación por horas. Los colores indican la intensidad: de azul (llovizna) a rojo y morado (lluvia muy fuerte). El mapa es interactivo: puedes hacer zoom hasta tu zona y mover la línea de tiempo.',
       },
     },
     {
       '@type': 'Question',
-      name: '¿Qué muestra el radar de lluvia?',
+      name: '¿Cómo veo la lluvia de mi ciudad o barrio?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El radar muestra la lluvia detectada por satélite en las últimas 2 horas (frames del pasado) y una previsión nowcast para los próximos 30 minutos. Los colores van de azul claro (llovizna) a rojo y morado (lluvia muy fuerte).',
+        text: 'Usa el buscador del mapa para ir a cualquier ciudad, o acerca el zoom hasta tu barrio. También puedes arrastrar el mapa para explorar las zonas cercanas y ver si la lluvia se acerca.',
       },
     },
     {
       '@type': 'Question',
-      name: '¿Puedo ver el radar de lluvia de mi ciudad específica?',
+      name: '¿Cada cuánto se actualiza?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sí. Usa el buscador sobre el mapa para centrar el radar en tu ciudad, o pulsa el botón de geolocalización para ir directamente a tu ubicación actual.',
+        text: 'El mapa usa los datos de previsión más recientes de Windy. Mueve la línea de tiempo para ver cómo evolucionará la lluvia en las próximas horas.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Para quién es útil este mapa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Es especialmente útil para motociclistas, ciclistas, peatones y cualquiera que necesite decidir si salir ahora o esperar a que pase la lluvia.',
       },
     },
   ],
@@ -84,20 +92,15 @@ export default function LluviaPage() {
         </h1>
 
         <p style={{ maxWidth: 900, margin: '0 auto 20px', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--color-text)', textAlign: 'center' }}>
-          Consulta el <strong>radar de lluvia en tiempo real</strong> con animación: ve dónde está
-          lloviendo ahora mismo y cómo se moverá la lluvia en los próximos 30 minutos.
-          Ideal para <strong>motociclistas, peatones y ciclistas</strong> que necesitan saber si
-          conviene salir o esperar. Los datos provienen de <strong>RainViewer</strong> y se
-          actualizan automáticamente cada 5 minutos.
+          Consulta el <strong>mapa de lluvia interactivo y animado</strong>: ve dónde está
+          lloviendo ahora mismo y cómo se moverá la lluvia en las próximas horas. Acerca el zoom
+          hasta tu zona, busca cualquier ciudad y mueve la línea de tiempo. Ideal para
+          <strong> motociclistas, peatones y ciclistas</strong> que necesitan saber si conviene
+          salir o esperar.
         </p>
 
         <div style={{ maxWidth: 900, margin: '0 auto 20px' }}>
-          <RainRadarMapWrapper
-            lat={DEFAULT_LAT}
-            lon={DEFAULT_LON}
-            zoom={DEFAULT_ZOOM}
-            showSearch
-          />
+          <WindyMap lat={DEFAULT_LAT} lon={DEFAULT_LON} zoom={DEFAULT_ZOOM} height={480} />
         </div>
 
         <div style={{ maxWidth: 900, margin: '0 auto 32px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)' }}>
@@ -105,44 +108,44 @@ export default function LluviaPage() {
 
           <details style={{ marginBottom: 10, background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', padding: '12px 16px' }}>
             <summary style={{ cursor: 'pointer', fontWeight: 600 }}>
-              ¿Con qué frecuencia se actualiza el radar de lluvia?
+              ¿Qué muestra este mapa de lluvia?
             </summary>
             <p style={{ margin: '8px 0 0 0', paddingLeft: 16 }}>
-              El radar se actualiza aproximadamente cada 10 minutos. El mapa recarga los datos de
-              RainViewer cada 5 minutos para mostrar siempre la información más reciente.
+              Muestra dónde está lloviendo y cómo se moverá la lluvia, con una animación por horas.
+              Los colores indican la intensidad: de azul (llovizna) a rojo y morado (lluvia muy
+              fuerte). El mapa es interactivo: puedes hacer zoom hasta tu zona y mover la línea de
+              tiempo.
             </p>
           </details>
 
           <details style={{ marginBottom: 10, background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', padding: '12px 16px' }}>
             <summary style={{ cursor: 'pointer', fontWeight: 600 }}>
-              ¿Qué muestra el radar de lluvia?
+              ¿Cómo veo la lluvia de mi ciudad o barrio?
             </summary>
             <p style={{ margin: '8px 0 0 0', paddingLeft: 16 }}>
-              El radar muestra la lluvia detectada por satélite en las últimas 2 horas (frames del
-              pasado) y una previsión <em>nowcast</em> para los próximos 30 minutos. Los colores
-              van de azul claro (llovizna) a rojo y morado (lluvia muy fuerte).
+              Usa el buscador del mapa para ir a cualquier ciudad, o acerca el zoom hasta tu barrio.
+              También puedes arrastrar el mapa para explorar las zonas cercanas y ver si la lluvia se
+              acerca.
             </p>
           </details>
 
           <details style={{ marginBottom: 10, background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', padding: '12px 16px' }}>
             <summary style={{ cursor: 'pointer', fontWeight: 600 }}>
-              ¿Puedo ver el radar de lluvia de mi ciudad específica?
+              ¿Cada cuánto se actualiza?
             </summary>
             <p style={{ margin: '8px 0 0 0', paddingLeft: 16 }}>
-              Sí. Usa el buscador sobre el mapa para centrar el radar en tu ciudad, o pulsa el
-              botón de geolocalización para ir directamente a tu ubicación actual.
+              El mapa usa los datos de previsión más recientes de Windy. Mueve la línea de tiempo
+              para ver cómo evolucionará la lluvia en las próximas horas.
             </p>
           </details>
 
           <details style={{ background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', padding: '12px 16px' }}>
             <summary style={{ cursor: 'pointer', fontWeight: 600 }}>
-              ¿Cómo leer los colores del radar?
+              ¿Para quién es útil este mapa?
             </summary>
             <p style={{ margin: '8px 0 0 0', paddingLeft: 16 }}>
-              La escala de color de la leyenda va de izquierda a derecha: <strong>azul claro</strong> es
-              llovizna ligera, <strong>verde</strong> es lluvia moderada, <strong>amarillo y naranja</strong> es
-              lluvia fuerte, y <strong>rojo y morado</strong> indica lluvia muy intensa o granizo. Las
-              zonas sin color no tienen lluvia detectada.
+              Es especialmente útil para <strong>motociclistas, ciclistas y peatones</strong>, y para
+              cualquiera que necesite decidir si salir ahora o esperar a que pase la lluvia.
             </p>
           </details>
         </div>

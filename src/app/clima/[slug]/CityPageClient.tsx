@@ -4,7 +4,7 @@ import { Suspense, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
-import RainRadarMapWrapper from '@/components/RainRadarMapWrapper';
+import WindyMap from '@/components/WindyMap';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { SunIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
@@ -127,11 +127,10 @@ function CityContent({ slug, cityName }: { slug: string; cityName: string }) {
           />
           {weather.coord?.lat && weather.coord?.lon && (
             <div style={{ margin: '24px 0 8px' }}>
-              <RainRadarMapWrapper
+              <WindyMap
                 lat={weather.coord.lat}
                 lon={weather.coord.lon}
-                zoom={9}
-                cityName={weather.name}
+                zoom={10}
               />
             </div>
           )}

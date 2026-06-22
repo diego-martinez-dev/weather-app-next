@@ -45,8 +45,8 @@ export default function CookiesPage() {
             <h3>Mapa meteorológico</h3>
             <p>El mapa de temperaturas carga teselas (tiles) desde los servidores de OpenWeatherMap. Al visualizar el mapa, tu dirección IP queda expuesta a OpenWeatherMap. Consulta su <a href="https://openweathermap.org/privacy-policy" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>
 
-            <h3>Radar de lluvia (RainViewer)</h3>
-            <p>El radar de lluvia en <a href="/lluvia">/lluvia</a> y en las páginas de ciudad carga datos de radar desde los servidores de <strong>RainViewer</strong>. Al visualizar el radar, tu dirección IP queda expuesta a RainViewer. Consulta su <a href="https://www.rainviewer.com/privacy.html" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>
+            <h3>Mapa de lluvia (Windy)</h3>
+            <p>El mapa de lluvia en <a href="/lluvia">/lluvia</a> y en las páginas de ciudad se muestra mediante un mapa interactivo incrustado de <strong>Windy</strong>. Al cargarlo, tu dirección IP queda expuesta a Windy y este puede usar sus propias cookies. Consulta su <a href="https://account.windy.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>
           </section>
 
           <section>

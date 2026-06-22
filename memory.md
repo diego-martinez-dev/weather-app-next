@@ -169,18 +169,20 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - **Día 6 (resto + páginas clave):** `/clima/malaga`, `/clima/zaragoza`, `/clima/alicante`, `/clima/granada`, `/clima/murcia`, `/guias`, `/glosario`, `/faq`, `/clima`, `/clima/neiva`
 - **Día 7+ (mundo/inglés, menor prioridad para mercado ES):** new-york, london, paris, tokyo, berlin, rome, etc., y las sub-rutas `/clima/{ciudad}/manana` de las ciudades top.
 
-### Feature: Mapa de lluvia en tiempo real (radar) — PLAN escrito, por implementar
-- Idea de Diego: radar de lluvia **animado** (ver la lluvia moviéndose), para motociclistas/peatones, sobre todo en ciudades lluviosas (Bogotá, Medellín). Visita recurrente → bueno para AdSense.
-- **Decisiones tomadas:** fuente = **RainViewer** (gratis, sin API key, radar animado real); ubicación = **página dedicada `/lluvia`** + **integración por ciudad** (sección "¿Está lloviendo en {city}?" + enlace/mini-mapa).
-- Plan completo en `PLAN_MAPA_LLUVIA.md` (incluye API de RainViewer: `weather-maps.json`, formato de tiles `{host}{path}/256/{z}/{x}/{y}/4/1_1.png`, refresco ~5min, atribución obligatoria). Reusa Leaflet (patrón de `WeatherMap.tsx`).
-- **Futuro:** este mapa es candidato natural para alertas "está por llover en tu zona" (conecta con captura de usuarios / WhatsApp).
+### Feature: Mapa de lluvia en tiempo real (radar) — IMPLEMENTADO (commit 76b2e6c, jun-2026)
+- Fuente: **RainViewer** (gratis, sin API key). Tiles: `{host}{path}/256/{z}/{x}/{y}/4/1_1.png`. Frames: `https://api.rainviewer.com/public/weather-maps.json` (past + nowcast). Refresco: 5 min.
+- `src/components/RainRadarMap.tsx` + `RainRadarMap.css`: animación de frames, play/pause, slider, etiqueta de hora ("Ahora" / "+N min" para nowcast), leyenda de colores, botón de geolocalización, búsqueda de ciudad (solo cuando `showSearch`). Carga dinámica vía `RainRadarMapWrapper.tsx` (ssr:false).
+- Página dedicada `/lluvia`: Server Component con h1, intro, FAQ (4 preguntas), JSON-LD FAQPage + BreadcrumbList. Mapa centrado en Bogotá por defecto (lat 4.711, lon -74.0721, zoom 7). Acepta `?ciudad={slug}` o `?lat=&lon=` (pendiente parsear query params en cliente).
+- Integración ciudad: sección server-side en `clima/[slug]/page.tsx` ("¿Está lloviendo en {city}?") + mini-mapa compacto en `CityPageClient.tsx` con coords del fetch (`weather.coord.lat/lon`, zoom 8).
+- Nav (`TopMenu.tsx`): enlace con `CloudIcon` en desktop y móvil. Footer: enlace a `/lluvia`. i18n: `app.nav.rain_map` en es/en/pt/fr/de/it. Sitemap: `daily`, priority 0.8. Cookies: sección RainViewer.
+- **Futuro:** parsear `?ciudad=` en la página client para centrar automáticamente; alertas push "está por llover" (conecta con WhatsApp/email).
 
 ### SEO titles de ciudad (commit 694b5d7, jun-2026)
 - GSC mostró que la gente busca variantes: **"el tiempo en {ciudad}"**, **"temperatura en {ciudad}"**, **"{ciudad} por horas"**, **"está lloviendo en {ciudad}"** (no solo "clima"). Se actualizaron title/description/OG + párrafo intro server-side de las páginas de ciudad para cubrirlas. Posición media subió de 56,7 → 43,2 y llegó el **primer clic** ("el tiempo en caracas").
 
 ## Pendientes
 
-### Hechos en esta sesión (jun-2026) ✓
+### Hechos en sesiones anteriores (jun-2026) ✓
 - ✓ Páginas de confianza, glosario, FAQ, guías (Fases 1-2).
 - ✓ Disclosure de AdSense en privacy/cookies (Fase legal).
 - ✓ Host canónico unificado a www.
@@ -190,11 +192,23 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ Nueva revisión de AdSense solicitada.
 - ✓ Sitemaps viejos del Blogger eliminados en Search Console.
 
+### Sesión jun-2026 — Radar de lluvia (commit 76b2e6c) ✓
+- ✓ `RainRadarMap.tsx` + `RainRadarMap.css`: mapa Leaflet con radar animado de RainViewer. Frames past + nowcast (~13 frames). Animación 500ms, play/pausa, slider, etiqueta de hora ("Ahora" / "+N min"), leyenda de intensidad, botón de geolocalización, búsqueda de ciudad (solo en `/lluvia`). Re-fetch cada 5 min.
+- ✓ `RainRadarMapWrapper.tsx`: carga dinámica `dynamic({ ssr: false })`, misma patrón que `WeatherMapWrapper`.
+- ✓ Página `/lluvia` (Server Component): h1, intro SEO, 4 FAQs con `<details>`, JSON-LD FAQPage + BreadcrumbList. Mapa centrado en Bogotá por defecto (zoom 7).
+- ✓ Integración en páginas de ciudad: sección server-side en `page.tsx` ("¿Está lloviendo en {city}? Radar en vivo" + botón → `/lluvia?ciudad={slug}`) + mini-mapa compacto en `CityPageClient.tsx` con coords del fetch (zoom 8).
+- ✓ TopMenu: enlace con `CloudIcon` en desktop y móvil. Footer: enlace a `/lluvia`. i18n: `app.nav.rain_map` en 6 idiomas. Sitemap: daily, priority 0.8. Cookies: sección RainViewer.
+- ✓ Build: 202 páginas SSG sin errores. SEO verificado con curl (texto server-side presente en HTML crudo).
+- ✓ Push a main → deploy automático en Vercel.
+
 ### Pendiente inmediato (Diego, manual, esta semana)
 - **Search Console:** pedir indexación siguiendo la "Lista priorizada" de arriba (~10/día). **Día 1 ya hecho** → continuar por Día 2.
 - **Vercel:** confirmar que el redirect no-www → www sea **permanente (308)**, no 307 temporal (Settings → Domains).
 
 ### Para la PRÓXIMA sesión (1-2 semanas después de respuesta de AdSense)
+0. **Revisar deploy de `/lluvia`** en Vercel: que la animación del radar funcione en móvil y que el texto SEO esté visible. Considerar parsear `?ciudad=` en la page client para centrar el mapa automáticamente al llegar desde una ciudad.
+
+
 1. **Revisar respuesta de AdSense:**
    - Si **aprobó** → reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales (pedirlos en el panel de AdSense). Evaluar un 3er anuncio sobre el fold.
    - Si **rechazó** → leer el motivo concreto del correo y resolver puntualmente.
