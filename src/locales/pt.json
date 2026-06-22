@@ -72,6 +72,19 @@
     },
     "home": {
       "faq_title": "Perguntas frequentes"
+    },
+    "advice": {
+      "title": "Conselho",
+      "storm": "Tempestade com raios. Evite sair e fique longe de áreas abertas ou árvores.",
+      "rain": "Está chovendo. Leve guarda-chuva e, se for de moto ou bicicleta, redobre a atenção: o piso está escorregadio.",
+      "snow": "Neve. Agasalhe-se bem e dirija com muito cuidado.",
+      "lowVisibility": "Visibilidade reduzida. Dirija devagar e com os faróis ligados.",
+      "extremeHeat": "Calor intenso. Hidrate-se, evite o sol do meio-dia e use protetor solar.",
+      "cold": "Está frio. Vista-se em camadas antes de sair.",
+      "hotSunny": "Sol forte. Use protetor solar, boné e mantenha-se hidratado.",
+      "clear": "Céu limpo, bom momento para sair.",
+      "clouds": "Céu nublado. Pode mudar; leve um casaco leve por precaução.",
+      "default": "Confira a previsão antes de sair."
     }
   },
   "legal": {

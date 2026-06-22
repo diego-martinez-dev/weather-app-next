@@ -72,6 +72,19 @@
     },
     "home": {
       "faq_title": "Questions fréquentes"
+    },
+    "advice": {
+      "title": "Conseil",
+      "storm": "Orage. Évitez de sortir et éloignez-vous des espaces ouverts ou des arbres.",
+      "rain": "Il pleut. Prenez un parapluie et, à moto ou à vélo, redoublez de prudence : la chaussée est glissante.",
+      "snow": "Neige. Couvrez-vous bien et conduisez très prudemment.",
+      "lowVisibility": "Visibilité réduite. Roulez lentement, feux allumés.",
+      "extremeHeat": "Forte chaleur. Hydratez-vous, évitez le soleil de midi et mettez de la crème solaire.",
+      "cold": "Il fait froid. Habillez-vous en couches avant de sortir.",
+      "hotSunny": "Soleil intense. Crème solaire, casquette et hydratation.",
+      "clear": "Ciel dégagé, bon moment pour sortir.",
+      "clouds": "Ciel nuageux. Cela peut changer ; prenez une veste légère au cas où.",
+      "default": "Vérifiez les prévisions avant de sortir."
     }
   },
   "legal": {

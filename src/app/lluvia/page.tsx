@@ -71,7 +71,7 @@ const breadcrumbJsonLd = {
 // Coordenadas por defecto: Bogotá (ciudad más lluviosa de la región + mayor tráfico del sitio)
 const DEFAULT_LAT = 4.711;
 const DEFAULT_LON = -74.0721;
-const DEFAULT_ZOOM = 8;
+const DEFAULT_ZOOM = 11;
 
 export default function LluviaPage() {
   return (

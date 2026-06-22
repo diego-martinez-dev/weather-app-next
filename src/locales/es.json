@@ -72,6 +72,19 @@
     },
     "home": {
       "faq_title": "Preguntas frecuentes"
+    },
+    "advice": {
+      "title": "Consejo",
+      "storm": "Tormenta eléctrica. Evita salir y aléjate de zonas abiertas o árboles.",
+      "rain": "Está lloviendo. Lleva paraguas y, si vas en moto o bici, extrema la precaución: el pavimento está resbaladizo.",
+      "snow": "Nieve. Abrígate bien y conduce con mucho cuidado.",
+      "lowVisibility": "Visibilidad reducida. Conduce despacio y con las luces encendidas.",
+      "extremeHeat": "Calor intenso. Hidrátate, evita el sol del mediodía y usa protector solar.",
+      "cold": "Hace frío. Abrígate por capas antes de salir.",
+      "hotSunny": "Sol fuerte. Usa protector solar, gorra y mantente hidratado.",
+      "clear": "Cielo despejado, buen momento para salir.",
+      "clouds": "Cielo nublado. Podría cambiar; lleva un abrigo ligero por si acaso.",
+      "default": "Revisa el pronóstico antes de salir."
     }
   },
   "legal": {

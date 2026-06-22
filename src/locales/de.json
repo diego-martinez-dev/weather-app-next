@@ -72,6 +72,19 @@
     },
     "home": {
       "faq_title": "Häufig gestellte Fragen"
+    },
+    "advice": {
+      "title": "Tipp",
+      "storm": "Gewitter. Bleib drinnen und meide offene Flächen oder Bäume.",
+      "rain": "Es regnet. Nimm einen Schirm mit, und auf Motorrad oder Fahrrad besonders vorsichtig: die Fahrbahn ist rutschig.",
+      "snow": "Schnee. Zieh dich warm an und fahr sehr vorsichtig.",
+      "lowVisibility": "Schlechte Sicht. Fahr langsam mit eingeschaltetem Licht.",
+      "extremeHeat": "Große Hitze. Trink genug, meide die Mittagssonne und benutze Sonnencreme.",
+      "cold": "Es ist kalt. Zieh dich vor dem Rausgehen in Schichten an.",
+      "hotSunny": "Starke Sonne. Sonnencreme, Mütze und viel trinken.",
+      "clear": "Klarer Himmel, ein guter Moment zum Rausgehen.",
+      "clouds": "Bewölkter Himmel. Es könnte umschlagen; nimm sicherheitshalber eine leichte Jacke mit.",
+      "default": "Prüfe die Vorhersage, bevor du rausgehst."
     }
   },
   "legal": {

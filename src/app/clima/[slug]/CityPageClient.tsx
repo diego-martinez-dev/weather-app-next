@@ -130,7 +130,7 @@ function CityContent({ slug, cityName }: { slug: string; cityName: string }) {
               <WindyMap
                 lat={weather.coord.lat}
                 lon={weather.coord.lon}
-                zoom={10}
+                zoom={11}
               />
             </div>
           )}

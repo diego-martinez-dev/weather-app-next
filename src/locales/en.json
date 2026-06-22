@@ -72,6 +72,19 @@
     },
     "home": {
       "faq_title": "Frequently asked questions"
+    },
+    "advice": {
+      "title": "Tip",
+      "storm": "Thunderstorm. Avoid going out and stay away from open areas or trees.",
+      "rain": "It's raining. Take an umbrella, and if you're on a motorcycle or bike, be extra careful: the road is slippery.",
+      "snow": "Snow. Bundle up and drive very carefully.",
+      "lowVisibility": "Low visibility. Drive slowly with your lights on.",
+      "extremeHeat": "Intense heat. Stay hydrated, avoid midday sun and use sunscreen.",
+      "cold": "It's cold. Dress in layers before going out.",
+      "hotSunny": "Strong sun. Use sunscreen, a hat and stay hydrated.",
+      "clear": "Clear skies, a good time to head out.",
+      "clouds": "Cloudy skies. It could change; take a light jacket just in case.",
+      "default": "Check the forecast before heading out."
     }
   },
   "legal": {
