@@ -75,16 +75,16 @@
     },
     "advice": {
       "title": "Consiglio",
-      "storm": "Temporale. Evita di uscire e stai lontano da spazi aperti o alberi.",
-      "rain": "Sta piovendo. Porta l'ombrello e, in moto o in bici, massima prudenza: l'asfalto è scivoloso.",
-      "snow": "Neve. Copriti bene e guida con molta attenzione.",
-      "lowVisibility": "Visibilità ridotta. Guida piano con i fari accesi.",
-      "extremeHeat": "Caldo intenso. Idratati, evita il sole di mezzogiorno e usa la crema solare.",
-      "cold": "Fa freddo. Vestiti a strati prima di uscire.",
-      "hotSunny": "Sole forte. Usa crema solare, cappellino e bevi acqua.",
-      "clear": "Cielo sereno, buon momento per uscire.",
-      "clouds": "Cielo nuvoloso. Potrebbe cambiare; porta una giacca leggera per sicurezza.",
-      "default": "Controlla le previsioni prima di uscire."
+      "storm": "Per oggi sono previsti temporali, con una probabilità di pioggia fino al {{rainProbToday}}%. La cosa più prudente è restare al riparo e rimandare le uscite all'aperto. Se devi uscire, porta un {{umbrella}} e tieniti lontano da alberi, pali e spazi aperti.",
+      "rainVeryLikely": "Le previsioni indicano una probabilità di pioggia del {{rainProbToday}}% per oggi, con massime vicine ai {{tempMaxToday}}°. Ti consigliamo di uscire con un {{umbrella}} e di tenere a portata di mano una {{jacket}} impermeabile. Se hai intenzione di {{drive}} in moto o in bici, massima prudenza: l'asfalto bagnato allunga le frenate e riduce l'aderenza.",
+      "rainPossible": "C'è una probabilità di pioggia del {{rainProbToday}}% per oggi, quindi il cielo potrebbe aprirsi da un momento all'altro. Conviene portare un {{umbrella}} pieghevole e una {{jacket}} leggera nel caso il tempo cambi. Le massime si aggireranno sui {{tempMaxToday}}°, ideali per sfruttare le ore meno a rischio.",
+      "lowVisibility": "Sono previste condizioni di scarsa visibilità (nebbia o foschia) per buona parte della giornata. Se hai intenzione di {{drive}}, vai piano, con i fari accesi e mantenendo più distanza del solito. A piedi, fai attenzione ad attraversare e indossa indumenti ben visibili.",
+      "extremeHeat": "Per oggi è previsto caldo intenso, con massime che raggiungeranno i {{tempMaxToday}}°. Idratati spesso anche senza sete, evita l'attività fisica all'aperto tra mezzogiorno e il primo pomeriggio e usa la {{sunscreen}}, un cappellino e indumenti leggeri di colore chiaro.",
+      "cold": "Oggi farà freddo, con minime che scenderanno fino ai {{tempMinToday}}°. Vestiti a strati per trattenere il calore e poterti regolare durante la giornata; aggiungi sciarpa e guanti se rimani a lungo all'aperto.",
+      "hotSunny": "Giornata soleggiata e calda, con massime intorno ai {{tempMaxToday}}° e bassa probabilità di pioggia ({{rainProbToday}}%). È un buon momento per i piani all'aperto: usa la {{sunscreen}} e un cappellino, cerca l'ombra nelle ore centrali e idratati durante la giornata.",
+      "clearNice": "Il cielo sarà sereno e la probabilità di pioggia è molto bassa ({{rainProbToday}}%), con temperature gradevoli fino ai {{tempMaxToday}}°. È una giornata ideale per uscire e godersi l'aria aperta; in ogni caso, usa un po' di {{sunscreen}} se resti a lungo al sole.",
+      "cloudyDry": "Il cielo sarà nuvoloso, ma la probabilità di pioggia è bassa ({{rainProbToday}}%), quindi è poco probabile che la giornata si bagni. Le temperature raggiungeranno i {{tempMaxToday}}°; una {{jacket}} leggera basta per stare comodi. Un buon momento per uscire senza grandi complicazioni.",
+      "general": "Le condizioni di oggi sono variabili, con massime di {{tempMaxToday}}°, minime di {{tempMinToday}}° e una probabilità di pioggia del {{rainProbToday}}%. Conviene controllare le previsioni orarie prima di uscire e portare una {{jacket}} leggera nel caso il tempo cambi."
     }
   },
   "legal": {

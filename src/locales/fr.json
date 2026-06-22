@@ -75,16 +75,16 @@
     },
     "advice": {
       "title": "Conseil",
-      "storm": "Orage. Évitez de sortir et éloignez-vous des espaces ouverts ou des arbres.",
-      "rain": "Il pleut. Prenez un parapluie et, à moto ou à vélo, redoublez de prudence : la chaussée est glissante.",
-      "snow": "Neige. Couvrez-vous bien et conduisez très prudemment.",
-      "lowVisibility": "Visibilité réduite. Roulez lentement, feux allumés.",
-      "extremeHeat": "Forte chaleur. Hydratez-vous, évitez le soleil de midi et mettez de la crème solaire.",
-      "cold": "Il fait froid. Habillez-vous en couches avant de sortir.",
-      "hotSunny": "Soleil intense. Crème solaire, casquette et hydratation.",
-      "clear": "Ciel dégagé, bon moment pour sortir.",
-      "clouds": "Ciel nuageux. Cela peut changer ; prenez une veste légère au cas où.",
-      "default": "Vérifiez les prévisions avant de sortir."
+      "storm": "Des orages sont prévus aujourd'hui, avec jusqu'à {{rainProbToday}}% de probabilité de pluie. Le plus prudent est de rester à l'abri et de reporter les sorties en plein air. Si vous devez sortir, prenez un {{umbrella}} et tenez-vous loin des arbres, poteaux et espaces ouverts.",
+      "rainVeryLikely": "Les prévisions annoncent {{rainProbToday}}% de probabilité de pluie aujourd'hui, avec des maximales proches de {{tempMaxToday}}°. Nous vous conseillons de sortir avec un {{umbrella}} et de garder une {{jacket}} imperméable à portée de main. Si vous comptez {{drive}} à moto ou à vélo, redoublez de prudence : la chaussée mouillée allonge les distances de freinage et réduit l'adhérence.",
+      "rainPossible": "Il y a {{rainProbToday}}% de probabilité de pluie aujourd'hui, le ciel peut donc se couvrir à tout moment. Mieux vaut emporter un {{umbrella}} pliable et une {{jacket}} légère au cas où le temps change. Les maximales avoisineront {{tempMaxToday}}°, idéal pour profiter des heures les moins à risque.",
+      "lowVisibility": "Des conditions de faible visibilité (brouillard ou brume) sont attendues une grande partie de la journée. Si vous comptez {{drive}}, roulez lentement, feux allumés et en gardant plus de distance que d'habitude. À pied, soyez prudent en traversant et portez des vêtements visibles.",
+      "extremeHeat": "Une forte chaleur est prévue aujourd'hui, avec des maximales atteignant {{tempMaxToday}}°. Hydratez-vous souvent même sans soif, évitez l'activité physique en plein air entre midi et le milieu d'après-midi, et utilisez de la {{sunscreen}}, une casquette et des vêtements légers de couleur claire.",
+      "cold": "Il fera froid aujourd'hui, avec des minimales descendant jusqu'à {{tempMinToday}}°. Habillez-vous en couches pour garder la chaleur et pouvoir vous ajuster dans la journée ; ajoutez écharpe et gants si vous restez longtemps dehors.",
+      "hotSunny": "Journée ensoleillée et chaude, avec des maximales autour de {{tempMaxToday}}° et une faible probabilité de pluie ({{rainProbToday}}%). C'est un bon moment pour les plans en plein air : utilisez de la {{sunscreen}} et une casquette, cherchez l'ombre aux heures centrales et hydratez-vous tout au long de la journée.",
+      "clearNice": "Le ciel sera dégagé et la probabilité de pluie est très faible ({{rainProbToday}}%), avec des températures agréables jusqu'à {{tempMaxToday}}°. C'est une journée idéale pour sortir et profiter du plein air ; malgré tout, mettez un peu de {{sunscreen}} si vous restez longtemps au soleil.",
+      "cloudyDry": "Le ciel sera nuageux, mais la probabilité de pluie est faible ({{rainProbToday}}%), il est donc peu probable que la journée soit pluvieuse. Les températures atteindront {{tempMaxToday}}° ; une {{jacket}} légère suffit pour être à l'aise. Un bon moment pour sortir sans grande complication.",
+      "general": "Les conditions d'aujourd'hui sont variables, avec des maximales de {{tempMaxToday}}°, des minimales de {{tempMinToday}}° et {{rainProbToday}}% de probabilité de pluie. Mieux vaut consulter les prévisions horaires avant de sortir et emporter une {{jacket}} légère au cas où le temps change."
     }
   },
   "legal": {

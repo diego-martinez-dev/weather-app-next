@@ -75,16 +75,16 @@
     },
     "advice": {
       "title": "Tip",
-      "storm": "Thunderstorm. Avoid going out and stay away from open areas or trees.",
-      "rain": "It's raining. Take an umbrella, and if you're on a motorcycle or bike, be extra careful: the road is slippery.",
-      "snow": "Snow. Bundle up and drive very carefully.",
-      "lowVisibility": "Low visibility. Drive slowly with your lights on.",
-      "extremeHeat": "Intense heat. Stay hydrated, avoid midday sun and use sunscreen.",
-      "cold": "It's cold. Dress in layers before going out.",
-      "hotSunny": "Strong sun. Use sunscreen, a hat and stay hydrated.",
-      "clear": "Clear skies, a good time to head out.",
-      "clouds": "Cloudy skies. It could change; take a light jacket just in case.",
-      "default": "Check the forecast before heading out."
+      "storm": "Thunderstorms are forecast for today, with up to a {{rainProbToday}}% chance of rain. The safest choice is to stay indoors and put off outdoor plans. If you must head out, take an {{umbrella}} and keep well away from trees, poles and open areas.",
+      "rainVeryLikely": "The forecast shows a {{rainProbToday}}% chance of rain today, with highs near {{tempMaxToday}}°. We recommend heading out with an {{umbrella}} and keeping a waterproof {{jacket}} handy. If you're going to {{drive}} a motorcycle or bike, take extra care: wet pavement lengthens braking distances and cuts grip.",
+      "rainPossible": "There's a {{rainProbToday}}% chance of rain today, so the sky could open up at any moment. It's worth carrying a folding {{umbrella}} and a light {{jacket}} in case the weather turns. Highs will be around {{tempMaxToday}}°, ideal for planning outings during the lower-risk hours.",
+      "lowVisibility": "Low-visibility conditions (fog, mist or haze) are expected for much of the day. If you're going to {{drive}}, go slowly, with your lights on and keeping more distance than usual. On foot, take care crossing the streets and wear visible clothing.",
+      "extremeHeat": "Intense heat is expected today, with highs reaching {{tempMaxToday}}°. Stay hydrated often even if you're not thirsty, avoid outdoor physical activity between midday and mid-afternoon, and use {{sunscreen}}, a hat and light, light-coloured clothing.",
+      "cold": "It will be cold today, with lows dropping to {{tempMinToday}}°. Dress in layers to keep warm and adjust through the day; add a scarf and gloves if you'll spend a long time outdoors.",
+      "hotSunny": "A sunny, hot day, with highs around {{tempMaxToday}}° and a low chance of rain ({{rainProbToday}}%). It's a good time for outdoor plans: use {{sunscreen}} and a hat, seek shade during the middle hours and stay hydrated throughout the day.",
+      "clearNice": "The sky will be clear and the chance of rain is very low ({{rainProbToday}}%), with pleasant temperatures of up to {{tempMaxToday}}°. It's an ideal day to get out and enjoy the outdoors; even so, use a little {{sunscreen}} if you'll be in the sun for a while.",
+      "cloudyDry": "The sky will be cloudy, but the chance of rain is low ({{rainProbToday}}%), so the day is unlikely to get wet. Temperatures will reach {{tempMaxToday}}°; a light {{jacket}} is enough to stay comfortable. A good time to head out without much hassle.",
+      "general": "Conditions today are mixed, with highs of {{tempMaxToday}}°, lows of {{tempMinToday}}° and a {{rainProbToday}}% chance of rain. It's worth checking the hourly forecast before going out and taking a light {{jacket}} in case the weather changes."
     }
   },
   "legal": {

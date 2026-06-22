@@ -75,16 +75,16 @@
     },
     "advice": {
       "title": "Conselho",
-      "storm": "Tempestade com raios. Evite sair e fique longe de áreas abertas ou árvores.",
-      "rain": "Está chovendo. Leve guarda-chuva e, se for de moto ou bicicleta, redobre a atenção: o piso está escorregadio.",
-      "snow": "Neve. Agasalhe-se bem e dirija com muito cuidado.",
-      "lowVisibility": "Visibilidade reduzida. Dirija devagar e com os faróis ligados.",
-      "extremeHeat": "Calor intenso. Hidrate-se, evite o sol do meio-dia e use protetor solar.",
-      "cold": "Está frio. Vista-se em camadas antes de sair.",
-      "hotSunny": "Sol forte. Use protetor solar, boné e mantenha-se hidratado.",
-      "clear": "Céu limpo, bom momento para sair.",
-      "clouds": "Céu nublado. Pode mudar; leve um casaco leve por precaução.",
-      "default": "Confira a previsão antes de sair."
+      "storm": "Há previsão de tempestade com raios para hoje, com até {{rainProbToday}}% de probabilidade de chuva. O mais prudente é ficar abrigado e adiar as saídas ao ar livre. Se precisar sair, leve um {{umbrella}} e mantenha-se longe de árvores, postes e áreas abertas.",
+      "rainVeryLikely": "A previsão indica {{rainProbToday}}% de probabilidade de chuva para hoje, com máximas perto de {{tempMaxToday}}°. Recomendamos sair com um {{umbrella}} e ter à mão um {{jacket}} impermeável. Se for {{drive}} de moto ou bicicleta, redobre a atenção: o piso molhado aumenta a distância de frenagem e reduz a aderência.",
+      "rainPossible": "Há {{rainProbToday}}% de probabilidade de chuva para hoje, então o céu pode abrir a qualquer momento. Vale a pena levar um {{umbrella}} dobrável e um {{jacket}} leve caso o tempo vire. As máximas ficarão em torno de {{tempMaxToday}}°, ideal para aproveitar as horas de menor risco.",
+      "lowVisibility": "São esperadas condições de baixa visibilidade (neblina, bruma ou névoa) durante boa parte do dia. Se for {{drive}}, vá devagar, com os faróis ligados e mantendo mais distância que o habitual. A pé, tenha cuidado ao atravessar as ruas e use roupas visíveis.",
+      "extremeHeat": "Prevê-se calor intenso para hoje, com máximas chegando a {{tempMaxToday}}°. Hidrate-se com frequência mesmo sem sede, evite atividade física ao ar livre entre o meio-dia e o meio da tarde, e use {{sunscreen}}, boné e roupas leves de cores claras.",
+      "cold": "Hoje fará frio, com mínimas caindo até {{tempMinToday}}°. Vista-se em camadas para conservar o calor e poder se ajustar ao longo do dia; acrescente cachecol e luvas se for passar muito tempo ao relento.",
+      "hotSunny": "Dia ensolarado e quente, com máximas em torno de {{tempMaxToday}}° e baixa probabilidade de chuva ({{rainProbToday}}%). É um bom momento para planos ao ar livre: use {{sunscreen}} e boné, procure a sombra nas horas centrais e hidrate-se ao longo do dia.",
+      "clearNice": "O céu estará limpo e a probabilidade de chuva é muito baixa ({{rainProbToday}}%), com temperaturas agradáveis de até {{tempMaxToday}}°. É um dia ideal para sair e aproveitar ao ar livre; ainda assim, use um pouco de {{sunscreen}} se for ficar muito tempo ao sol.",
+      "cloudyDry": "O céu estará nublado, mas a probabilidade de chuva é baixa ({{rainProbToday}}%), então é pouco provável que o dia se molhe. As temperaturas chegarão a {{tempMaxToday}}°; um {{jacket}} leve basta para ficar confortável. Bom momento para sair sem grandes complicações.",
+      "general": "As condições para hoje são variáveis, com máximas de {{tempMaxToday}}°, mínimas de {{tempMinToday}}° e {{rainProbToday}}% de probabilidade de chuva. Vale conferir a previsão por hora antes de sair e levar um {{jacket}} leve caso o tempo mude."
     }
   },
   "legal": {

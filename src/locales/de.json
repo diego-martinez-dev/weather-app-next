@@ -75,16 +75,16 @@
     },
     "advice": {
       "title": "Tipp",
-      "storm": "Gewitter. Bleib drinnen und meide offene Flächen oder Bäume.",
-      "rain": "Es regnet. Nimm einen Schirm mit, und auf Motorrad oder Fahrrad besonders vorsichtig: die Fahrbahn ist rutschig.",
-      "snow": "Schnee. Zieh dich warm an und fahr sehr vorsichtig.",
-      "lowVisibility": "Schlechte Sicht. Fahr langsam mit eingeschaltetem Licht.",
-      "extremeHeat": "Große Hitze. Trink genug, meide die Mittagssonne und benutze Sonnencreme.",
-      "cold": "Es ist kalt. Zieh dich vor dem Rausgehen in Schichten an.",
-      "hotSunny": "Starke Sonne. Sonnencreme, Mütze und viel trinken.",
-      "clear": "Klarer Himmel, ein guter Moment zum Rausgehen.",
-      "clouds": "Bewölkter Himmel. Es könnte umschlagen; nimm sicherheitshalber eine leichte Jacke mit.",
-      "default": "Prüfe die Vorhersage, bevor du rausgehst."
+      "storm": "Für heute sind Gewitter vorhergesagt, mit bis zu {{rainProbToday}}% Regenwahrscheinlichkeit. Am sichersten ist es, drinnen zu bleiben und Aktivitäten im Freien zu verschieben. Falls du raus musst, nimm einen {{umbrella}} mit und halte dich von Bäumen, Masten und offenen Flächen fern.",
+      "rainVeryLikely": "Die Vorhersage zeigt für heute {{rainProbToday}}% Regenwahrscheinlichkeit, mit Höchstwerten um {{tempMaxToday}}°. Wir empfehlen, mit einem {{umbrella}} rauszugehen und eine wasserdichte {{jacket}} griffbereit zu haben. Wenn du mit Motorrad oder Fahrrad {{drive}} willst, sei besonders vorsichtig: nasser Asphalt verlängert den Bremsweg und verringert die Haftung.",
+      "rainPossible": "Es besteht {{rainProbToday}}% Regenwahrscheinlichkeit für heute, der Himmel kann sich also jederzeit öffnen. Es lohnt sich, einen faltbaren {{umbrella}} und eine leichte {{jacket}} mitzunehmen, falls das Wetter umschlägt. Die Höchstwerte liegen bei etwa {{tempMaxToday}}°, ideal, um die risikoärmeren Stunden zu nutzen.",
+      "lowVisibility": "Für einen Großteil des Tages werden Bedingungen mit schlechter Sicht (Nebel oder Dunst) erwartet. Wenn du {{drive}} willst, fahr langsam, mit eingeschaltetem Licht und mehr Abstand als sonst. Zu Fuß sei beim Überqueren vorsichtig und trage gut sichtbare Kleidung.",
+      "extremeHeat": "Für heute wird starke Hitze erwartet, mit Höchstwerten bis {{tempMaxToday}}°. Trink häufig, auch ohne Durst, vermeide körperliche Aktivität im Freien zwischen Mittag und frühem Nachmittag und benutze {{sunscreen}}, eine Mütze und leichte, helle Kleidung.",
+      "cold": "Heute wird es kalt, mit Tiefstwerten bis {{tempMinToday}}°. Zieh dich in Schichten an, um die Wärme zu halten und dich im Laufe des Tages anzupassen; nimm Schal und Handschuhe dazu, wenn du lange draußen bist.",
+      "hotSunny": "Ein sonniger, heißer Tag, mit Höchstwerten um {{tempMaxToday}}° und geringer Regenwahrscheinlichkeit ({{rainProbToday}}%). Ein guter Moment für Pläne im Freien: benutze {{sunscreen}} und eine Mütze, suche in den Mittagsstunden Schatten und trink über den Tag verteilt genug.",
+      "clearNice": "Der Himmel wird klar sein und die Regenwahrscheinlichkeit ist sehr gering ({{rainProbToday}}%), bei angenehmen Temperaturen bis {{tempMaxToday}}°. Ein idealer Tag, um rauszugehen und die frische Luft zu genießen; trotzdem etwas {{sunscreen}} benutzen, wenn du länger in der Sonne bist.",
+      "cloudyDry": "Der Himmel wird bewölkt sein, aber die Regenwahrscheinlichkeit ist gering ({{rainProbToday}}%), der Tag wird also kaum nass. Die Temperaturen erreichen {{tempMaxToday}}°; eine leichte {{jacket}} reicht, um bequem zu bleiben. Ein guter Moment, um ohne große Umstände rauszugehen.",
+      "general": "Die Bedingungen heute sind wechselhaft, mit Höchstwerten von {{tempMaxToday}}°, Tiefstwerten von {{tempMinToday}}° und {{rainProbToday}}% Regenwahrscheinlichkeit. Es lohnt sich, vor dem Rausgehen die stündliche Vorhersage zu prüfen und eine leichte {{jacket}} mitzunehmen, falls sich das Wetter ändert."
     }
   },
   "legal": {

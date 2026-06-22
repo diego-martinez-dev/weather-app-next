@@ -75,16 +75,16 @@
     },
     "advice": {
       "title": "Consejo",
-      "storm": "Tormenta eléctrica. Evita salir y aléjate de zonas abiertas o árboles.",
-      "rain": "Está lloviendo. Lleva paraguas y, si vas en moto o bici, extrema la precaución: el pavimento está resbaladizo.",
-      "snow": "Nieve. Abrígate bien y conduce con mucho cuidado.",
-      "lowVisibility": "Visibilidad reducida. Conduce despacio y con las luces encendidas.",
-      "extremeHeat": "Calor intenso. Hidrátate, evita el sol del mediodía y usa protector solar.",
-      "cold": "Hace frío. Abrígate por capas antes de salir.",
-      "hotSunny": "Sol fuerte. Usa protector solar, gorra y mantente hidratado.",
-      "clear": "Cielo despejado, buen momento para salir.",
-      "clouds": "Cielo nublado. Podría cambiar; lleva un abrigo ligero por si acaso.",
-      "default": "Revisa el pronóstico antes de salir."
+      "storm": "El pronóstico anticipa tormenta eléctrica para hoy, con hasta un {{rainProbToday}}% de probabilidad de lluvia. Lo más prudente es quedarse a resguardo y posponer las salidas al aire libre. Si hay que salir, {{take}} {{umbrella}} y conviene mantenerse lejos de árboles, postes y zonas abiertas.",
+      "rainVeryLikely": "El pronóstico indica una probabilidad de lluvia del {{rainProbToday}}% para hoy, con máximas cercanas a los {{tempMaxToday}}°. Te aconsejamos salir con {{umbrella}} y tener a mano {{jacket}} impermeable. Si vas a {{drive}} en moto o bici, {{beCareful}}: el pavimento mojado alarga las frenadas y reduce el agarre.",
+      "rainPossible": "Hay un {{rainProbToday}}% de probabilidad de lluvia para hoy, así que el cielo podría abrirse en cualquier momento. Conviene salir con {{umbrella}} plegable y {{jacket}} por si refresca o el clima cambia. Las máximas rondarán los {{tempMaxToday}}°, ideal para aprovechar las horas de menor riesgo.",
+      "lowVisibility": "Se esperan condiciones de baja visibilidad (niebla, bruma o calima) durante buena parte del día. Si vas a {{drive}}, lo mejor es ir despacio, con las luces encendidas y manteniendo más distancia de la habitual. A pie, {{beCareful}} al cruzar las calles y conviene usar ropa visible.",
+      "extremeHeat": "Se prevé calor intenso para hoy, con máximas que alcanzarán los {{tempMaxToday}}°. Por eso {{hydrate}} con frecuencia aunque no tengas sed, {{avoid}} la actividad física al aire libre entre el mediodía y la media tarde, y {{use}} {{sunscreen}}, gorra y ropa ligera de colores claros.",
+      "cold": "Hoy hará frío, con mínimas que bajarán hasta los {{tempMinToday}}°. Por eso {{bundleUp}} por capas para conservar el calor y poder regular la temperatura durante el día; conviene sumar bufanda y guantes si vas a pasar mucho tiempo a la intemperie.",
+      "hotSunny": "Día soleado y caluroso, con máximas en torno a los {{tempMaxToday}}° y baja probabilidad de lluvia ({{rainProbToday}}%). Es buen momento para planes al aire libre: {{use}} {{sunscreen}} y gorra, conviene buscar la sombra en las horas centrales y {{hydrate}} a lo largo del día.",
+      "clearNice": "El cielo estará despejado y la probabilidad de lluvia es muy baja ({{rainProbToday}}%), con temperaturas agradables de hasta {{tempMaxToday}}°. Es un día ideal para salir y disfrutar al aire libre; aun así, {{use}} algo de {{sunscreen}} si vas a estar largo rato al sol.",
+      "cloudyDry": "El cielo estará nublado, pero la probabilidad de lluvia es baja ({{rainProbToday}}%), así que es poco probable que se moje el día. Las temperaturas llegarán a los {{tempMaxToday}}°; con {{jacket}} basta para estar cómodo. Buen momento para salir sin grandes complicaciones.",
+      "general": "Las condiciones para hoy son variables, con máximas de {{tempMaxToday}}°, mínimas de {{tempMinToday}}° y un {{rainProbToday}}% de probabilidad de lluvia. Conviene revisar el pronóstico por horas antes de salir y llevar {{jacket}} por si el tiempo cambia."
     }
   },
   "legal": {
