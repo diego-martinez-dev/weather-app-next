@@ -134,7 +134,7 @@ export default function RainRadarMap({ lat, lon, zoom = 7, cityName, showSearch 
         opacity: 0,
         zIndex: 200,
         tileSize: 256,
-        maxNativeZoom: 10,
+        maxNativeZoom: 7,
         maxZoom: 19,
       });
       layer.addTo(map);
