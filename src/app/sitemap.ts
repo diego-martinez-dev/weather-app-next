@@ -3,9 +3,15 @@ import { topCities } from './clima/[slug]/page';
 import { guideSlugs } from '@/data/guides';
 import { countrySlugs } from '@/data/countries';
 
+// Fecha de la última actualización REAL de contenido. Bumpeala manualmente
+// cuando agregues/cambies contenido (ciudades, guías, países), no en cada build.
+// Un lastmod estable y honesto es una señal que Google usa; un "new Date()" en
+// cada deploy hace que Google desconfíe del lastmod y lo ignore.
+const LAST_CONTENT_UPDATE = new Date('2026-06-22');
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.clima-hoy.com';
-  const currentDate = new Date();
+  const currentDate = LAST_CONTENT_UPDATE;
 
   const staticRoutes = [
     { url: `${baseUrl}/`, lastModified: currentDate, changeFrequency: 'daily' as const, priority: 1.0 },
