@@ -1,7 +1,8 @@
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
-import { SunIcon, BuildingOffice2Icon, GlobeAmericasIcon, GlobeAltIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { SunIcon, BuildingOffice2Icon, GlobeAmericasIcon, GlobeAltIcon, MagnifyingGlassIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { countries } from '@/data/countries';
 
 const popularCities = [
   { name: 'Bogotá', slug: 'bogota' },
@@ -79,6 +80,22 @@ export default function ClimaHubPage() {
           </div>
         </section>
         
+        <section className="cities-section">
+          <h2><MapPinIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em' }} /> Clima por país</h2>
+          <p>
+            ¿Buscás el clima de un país completo? Estas guías explican cómo es el tiempo por regiones,
+            cuándo es la mejor época para viajar y la temporada de lluvias, con enlaces a todas sus
+            ciudades.
+          </p>
+          <div className="cities-grid">
+            {countries.map((country) => (
+              <Link key={country.slug} href={`/clima-pais/${country.slug}`} className="city-card">
+                <MapPinIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {country.name}
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className="search-section">
           <h2><MagnifyingGlassIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em' }} /> Buscar otra ciudad</h2>
           <p>Usa el buscador en la parte superior para encontrar el clima de cualquier ciudad.</p>

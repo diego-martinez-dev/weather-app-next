@@ -3,10 +3,11 @@ import Link from 'next/link';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import CityPageClient from './CityPageClient';
-import { LightBulbIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BookOpenIcon } from '@heroicons/react/24/outline';
+import { LightBulbIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BookOpenIcon, MapPinIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline';
 import { getCityDescription, getCityTouristTip } from '@/data/cityDescriptions';
 import { getCityClimate } from '@/data/cityClimate';
 import { getGuideBySlug } from '@/data/guides';
+import { getCountryForCity } from '@/data/countries';
 
 const highAltitudeSlugs = new Set(['bogota', 'quito', 'la-paz', 'cusco', 'arequipa', 'cuenca', 'tunja', 'manizales', 'pasto', 'popayan', 'armenia']);
 const tropicalBeachSlugs = new Set(['cartagena', 'santa-marta', 'barranquilla', 'havana', 'santo-domingo', 'managua', 'panama-city', 'san-jose', 'miami', 'manta', 'guayaquil', 'rio-de-janeiro', 'salvador', 'dubai', 'sydney']);
@@ -108,6 +109,7 @@ export default async function CityPage(
   const { slug } = await params;
   const city = slugToCity(slug);
   const climate = getCityClimate(slug);
+  const country = getCountryForCity(slug);
   const description = getCityDescription(slug);
   const touristTip = getCityTouristTip(slug);
   const relatedGuides = getRelatedGuideSlugs(slug)
@@ -252,15 +254,41 @@ export default async function CityPage(
           </div>
         )}
 
+        {country && country.cities.length > 1 && (
+          <div style={{ maxWidth: 900, margin: '16px auto 8px', padding: '16px 20px', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+            <h2 style={{ margin: '0 0 10px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+              <MapPinIcon style={{ width: '1.2em', height: '1.2em' }} />
+              Clima en otras ciudades de {country.name}
+            </h2>
+            <p style={{ margin: '0 0 12px', fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--color-text)' }}>
+              Consulta el tiempo de otras ciudades de {country.name} o lee la{' '}
+              <Link href={`/clima-pais/${country.slug}`} style={{ color: 'var(--color-primary, #1a73e8)', textDecoration: 'none' }}>
+                guía del clima de {country.name}
+              </Link>{' '}
+              con sus estaciones y temporada de lluvias.
+            </p>
+            <div className="cities-grid">
+              {country.cities
+                .filter(c => c.slug !== slug)
+                .slice(0, 11)
+                .map(c => (
+                  <Link key={c.slug} href={`/clima/${c.slug}`} className="city-card">
+                    <BuildingOffice2Icon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.1em' }} /> {c.name}
+                  </Link>
+                ))}
+            </div>
+          </div>
+        )}
+
         <div style={{ maxWidth: 900, margin: '16px auto 8px', padding: '16px 20px', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
           <h2 style={{ margin: '0 0 8px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
             <CloudIcon style={{ width: '1.2em', height: '1.2em' }} />
             ¿Está lloviendo en {city}? Radar en vivo
           </h2>
           <p style={{ margin: '0 0 12px', fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--color-text)' }}>
-            Consulta el radar de lluvia en tiempo real para {city}: ve dónde está cayendo la lluvia
-            ahora mismo y cómo se moverá en los próximos 30 minutos. Útil para saber si salir con
-            paraguas o esperar a que escampe.
+            Consulta el mapa de lluvia en vivo para {city}: ve dónde está lloviendo en la zona y cómo
+            avanzan las precipitaciones, con animación y zoom a nivel de ciudad. Útil para saber si
+            salir con paraguas o esperar a que escampe.
           </p>
           <Link
             href={`/lluvia?ciudad=${slug}`}

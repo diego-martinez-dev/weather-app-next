@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { topCities } from './clima/[slug]/page';
 import { guideSlugs } from '@/data/guides';
+import { countrySlugs } from '@/data/countries';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.clima-hoy.com';
@@ -42,5 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...cityRoutes, ...cityMananaRoutes, ...guideRoutes];
+  const countryRoutes = countrySlugs.map(slug => ({
+    url: `${baseUrl}/clima-pais/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...cityRoutes, ...cityMananaRoutes, ...guideRoutes, ...countryRoutes];
 }
