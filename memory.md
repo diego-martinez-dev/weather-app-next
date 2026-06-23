@@ -213,15 +213,24 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ Nueva revisión de AdSense solicitada.
 - ✓ Sitemaps viejos del Blogger eliminados en Search Console.
 
+### Sesión 22-23 jun-2026 — 2º rechazo AdSense + páginas-país + sitemap ✓
+- ✓ **2º rechazo de AdSense ("Low value content").** Diagnóstico estructural y **decisión de NO reenviar aún** (enfocar indexación+tráfico 3-4 semanas). Detalle en sección "AdSense" arriba.
+- ✓ **Páginas-país `/clima-pais/[pais]`** (19 países, contenido original, enlazado interno bidireccional, 19 SSG). Commit b7ce933. Detalle en sección "Páginas-país" arriba.
+- ✓ **Sitemap `lastmod` estable** (commit 8d5eaa9): se reemplazó `new Date()` (que marcaba todo como "modificado hoy" en cada deploy y hacía que Google ignorara el lastmod) por la constante `LAST_CONTENT_UPDATE` en `src/app/sitemap.ts`. **Bumpear esa fecha a mano al cambiar contenido.**
+- **Aclaración clave (no repetir el mito):** "mejorar el sitemap → Google indexa en días" aplica a sitios nuevos sin descubrir. Las 72 páginas en "Discovered – not indexed" YA fueron descubiertas por el sitemap; el sitemap NO cambia la decisión de indexar. Lo que mueve eso: pedir indexación manual + enlazado interno + autoridad/tiempo.
+- **Diego (23 jun-2026):** se va a hacer la **indexación manual** en GSC (incl. las nuevas páginas-país) y **reenviar el sitemap** en Search Console tras el deploy. Vuelve en unos días a revisar resultados.
+
 ### Sesión jun-2026 — Mapa de lluvia + consejo dinámico ✓
 - ✓ **Mapa de lluvia:** RainViewer probado y **descartado** (no soporta zoom de barrio) → reemplazado por **embed de Windy** (`WindyMap.tsx`), zoom 11, en `/lluvia` + páginas de ciudad. Detalle completo en la sección "Feature: Mapa de lluvia — ESTADO FINAL = Windy" arriba.
 - ✓ **Consejo del clima data-driven** con prob. de lluvia real (`pop`) y **léxico por país** (sombrilla/campera/chamarra, voseo AR). Detalle en "Consejo del clima data-driven" arriba.
 - ✓ **SEO titles de ciudad** ampliados a variantes "el tiempo"/"temperatura"/"por horas". Primer clic en GSC ("el tiempo en caracas"); posición media 56,7 → 43,2.
 - ✓ Build OK, 6 locales válidos, push a main → deploy Vercel.
 
-### Pendiente inmediato (Diego, manual, esta semana)
-- **Search Console:** pedir indexación siguiendo la "Lista priorizada" de arriba (~10/día). **Día 1 ya hecho** → continuar por Día 2.
+### Pendiente inmediato (Diego, manual — en curso desde 23 jun-2026)
+- **Search Console — indexación manual (EN CURSO):** seguir la "Lista priorizada" (~10/día). Día 1 y Día 2 hechos → continuar Día 3+. **Agregar las nuevas páginas-país** a la cola (empezar por `/clima-pais/colombia`, `/espana`, `/mexico`, `/argentina`).
+- **Search Console — sitemap:** reenviar el sitemap (Sitemaps → volver a enviar) tras el deploy del `lastmod` arreglado, para empujar el recrawl.
 - **Vercel:** confirmar que el redirect no-www → www sea **permanente (308)**, no 307 temporal (Settings → Domains).
+- **Volver en unos días** a revisar el informe Pages de GSC: debería subir "Indexed" y bajar "Discovered – not indexed". Ahí se decide el siguiente paso (reforzar ciudades, más contenido, o reenviar a AdSense si la indexación mejoró).
 
 ### Para la PRÓXIMA sesión (1-2 semanas después de respuesta de AdSense)
 1. **Revisar respuesta de AdSense:**
