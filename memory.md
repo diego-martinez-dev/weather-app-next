@@ -45,7 +45,9 @@ Archivo de memoria persistente. Actualizar cuando el usuario indique algo import
 - **Publisher ID:** `ca-pub-1859146451941420`
 - **ads.txt:** creado en `public/ads.txt`
 - **Meta tag de verificación:** agregado en `layout.tsx`
-- **Estado:** **nueva revisión SOLICITADA** (jun-2026), tras corregir todos los problemas del primer rechazo ("contenido de poco valor"). A la espera de respuesta de Google.
+- **Estado:** **SEGUNDO RECHAZO (jun-2026) — "Low value content"** (mismo motivo que el primero). Tras agregar todas las páginas de confianza/guías/glosario/FAQ/contenido de ciudad, Google sigue diciendo que el sitio no cumple los criterios mínimos.
+  - **Diagnóstico (importante, no repetir el error de "agregar más páginas y reenviar"):** el cuello de botella NO es falta de páginas, es **estructural + de indexación/tráfico**: (1) el contenido central (clima en vivo) es dato de OpenWeather, no original; (2) 200+ páginas SSG generadas por plantilla pueden contar como "contenido escalado/doorway"; (3) solo **14 indexadas / 72 "Discovered – not indexed"** → Google mismo no valora esas páginas (indexación y AdSense van de la mano); (4) casi cero tráfico (0 clics, pos. 56) = perfil "made for AdSense".
+  - **Decisión de Diego (jun-2026):** **NO reenviar a AdSense por ahora.** Enfocar 3-4 semanas en **indexación + tráfico + enlazado interno** (páginas-país) y reenviar recién con base más sólida (~50 indexadas y algunos clics reales). Reenvíos rápidos con cambios marginales pueden perjudicar.
 - **Unidades de anuncio:** 2 slots en `WeatherClient.tsx` con IDs placeholder (`1111111111`, `2222222222`) — reemplazar por IDs reales cuando AdSense apruebe.
 - **Disclosure legal (requisito de AdSense, commit 02cefce):** `/privacy` tiene sección "Publicidad (Google AdSense)" con cookies de DoubleClick + opt-out (Configuración de anuncios de Google / aboutads.info). `/cookies` tiene subsección equivalente. Se corrigió la imprecisión "no almacenamos datos en servidores externos" para reflejar el login con Google (nombre/email/foto en Supabase).
 
@@ -188,6 +190,14 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - Render: `WeatherClient.tsx` arma `signals` → `getAdvice` → `getLexicon(language, country)` → `t(\`app.advice.\${scenario}\`, {...params, ...lexicon, tempMaxToday: convertTemp(...), tempMinToday: convertTemp(...)})`.
 - Verificado: build OK, los 6 JSON válidos, y simulación de cambio de país (CO=sombrilla/chaqueta, AR=campera/voseo, MX=chamarra/bloqueador, ES=abrigo/conducir). cloudyDry dice explícitamente "prob. baja" → no contradice.
 
+### Páginas-país /clima-pais/[pais] (commit b7ce933, jun-2026)
+- **Qué es:** respuesta al 2º rechazo de AdSense ("Low value content"). En vez de "más páginas", se ataca la causa raíz (indexación + enlazado interno) con **clusters temáticos por país**.
+- `src/data/countries.ts` (nuevo): 19 países (todos los hispanos del array `topCities` + EEUU + Canadá) con **contenido climático original** (no derivado de la API): `intro[]` (2 párrafos), `bestSeason`, `rainySeason`, `cities[]` (slug+nombre con acentos), `faq[]`. Helpers `getCountryBySlug`, `getCountryForCity(citySlug)`, `countrySlugs`. **No** se crearon páginas-país para ciudades sueltas no hispanas (London/Paris/Tokyo/Berlin/Rome/Amsterdam/Dubai/Sydney): un país de 1 ciudad sin cluster sería "low value".
+- `src/app/clima-pais/[pais]/page.tsx` (nuevo, Server Component): SEO + canonical www + JSON-LD (WebPage + BreadcrumbList + FAQPage). Renderiza intro, recuadro mejor-época/lluvias, grilla de ciudades del país, FAQ `<details>` y grilla "clima en otros países". 19 rutas SSG. Verificado en HTML estático: "pisos térmicos" y 20 enlaces a ciudad en `/clima-pais/colombia`.
+- **Enlazado interno bidireccional:** cada `/clima/[slug]` ahora muestra (si el país tiene >1 ciudad) un bloque "Clima en otras ciudades de {país}" con enlace a la guía-país + hasta 11 ciudades hermanas; `/clima` lista los 19 países; sitemap incluye las 19 rutas-país (priority 0.8).
+- **Bonus:** se corrigió el texto del radar en la página de ciudad (decía "próximos 30 minutos" — lenguaje viejo de RainViewer; ahora describe Windy correctamente).
+- **Patrón:** el contenido de país vive solo en español (mercado objetivo), igual que `cityDescriptions`/`cityClimate`. No se tradujo a los 6 idiomas.
+
 ### SEO titles de ciudad (commit 694b5d7, jun-2026)
 - GSC mostró que la gente busca variantes: **"el tiempo en {ciudad}"**, **"temperatura en {ciudad}"**, **"{ciudad} por horas"**, **"está lloviendo en {ciudad}"** (no solo "clima"). Se actualizaron title/description/OG + párrafo intro server-side de las páginas de ciudad para cubrirlas. Posición media subió de 56,7 → 43,2 y llegó el **primer clic** ("el tiempo en caracas").
 
@@ -218,11 +228,7 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
    - Si **aprobó** → reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales (pedirlos en el panel de AdSense). Evaluar un 3er anuncio sobre el fold.
    - Si **rechazó** → leer el motivo concreto del correo y resolver puntualmente.
 2. **Revisar Search Console:** ver evolución del informe Pages — debería subir "Indexed" y bajar "Discovered - currently not indexed". Revisar nuevas queries/posiciones en Performance para decidir qué ciudades reforzar.
-3. **⭐ Páginas-país (guía del clima por país) — idea de Diego, alta prioridad SEO:**
-   - Crear páginas tipo `/clima-pais/[pais]` (o `/clima/pais/[pais]`) — una por país — con: intro original sobre el clima del país (regiones, estaciones, temporada de lluvias) + **enlaces a todas las ciudades de ese país** que ya existen en `topCities`.
-   - **Por qué importa (validado con GSC):** crea *clusters temáticos* y **enlazado interno** hacia las páginas de ciudad. Esto ayuda a destrabar las "Discovered - currently not indexed" (Google rastrea más las páginas enlazadas desde contenido relevante) y reparte autoridad interna. Además es contenido propio nuevo (bueno para AdSense) y captura búsquedas tipo "clima en Colombia", "temperatura en México por ciudad".
-   - Patrón: Server Component con SEO + JSON-LD, agrupar `topCities` por país (ya están ordenadas por país en el array). Enlazar la página-país desde cada página de ciudad ("Ver clima de otras ciudades de {país}") y desde `/clima`. Agregar al sitemap.
-   - Países con más ciudades para empezar: Colombia (~20), España (~10), México, Argentina, luego el resto.
+3. **⭐ Páginas-país — ✓ HECHO (jun-2026, commit b7ce933).** Ver sección "Páginas-país" más abajo.
 4. **Contenido pendiente de SEO (mejora continua):**
    - `src/app/page.tsx` (home): mover los tips renderizados en cliente a server (mismo fix que Fase 5; opcional por ser geolocalización dinámica).
    - Agregar descripción en prosa (`cityDescriptions.ts`) a ciudades de tráfico que aún no la tengan.
