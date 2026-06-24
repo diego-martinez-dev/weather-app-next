@@ -68,7 +68,8 @@
     },
     "nav": {
       "home": "Startseite",
-      "rain_map": "Regenradar"
+      "rain_map": "Regenradar",
+      "weather_by_country": "Wetter nach Land"
     },
     "home": {
       "faq_title": "Häufig gestellte Fragen"

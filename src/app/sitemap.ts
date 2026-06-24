@@ -7,7 +7,7 @@ import { countrySlugs } from '@/data/countries';
 // cuando agregues/cambies contenido (ciudades, guías, países), no en cada build.
 // Un lastmod estable y honesto es una señal que Google usa; un "new Date()" en
 // cada deploy hace que Google desconfíe del lastmod y lo ignore.
-const LAST_CONTENT_UPDATE = new Date('2026-06-22');
+const LAST_CONTENT_UPDATE = new Date('2026-06-24');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.clima-hoy.com';

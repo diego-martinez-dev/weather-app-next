@@ -68,7 +68,8 @@
     },
     "nav": {
       "home": "Inicio",
-      "rain_map": "Radar de lluvia"
+      "rain_map": "Radar de lluvia",
+      "weather_by_country": "Clima por país"
     },
     "home": {
       "faq_title": "Preguntas frecuentes"

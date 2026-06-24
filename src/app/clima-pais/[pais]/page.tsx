@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
-import { MapPinIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline';
+import { MapPinIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BuildingOffice2Icon, GlobeAltIcon, SunIcon } from '@heroicons/react/24/outline';
 import { countries, countrySlugs, getCountryBySlug } from '@/data/countries';
 
 export async function generateStaticParams() {
@@ -18,7 +18,7 @@ export async function generateMetadata(
 
   return {
     title: `Clima en ${country.name}: el tiempo por ciudades, estaciones y temporada de lluvias`,
-    description: `Guía del clima de ${country.name}: cómo es el tiempo por regiones, cuándo es la mejor época para viajar, temporada de lluvias y el pronóstico de sus principales ciudades.`,
+    description: `Guía completa del clima de ${country.name}: regiones climáticas, cuándo viajar, qué llevar, temporada de lluvias y el pronóstico de sus principales ciudades.`,
     alternates: {
       canonical: `https://www.clima-hoy.com/clima-pais/${pais}`,
     },
@@ -115,6 +115,21 @@ export default async function CountryPage(
           </p>
         ))}
 
+        {country.climateRegions.length > 0 && (
+          <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+            <h2 style={{ margin: '0 0 14px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+              <GlobeAltIcon style={{ width: '1.2em', height: '1.2em' }} />
+              Clima por regiones de {country.name}
+            </h2>
+            {country.climateRegions.map((region, i) => (
+              <div key={i} style={{ marginBottom: i < country.climateRegions.length - 1 ? 12 : 0 }}>
+                <strong>{region.name}</strong>
+                <p style={{ margin: '4px 0 0', paddingLeft: 0 }}>{region.description}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
         <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
           <p style={{ margin: '0 0 10px' }}>
             <CalendarIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.2em', marginRight: 6 }} />
@@ -124,6 +139,21 @@ export default async function CountryPage(
             <CloudIcon style={{ width: '1.2em', height: '1.2em', display: 'inline', verticalAlign: '-0.2em', marginRight: 6 }} />
             <strong>Temporada de lluvias:</strong> {country.rainySeason}
           </p>
+        </div>
+
+        <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+          <h2 style={{ margin: '0 0 10px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+            <SunIcon style={{ width: '1.2em', height: '1.2em' }} />
+            ¿Cuándo viajar a {country.name}?
+          </h2>
+          <p style={{ margin: 0 }}>{country.whenToGo}</p>
+        </div>
+
+        <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+          <h2 style={{ margin: '0 0 10px', fontSize: '1rem' }}>
+            🎒 Qué llevar
+          </h2>
+          <p style={{ margin: 0 }}>{country.whatToPack}</p>
         </div>
 
         <section className="cities-section">

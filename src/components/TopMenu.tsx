@@ -8,7 +8,10 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import { useSettings } from '@/contexts/SettingsContext';
 import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon, ChevronDownIcon, CloudIcon } from '@heroicons/react/24/outline';
 import { guides, Guide } from '@/data/guides';
+import { getCountriesByContinent } from '@/data/countries';
 import './TopMenu.css';
+
+const countryGroups = getCountriesByContinent();
 
 export default function TopMenu() {
   const { t } = useTranslation();
@@ -19,15 +22,18 @@ export default function TopMenu() {
   const [showUnitDropdown, setShowUnitDropdown] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showGuidesMenu, setShowGuidesMenu] = useState(false);
+  const [showCountriesMenu, setShowCountriesMenu] = useState(false);
   const [searchCity, setSearchCity] = useState('');
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showMobileGuides, setShowMobileGuides] = useState(false);
+  const [showMobileCountries, setShowMobileCountries] = useState(false);
 
   const unitRef = useRef<HTMLDivElement>(null);
   const languageRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const guidesMenuRef = useRef<HTMLDivElement>(null);
+  const countriesMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -53,6 +59,9 @@ export default function TopMenu() {
       }
       if (guidesMenuRef.current && !guidesMenuRef.current.contains(event.target as Node)) {
         setShowGuidesMenu(false);
+      }
+      if (countriesMenuRef.current && !countriesMenuRef.current.contains(event.target as Node)) {
+        setShowCountriesMenu(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -242,6 +251,32 @@ export default function TopMenu() {
           )}
         </div>
 
+        {/* Clima por país con submenú */}
+        <div className="nav-item" ref={countriesMenuRef}>
+          <button
+            className={`nav-item-trigger ${showCountriesMenu ? 'open' : ''}`}
+            onClick={() => setShowCountriesMenu(!showCountriesMenu)}
+            suppressHydrationWarning
+          >
+            {t('app.nav.weather_by_country')}
+            <ChevronDownIcon className="nav-chevron" />
+          </button>
+          {showCountriesMenu && (
+            <div className="nav-submenu nav-submenu--countries">
+              {countryGroups.map(group => (
+                <div key={group.continent} className="nav-submenu-group">
+                  <span className="nav-submenu-group-label">{group.continent}</span>
+                  {group.countries.map(c => (
+                    <Link key={c.slug} href={`/clima-pais/${c.slug}`} className="nav-submenu-item" onClick={() => setShowCountriesMenu(false)}>
+                      {c.name}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         <Link href="/glosario" className="top-nav-link" suppressHydrationWarning>{t('app.footer.glossary')}</Link>
 
         <Link href="/faq" className="top-nav-link" suppressHydrationWarning>FAQ</Link>
@@ -281,6 +316,29 @@ export default function TopMenu() {
                       <Link key={guide.slug} href={`/guias/${guide.slug}`} className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
                         {getGuideTitle(guide)}
                       </Link>
+                    ))}
+                  </div>
+                )}
+
+                {/* Clima por país expandible */}
+                <button
+                  className="mobile-nav-expand"
+                  onClick={() => setShowMobileCountries(!showMobileCountries)}
+                >
+                  {t('app.nav.weather_by_country')}
+                  <ChevronDownIcon style={{ width: '1em', height: '1em', flexShrink: 0, transition: 'transform 0.2s', transform: showMobileCountries ? 'rotate(180deg)' : 'none' }} />
+                </button>
+                {showMobileCountries && (
+                  <div className="mobile-nav-subitems">
+                    {countryGroups.map(group => (
+                      <div key={group.continent}>
+                        <span className="mobile-nav-group-label">{group.continent}</span>
+                        {group.countries.map(c => (
+                          <Link key={c.slug} href={`/clima-pais/${c.slug}`} className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
+                            {c.name}
+                          </Link>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 )}

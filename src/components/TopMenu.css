@@ -558,3 +558,33 @@
 .mobile-nav-subitem:hover {
   color: white;
 }
+
+/* Submenú de países por continente */
+.nav-submenu--countries {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.nav-submenu-group {
+  padding: 4px 0;
+}
+
+.nav-submenu-group + .nav-submenu-group {
+  border-top: 1px solid #f1f5f9;
+}
+
+.nav-submenu-group-label,
+.mobile-nav-group-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+  padding: 6px 12px 2px;
+}
+
+.mobile-nav-group-label {
+  color: rgba(255,255,255,0.4);
+  padding: 8px 6px 2px;
+}
