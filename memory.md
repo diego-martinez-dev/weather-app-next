@@ -232,6 +232,14 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - **Vercel:** confirmar que el redirect no-www → www sea **permanente (308)**, no 307 temporal (Settings → Domains).
 - **Volver en unos días** a revisar el informe Pages de GSC: debería subir "Indexed" y bajar "Discovered – not indexed". Ahí se decide el siguiente paso (reforzar ciudades, más contenido, o reenviar a AdSense si la indexación mejoró).
 
+### Sesión 24 jun-2026 — Menú "Clima por país" + guías extensas ✓
+- ✓ **Menú "Clima por país" en TopMenu** (desktop + móvil): desplegable con 4 continentes (Sudamérica, Centroamérica y Caribe, Norteamérica, Europa) y sus 19 países. Clave i18n `app.nav.weather_by_country` en los 6 idiomas. Click-outside cierra el menú igual que Guías. CSS en `TopMenu.css`: `.nav-submenu--countries`, `.nav-submenu-group`, `.nav-submenu-group-label`, `.mobile-nav-group-label`.
+- ✓ **Guías de país extensas** (commit 5cdf88d): `countries.ts` ampliado con tipo `Continent`, campo `continent` en los 19 países; nueva interfaz `ClimateRegion`; campos nuevos `climateRegions[]` (2-5 regiones por país), `whenToGo` (párrafo detallado), `whatToPack` (párrafo práctico); `intro` ampliado a 3 párrafos; FAQ ampliado a 3-4 preguntas; helpers `getCountriesByContinent()` y `continentOrder`.
+- ✓ **Render en servidor:** `clima-pais/[pais]/page.tsx` tiene 3 nuevas secciones SSR: "Clima por regiones de {país}", "¿Cuándo viajar a {país}?", "Qué llevar". Verificado en HTML crudo con `grep` sobre el build.
+- ✓ **Uruguay** tiene `climateRegions: []` (clima uniforme) → la sección de regiones no se renderiza (condicional `length > 0`).
+- ✓ `LAST_CONTENT_UPDATE` bumpeado a `2026-06-24` en `sitemap.ts`.
+- ✓ Build 221 páginas SSG, 6 locales JSON válidos, push a main → deploy Vercel.
+
 ### Para la PRÓXIMA sesión (1-2 semanas después de respuesta de AdSense)
 1. **Revisar respuesta de AdSense:**
    - Si **aprobó** → reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales (pedirlos en el panel de AdSense). Evaluar un 3er anuncio sobre el fold.
