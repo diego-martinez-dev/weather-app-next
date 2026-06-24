@@ -239,6 +239,8 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ **Uruguay** tiene `climateRegions: []` (clima uniforme) → la sección de regiones no se renderiza (condicional `length > 0`).
 - ✓ `LAST_CONTENT_UPDATE` bumpeado a `2026-06-24` en `sitemap.ts`.
 - ✓ Build 221 páginas SSG, 6 locales JSON válidos, push a main → deploy Vercel.
+- ✓ **Revisión Opus (24 jun):** verificado de forma independiente — 19 países completos (continent, climateRegions, whenToGo, whatToPack, intro≥3, faq≥3), agrupación por continente correcta (10/5/3/1), menú cableado igual que Guías (click-outside OK), las 3 secciones nuevas presentes en el HTML estático de colombia/espana/argentina. Sin problemas.
+- **Hipótesis de Diego (validar la próxima sesión):** con el enlazado interno (ciudad↔país), el menú "Clima por país" y los links desde el home/`/clima`, GSC debería empezar a indexar más fácil las páginas en "Discovered – not indexed". **Revisar el informe Pages en unos días** para confirmar si sube "Indexed".
 
 ### Para la PRÓXIMA sesión (1-2 semanas después de respuesta de AdSense)
 1. **Revisar respuesta de AdSense:**
