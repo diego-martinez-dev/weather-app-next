@@ -870,7 +870,22 @@ export const cityClimate: Record<string, CityClimate> = {
       {
         question: '¿Qué temperatura hace en Santo Domingo?',
         answer:
-          'Santo Domingo tiene un clima tropical cálido con temperaturas entre 22°C y 33°C durante todo el año y humedad alta constante.',
+          'Santo Domingo tiene un clima tropical cálido con temperaturas entre 22°C y 33°C durante todo el año y humedad alta constante. El invierno caribeño (dic-feb) es ligeramente más fresco (22-28°C) y el verano (jun-sep) alcanza los 31-33°C con humedad elevada.',
+      },
+      {
+        question: '¿Cuándo es la temporada seca en Santo Domingo?',
+        answer:
+          'La temporada seca principal va de diciembre a abril, cuando los vientos alisios del noreste traen cielos despejados y menor humedad. Mayo y noviembre son meses de transición con lluvias moderadas. La temporada más lluviosa es de mayo a octubre, con aguaceros vespertinos intensos pero generalmente cortos.',
+      },
+      {
+        question: '¿Llegan huracanes a Santo Domingo?',
+        answer:
+          'Santo Domingo está en la trayectoria habitual del Atlántico tropical. La temporada de huracanes va de junio a noviembre, con mayor riesgo en agosto y septiembre. El último huracán de gran impacto directo fue el David (1979); desde entonces los ciclones han rozado la isla sin golpear el centro urbano directamente, pero el riesgo existe y hay planes de evacuación activos.',
+      },
+      {
+        question: '¿Es seguro viajar a Santo Domingo en temporada de lluvias?',
+        answer:
+          'Sí, con precaución en agosto y septiembre (pico de huracanes). Las lluvias son generalmente intensas pero cortas (por las tardes), no continuas. Los meses de junio y julio son lluviosos pero viajables. Se recomienda monitorear el pronóstico y contratar seguro de viaje durante esa época.',
       },
     ],
   },

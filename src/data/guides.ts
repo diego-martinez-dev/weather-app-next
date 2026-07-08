@@ -583,7 +583,7 @@ Climate is the script; weather is each day's performance. And in recent years, t
       en: 'How Rainfall Is Measured (mm) and What Probability Percentages Mean',
     },
     description: {
-      es: 'Los milímetros de lluvia y los porcentajes de probabilidad de precipitación son datos que aparecen en todos los pronósticos pero muy pocos saben interpretarlos bien. Esta guía lo explica con claridad.',
+      es: '¿Qué significa "70% de lluvia"? No es que lloverá el 70% del tiempo. Descubrí qué mide ese porcentaje, cuánto son los mm de lluvia y cómo usarlos para no mojarte.',
       en: 'Millimeters of rain and precipitation probability percentages appear in every forecast, but very few people know how to interpret them correctly. This guide explains them clearly.',
     },
     date: '2026-06-14',
@@ -1141,7 +1141,7 @@ Use historical averages, not forecasts — forecasts don't exist months out. Loo
       en: 'The Rainiest Cities in Colombia (and Why It Rains So Much)',
     },
     description: {
-      es: 'Colombia es uno de los países más lluviosos del mundo. Descubrí cuáles son las ciudades y regiones con más precipitaciones, por qué llueve tanto y cómo adaptarse a esa realidad climática.',
+      es: 'Lloró (Chocó), con 12.000 mm anuales, encabeza el ranking. Descubrí cuáles son las ciudades más lluviosas de Colombia y por qué la geografía del país genera esas precipitaciones extremas.',
       en: 'Colombia is one of the rainiest countries in the world. Discover which cities and regions receive the most rainfall, why it rains so much, and how to adapt to that climate reality.',
     },
     date: '2026-06-14',
@@ -1379,7 +1379,7 @@ Unlike most tropical countries with a single monsoon, Colombia has two inland ra
       en: 'The Seasons of the Year in Argentina: What to Expect in Each One',
     },
     description: {
-      es: 'Argentina es el segundo país más grande de América del Sur y tiene climas muy distintos según la región. Esta guía explica las cuatro estaciones con datos reales de temperatura, lluvias y qué hacer en cada época.',
+      es: 'En Argentina las estaciones están invertidas: el verano es en diciembre y el invierno en julio. Descubrí qué temperatura y lluvias esperar mes a mes en Buenos Aires, Mendoza y la Patagonia.',
       en: 'Argentina is the second largest country in South America and has very different climates by region. This guide explains the four seasons with real temperature data, rainfall, and what to do in each period.',
     },
     date: '2026-06-14',
@@ -1717,7 +1717,7 @@ In Colombia, El Niño episodes mean droughts affecting hydroelectric generation 
       en: 'How to Dress for the Feels-Like Temperature (Not Just the Thermometer)',
     },
     description: {
-      es: 'La temperatura del termómetro a veces engaña: el viento, la humedad y el sol cambian completamente lo que sientes. Esta guía práctica te dice exactamente qué ponerte según la sensación térmica real.',
+      es: 'Con 10°C y viento de 30 km/h la sensación es de 4°C; con 32°C y 90% de humedad se siente como 46°C. Guía práctica de qué ropa ponerte según la sensación térmica real.',
       en: 'The thermometer temperature can be misleading: wind, humidity, and sun completely change what you feel. This practical guide tells you exactly what to wear based on the real feels-like temperature.',
     },
     date: '2026-06-15',
@@ -1794,7 +1794,7 @@ Cities like Bogotá, Quito, or Madrid in spring and fall can vary 10–15°C bet
       en: 'The Best Months to Go to the Beach in Latin America',
     },
     description: {
-      es: 'Con costas en el Caribe, el Pacífico y el Atlántico, Latinoamérica tiene playas espectaculares durante todo el año. Esta guía te dice cuándo ir a cada destino para evitar lluvias, huracanes y temporadas altas.',
+      es: 'Caribe en dic-abr, Cancún en dic-abr, Brasil en dic-feb, Perú en dic-abr: el calendario de playas de Latinoamérica por destino, con las épocas a evitar por lluvia o huracanes.',
       en: 'With coasts on the Caribbean, Pacific, and Atlantic, Latin America has spectacular beaches year-round. This guide tells you when to go to each destination to avoid rain, hurricanes, and peak seasons.',
     },
     date: '2026-06-15',
@@ -2042,7 +2042,7 @@ Convective storms peak between 2–8 PM because the ground heats progressively t
       en: 'What Is Humidity and Why Humid Heat Is More Oppressive Than Dry Heat',
     },
     description: {
-      es: '32°C en Bogotá se sienten completamente distintos que 32°C en Cartagena. La diferencia está en la humedad. Entendé qué es, cómo se mide y por qué afecta tanto tu cuerpo, tu sueño y tu comodidad.',
+      es: '32°C con 90% de humedad = sensación de 46°C. Descubrí por qué el calor húmedo agobia más que el seco, cómo afecta tu sueño y qué podés hacer para aguantarlo mejor.',
       en: '32°C in Bogotá feels completely different from 32°C in Cartagena. The difference is humidity. Understand what it is, how it is measured, and why it affects your body, sleep, and comfort so much.',
     },
     date: '2026-06-15',

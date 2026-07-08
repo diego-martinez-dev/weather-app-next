@@ -7,7 +7,7 @@ import { countrySlugs } from '@/data/countries';
 // cuando agregues/cambies contenido (ciudades, guías, países), no en cada build.
 // Un lastmod estable y honesto es una señal que Google usa; un "new Date()" en
 // cada deploy hace que Google desconfíe del lastmod y lo ignore.
-const LAST_CONTENT_UPDATE = new Date('2026-06-24');
+const LAST_CONTENT_UPDATE = new Date('2026-07-08');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.clima-hoy.com';
@@ -42,6 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const cityPorHoraRoutes = topCities.map(city => ({
+    url: `${baseUrl}/clima/${city}/por-hora`,
+    lastModified: currentDate,
+    changeFrequency: 'daily' as const,
+    priority: 0.8,
+  }));
+
   const guideRoutes = guideSlugs.map(slug => ({
     url: `${baseUrl}/guias/${slug}`,
     lastModified: currentDate,
@@ -56,5 +63,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...cityRoutes, ...cityMananaRoutes, ...guideRoutes, ...countryRoutes];
+  return [...staticRoutes, ...cityRoutes, ...cityMananaRoutes, ...cityPorHoraRoutes, ...guideRoutes, ...countryRoutes];
 }

@@ -173,6 +173,15 @@ export default async function CityPage(
           hoy en {city}? Mira la previsión actualizada del clima.
         </p>
 
+        {climate?.avgTempRange && (
+          <div style={{ maxWidth: 900, margin: '8px auto 16px', padding: '14px 20px', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+            <h2 style={{ margin: '0 0 6px', fontSize: '1rem' }}>¿Qué temperatura hace en {city}?</h2>
+            <p style={{ margin: 0, fontSize: '0.92rem', lineHeight: 1.6 }}>
+              En {city} la temperatura suele ubicarse en el rango de {climate.avgTempRange}.{climate.bestTimeToVisit ? ' Para el detalle por temporada, mirá la información climática más abajo.' : ''} Consulta arriba la temperatura exacta de ahora mismo y el pronóstico por horas.
+            </p>
+          </div>
+        )}
+
         {(description || touristTip) && (
           <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
             {description && (
@@ -296,6 +305,15 @@ export default async function CityPage(
           >
             Ver radar de lluvia en {city} →
           </Link>
+          <p style={{ margin: '12px 0 0', fontSize: '0.85rem' }}>
+            <Link href={`/clima/${slug}/por-hora`} style={{ color: 'var(--color-primary, #1a73e8)', textDecoration: 'none' }}>
+              Ver el pronóstico hora a hora de {city} →
+            </Link>
+            {' · '}
+            <Link href={`/clima/${slug}/manana`} style={{ color: 'var(--color-primary, #1a73e8)', textDecoration: 'none' }}>
+              Clima mañana en {city}
+            </Link>
+          </p>
         </div>
       </div>
       <Footer />
