@@ -257,6 +257,8 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ **Tarea 4 — `/manana` con párrafo server-rendered** en `manana/page.tsx` (HTML crawleable sin JS).
 - ✓ **Tarea 5 — Nueva ruta `/clima/[slug]/por-hora`** (81 rutas SSG): `page.tsx` (Server, SEO, BreadcrumbList) + `PorHoraCityClient.tsx` (Client, hoy + mañana por hora, ícono + temp + pop%). Enlace interno bidireccional en página de ciudad (por-hora ↔ mañana). Sitemap actualizado con 81 nuevas rutas.
 - ✓ **LAST_CONTENT_UPDATE bumpeado a 2026-07-08.** Build: 302 páginas SSG (81 nuevas). 6 locales OK. Push a main → deploy Vercel.
+- ✓ **Revisión Opus (8-jul):** verificado de forma independiente — build OK (81 rutas `/por-hora` SSG), bloque "¿Qué temperatura hace en {city} hoy?" presente en el HTML crudo de caracas/santo-domingo/puebla, descriptions de las 6 guías reescritas con ganchos de datos, `/manana` y `/por-hora` con prosa server-rendered, enlace interno ciudad→/por-hora, sitemap con las 81 rutas. Sin problemas.
+- ⚠️ **Aclaración (evitar re-trabajo):** las 6 ciudades de alta demanda (murcia, puebla, guayaquil, guadalajara, montevideo, santo-domingo) **YA tenían `description` + `touristTip`** en `cityDescriptions.ts` (las claves usan comillas: `'murcia':`). Sonnet acertó al NO duplicarlas; el plan las creía faltantes por un grep defectuoso. Lo único que faltaba de verdad era `santo-domingo` en `cityClimate.ts` (agregado). **No volver a "agregar" descripciones de estas ciudades.**
 
 ### Para la PRÓXIMA sesión
 1. **Revisar respuesta de AdSense** (si llegó):
