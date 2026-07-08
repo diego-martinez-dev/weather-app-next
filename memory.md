@@ -242,15 +242,30 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ **Revisión Opus (24 jun):** verificado de forma independiente — 19 países completos (continent, climateRegions, whenToGo, whatToPack, intro≥3, faq≥3), agrupación por continente correcta (10/5/3/1), menú cableado igual que Guías (click-outside OK), las 3 secciones nuevas presentes en el HTML estático de colombia/espana/argentina. Sin problemas.
 - **Hipótesis de Diego (validar la próxima sesión):** con el enlazado interno (ciudad↔país), el menú "Clima por país" y los links desde el home/`/clima`, GSC debería empezar a indexar más fácil las páginas en "Discovered – not indexed". **Revisar el informe Pages en unos días** para confirmar si sube "Indexed".
 
-### Para la PRÓXIMA sesión (1-2 semanas después de respuesta de AdSense)
-1. **Revisar respuesta de AdSense:**
-   - Si **aprobó** → reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales (pedirlos en el panel de AdSense). Evaluar un 3er anuncio sobre el fold.
+### Sesión 8-jul-2026 — Plan SEO Prioridades (commit 18a90d6) ✓
+**Línea base GSC al inicio de sesión:** 9 clics / 3.435 impresiones / ~72 indexadas / posición media ~25 (vs. 0 clics, 412 impr, pos 56 hace 3 meses). El cuello de botella ya NO es indexación sino posición: casi todo en página 3-4.
+
+- ✓ **Tarea 1 — CTR guías pos 6-10 (0 clics):** reescritas `description.es` de 6 guías con ganchos + datos concretos:
+  - `estaciones-del-ano-en-argentina`: estaciones invertidas, mes a mes
+  - `como-se-mide-la-lluvia-y-probabilidades`: qué significa "70% de lluvia"
+  - `ciudades-mas-lluviosas-de-colombia`: Lloró con 12.000 mm
+  - `mejores-meses-para-viajar-a-la-playa-en-latinoamerica`: calendario destino a destino
+  - `como-vestirse-segun-la-sensacion-termica`: datos concretos 10°C/viento = 4°C
+  - `que-es-la-humedad-y-por-que-el-calor-humedo-agobia-mas`: 32°C/90% = 46°C
+- ✓ **Tarea 2 — Bloque "¿Qué temperatura hace en {city}?" server-rendered** en `clima/[slug]/page.tsx` (cuando `climate?.avgTempRange` existe). Apunta a featured snippet. Verificado en HTML de santo-domingo y caracas.
+- ✓ **Tarea 3 — santo-domingo en `cityClimate.ts`** ampliado de 1 FAQ a 4 FAQs (temperatura, temporada seca, huracanes, viaje en temporada de lluvias).
+- ✓ **Tarea 4 — `/manana` con párrafo server-rendered** en `manana/page.tsx` (HTML crawleable sin JS).
+- ✓ **Tarea 5 — Nueva ruta `/clima/[slug]/por-hora`** (81 rutas SSG): `page.tsx` (Server, SEO, BreadcrumbList) + `PorHoraCityClient.tsx` (Client, hoy + mañana por hora, ícono + temp + pop%). Enlace interno bidireccional en página de ciudad (por-hora ↔ mañana). Sitemap actualizado con 81 nuevas rutas.
+- ✓ **LAST_CONTENT_UPDATE bumpeado a 2026-07-08.** Build: 302 páginas SSG (81 nuevas). 6 locales OK. Push a main → deploy Vercel.
+
+### Para la PRÓXIMA sesión
+1. **Revisar respuesta de AdSense** (si llegó):
+   - Si **aprobó** → reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
    - Si **rechazó** → leer el motivo concreto del correo y resolver puntualmente.
-2. **Revisar Search Console:** ver evolución del informe Pages — debería subir "Indexed" y bajar "Discovered - currently not indexed". Revisar nuevas queries/posiciones en Performance para decidir qué ciudades reforzar.
-3. **⭐ Páginas-país — ✓ HECHO (jun-2026, commit b7ce933).** Ver sección "Páginas-país" más abajo.
+2. **Revisar GSC (~2 semanas después del 8-jul):** comparar posición media y clics vs. la línea base (9 clics / pos 25). ¿Subieron las guías que estaban en pos 6-10? ¿Llegaron clics a `/por-hora`?
+3. **Diego (manual):** pedir indexación en GSC de las 81 nuevas `/por-hora` (priorizar las de más impresiones: bogota, caracas, montevideo, medellin, santo-domingo). Reenviar sitemap.
 4. **Contenido pendiente de SEO (mejora continua):**
-   - `src/app/page.tsx` (home): mover los tips renderizados en cliente a server (mismo fix que Fase 5; opcional por ser geolocalización dinámica).
-   - Agregar descripción en prosa (`cityDescriptions.ts`) a ciudades de tráfico que aún no la tengan.
-   - Considerar más sub-rutas de cola larga (`/por-hora`, `/fin-de-semana`) si `/manana` rinde.
-   - Conseguir primeros backlinks para subir autoridad de dominio (mejora crawl budget e indexación).
+   - Conseguir primeros backlinks para subir autoridad de dominio.
+   - Considerar sub-ruta `/fin-de-semana` si `/por-hora` rinde.
+   - `src/app/page.tsx` (home): mover tips a server (opcional, es geolocalización dinámica).
 5. **Objetivo de fondo:** una vez con tráfico, empezar la captura de datos de usuarios (email marketing / alertas WhatsApp).
