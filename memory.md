@@ -260,14 +260,33 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ **Revisión Opus (8-jul):** verificado de forma independiente — build OK (81 rutas `/por-hora` SSG), bloque "¿Qué temperatura hace en {city} hoy?" presente en el HTML crudo de caracas/santo-domingo/puebla, descriptions de las 6 guías reescritas con ganchos de datos, `/manana` y `/por-hora` con prosa server-rendered, enlace interno ciudad→/por-hora, sitemap con las 81 rutas. Sin problemas.
 - ⚠️ **Aclaración (evitar re-trabajo):** las 6 ciudades de alta demanda (murcia, puebla, guayaquil, guadalajara, montevideo, santo-domingo) **YA tenían `description` + `touristTip`** en `cityDescriptions.ts` (las claves usan comillas: `'murcia':`). Sonnet acertó al NO duplicarlas; el plan las creía faltantes por un grep defectuoso. Lo único que faltaba de verdad era `santo-domingo` en `cityClimate.ts` (agregado). **No volver a "agregar" descripciones de estas ciudades.**
 
+### Sesión jul-2026 — PLAN_CONTENIDO_VALOR ejecutado (commit 6c3ad81) ✓
+- ✓ **FASE 1 — Calidad del aire enriquecida:**
+  - `src/lib/airQuality.ts`: `getAqiInfo(aqi)` (reutiliza colores/labelKeys existentes de WeatherCard), `getPollutantLevel(name, value)` con umbrales OMS/EPA, `pollutantLevelColor`.
+  - `src/components/AirQuality.{tsx,css}`: sección en ciudad (client-side, depende del fetch en vivo) con AQI coloreado, desglose PM2.5/PM10/O₃/NO₂ con nivel bueno/moderado/alto, consejo de salud por nivel AQI. Link a hub educativo.
+  - `src/app/calidad-del-aire/page.tsx`: hub SSG educativo (qué es el ICA, escala 5 niveles, 6 contaminantes con fuente y efectos, grupos de riesgo, qué hacer según nivel, 5 FAQ + JSON-LD FAQPage + BreadcrumbList). Link desde footer y desde sección de aire en ciudad.
+  - i18n: claves `app.air.title`, `app.air.advice_1..5`, `app.air.level_*`, `app.air.learn_more`, `app.footer.air_quality` en los 6 idiomas.
+  - Sitemap: `/calidad-del-aire` (priority 0.6).
+- ✓ **FASE 2 — Sol y Luna:**
+  - `src/lib/moon.ts`: `getMoonPhase(date)` → `{ phaseKey, illumination, emoji }`. Cálculo astronómico con luna nueva de referencia 2000-01-06 y mes sinódico 29.53 días. 8 fases, sin API externa.
+  - `src/components/SunMoon.{tsx,css}`: amanecer, atardecer, duración del día (en h min), fase lunar (emoji + nombre + % iluminación). Client component, datos de `weather.sys.*`. Grid 4 columnas.
+  - i18n: claves `app.sun_moon.title`, `app.sun_moon.day_length`, `app.moon.*` (8 fases) en 6 idiomas.
+- ✓ **FASE 3 — Clima mes a mes:**
+  - `src/data/cityMonthlyClimate.ts`: 15 ciudades de alto tráfico (caracas, montevideo, medellin, bogota, madrid, barcelona, puebla, guayaquil, guadalajara, santo-domingo, murcia, buenos-aires, lima, santiago, quito). Datos cualitativos (`tempRange`, `rain`: seco/moderado/lluvioso, `note?`). **Exactitud > volumen — sin estadísticas inventadas.**
+  - Tabla server-rendered "Clima en {city} mes a mes" en `clima/[slug]/page.tsx`: 12 filas con colores por nivel de lluvia, crawleable por Googlebot. Captura queries de intención de viaje ("clima en Caracas en enero", "qué tiempo hace en Madrid en verano").
+- ✓ **FASE 4 (UV):** NO ejecutada — requiere confirmación de Diego sobre One Call API 3.0.
+- ✓ Build: 303 páginas SSG. Locales 6/6 válidos. Push a main → deploy Vercel.
+- ✓ Verificación HTML crudo: PM2.5 en calidad-del-aire.html, "mes a mes" + "Ene"/"Feb" en caracas.html y bogota.html.
+- **FASE 4 pendiente:** Diego debe confirmar si tiene acceso a la One Call API 3.0 (`data/3.0/onecall`) de OpenWeatherMap para agregar el índice UV.
+- **Ampliación mes a mes:** el data file cubre 15 ciudades; se puede ampliar gradualmente con más ciudades de `topCities` en sesiones futuras.
+
 ### Para la PRÓXIMA sesión
 1. **Revisar respuesta de AdSense** (si llegó):
    - Si **aprobó** → reponer los `<AdUnit>` en `src/components/WeatherClient.tsx` con los slot IDs reales.
    - Si **rechazó** → leer el motivo concreto del correo y resolver puntualmente.
-2. **Revisar GSC (~2 semanas después del 8-jul):** comparar posición media y clics vs. la línea base (9 clics / pos 25). ¿Subieron las guías que estaban en pos 6-10? ¿Llegaron clics a `/por-hora`?
-3. **Diego (manual):** pedir indexación en GSC de las 81 nuevas `/por-hora` (priorizar las de más impresiones: bogota, caracas, montevideo, medellin, santo-domingo). Reenviar sitemap.
-4. **Contenido pendiente de SEO (mejora continua):**
-   - Conseguir primeros backlinks para subir autoridad de dominio.
-   - Considerar sub-ruta `/fin-de-semana` si `/por-hora` rinde.
-   - `src/app/page.tsx` (home): mover tips a server (opcional, es geolocalización dinámica).
-5. **Objetivo de fondo:** una vez con tráfico, empezar la captura de datos de usuarios (email marketing / alertas WhatsApp).
+2. **Revisar GSC (~2 semanas después del 8-jul):** comparar posición media y clics vs. la línea base (9 clics / pos 25). ¿Subieron las guías que estaban en pos 6-10? ¿Llegaron clics a `/por-hora`? ¿Está indexando `/calidad-del-aire`?
+3. **Diego (manual):** pedir indexación en GSC de `/calidad-del-aire` y las 81 nuevas `/por-hora` (priorizar: bogota, caracas, montevideo, medellin, santo-domingo). Reenviar sitemap.
+4. **FASE 4 — Índice UV:** confirmar si la API key tiene acceso a `data/3.0/onecall` (One Call API 3.0). Si sí, ejecutar la Fase 4 del PLAN_CONTENIDO_VALOR.
+5. **Ampliar `cityMonthlyClimate.ts`** con más ciudades de `topCities` (cali, barranquilla, cartagena, lima-peru, etc.) si la tabla empieza a rankear.
+6. **Contenido pendiente:** backlinks, sub-ruta `/fin-de-semana` si `/por-hora` rinde.
+7. **Objetivo de fondo:** captura de datos de usuarios (email marketing / alertas WhatsApp).
