@@ -1,0 +1,55 @@
+.sun-moon-section {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  padding: 16px 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--color-shadow-sm);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.sun-moon-title {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.sun-moon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 500px) {
+  .sun-moon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sun-moon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 8px;
+  border-radius: 8px;
+  background: var(--color-bg, #f8f9fa);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  gap: 4px;
+}
+
+.sun-moon-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.sun-moon-label {
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.sun-moon-value {
+  font-weight: 700;
+  font-size: 0.95rem;
+}

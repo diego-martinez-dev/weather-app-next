@@ -43,7 +43,8 @@
       "guides": "Ratgeber",
       "glossary": "Glossar",
       "faq": "FAQ",
-      "copyright": "Wetterdaten © OpenWeather | © 2026 WeatherApp - Ihr Wetter in Echtzeit"
+      "copyright": "Wetterdaten © OpenWeather | © 2026 WeatherApp - Ihr Wetter in Echtzeit",
+      "air_quality": "Luftqualität"
     },
     "menu": {
       "celsius": "Celsius",
@@ -86,6 +87,32 @@
       "clearNice": "Der Himmel wird klar sein und die Regenwahrscheinlichkeit ist sehr gering ({{rainProbToday}}%), bei angenehmen Temperaturen bis {{tempMaxToday}}°. Ein idealer Tag, um rauszugehen und die frische Luft zu genießen; trotzdem etwas {{sunscreen}} benutzen, wenn du länger in der Sonne bist.",
       "cloudyDry": "Der Himmel wird bewölkt sein, aber die Regenwahrscheinlichkeit ist gering ({{rainProbToday}}%), der Tag wird also kaum nass. Die Temperaturen erreichen {{tempMaxToday}}°; eine leichte {{jacket}} reicht, um bequem zu bleiben. Ein guter Moment, um ohne große Umstände rauszugehen.",
       "general": "Die Bedingungen heute sind wechselhaft, mit Höchstwerten von {{tempMaxToday}}°, Tiefstwerten von {{tempMinToday}}° und {{rainProbToday}}% Regenwahrscheinlichkeit. Es lohnt sich, vor dem Rausgehen die stündliche Vorhersage zu prüfen und eine leichte {{jacket}} mitzunehmen, falls sich das Wetter ändert."
+    },
+    "air": {
+      "title": "Luftqualität",
+      "advice_1": "Die Luft ist heute sauber. Ideal zum Rausgehen, Sport treiben und die Natur uneingeschränkt genießen.",
+      "advice_2": "Die Luftqualität ist gut. Sehr empfindliche Personen können bei intensiver Outdoor-Aktivität leichte Beschwerden bemerken.",
+      "advice_3": "Mäßige Luftqualität. Wenn Sie Asthma, Allergien oder Atemwegserkrankungen haben, reduzieren Sie intensive körperliche Aktivitäten im Freien.",
+      "advice_4": "Schlechte Luftqualität. Es wird empfohlen, länger andauernde körperliche Aktivitäten im Freien einzuschränken. Empfindliche Gruppen sollten drinnen bleiben.",
+      "advice_5": "Sehr schlechte Luftqualität. Gesundheitsnotfall: Vermeiden Sie den Aufenthalt im Freien, besonders wenn Sie zur Risikogruppe gehören (Kinder, Ältere, Asthma, COPD).",
+      "level_bueno": "gut",
+      "level_moderado": "mäßig",
+      "level_alto": "hoch",
+      "learn_more": "Was bedeuten diese Werte? → Luftqualitäts-Ratgeber"
+    },
+    "sun_moon": {
+      "title": "Sonne und Mond",
+      "day_length": "Tageslänge"
+    },
+    "moon": {
+      "new": "Neumond",
+      "waxing_crescent": "Zunehmende Sichel",
+      "first_quarter": "Erstes Viertel",
+      "waxing_gibbous": "Zunehmender Mond",
+      "full": "Vollmond",
+      "waning_gibbous": "Abnehmender Mond",
+      "last_quarter": "Letztes Viertel",
+      "waning_crescent": "Abnehmende Sichel"
     }
   },
   "legal": {

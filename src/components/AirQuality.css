@@ -1,0 +1,106 @@
+.air-quality-section {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  padding: 16px 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--color-shadow-sm);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.air-quality-title {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.air-quality-aqi {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--color-bg, #f8f9fa);
+  margin-bottom: 14px;
+}
+
+.air-quality-aqi-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.air-quality-aqi-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.air-quality-aqi-index {
+  font-size: 0.8rem;
+  color: #888;
+  margin-left: auto;
+}
+
+.air-quality-advice {
+  margin: 0;
+  font-size: 0.87rem;
+  color: var(--color-text-muted, #555);
+}
+
+.air-quality-pollutants {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  .air-quality-pollutants {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pollutant-item {
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--color-bg, #f8f9fa);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.pollutant-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.pollutant-value {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pollutant-unit {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #888;
+}
+
+.pollutant-level {
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 4px;
+  text-transform: capitalize;
+}
+
+.air-quality-link {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.air-quality-link a {
+  color: var(--color-primary, #1a73e8);
+  text-decoration: none;
+}

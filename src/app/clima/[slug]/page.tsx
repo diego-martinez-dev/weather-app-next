@@ -3,9 +3,10 @@ import Link from 'next/link';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import CityPageClient from './CityPageClient';
-import { LightBulbIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BookOpenIcon, MapPinIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline';
+import { LightBulbIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BookOpenIcon, MapPinIcon, BuildingOffice2Icon, TableCellsIcon } from '@heroicons/react/24/outline';
 import { getCityDescription, getCityTouristTip } from '@/data/cityDescriptions';
 import { getCityClimate } from '@/data/cityClimate';
+import { getCityMonthly, MONTHS } from '@/data/cityMonthlyClimate';
 import { getGuideBySlug } from '@/data/guides';
 import { getCountryForCity } from '@/data/countries';
 
@@ -109,6 +110,7 @@ export default async function CityPage(
   const { slug } = await params;
   const city = slugToCity(slug);
   const climate = getCityClimate(slug);
+  const monthly = getCityMonthly(slug);
   const country = getCountryForCity(slug);
   const description = getCityDescription(slug);
   const touristTip = getCityTouristTip(slug);
@@ -237,6 +239,48 @@ export default async function CityPage(
                 ))}
               </div>
             )}
+          </div>
+        )}
+
+        {monthly && (
+          <div style={{ maxWidth: 900, margin: '0 auto 20px' }}>
+            <div style={{ padding: '16px 20px', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
+              <h2 style={{ margin: '0 0 8px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+                <TableCellsIcon style={{ width: '1.2em', height: '1.2em' }} />
+                Clima en {city} mes a mes
+              </h2>
+              <p style={{ margin: '0 0 14px', fontSize: '0.88rem', lineHeight: 1.6 }}>{monthly.intro}</p>
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.83rem' }}>
+                  <thead>
+                    <tr style={{ borderBottom: '2px solid var(--color-border)' }}>
+                      <th style={{ textAlign: 'left', padding: '6px 8px', fontWeight: 600 }}>Mes</th>
+                      <th style={{ textAlign: 'left', padding: '6px 8px', fontWeight: 600 }}>Temperatura</th>
+                      <th style={{ textAlign: 'left', padding: '6px 8px', fontWeight: 600 }}>Lluvia</th>
+                      <th style={{ textAlign: 'left', padding: '6px 8px', fontWeight: 600, minWidth: 120 }}>Nota</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {monthly.months.map((m, i) => (
+                      <tr key={i} style={{ borderBottom: '1px solid var(--color-border)', background: i % 2 === 0 ? 'transparent' : 'var(--color-bg, #f8f9fa)' }}>
+                        <td style={{ padding: '6px 8px', fontWeight: 600 }}>{MONTHS[i]}</td>
+                        <td style={{ padding: '6px 8px' }}>{m.tempRange}</td>
+                        <td style={{ padding: '6px 8px' }}>
+                          <span style={{
+                            display: 'inline-block', padding: '2px 8px', borderRadius: 12, fontSize: '0.78rem', fontWeight: 600,
+                            background: m.rain === 'seco' ? '#e8f5e9' : m.rain === 'moderado' ? '#fff3e0' : '#e3f2fd',
+                            color: m.rain === 'seco' ? '#2e7d32' : m.rain === 'moderado' ? '#e65100' : '#0d47a1',
+                          }}>
+                            {m.rain === 'seco' ? '☀ Seco' : m.rain === 'moderado' ? '🌤 Moderado' : '🌧 Lluvioso'}
+                          </span>
+                        </td>
+                        <td style={{ padding: '6px 8px', color: '#888', fontSize: '0.8rem' }}>{m.note ?? ''}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         )}
 

@@ -10,6 +10,8 @@ import { useSettings } from '@/contexts/SettingsContext';
 import { getWeatherSignals } from '@/lib/weatherSignals';
 import { getAdvice } from '@/lib/weatherAdvice';
 import { getLexicon } from '@/lib/localLexicon';
+import AirQuality from './AirQuality';
+import SunMoon from './SunMoon';
 
 interface WeatherClientProps {
   weather: any;
@@ -79,6 +81,10 @@ export default function WeatherClient({
       {forecast?.list && <HourlyForecast forecastData={forecast} />}
 
       <Forecast cityName={weather.name} forecastData={forecast} />
+
+      <SunMoon weather={weather} />
+
+      {airQuality && <AirQuality airQuality={airQuality} />}
     </>
   );
 }

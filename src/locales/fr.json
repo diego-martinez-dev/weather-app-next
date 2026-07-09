@@ -43,7 +43,8 @@
       "guides": "Guides",
       "glossary": "Glossaire",
       "faq": "FAQ",
-      "copyright": "Données météo © OpenWeather | © 2026 WeatherApp - Votre météo en temps réel"
+      "copyright": "Données météo © OpenWeather | © 2026 WeatherApp - Votre météo en temps réel",
+      "air_quality": "Qualité de l'air"
     },
     "menu": {
       "celsius": "Celsius",
@@ -86,6 +87,32 @@
       "clearNice": "Le ciel sera dégagé et la probabilité de pluie est très faible ({{rainProbToday}}%), avec des températures agréables jusqu'à {{tempMaxToday}}°. C'est une journée idéale pour sortir et profiter du plein air ; malgré tout, mettez un peu de {{sunscreen}} si vous restez longtemps au soleil.",
       "cloudyDry": "Le ciel sera nuageux, mais la probabilité de pluie est faible ({{rainProbToday}}%), il est donc peu probable que la journée soit pluvieuse. Les températures atteindront {{tempMaxToday}}° ; une {{jacket}} légère suffit pour être à l'aise. Un bon moment pour sortir sans grande complication.",
       "general": "Les conditions d'aujourd'hui sont variables, avec des maximales de {{tempMaxToday}}°, des minimales de {{tempMinToday}}° et {{rainProbToday}}% de probabilité de pluie. Mieux vaut consulter les prévisions horaires avant de sortir et emporter une {{jacket}} légère au cas où le temps change."
+    },
+    "air": {
+      "title": "Qualité de l'air",
+      "advice_1": "L'air est pur aujourd'hui. Idéal pour sortir, faire du sport et profiter de l'extérieur.",
+      "advice_2": "La qualité de l'air est bonne. Les personnes très sensibles peuvent ressentir une légère gêne lors d'activités intenses en plein air.",
+      "advice_3": "Qualité modérée. Si vous souffrez d'asthme, d'allergies ou de maladies respiratoires, réduisez l'exercice intense à l'extérieur.",
+      "advice_4": "Mauvaise qualité de l'air. Il est recommandé à tous de limiter l'activité physique prolongée en extérieur. Les personnes sensibles doivent rester à l'intérieur.",
+      "advice_5": "Très mauvaise qualité de l'air. Urgence sanitaire : évitez de sortir, surtout si vous faites partie d'un groupe à risque (enfants, personnes âgées, asthme, BPCO).",
+      "level_bueno": "bon",
+      "level_moderado": "modéré",
+      "level_alto": "élevé",
+      "learn_more": "Que signifient ces valeurs ? → Guide sur la qualité de l'air"
+    },
+    "sun_moon": {
+      "title": "Soleil et lune",
+      "day_length": "Durée du jour"
+    },
+    "moon": {
+      "new": "Nouvelle lune",
+      "waxing_crescent": "Croissant montant",
+      "first_quarter": "Premier quartier",
+      "waxing_gibbous": "Gibbeuse montante",
+      "full": "Pleine lune",
+      "waning_gibbous": "Gibbeuse descendante",
+      "last_quarter": "Dernier quartier",
+      "waning_crescent": "Croissant descendant"
     }
   },
   "legal": {

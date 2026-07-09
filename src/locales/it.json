@@ -43,7 +43,8 @@
       "guides": "Guide",
       "glossary": "Glossario",
       "faq": "FAQ",
-      "copyright": "Dati meteo © OpenWeather | © 2026 WeatherApp - Il tuo meteo in tempo reale"
+      "copyright": "Dati meteo © OpenWeather | © 2026 WeatherApp - Il tuo meteo in tempo reale",
+      "air_quality": "Qualità dell'aria"
     },
     "menu": {
       "celsius": "Celsius",
@@ -86,6 +87,32 @@
       "clearNice": "Il cielo sarà sereno e la probabilità di pioggia è molto bassa ({{rainProbToday}}%), con temperature gradevoli fino ai {{tempMaxToday}}°. È una giornata ideale per uscire e godersi l'aria aperta; in ogni caso, usa un po' di {{sunscreen}} se resti a lungo al sole.",
       "cloudyDry": "Il cielo sarà nuvoloso, ma la probabilità di pioggia è bassa ({{rainProbToday}}%), quindi è poco probabile che la giornata si bagni. Le temperature raggiungeranno i {{tempMaxToday}}°; una {{jacket}} leggera basta per stare comodi. Un buon momento per uscire senza grandi complicazioni.",
       "general": "Le condizioni di oggi sono variabili, con massime di {{tempMaxToday}}°, minime di {{tempMinToday}}° e una probabilità di pioggia del {{rainProbToday}}%. Conviene controllare le previsioni orarie prima di uscire e portare una {{jacket}} leggera nel caso il tempo cambi."
+    },
+    "air": {
+      "title": "Qualità dell'aria",
+      "advice_1": "L'aria è pulita oggi. Ideale per uscire, fare sport e godere del clima all'aperto senza restrizioni.",
+      "advice_2": "La qualità dell'aria è buona. Le persone molto sensibili possono avvertire qualche fastidio nelle attività intense all'aperto.",
+      "advice_3": "Qualità moderata. Se hai asma, allergie o malattie respiratorie, riduci l'esercizio intenso all'aperto.",
+      "advice_4": "Qualità dell'aria cattiva. Si consiglia a tutti di limitare l'attività fisica prolungata all'esterno. Le persone sensibili devono restare al chiuso.",
+      "advice_5": "Qualità dell'aria molto cattiva. Emergenza sanitaria: evita di uscire all'esterno, soprattutto se appartieni a un gruppo a rischio (bambini, anziani, asma, BPCO).",
+      "level_bueno": "buono",
+      "level_moderado": "moderato",
+      "level_alto": "alto",
+      "learn_more": "Cosa significano questi valori? → Guida alla qualità dell'aria"
+    },
+    "sun_moon": {
+      "title": "Sole e luna",
+      "day_length": "Durata del giorno"
+    },
+    "moon": {
+      "new": "Luna nuova",
+      "waxing_crescent": "Luna crescente",
+      "first_quarter": "Primo quarto",
+      "waxing_gibbous": "Gibbosa crescente",
+      "full": "Luna piena",
+      "waning_gibbous": "Gibbosa calante",
+      "last_quarter": "Ultimo quarto",
+      "waning_crescent": "Luna calante"
     }
   },
   "legal": {

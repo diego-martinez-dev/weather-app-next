@@ -43,7 +43,8 @@
       "guides": "Guías",
       "glossary": "Glosario",
       "faq": "FAQ",
-      "copyright": "Weather data © OpenWeather | © 2026 WeatherApp - Tu clima en tiempo real"
+      "copyright": "Weather data © OpenWeather | © 2026 WeatherApp - Tu clima en tiempo real",
+      "air_quality": "Calidad del aire"
     },
     "menu": {
       "celsius": "Celsius",
@@ -86,6 +87,32 @@
       "clearNice": "El cielo estará despejado y la probabilidad de lluvia es muy baja ({{rainProbToday}}%), con temperaturas agradables de hasta {{tempMaxToday}}°. Es un día ideal para salir y disfrutar al aire libre; aun así, {{use}} algo de {{sunscreen}} si vas a estar largo rato al sol.",
       "cloudyDry": "El cielo estará nublado, pero la probabilidad de lluvia es baja ({{rainProbToday}}%), así que es poco probable que se moje el día. Las temperaturas llegarán a los {{tempMaxToday}}°; con {{jacket}} basta para estar cómodo. Buen momento para salir sin grandes complicaciones.",
       "general": "Las condiciones para hoy son variables, con máximas de {{tempMaxToday}}°, mínimas de {{tempMinToday}}° y un {{rainProbToday}}% de probabilidad de lluvia. Conviene revisar el pronóstico por horas antes de salir y llevar {{jacket}} por si el tiempo cambia."
+    },
+    "air": {
+      "title": "Calidad del aire",
+      "advice_1": "El aire está limpio hoy. Ideal para salir, hacer ejercicio y disfrutar del exterior sin restricciones.",
+      "advice_2": "La calidad del aire es buena. Las personas muy sensibles pueden notar alguna molestia durante actividades intensas al exterior.",
+      "advice_3": "Calidad moderada. Si tienes asma, alergias o enfermedades respiratorias, reduce el ejercicio intenso al aire libre.",
+      "advice_4": "Calidad del aire mala. Se recomienda limitar la actividad física prolongada al exterior. Las personas sensibles deben quedarse en interiores.",
+      "advice_5": "Calidad del aire muy mala. Emergencia sanitaria: evita salir al exterior, especialmente si eres del grupo de riesgo (niños, mayores, asma, EPOC).",
+      "level_bueno": "bueno",
+      "level_moderado": "moderado",
+      "level_alto": "alto",
+      "learn_more": "¿Qué significan estos valores? → Guía de calidad del aire"
+    },
+    "sun_moon": {
+      "title": "Sol y luna",
+      "day_length": "Duración del día"
+    },
+    "moon": {
+      "new": "Luna nueva",
+      "waxing_crescent": "Luna creciente",
+      "first_quarter": "Cuarto creciente",
+      "waxing_gibbous": "Gibosa creciente",
+      "full": "Luna llena",
+      "waning_gibbous": "Gibosa menguante",
+      "last_quarter": "Cuarto menguante",
+      "waning_crescent": "Luna menguante"
     }
   },
   "legal": {

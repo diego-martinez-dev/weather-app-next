@@ -43,7 +43,8 @@
       "guides": "Guides",
       "glossary": "Glossary",
       "faq": "FAQ",
-      "copyright": "Weather data © OpenWeather | © 2026 WeatherApp - Your real-time weather"
+      "copyright": "Weather data © OpenWeather | © 2026 WeatherApp - Your real-time weather",
+      "air_quality": "Air quality"
     },
     "menu": {
       "celsius": "Celsius",
@@ -86,6 +87,32 @@
       "clearNice": "The sky will be clear and the chance of rain is very low ({{rainProbToday}}%), with pleasant temperatures of up to {{tempMaxToday}}°. It's an ideal day to get out and enjoy the outdoors; even so, use a little {{sunscreen}} if you'll be in the sun for a while.",
       "cloudyDry": "The sky will be cloudy, but the chance of rain is low ({{rainProbToday}}%), so the day is unlikely to get wet. Temperatures will reach {{tempMaxToday}}°; a light {{jacket}} is enough to stay comfortable. A good time to head out without much hassle.",
       "general": "Conditions today are mixed, with highs of {{tempMaxToday}}°, lows of {{tempMinToday}}° and a {{rainProbToday}}% chance of rain. It's worth checking the hourly forecast before going out and taking a light {{jacket}} in case the weather changes."
+    },
+    "air": {
+      "title": "Air quality",
+      "advice_1": "The air is clean today. Perfect for going out, exercising and enjoying the outdoors.",
+      "advice_2": "Air quality is good. Very sensitive people may notice some discomfort during intense outdoor activity.",
+      "advice_3": "Moderate air quality. If you have asthma, allergies or respiratory conditions, reduce intense outdoor exercise.",
+      "advice_4": "Poor air quality. Everyone should limit prolonged outdoor physical activity. Sensitive groups should stay indoors.",
+      "advice_5": "Very poor air quality. Health emergency: avoid going outside, especially if you are in a risk group (children, elderly, asthma, COPD).",
+      "level_bueno": "good",
+      "level_moderado": "moderate",
+      "level_alto": "high",
+      "learn_more": "What do these values mean? → Air quality guide"
+    },
+    "sun_moon": {
+      "title": "Sun & moon",
+      "day_length": "Day length"
+    },
+    "moon": {
+      "new": "New moon",
+      "waxing_crescent": "Waxing crescent",
+      "first_quarter": "First quarter",
+      "waxing_gibbous": "Waxing gibbous",
+      "full": "Full moon",
+      "waning_gibbous": "Waning gibbous",
+      "last_quarter": "Last quarter",
+      "waning_crescent": "Waning crescent"
     }
   },
   "legal": {

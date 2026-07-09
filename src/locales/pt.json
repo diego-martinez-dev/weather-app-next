@@ -43,7 +43,8 @@
       "guides": "Guias",
       "glossary": "Glossário",
       "faq": "Perguntas frequentes",
-      "copyright": "Dados meteorológicos © OpenWeather | © 2026 WeatherApp - Seu clima em tempo real"
+      "copyright": "Dados meteorológicos © OpenWeather | © 2026 WeatherApp - Seu clima em tempo real",
+      "air_quality": "Qualidade do ar"
     },
     "menu": {
       "celsius": "Celsius",
@@ -86,6 +87,32 @@
       "clearNice": "O céu estará limpo e a probabilidade de chuva é muito baixa ({{rainProbToday}}%), com temperaturas agradáveis de até {{tempMaxToday}}°. É um dia ideal para sair e aproveitar ao ar livre; ainda assim, use um pouco de {{sunscreen}} se for ficar muito tempo ao sol.",
       "cloudyDry": "O céu estará nublado, mas a probabilidade de chuva é baixa ({{rainProbToday}}%), então é pouco provável que o dia se molhe. As temperaturas chegarão a {{tempMaxToday}}°; um {{jacket}} leve basta para ficar confortável. Bom momento para sair sem grandes complicações.",
       "general": "As condições para hoje são variáveis, com máximas de {{tempMaxToday}}°, mínimas de {{tempMinToday}}° e {{rainProbToday}}% de probabilidade de chuva. Vale conferir a previsão por hora antes de sair e levar um {{jacket}} leve caso o tempo mude."
+    },
+    "air": {
+      "title": "Qualidade do ar",
+      "advice_1": "O ar está limpo hoje. Ideal para sair, praticar exercício e aproveitar o exterior sem restrições.",
+      "advice_2": "A qualidade do ar é boa. Pessoas muito sensíveis podem notar algum desconforto em atividades intensas ao ar livre.",
+      "advice_3": "Qualidade moderada. Se você tem asma, alergias ou doenças respiratórias, reduza o exercício intenso ao ar livre.",
+      "advice_4": "Qualidade do ar ruim. Recomenda-se limitar a atividade física prolongada ao exterior. Pessoas sensíveis devem ficar em ambientes fechados.",
+      "advice_5": "Qualidade do ar muito ruim. Emergência sanitária: evite sair ao exterior, especialmente se você pertence ao grupo de risco (crianças, idosos, asma, DPOC).",
+      "level_bueno": "bom",
+      "level_moderado": "moderado",
+      "level_alto": "alto",
+      "learn_more": "O que significam esses valores? → Guia de qualidade do ar"
+    },
+    "sun_moon": {
+      "title": "Sol e lua",
+      "day_length": "Duração do dia"
+    },
+    "moon": {
+      "new": "Lua nova",
+      "waxing_crescent": "Lua crescente",
+      "first_quarter": "Quarto crescente",
+      "waxing_gibbous": "Gibosa crescente",
+      "full": "Lua cheia",
+      "waning_gibbous": "Gibosa minguante",
+      "last_quarter": "Quarto minguante",
+      "waning_crescent": "Lua minguante"
     }
   },
   "legal": {
