@@ -278,7 +278,10 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ Build: 303 páginas SSG. Locales 6/6 válidos. Push a main → deploy Vercel.
 - ✓ Verificación HTML crudo: PM2.5 en calidad-del-aire.html, "mes a mes" + "Ene"/"Feb" en caracas.html y bogota.html.
 - ✓ **Revisión Opus (jul):** verificado de forma independiente — build OK, 6 componentes/archivos nuevos presentes con sus CSS, UV correctamente NO implementada, hub de aire y tabla mes a mes server-rendered en HTML crudo. **Exactitud del mes a mes verificada** en bogota (5–19°C, dos temporadas de lluvia abr-may/oct-nov) y caracas (13–28°C, seco dic-mar): coinciden con la climatología real, sin cifras inventadas. Sin problemas.
-- **FASE 4 (UV) — estado real:** Diego **ya se suscribió** a "One Call by Call" con límite de 1.000/día (para no pagar). PERO al probar `data/3.0/onecall` con la key `91ca0e29…` **sigue devolviendo HTTP 401** (suscripción aún no propagada del lado de OpenWeather). **Antes de ejecutar la Fase 4, re-probar el endpoint** — solo cuando dé 200 y traiga `uvi`. Si tras horas sigue en 401, revisar en el panel que la suscripción figure activa (no "pending").
+- **FASE 4 (UV) — estado real (cierre del día):** Diego **ya se suscribió** a "One Call by Call" con límite de 1.000/día (para no pagar). Se re-probó `data/3.0/onecall` con la key `91ca0e29…` **dos veces** y **sigue en HTTP 401**; la MISMA key da `200` en los endpoints 2.5 (weather/forecast/air) → la key es válida, lo que falta es que el plan One Call quede enganchado/activo. **Diego retoma mañana** para verificar el panel de OpenWeather (que "One Call by Call" figure **Active**, no *Pending*; que la suscripción esté en la **misma cuenta** dueña de la key) y reintentar.
+  - **Al reanudar:** primero re-correr el curl de prueba:
+    `curl -s -o /dev/null -w "%{http_code}\n" "https://api.openweathermap.org/data/3.0/onecall?lat=10.48&lon=-66.87&units=metric&exclude=minutely&appid=91ca0e29e5a576e51887bc6e349bbd9d"`
+    Solo cuando dé **200 y traiga `uvi`**, ejecutar la Fase 4 del `PLAN_CONTENIDO_VALOR.md` (ya está toda escrita: `type=onecall` en el route, `src/lib/uv.ts`, componente `UvIndex.{tsx,css}`, i18n `app.uv.*`).
 - **Ampliación mes a mes:** el data file cubre 15 ciudades; se puede ampliar gradualmente con más ciudades de `topCities` en sesiones futuras.
 
 ### Para la PRÓXIMA sesión
@@ -287,7 +290,7 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
    - Si **rechazó** → leer el motivo concreto del correo y resolver puntualmente.
 2. **Revisar GSC (~2 semanas después del 8-jul):** comparar posición media y clics vs. la línea base (9 clics / pos 25). ¿Subieron las guías que estaban en pos 6-10? ¿Llegaron clics a `/por-hora`? ¿Está indexando `/calidad-del-aire`?
 3. **Diego (manual):** pedir indexación en GSC de `/calidad-del-aire` y las 81 nuevas `/por-hora` (priorizar: bogota, caracas, montevideo, medellin, santo-domingo). Reenviar sitemap.
-4. **FASE 4 — Índice UV:** confirmar si la API key tiene acceso a `data/3.0/onecall` (One Call API 3.0). Si sí, ejecutar la Fase 4 del PLAN_CONTENIDO_VALOR.
+4. **⭐ FASE 4 — Índice UV (retomar MAÑANA):** re-probar `data/3.0/onecall` con el curl de arriba. Si da 200 con `uvi`, ejecutar la Fase 4 del `PLAN_CONTENIDO_VALOR.md`. Si sigue 401, revisar el panel de OpenWeather (suscripción Active vs Pending, misma cuenta que la key).
 5. **Ampliar `cityMonthlyClimate.ts`** con más ciudades de `topCities` (cali, barranquilla, cartagena, lima-peru, etc.) si la tabla empieza a rankear.
 6. **Contenido pendiente:** backlinks, sub-ruta `/fin-de-semana` si `/por-hora` rinde.
 7. **Objetivo de fondo:** captura de datos de usuarios (email marketing / alertas WhatsApp).
