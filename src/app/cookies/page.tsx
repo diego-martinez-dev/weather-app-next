@@ -43,7 +43,7 @@ export default function CookiesPage() {
             <p>Si lo autorizas a través del diálogo del navegador, usamos la API de geolocalización (<code>navigator.geolocation</code>) para obtener el clima de tu ubicación actual. Esta autorización es gestionada por el navegador y puedes revocarla en cualquier momento desde la configuración del sitio.</p>
 
             <h3>Mapa meteorológico</h3>
-            <p>El mapa de temperaturas carga teselas (tiles) desde los servidores de OpenWeatherMap. Al visualizar el mapa, tu dirección IP queda expuesta a OpenWeatherMap. Consulta su <a href="https://openweathermap.org/privacy-policy" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>
+            <p>El mapa de temperaturas carga las teselas (tiles) a través de nuestro propio servidor, que las obtiene de OpenWeatherMap. De esta forma tu dirección IP no se comparte directamente con OpenWeatherMap al visualizar el mapa. Consulta su <a href="https://openweathermap.org/privacy-policy" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>
 
             <h3>Mapa de lluvia (Windy)</h3>
             <p>El mapa de lluvia en <a href="/lluvia">/lluvia</a> y en las páginas de ciudad se muestra mediante un mapa interactivo incrustado de <strong>Windy</strong>. Al cargarlo, tu dirección IP queda expuesta a Windy y este puede usar sus propias cookies. Consulta su <a href="https://account.windy.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</p>

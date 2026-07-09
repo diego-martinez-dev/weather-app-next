@@ -16,7 +16,7 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 
 ## Stack y datos operativos
 - **Next.js 16 App Router + React 19 + TS.** CSS plano por componente (`.tsx`+`.css`). **Tailwind NO se usa.**
-- **Clima:** OpenWeatherMap vía proxy interno `src/app/api/weather/route.ts`. La API key debe vivir **solo en variable de entorno** (`.env.local` local + Vercel), **nunca en memoria ni en texto plano**. ⚠️ Hoy sigue hardcodeada en el route — pendiente moverla a env y **rotar la key** (ver Pendientes: quedó en el historial de git). Tipos: `weather`|`forecast`|`air`|`geocode`. Pasar siempre `&lang=${language}`.
+- **Clima:** OpenWeatherMap vía proxy interno `src/app/api/weather/route.ts`. La API key vive **solo en env** (`OPENWEATHER_API_KEY` en `.env.local` local + Vercel), **nunca en memoria/repo/texto plano**. Los tiles del mapa de temperatura se sirven por otro proxy server-side `src/app/api/tile/route.ts` (así la key tampoco se expone en el cliente). Tipos de `/api/weather`: `weather`|`forecast`|`air`|`geocode`. Pasar siempre `&lang=${language}`.
 - **Auth:** Google OAuth con NextAuth v5 beta, sesiones JWT. `AUTH_URL=https://clima-hoy.com` en Vercel (callback OAuth va **sin www**). `NEXTAUTH_URL` eliminado (deprecado en v5).
 - **BD:** Supabase (PostgreSQL) + Prisma **v5** (no v7 — incompatible con `@auth/prisma-adapter`). Project ref `rhoqbvppawkkitjvlppu`. Pooler host `aws-1-us-east-1.pooler.supabase.com`; `DATABASE_URL` con `?pgbouncer=true`. Build = `prisma generate && next build`.
 - **MCP** Supabase y Vercel configurados en `~/.mcp.json`.
@@ -87,8 +87,8 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 - **GSC:** seguir la indexación manual (arriba) y confirmar redirect 308 en Vercel.
 - **Revisar GSC (~2 semanas post 8-jul):** ¿subieron las guías que estaban en pos 6-10? ¿clics en `/por-hora`? ¿indexó `/calidad-del-aire` y las páginas-país? Con eso se decide reforzar ciudades / reenviar a AdSense.
 
-### 🔒 Seguridad — mover la API key de OpenWeather a env (pendiente)
-- Hoy la key está **hardcodeada** en `src/app/api/weather/route.ts` (committeada → está en el historial de git). Pasos para asegurarla: (1) **rotar la key** en el panel de OpenWeather (la actual queda comprometida); (2) leerla en el route desde `process.env.OPENWEATHER_API_KEY`; (3) agregarla a `.env.local` (gitignored) y a **Vercel** (Settings → Environment Variables); (4) actualizar `CLAUDE.md`, que hoy dice "hardcodeada, no env var". Requiere coordinar con Diego (rotación + env en Vercel para no romper prod).
+### 🔒 Seguridad — API key de OpenWeather ✓ RESUELTO (jul-2026)
+- Diego **rotó la key** y la puso en `.env.local` + Vercel como `OPENWEATHER_API_KEY`. En el código: `route.ts` la lee de `process.env`; se **eliminó `src/config.ts`** (dead code con la key vieja); los tiles de `WeatherMap.tsx` ahora pasan por el proxy server-side `/api/tile` (antes tenían la key hardcodeada en el cliente). `CLAUDE.md` y `memory.md` actualizados; 0 ocurrencias de la key vieja en el repo. Divulgación de cookies del mapa actualizada (la IP ya no se comparte directo con OWM). **Nota:** la key vieja quedó en el historial de git, pero al estar rotada ya no sirve.
 
 ### Próximas mejoras (cuando corresponda)
 - Ampliar `cityMonthlyClimate.ts` con más ciudades si la tabla mes a mes rankea.

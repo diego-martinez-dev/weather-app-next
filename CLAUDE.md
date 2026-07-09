@@ -97,7 +97,7 @@ if (!mounted) return <SkeletonOPlaceholder />;
 - `geocode` requiere `lat` y `lon` — devuelve el nombre de la ciudad a partir de coordenadas
 - El parámetro `lang` debe ser el idioma del usuario: `&lang=${language}`
 - Para detectar el fondo correcto según condición climática usa `weather.weather[0].main` (siempre en inglés), no `.description` (localizado)
-- La API key de OpenWeatherMap está hardcodeada en `src/app/api/weather/route.ts` — no en env vars
+- La API key de OpenWeatherMap se lee de la env var `OPENWEATHER_API_KEY` en `src/app/api/weather/route.ts` (`.env.local` local + Vercel). Nunca hardcodearla ni ponerla en texto plano.
 
 ### Páginas de ciudad (`/clima/[slug]`)
 - La página sigue el patrón Server + Client: `page.tsx` (Server Component con SEO/metadata/JSON-LD) + `CityPageClient.tsx` (Client Component con toda la UI). No mezclar lógica de cliente en `page.tsx`.
@@ -182,9 +182,8 @@ AUTH_GOOGLE_ID              # Google OAuth Client ID
 AUTH_GOOGLE_SECRET          # Google OAuth Client Secret
 DATABASE_URL                # Supabase — Session pooler o direct connection
 DIRECT_URL                  # Supabase — Direct connection (puede fallar en redes IPv4)
+OPENWEATHER_API_KEY         # Key de OpenWeatherMap (usada en src/app/api/weather/route.ts)
 ```
-
-> `OPENWEATHER_API_KEY` no se usa como env var — la key está hardcodeada en `src/app/api/weather/route.ts`.
 
 ---
 
@@ -197,7 +196,7 @@ src/
 │   ├── page.tsx                 # Homepage con geolocalización
 │   ├── sitemap.ts               # Sitemap — importa topCities de clima/[slug]/page.tsx
 │   ├── api/
-│   │   ├── weather/route.ts     # Proxy de OpenWeatherMap (API key hardcodeada aquí)
+│   │   ├── weather/route.ts     # Proxy de OpenWeatherMap (API key desde OPENWEATHER_API_KEY)
 │   │   └── auth/[...nextauth]/  # Handlers de NextAuth
 │   └── clima/
 │       └── [slug]/

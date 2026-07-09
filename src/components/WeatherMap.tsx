@@ -52,12 +52,9 @@ export default function WeatherMap({
         minZoom: 3
       }).addTo(mapInstanceRef.current);
       
-      // Capa de temperatura de OpenWeatherMap (usando la API centralizada)
-      // Nota: Leaflet no puede usar nuestra API porque necesita una URL de tiles
-      // Así que todavía necesitamos la key aquí para los tiles
-      // Esta es la única excepción porque es una URL de imagen
-      const API_KEY = '91ca0e29e5a576e51887bc6e349bbd9d';
-      L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${API_KEY}`, {
+      // Capa de temperatura de OpenWeatherMap vía proxy interno /api/tile.
+      // La key vive solo en el servidor; nunca se expone al navegador.
+      L.tileLayer(`/api/tile?layer=temp_new&z={z}&x={x}&y={y}`, {
         attribution: 'Temperature data © <a href="https://openweathermap.org/">OpenWeatherMap</a>',
         opacity: 0.65,
         maxZoom: 18
