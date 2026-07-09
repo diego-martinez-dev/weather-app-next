@@ -16,7 +16,7 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 
 ## Stack y datos operativos
 - **Next.js 16 App Router + React 19 + TS.** CSS plano por componente (`.tsx`+`.css`). **Tailwind NO se usa.**
-- **Clima:** OpenWeatherMap vía proxy interno `src/app/api/weather/route.ts`. **API key hardcodeada** ahí (`91ca0e29e5a576e51887bc6e349bbd9d`), no en env. Tipos: `weather`|`forecast`|`air`|`geocode`. Pasar siempre `&lang=${language}`.
+- **Clima:** OpenWeatherMap vía proxy interno `src/app/api/weather/route.ts`. La API key debe vivir **solo en variable de entorno** (`.env.local` local + Vercel), **nunca en memoria ni en texto plano**. ⚠️ Hoy sigue hardcodeada en el route — pendiente moverla a env y **rotar la key** (ver Pendientes: quedó en el historial de git). Tipos: `weather`|`forecast`|`air`|`geocode`. Pasar siempre `&lang=${language}`.
 - **Auth:** Google OAuth con NextAuth v5 beta, sesiones JWT. `AUTH_URL=https://clima-hoy.com` en Vercel (callback OAuth va **sin www**). `NEXTAUTH_URL` eliminado (deprecado en v5).
 - **BD:** Supabase (PostgreSQL) + Prisma **v5** (no v7 — incompatible con `@auth/prisma-adapter`). Project ref `rhoqbvppawkkitjvlppu`. Pooler host `aws-1-us-east-1.pooler.supabase.com`; `DATABASE_URL` con `?pgbouncer=true`. Build = `prisma generate && next build`.
 - **MCP** Supabase y Vercel configurados en `~/.mcp.json`.
@@ -78,7 +78,8 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 - Diego se suscribió a **One Call by Call** (límite 1.000/día para no pagar), pero `data/3.0/onecall` **sigue en HTTP 401** (la key da 200 en los endpoints 2.5 → key válida, falta que el plan One Call quede activo).
 - **Al reanudar:** re-correr el curl; solo si da **200 con `uvi`**, ejecutar la Fase 4 (ya escrita en el plan: `type=onecall` en el route, `src/lib/uv.ts`, `components/UvIndex.{tsx,css}`, i18n `app.uv.*`).
   ```
-  curl -s -o /dev/null -w "%{http_code}\n" "https://api.openweathermap.org/data/3.0/onecall?lat=10.48&lon=-66.87&units=metric&exclude=minutely&appid=91ca0e29e5a576e51887bc6e349bbd9d"
+  # usar la key real desde el route/env; NO pegarla en memoria
+  curl -s -o /dev/null -w "%{http_code}\n" "https://api.openweathermap.org/data/3.0/onecall?lat=10.48&lon=-66.87&units=metric&exclude=minutely&appid=$OWM_KEY"
   ```
 - Si sigue 401 tras horas: revisar en el panel de OpenWeather que la suscripción figure **Active** (no *Pending*) y en la **misma cuenta** dueña de la key.
 
@@ -86,10 +87,16 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 - **GSC:** seguir la indexación manual (arriba) y confirmar redirect 308 en Vercel.
 - **Revisar GSC (~2 semanas post 8-jul):** ¿subieron las guías que estaban en pos 6-10? ¿clics en `/por-hora`? ¿indexó `/calidad-del-aire` y las páginas-país? Con eso se decide reforzar ciudades / reenviar a AdSense.
 
+### 🔒 Seguridad — mover la API key de OpenWeather a env (pendiente)
+- Hoy la key está **hardcodeada** en `src/app/api/weather/route.ts` (committeada → está en el historial de git). Pasos para asegurarla: (1) **rotar la key** en el panel de OpenWeather (la actual queda comprometida); (2) leerla en el route desde `process.env.OPENWEATHER_API_KEY`; (3) agregarla a `.env.local` (gitignored) y a **Vercel** (Settings → Environment Variables); (4) actualizar `CLAUDE.md`, que hoy dice "hardcodeada, no env var". Requiere coordinar con Diego (rotación + env en Vercel para no romper prod).
+
 ### Próximas mejoras (cuando corresponda)
 - Ampliar `cityMonthlyClimate.ts` con más ciudades si la tabla mes a mes rankea.
 - Sub-ruta `/fin-de-semana` si `/por-hora` rinde. Primeros backlinks para autoridad.
 - **Al aprobar AdSense:** reponer `<AdUnit>` con slot IDs reales; evaluar un 3er anuncio.
 
-## Objetivo de fondo
-Una vez con tráfico: captar datos de usuarios (login Google ya es el primer paso) para **email marketing** y **alertas por WhatsApp**.
+## Objetivos a largo plazo
+- Construir una base de datos de usuarios para **campañas de email marketing**.
+- Enviar **alertas personalizadas por WhatsApp** a usuarios registrados.
+- El login con Google es el primer paso hacia ese sistema.
+- **Monetizar la página con publicidad (Google AdSense)** — en proceso de aprobación.
