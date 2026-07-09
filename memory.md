@@ -274,10 +274,11 @@ lluvia por ciudades, altitud y clima, El Niño/La Niña, sensación térmica y r
 - ✓ **FASE 3 — Clima mes a mes:**
   - `src/data/cityMonthlyClimate.ts`: 15 ciudades de alto tráfico (caracas, montevideo, medellin, bogota, madrid, barcelona, puebla, guayaquil, guadalajara, santo-domingo, murcia, buenos-aires, lima, santiago, quito). Datos cualitativos (`tempRange`, `rain`: seco/moderado/lluvioso, `note?`). **Exactitud > volumen — sin estadísticas inventadas.**
   - Tabla server-rendered "Clima en {city} mes a mes" en `clima/[slug]/page.tsx`: 12 filas con colores por nivel de lluvia, crawleable por Googlebot. Captura queries de intención de viaje ("clima en Caracas en enero", "qué tiempo hace en Madrid en verano").
-- ✓ **FASE 4 (UV):** NO ejecutada — requiere confirmación de Diego sobre One Call API 3.0.
+- ✓ **FASE 4 (UV):** NO ejecutada — bloqueada por acceso a la One Call API 3.0 (ver estado abajo).
 - ✓ Build: 303 páginas SSG. Locales 6/6 válidos. Push a main → deploy Vercel.
 - ✓ Verificación HTML crudo: PM2.5 en calidad-del-aire.html, "mes a mes" + "Ene"/"Feb" en caracas.html y bogota.html.
-- **FASE 4 pendiente:** Diego debe confirmar si tiene acceso a la One Call API 3.0 (`data/3.0/onecall`) de OpenWeatherMap para agregar el índice UV.
+- ✓ **Revisión Opus (jul):** verificado de forma independiente — build OK, 6 componentes/archivos nuevos presentes con sus CSS, UV correctamente NO implementada, hub de aire y tabla mes a mes server-rendered en HTML crudo. **Exactitud del mes a mes verificada** en bogota (5–19°C, dos temporadas de lluvia abr-may/oct-nov) y caracas (13–28°C, seco dic-mar): coinciden con la climatología real, sin cifras inventadas. Sin problemas.
+- **FASE 4 (UV) — estado real:** Diego **ya se suscribió** a "One Call by Call" con límite de 1.000/día (para no pagar). PERO al probar `data/3.0/onecall` con la key `91ca0e29…` **sigue devolviendo HTTP 401** (suscripción aún no propagada del lado de OpenWeather). **Antes de ejecutar la Fase 4, re-probar el endpoint** — solo cuando dé 200 y traiga `uvi`. Si tras horas sigue en 401, revisar en el panel que la suscripción figure activa (no "pending").
 - **Ampliación mes a mes:** el data file cubre 15 ciudades; se puede ampliar gradualmente con más ciudades de `topCities` en sesiones futuras.
 
 ### Para la PRÓXIMA sesión
