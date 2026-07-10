@@ -95,6 +95,7 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 - One Call API 3.0 activa. Endpoint `data/3.0/onecall` (no la 4.0 — da 404). Límite 1.000/día, $0.
 - **Implementado:** `type=onecall` en `route.ts`, `src/lib/uv.ts` (escala OMS 5 niveles: bajo/#4caf50, moderado/#ffb300, alto/#ff7043, muy alto/#e53935, extremo/#7b1fa2 + consejo por nivel), `components/UvIndex.{tsx,css}` (UV actual + gráfico de barras horario daytime con timezone_offset + consejo), fetch en `CityPageClient.tsx` (paralelo con air y forecast), `app.uv.*` en 6 idiomas.
 - **Falla silenciosa:** si `current.uvi` no existe en la respuesta (key sin acceso), el componente no se monta.
+- ✓ **Revisión Opus (10-jul):** verificado independiente y **end-to-end** — escala OMS correcta en `uv.ts`, `UvIndex` montado con guard, route lee la key de `process.env`, i18n en 6 locales, build OK. Probado el proxy real `/api/weather?type=onecall` → devuelve `uvi` real (máx 12.37 de día). Sin problemas. Falta solo la verificación visual de Diego en el navegador tras el deploy.
 
 ### Diego (manual)
 - **GSC:** seguir la indexación manual (arriba) y confirmar redirect 308 en Vercel.
