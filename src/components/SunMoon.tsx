@@ -1,8 +1,9 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { SunIcon, MoonIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { SunIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { getMoonPhase } from '@/lib/moon';
+import { MoonPhaseIcon } from './MoonPhaseIcon';
 import './SunMoon.css';
 
 interface SunMoonProps {
@@ -55,7 +56,7 @@ export default function SunMoon({ weather }: SunMoonProps) {
           <div className="sun-moon-value">{formatDuration(dayLength)}</div>
         </div>
         <div className="sun-moon-item">
-          <MoonIcon className="sun-moon-icon" />
+          <MoonPhaseIcon phase={moon.phase} size={27} style={{ marginBottom: 2 }} />
           <div className="sun-moon-label">{t(moon.phaseKey)}</div>
           <div className="sun-moon-value">{moon.illumination}%</div>
         </div>

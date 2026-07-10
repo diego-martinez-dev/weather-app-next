@@ -1,6 +1,7 @@
 export interface MoonPhase {
   phaseKey: string;
   illumination: number;
+  phase: number;
 }
 
 // Reference new moon: 2000-01-06 18:14 UTC (Julian day 2451550.1)
@@ -32,5 +33,5 @@ export function getMoonPhase(date: Date): MoonPhase {
   else if (phase < 0.9375) { phaseKey = 'app.moon.waning_crescent'; }
   else                     { phaseKey = 'app.moon.new'; }
 
-  return { phaseKey, illumination };
+  return { phaseKey, illumination, phase };
 }

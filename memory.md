@@ -31,7 +31,7 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 7. **No** crear páginas por-ciudad finitas a escala (riesgo "low value"): el dato en vivo va como sección en la página de ciudad existente; lo educativo, en un hub.
 8. Footer: última línea siempre "Website creado por [cracksdigitales.com]". Commits terminan con `Co-Authored-By: Claude Opus 4.8`.
 9. **Nunca emojis en la UI.** Íconos de Heroicons (o SVG propio como `SnowflakeIcon` cuando Heroicons no lo tenga, ej. nieve). Look profesional.
-10. **Radares (lluvia/nieve) = página aparte.** El mapa Windy vive en su página dedicada (`/lluvia`, `/nieve`); las páginas de ciudad solo enlazan a ellas con un botón, no embeben el mapa en la sección.
+10. **Radar de nieve = página aparte** (`/nieve`): la sección de nieve de la ciudad solo enlaza con botón, NO embebe el mapa. La **lluvia** mantiene su mapa embebido en la página de ciudad (client) **además** de la página `/lluvia` (decisión de Diego 10-jul: dejarla así). Los mapas Windy (`snowAccu`) nuevos van en su página dedicada.
 
 ---
 
@@ -68,7 +68,7 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 **Features vivas y sus archivos clave:**
 - **Consejo del clima data-driven** (`WeatherClient.tsx`): `src/lib/weatherSignals.ts` + `weatherAdvice.ts` (la prob. de lluvia real manda sobre la condición) + `localLexicon.ts` (léxico por país es: sombrilla/paraguas, abrigo/chaqueta/chamarra/campera, voseo AR) + plantillas `app.advice.*`. Temps convertidas con `convertTemp` antes de interpolar.
 - **Calidad del aire:** `src/lib/airQuality.ts` (`getAqiInfo`, `getPollutantLevel` umbrales OMS/EPA) + `components/AirQuality.{tsx,css}` (AQI + PM2.5/PM10/O₃/NO₂ + consejo salud) + hub `/calidad-del-aire`.
-- **Sol y Luna:** `src/lib/moon.ts` (`getMoonPhase`, cálculo astronómico sin API) + `components/SunMoon.{tsx,css}` (amanecer/atardecer/duración día/fase lunar).
+- **Sol y Luna:** `src/lib/moon.ts` (`getMoonPhase` → `{phaseKey, illumination, phase}`, cálculo astronómico sin API) + `components/SunMoon.{tsx,css}` (amanecer/atardecer con `SunIcon`, duración con `ClockIcon`, fase lunar con **`components/MoonPhaseIcon.tsx`** — SVG que dibuja la fase real vía semicírculo iluminado + elipse del terminador, sin emoji).
 - **Índice UV:** `src/lib/uv.ts` (`getUvInfo`, escala OMS 5 niveles) + `components/UvIndex.{tsx,css}` (UV actual + gráfico barras horario daytime usando `timezone_offset` de One Call 3.0 + consejo de protección). Montado en `CityPageClient.tsx` condicionado a `uvData?.current?.uvi !== undefined`. Fetch `type=onecall` paralelo con air y forecast.
 - **Mapa de lluvia/nieve:** `components/WindyMap.tsx` (iframe embed de Windy). Props: `lat`, `lon`, `zoom` (default 9), `height` (default 470), `overlay` (default `'rain'`; para nieve usar `'snowAccu'`). RainViewer fue **descartado** (no soporta zoom de barrio). Divulgación de cookies apunta a Windy.
 
