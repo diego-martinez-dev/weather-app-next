@@ -54,6 +54,7 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 - **Menú condicional:** `TopMenu.tsx` usa `usePathname()` para detectar `/clima/{slug}` y mostrar "❄️ Nieve" solo si `isSnowCity(slug)`. Clave i18n `app.nav.snow` en los 6 idiomas (es/en/pt/fr/de/it).
 - Hub `/nieve` (Server, SSG): H1, intro doble temporada, mapa Windy snowAccu centrado en Bariloche (zoom 5), grilla de destinos por región, 4 FAQ + JSON-LD FAQPage + BreadcrumbList, enlazado desde footer.
 - **Sin dependencia de One Call API.** Esta feature es independiente del UV.
+- ✓ **Revisión Opus (9-jul):** verificado independiente — 16 snow cities, sección `snowAccu` server-rendered SOLO en snow cities (bariloche/denver/ushuaia sí; caracas/miami no), hub `/nieve` con ambas regiones, EE.UU. con temporada correcta (Buffalo: diciembre/invierno/efecto lago, NO jun-sep), 14 ciudades nuevas enlazadas en sus guías-país, `WindyMap` con prop `overlay`, `app.nav.snow` en 6 locales, build OK (~347 SSG). Sin problemas.
 
 **Páginas-país `/clima-pais/[pais]`** (19 países hispanos + EEUU/Canadá, SSG): guía extensa server-rendered — intro (3 párr.), clima por regiones, cuándo viajar, qué llevar, grilla de ciudades, FAQ, otros países. Enlazado interno bidireccional ciudad↔país. Agrupados por continente en el menú.
 
@@ -89,14 +90,10 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 
 ## Pendientes
 
-### ⭐ Retomar MAÑANA — Índice UV (Fase 4 de `PLAN_CONTENIDO_VALOR.md`)
-- Diego se suscribió a **One Call by Call** (límite 1.000/día para no pagar), pero `data/3.0/onecall` **sigue en HTTP 401** (la key da 200 en los endpoints 2.5 → key válida, falta que el plan One Call quede activo).
-- **Al reanudar:** re-correr el curl; solo si da **200 con `uvi`**, ejecutar la Fase 4 (ya escrita en el plan: `type=onecall` en el route, `src/lib/uv.ts`, `components/UvIndex.{tsx,css}`, i18n `app.uv.*`).
-  ```
-  # usar la key real desde el route/env; NO pegarla en memoria
-  curl -s -o /dev/null -w "%{http_code}\n" "https://api.openweathermap.org/data/3.0/onecall?lat=10.48&lon=-66.87&units=metric&exclude=minutely&appid=$OWM_KEY"
-  ```
-- Si sigue 401 tras horas: revisar en el panel de OpenWeather que la suscripción figure **Active** (no *Pending*) y en la **misma cuenta** dueña de la key.
+### ⭐ LISTO PARA EJECUTAR — Índice UV (Fase 4 de `PLAN_CONTENIDO_VALOR.md`)
+- **One Call API 3.0 ✓ ACTIVO.** Diego se suscribió al producto correcto ("One Call API 3.0", NO la 4.0 — son planes separados; había activado la 4.0 por error). Verificado (9-jul): `data/3.0/onecall` da **HTTP 200** con `uvi` real (máx ~12 de día). Límite 1.000/día, $0.
+- **Siguiente paso:** ejecutar la Fase 4 del `PLAN_CONTENIDO_VALOR.md` (ya escrita): `type=onecall` en `route.ts` (endpoint **3.0**, no 4.0 — la URL 4.0 da 404), `src/lib/uv.ts`, `components/UvIndex.{tsx,css}`, i18n `app.uv.*`. Toma `uvi` de `current` y `hourly[]`.
+- Nota Solar Irradiance API: **descartada** (0.12 USD/call, sin tramo gratis, público de nicho solar; no encaja).
 
 ### Diego (manual)
 - **GSC:** seguir la indexación manual (arriba) y confirmar redirect 308 en Vercel.
