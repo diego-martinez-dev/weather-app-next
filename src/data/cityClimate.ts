@@ -1457,6 +1457,418 @@ export const cityClimate: Record<string, CityClimate> = {
       },
     ],
   },
+
+  // ── Montaña / Esquí — Cono Sur ────────────────────────────────────────────
+  bariloche: {
+    bestTimeToVisit:
+      'La temporada de esquí (junio–septiembre) es el momento estrella de Bariloche, con el Cerro Catedral en plena operación y nieve garantizada. El verano austral (diciembre–marzo) es ideal para trekking y kayak: temperaturas de 15–22°C, días largos y el lago Nahuel Huapi en su mejor color. El otoño (abril–mayo) ofrece colores de bosque espectaculares y muy poco turismo.',
+    rainySeasons:
+      'Las precipitaciones son moderadas durante todo el año. Junio a agosto traen nieve abundante en el cerro; el resto del año llueve ocasionalmente, con los meses de verano siendo los más secos.',
+    avgTempRange: '-5°C – 22°C según estación',
+    faq: [
+      {
+        question: '¿Cuándo nieva en Bariloche?',
+        answer:
+          'Las nevadas más intensas en el Cerro Catedral se producen entre junio y septiembre. En la ciudad la nieve cae esporádicamente, pero en el cerro (a 2.388 m de cima) el manto es estable toda la temporada de invierno austral.',
+      },
+      {
+        question: '¿Qué temperatura hace en Bariloche en invierno?',
+        answer:
+          'En el invierno austral (junio–agosto), las temperaturas en la ciudad oscilan entre −5°C y 5°C. En el Cerro Catedral puede hacer más frío con viento; en los días de sol la sensación es más agradable gracias a la altitud y el cielo despejado.',
+      },
+      {
+        question: '¿Cuál es la mejor época para esquiar en Bariloche?',
+        answer:
+          'Julio y agosto son los meses de mayor calidad de nieve en el Cerro Catedral. Julio coincide con las vacaciones de invierno argentina y es la época más masificada y cara. Junio y septiembre ofrecen nieve con menos turistas y precios más bajos.',
+      },
+      {
+        question: '¿Qué temperatura hace en Bariloche en verano?',
+        answer:
+          'El verano austral (diciembre–febrero) tiene temperaturas de 15–22°C en la ciudad, con días largos hasta las 9–10pm. El viento patagónico puede hacer las tardes frescas; es recomendable llevar una chaqueta cortavientos incluso en enero.',
+      },
+    ],
+  },
+  ushuaia: {
+    bestTimeToVisit:
+      'El verano austral (noviembre–marzo) es la mejor época para el turismo terrestre: días larguísimos (hasta 18 horas de luz), temperaturas de 8–14°C y el Parque Nacional Tierra del Fuego accesible. Para esquiar en el Cerro Castor, julio y agosto ofrecen la mejor nieve. Septiembre y octubre son excelentes para la fotografía: nieve en las cimas y verde emergiendo en los valles.',
+    rainySeasons:
+      'Las precipitaciones son frecuentes y pueden presentarse como lluvia, nieve o granizo en cualquier mes. El clima es subantártico: cambia rápidamente. No hay una temporada verdaderamente seca.',
+    avgTempRange: '-10°C – 14°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en Ushuaia?',
+        answer:
+          'Ushuaia tiene un clima frío todo el año. En verano (diciembre–febrero) las máximas llegan a 12–14°C; en invierno (junio–agosto) las mínimas bajan a −10°C con viento. El viento patagónico hace que la sensación térmica siempre sea varios grados más baja.',
+      },
+      {
+        question: '¿Se puede esquiar en Ushuaia?',
+        answer:
+          'Sí, el Cerro Castor es el centro de esquí más austral del mundo. Opera de junio a septiembre, con julio y agosto como los mejores meses. Tiene 30 pistas y ofrece una experiencia única en el fin del mundo.',
+      },
+      {
+        question: '¿Cuándo es la temporada de esquí en Ushuaia?',
+        answer:
+          'La temporada de esquí en el Cerro Castor va de junio a septiembre (invierno austral). Julio y agosto son los meses de mejor nieve y mayor afluencia; junio y septiembre tienen menos gente y precios más accesibles.',
+      },
+      {
+        question: '¿Cuándo es el mejor momento para visitar el Parque Nacional Tierra del Fuego?',
+        answer:
+          'El verano austral (noviembre–marzo) es el mejor momento: días largos, senderos accesibles y fauna activa. En invierno el parque es visitable pero algunos senderos pueden estar nevados y las horas de luz son muy cortas.',
+      },
+    ],
+  },
+  'san-martin-de-los-andes': {
+    bestTimeToVisit:
+      'El verano austral (diciembre–marzo) es ideal para kayak, senderismo y ciclismo de montaña alrededor del lago Lacar: temperaturas de 20–28°C y días muy largos. La temporada de esquí en Chapelco (junio–septiembre) es menos masificada que Bariloche y ofrece nieve de calidad. El otoño (abril–mayo) tiene colores de bosque excepcionales.',
+    rainySeasons:
+      'Las precipitaciones se distribuyen a lo largo del año, siendo algo más frecuentes en invierno. La nieve cae en el cerro Chapelco de junio a septiembre.',
+    avgTempRange: '-5°C – 28°C según estación',
+    faq: [
+      {
+        question: '¿Cuándo es la temporada de esquí en Chapelco?',
+        answer:
+          'Chapelco opera de junio a septiembre. Julio y agosto tienen la mejor nieve; es menos concurrido que Bariloche, lo que lo hace atractivo para quienes buscan menos filas y un ambiente más tranquilo.',
+      },
+      {
+        question: '¿Qué temperatura hace en San Martín de los Andes?',
+        answer:
+          'En verano (diciembre–febrero) las temperaturas alcanzan 20–28°C con noches frescas de 10–15°C. En invierno (junio–agosto) las temperaturas en la villa bajan a −5°C y en el cerro Chapelco hace más frío con el viento.',
+      },
+      {
+        question: '¿Cuál es la diferencia entre Bariloche y San Martín de los Andes para el esquí?',
+        answer:
+          'Chapelco tiene menos pistas que el Catedral pero también mucho menos afluencia de turistas. Es una buena opción para familias y para quienes buscan una experiencia más tranquila; los precios en alojamiento suelen ser algo más accesibles.',
+      },
+      {
+        question: '¿Cuándo ir a San Martín de los Andes para el verano?',
+        answer:
+          'Diciembre a febrero son los mejores meses: el lago Lacar está en temperatura ideal para kayak y paddleboard, los senderos del Parque Nacional Lanín están despejados y las horas de luz son máximas. Enero es el mes más caluroso.',
+      },
+    ],
+  },
+  'villa-la-angostura': {
+    bestTimeToVisit:
+      'El otoño (marzo–mayo) es el secreto mejor guardado: el bosque de arrayanes cambia de color y el pueblo recibe mucho menos turismo que en verano. El verano (diciembre–febrero) es agradable para navegar el lago Nahuel Huapi. La temporada de esquí en Cerro Bayo (junio–septiembre) es más íntima que en Bariloche.',
+    rainySeasons:
+      'Las precipitaciones son moderadas y se reparten a lo largo del año. Los inviernos aportan nieve en el cerro Bayo; el verano es relativamente seco.',
+    avgTempRange: '-5°C – 22°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en Villa La Angostura?',
+        answer:
+          'En verano (diciembre–febrero) las temperaturas alcanzan 18–22°C de día, con noches frescas de 8–12°C. En invierno (junio–agosto) bajan a −5°C en las noches más frías, con nieve ocasional en el pueblo.',
+      },
+      {
+        question: '¿Cuándo nieva en Villa La Angostura?',
+        answer:
+          'Las nevadas en la villa son ocasionales en invierno (junio–agosto); en el Cerro Bayo, a mayor altitud, la nieve es estable durante toda la temporada de esquí.',
+      },
+      {
+        question: '¿Cuál es la mejor época para ver el Parque Nacional Los Arrayanes?',
+        answer:
+          'El bosque de arrayanes es espectacular en otoño (abril–mayo) con los colores cambiantes, y en verano es el momento más cálido para la caminata. Se accede en bote desde el muelle de la villa o a pie por sendero.',
+      },
+      {
+        question: '¿Cuándo esquiar en Cerro Bayo?',
+        answer:
+          'El Cerro Bayo opera de junio a septiembre. Es más pequeño que el Cerro Catedral de Bariloche, con menos pistas pero también mucho menos gente; es ideal para familias y principiantes que buscan un ambiente tranquilo.',
+      },
+    ],
+  },
+  esquel: {
+    bestTimeToVisit:
+      'La temporada de esquí en La Hoya (junio–septiembre) es el principal atractivo invernal: nieve liviana y seca, poco turismo y precios más bajos que en Bariloche. El verano (noviembre–marzo) es soleado y seco, ideal para visitar el Parque Nacional Los Alerces y tomar la Trochita. El otoño ofrece colores de bosque andino excepcionales.',
+    rainySeasons:
+      'Esquel tiene un clima semiárido frío: las precipitaciones son moderadas y se concentran en invierno, generalmente en forma de nieve en el cerro y lluvia en la ciudad. El verano es seco y soleado.',
+    avgTempRange: '-5°C – 25°C según estación',
+    faq: [
+      {
+        question: '¿Cuándo es la temporada de esquí en La Hoya?',
+        answer:
+          'La Hoya opera aproximadamente de junio a septiembre. Es conocido por su nieve seca y liviana ("polvo") y su ambiente familiar y poco masificado. Julio es el mes de mayor afluencia; junio y agosto son más tranquilos.',
+      },
+      {
+        question: '¿Qué temperatura hace en Esquel en invierno?',
+        answer:
+          'En invierno (junio–agosto) las temperaturas en la ciudad oscilan entre −5°C y 5°C. En La Hoya hace más frío con el viento. La nieve es menos húmeda que en Bariloche, lo que la hace más polvo y menos compacta.',
+      },
+      {
+        question: '¿Qué visitar cerca de Esquel en verano?',
+        answer:
+          'El Parque Nacional Los Alerces, con sus lagos de aguas turquesas y alerces milenarios, es la joya de la región. La Trochita (Tren Patagónico) parte desde Esquel y recorre paisajes áridos patagónicos. El verano (noviembre–marzo) tiene las mejores condiciones para trekking y pesca en los lagos.',
+      },
+      {
+        question: '¿Por qué La Hoya es menos conocida que Bariloche?',
+        answer:
+          'Porque es más pequeña, más remota y mucho menos publicitada. Eso la convierte en una opción excelente para quienes buscan esquí sin aglomeraciones, con precios más accesibles tanto en el forfait como en el alojamiento.',
+      },
+    ],
+  },
+  'el-bolson': {
+    bestTimeToVisit:
+      'El verano (diciembre–febrero) es la temporada dorada: el clima es notablemente más cálido que el resto de la Patagonia (20–28°C), el mercado artesanal funciona los fines de semana y los senderos al Cajón del Azul y el Cerro Piltriquitrón están en condiciones óptimas. El otoño (marzo–mayo) ofrece colores excepcionales y menos gente.',
+    rainySeasons:
+      'El Bolsón recibe más precipitaciones que el resto de la Patagonia por su microclima, distribuidas a lo largo del año. Los inviernos traen algo de nieve en las cumbres cercanas pero en el valle el frío es moderado.',
+    avgTempRange: '2°C – 28°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en El Bolsón?',
+        answer:
+          'El Bolsón tiene un microclima más cálido que el resto de la Patagonia. En verano (diciembre–febrero) las máximas llegan a 28°C con noches frescas de 12–15°C. En invierno (junio–agosto) las temperaturas bajan a 2–8°C de día, con noches que pueden llegar a 0°C.',
+      },
+      {
+        question: '¿Nieva en El Bolsón?',
+        answer:
+          'En el pueblo nieva esporádicamente en invierno, pero no de forma abundante. Las cumbres cercanas sí reciben nieve de manera consistente. No hay centros de esquí en El Bolsón; para esquiar en la zona hay que ir a Bariloche o San Martín de los Andes.',
+      },
+      {
+        question: '¿Cuándo es la mejor época para visitar El Bolsón?',
+        answer:
+          'El verano austral (diciembre–febrero) es la temporada principal: el clima es agradable para senderismo, el mercado artesanal es muy activo y el Cajón del Azul y los bosques están en su mejor estado. El otoño (marzo–abril) tiene colores espectaculares y mucho menos turismo.',
+      },
+      {
+        question: '¿Qué hace único el clima de El Bolsón?',
+        answer:
+          'Su microclima. Está protegido por las montañas circundantes que bloquean parte del viento patagónico y retienen la humedad, creando un valle más cálido y fértil que el promedio de la región. Por eso se produce fruta fina, lúpulo para cerveza y se desarrolló una cultura artesanal y orgánica excepcional.',
+      },
+    ],
+  },
+  'el-calafate': {
+    bestTimeToVisit:
+      'Noviembre a marzo (verano austral) es la temporada principal: el Glaciar Perito Moreno está completamente accesible, las temperaturas son de 10–22°C y los días son muy largos. El Parque Nacional Los Glaciares también está abierto para trekking al Fitz Roy desde El Chaltén. El invierno (junio–agosto) tiene fríos intensos pero el glaciar se puede visitar con menos turistas.',
+    rainySeasons:
+      'Las precipitaciones son moderadas y se distribuyen durante todo el año. El viento patagónico es el elemento más constante e intenso, especialmente en primavera (septiembre–noviembre). Las nevadas en la ciudad son ocasionales en invierno.',
+    avgTempRange: '-5°C – 22°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en El Calafate?',
+        answer:
+          'En verano (diciembre–febrero) las temperaturas oscilan entre 10°C y 22°C, con viento frecuente. En invierno (junio–agosto) las mínimas bajan a −5°C o menos. El viento patagónico puede hacer que la sensación térmica sea varios grados más baja en cualquier época.',
+      },
+      {
+        question: '¿Cuándo visitar el Glaciar Perito Moreno?',
+        answer:
+          'El glaciar es visitable todo el año, pero el verano austral (noviembre–marzo) ofrece las mejores condiciones: temperaturas más agradables, días más largos y mayor actividad del glaciar (más desprendimientos). Noviembre y marzo tienen menos turistas que enero y febrero.',
+      },
+      {
+        question: '¿Qué ropa llevar a El Calafate?',
+        answer:
+          'Ropa en capas es fundamental: camiseta térmica, polar o suéter, y chaqueta cortavientos impermeable. El viento puede ser muy intenso incluso en verano. Guantes y gorro son recomendables incluso en diciembre. La radiación UV en la Patagonia es alta: protector solar siempre.',
+      },
+      {
+        question: '¿Cómo llegar al Glaciar Perito Moreno?',
+        answer:
+          'El glaciar está a 80 km de El Calafate por la ruta provincial 11. Se puede llegar en tour organizado (la opción más común) o en remise. No hay transporte público directo. El acceso a las pasarelas del glaciar tiene un costo adicional a la entrada del parque nacional.',
+      },
+    ],
+  },
+
+  // ── Montaña / Esquí — Chile ───────────────────────────────────────────────
+  farellones: {
+    bestTimeToVisit:
+      'La temporada de esquí (junio–octubre) es la razón principal para visitar Farellones y los centros El Colorado, La Parva y Valle Nevado. Julio y agosto son los meses de mejor nieve y mayor actividad. Fuera de temporada, Farellones es un pueblo de montaña tranquilo con vistas espectaculares de los Andes y la cordillera desde los 2.470 metros de altitud.',
+    rainySeasons:
+      'En invierno (junio–septiembre) las precipitaciones caen como nieve a esta altitud. El verano es seco y con sol intenso; las temperaturas son frescas por la altitud incluso en enero y febrero.',
+    avgTempRange: '-8°C – 15°C según estación',
+    faq: [
+      {
+        question: '¿Cuándo es la temporada de esquí en Farellones?',
+        answer:
+          'La temporada comienza típicamente en junio y se extiende hasta octubre, con julio y agosto como los meses de mejor nieve y máxima operación de los tres centros (El Colorado, La Parva y Valle Nevado). La temporada exacta depende de las nevadas del año.',
+      },
+      {
+        question: '¿Cuánto nieva en Farellones?',
+        answer:
+          'La temporada de nieve varía bastante entre años. En años buenos pueden acumularse 3–5 metros de nieve en la temporada; en años de sequía la temporada es más corta. El Colorado y Valle Nevado tienen cañones de nieve artificial para complementar las nevadas naturales.',
+      },
+      {
+        question: '¿Qué temperatura hace en Farellones?',
+        answer:
+          'A 2.470 metros, la temperatura en invierno oscila entre −8°C y 3°C con viento. El viento andino puede bajar notablemente la sensación térmica. En verano las temperaturas son frescas (5–15°C de día), con sol intenso y radiación UV muy alta por la altitud.',
+      },
+      {
+        question: '¿Es mejor esquiar en Farellones o en Bariloche?',
+        answer:
+          'Son destinos diferentes. Farellones/Valle Nevado está a 40 km de Santiago, lo que lo hace muy accesible; la nieve suele ser más seca y ligera. Bariloche tiene mayor extensión de pistas y un entorno de lago y bosque andino muy diferente. Ambos merecen ser visitados.',
+      },
+    ],
+  },
+  coyhaique: {
+    bestTimeToVisit:
+      'El verano austral (noviembre–marzo) es la mejor época para explorar la Carretera Austral y los parques patagónicos: temperaturas de 10–20°C y los caminos de ripio más transitables. El otoño (abril–mayo) tiene colores de bosque excepcionales y la región está tranquila. El invierno (junio–agosto) cierra muchos caminos rurales pero la ciudad funciona con normalidad.',
+    rainySeasons:
+      'Las precipitaciones son abundantes y se distribuyen durante todo el año, siendo más frecuentes en otoño e invierno. La nieve cae en la ciudad en invierno y puede cubrir los caminos rurales por semanas.',
+    avgTempRange: '-5°C – 20°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en Coyhaique?',
+        answer:
+          'En verano (diciembre–febrero) las temperaturas alcanzan 15–20°C de día, con noches frescas de 5–8°C. En invierno (junio–agosto) las temperaturas bajan a −5°C y la nieve es frecuente en la ciudad y los alrededores.',
+      },
+      {
+        question: '¿Es buena base para la Carretera Austral?',
+        answer:
+          'Sí, Coyhaique es el principal centro logístico de la Carretera Austral. Tiene buenos servicios, alquiler de autos, mecánicos y suministros. El verano (noviembre–marzo) es la mejor época para recorrer la ruta, cuando los caminos de ripio son más transitables.',
+      },
+      {
+        question: '¿Cuándo nieva en Coyhaique?',
+        answer:
+          'Las nevadas en la ciudad son frecuentes entre junio y agosto, y ocasionales en mayo y septiembre. Los caminos rurales pueden quedar cortados por nieve durante días; es importante planificar con flexibilidad si se viaja en invierno.',
+      },
+      {
+        question: '¿Qué parques naturales se visitan desde Coyhaique?',
+        answer:
+          'Los parques Patagonia (ex Estancia Valle Chacabuco), Cerro Castillo, Queulat y Jeinimeni son los principales. La temporada óptima para visitarlos es el verano austral (noviembre–marzo), cuando los senderos están accesibles y el clima es más favorable.',
+      },
+    ],
+  },
+  'punta-arenas': {
+    bestTimeToVisit:
+      'El verano austral (noviembre–febrero) es la mejor época: temperaturas de 8–15°C con días largos (hasta 20 horas de luz en diciembre) y acceso a las Islas Magallanes y la Reserva Magallanes. El viento es omnipresente pero el frío es más soportable. El invierno (junio–agosto) es muy frío y ventoso, pero la ciudad funciona con normalidad.',
+    rainySeasons:
+      'Las precipitaciones se distribuyen durante todo el año, en forma de lluvia fría, nieve o granizo según la estación. El viento es el factor climático dominante: puede superar los 100 km/h en cualquier época.',
+    avgTempRange: '-5°C – 15°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en Punta Arenas?',
+        answer:
+          'Punta Arenas tiene un clima frío y ventoso todo el año. En verano (diciembre–febrero) las máximas llegan a 12–15°C; en invierno (junio–agosto) bajan a −5°C o menos. El viento puede bajar la sensación térmica 10°C o más en cualquier época.',
+      },
+      {
+        question: '¿Cuándo visitar el Estrecho de Magallanes?',
+        answer:
+          'El verano austral (noviembre–febrero) es la mejor época para los paseos en barco por el estrecho y las islas. Las travesías a la Isla Magdalena (pingüinera) operan principalmente de octubre a marzo. El invierno es posible pero el frío y el viento son más intensos.',
+      },
+      {
+        question: '¿Nieva en Punta Arenas?',
+        answer:
+          'Sí, las nevadas son frecuentes entre junio y agosto, aunque la ciudad está habituada y funciona con normalidad. El viento hace que la nieve se acumule de forma irregular. Los parques y reservas cercanas tienen nieve en las cumbres casi todo el año.',
+      },
+      {
+        question: '¿Qué ropa llevar a Punta Arenas?',
+        answer:
+          'Un cortavientos resistente y un abrigo cálido son imprescindibles. El viento es el principal enemigo: una chaqueta que detenga el viento es más importante que el grosor del relleno. Además, calzado impermeable, guantes y gorro son necesarios en cualquier estación.',
+      },
+    ],
+  },
+
+  // ── EE.UU. — Nieve ───────────────────────────────────────────────────────
+  denver: {
+    bestTimeToVisit:
+      'El invierno (diciembre–marzo) es la temporada estrella para el esquí en las Rocosas: Breckenridge, Vail, Keystone y Arapahoe Basin están a 90–120 minutos en auto. La primavera (abril–mayo) tiene clima muy agradable con poca gente. El verano (junio–agosto) es cálido y soleado, perfecto para los parques nacionales del estado. El otoño tiene follaje dorado espectacular en las Rocosas.',
+    rainySeasons:
+      'Denver tiene más de 300 días de sol al año. Las nevadas se concentran entre octubre y abril; las tormentas de nieve ("Upslope") pueden traer 30–60 cm en 24 horas. El verano tiene tormentas eléctricas vespertinas frecuentes en las montañas.',
+    avgTempRange: '-10°C – 35°C según estación',
+    faq: [
+      {
+        question: '¿Cuándo nieva en Denver?',
+        answer:
+          'Las nevadas en Denver se producen principalmente entre octubre y abril, con los meses más nevosos siendo marzo y abril. Las tormentas de nieve "Upslope" pueden traer muchos centímetros rápidamente, pero el sol suele volver al día siguiente.',
+      },
+      {
+        question: '¿Cuáles son los mejores centros de esquí cerca de Denver?',
+        answer:
+          'Breckenridge, Keystone, Arapahoe Basin, Vail y Beaver Creek son los más conocidos, todos a menos de 2 horas. Breckenridge y Keystone son los más accesibles; Vail tiene la mayor extensión de pistas. La I-70 puede congestionarse en fines de semana; conviene ir entre semana o salir muy temprano.',
+      },
+      {
+        question: '¿Qué temperatura hace en Denver en invierno?',
+        answer:
+          'En invierno (diciembre–febrero) las temperaturas en la ciudad oscilan entre −10°C y 7°C. Los días de sol (que son muchos) la sensación es más agradable; después de una tormenta la ciudad vuelve a la normalidad rápidamente gracias al sol.',
+      },
+      {
+        question: '¿Qué temperatura hace en Denver en verano?',
+        answer:
+          'El verano (junio–agosto) es cálido y seco, con temperaturas de 25–35°C de día y noches frescas de 15–20°C. La altitud (1.600 m) hace que el calor sea más soportable que en ciudades costeras al mismo nivel. Las tormentas eléctricas son frecuentes en las tardes, especialmente en las montañas.',
+      },
+    ],
+  },
+  boston: {
+    bestTimeToVisit:
+      'El otoño (septiembre–octubre) es la época más famosa de Boston: el follaje de colores es espectacular y el clima es perfectamente fresco (10–20°C). La primavera (abril–junio) también es excelente. El invierno (diciembre–marzo) es frío y nevoso pero la ciudad tiene mucho encanto con las luces y festividades. El verano es caluroso y concurrido.',
+    rainySeasons:
+      'Las precipitaciones se distribuyen durante todo el año. Las nevadas son frecuentes entre diciembre y marzo; las "Nor\'easters" (tormentas del noreste) pueden traer 60 cm o más en 24 horas y paralizar la ciudad por horas.',
+    avgTempRange: '-10°C – 30°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en Boston?',
+        answer:
+          'Boston tiene cuatro estaciones bien marcadas. El verano (junio–agosto) tiene temperaturas de 22–30°C con humedad. El otoño (septiembre–noviembre) es fresco y soleado, de 5–18°C. El invierno (diciembre–marzo) puede bajar a −10°C con viento; la primavera (abril–mayo) es variable y a veces lluviosa.',
+      },
+      {
+        question: '¿Cuándo nieva en Boston?',
+        answer:
+          'Las nevadas son frecuentes entre diciembre y marzo. Las tormentas del noreste (Nor\'easters) son las más intensas y pueden traer 30–60 cm de nieve. Enero y febrero son los meses con más probabilidad de tormentas de nieve significativas.',
+      },
+      {
+        question: '¿Cuándo ver el follaje de otoño cerca de Boston?',
+        answer:
+          'El follaje de otoño es espectacular en el norte de Nueva Inglaterra (Maine, Vermont, New Hampshire), con colores que van de finales de septiembre a mediados de octubre. Cerca de Boston, el follaje suele estar en su pico entre el 10 y el 25 de octubre.',
+      },
+      {
+        question: '¿Cuál es la mejor época para visitar Boston?',
+        answer:
+          'El otoño (septiembre–octubre) es el favorito: clima perfecto, colores excepcionales y menos turistas que en verano. La primavera (mayo–junio) es la segunda mejor opción. El invierno tiene su propio encanto pero requiere ropa adecuada.',
+      },
+    ],
+  },
+  minneapolis: {
+    bestTimeToVisit:
+      'El verano (junio–agosto) transforma la ciudad: temperaturas de 22–30°C, festivales al aire libre, los más de 10.000 lagos del estado en plena actividad y días largos. El otoño (septiembre–octubre) tiene colores de follaje espectaculares. El invierno (diciembre–febrero) es extremo pero la ciudad tiene una infraestructura de interiores excepcional (Skyway, Mall of America).',
+    rainySeasons:
+      'Las nevadas son frecuentes de noviembre a marzo. Las tormentas de nieve pueden traer 30–50 cm y las temperaturas con viento pueden bajar a −30°C. El verano tiene tormentas eléctricas ocasionales; las precipitaciones se distribuyen durante el año.',
+    avgTempRange: '-20°C – 32°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en Minneapolis en invierno?',
+        answer:
+          'El invierno (diciembre–febrero) es uno de los más fríos de las grandes ciudades de EE.UU.: temperaturas entre −15°C y −5°C, con ráfagas de viento que pueden bajar la sensación térmica a −30°C. Las nevadas de 20–40 cm son comunes.',
+      },
+      {
+        question: '¿Nieva mucho en Minneapolis?',
+        answer:
+          'Sí, Minneapolis acumula entre 130 y 160 cm de nieve por temporada. Las nevadas son frecuentes de noviembre a marzo. La ciudad tiene muy buena infraestructura para manejar la nieve: quitanieves activos, sal en calles y el sistema de pasarelas climatizadas.',
+      },
+      {
+        question: '¿Qué es el Skyway de Minneapolis?',
+        answer:
+          'El Skyway es una red de 13 km de pasarelas climatizadas que conecta más de 80 manzanas del centro de la ciudad, incluyendo hoteles, restaurantes, tiendas y oficinas. Permite moverse por el centro sin salir al frío en invierno.',
+      },
+      {
+        question: '¿Cuándo es la mejor época para visitar Minneapolis?',
+        answer:
+          'El verano (junio–agosto) es la época más agradable: clima cálido, festivales como el Minnesota State Fair (agosto) y los lagos accesibles para deportes acuáticos. El otoño (septiembre–octubre) tiene colores de follaje hermosos. El invierno atrae a quienes buscan deportes de nieve.',
+      },
+    ],
+  },
+  buffalo: {
+    bestTimeToVisit:
+      'El verano (junio–agosto) es la mejor época: temperaturas de 22–28°C, las cataratas del Niágara a 30 minutos y una escena gastronómica y cultural muy activa. El otoño (septiembre–octubre) tiene el follaje de colores espectacular. El invierno tiene un atractivo singular para los amantes de la nieve extrema, pero requiere preparación real.',
+    rainySeasons:
+      'Buffalo es famosa por sus nevadas de "efecto lago": cuando el viento sopla del suroeste sobre el lago Erie, puede descargar más de 100 cm de nieve en 24 horas. La acumulación anual supera los 240 cm. Las nevadas son frecuentes de noviembre a marzo.',
+    avgTempRange: '-15°C – 30°C según estación',
+    faq: [
+      {
+        question: '¿Qué temperatura hace en Buffalo?',
+        answer:
+          'Buffalo tiene cuatro estaciones marcadas. El verano (junio–agosto) tiene temperaturas de 20–28°C; el otoño y la primavera son variables (5–20°C); el invierno (diciembre–marzo) puede bajar a −15°C con viento, con nevadas frecuentes e intensas.',
+      },
+      {
+        question: '¿Por qué nieva tanto en Buffalo?',
+        answer:
+          'Por el "efecto lago": cuando el viento frío del noroeste cruza el lago Erie sin congelar (o parcialmente congelado), absorbe humedad y la descarga como nieve en la orilla sur del lago, donde está Buffalo. Las tormentas de efecto lago pueden traer 1–2 metros en 24–48 horas.',
+      },
+      {
+        question: '¿Cuándo visitar las cataratas del Niágara desde Buffalo?',
+        answer:
+          'Las cataratas son impresionantes todo el año, incluso en invierno cuando se forman estructuras de hielo espectaculares. El verano (junio–agosto) es la temporada más concurrida; la primavera (abril–mayo) y el otoño (septiembre–octubre) ofrecen menos gente con el mismo espectáculo.',
+      },
+      {
+        question: '¿Cuánta nieve cae en Buffalo al año?',
+        answer:
+          'Buffalo acumula entre 200 y 280 cm de nieve por temporada, uno de los totales más altos de cualquier gran ciudad de EE.UU. Las tormentas más intensas por efecto lago pueden traer más de 100 cm en 24–48 horas, aunque estos eventos son esporádicos.',
+      },
+    ],
+  },
 };
 
 export function getCityClimate(slug: string): CityClimate | null {

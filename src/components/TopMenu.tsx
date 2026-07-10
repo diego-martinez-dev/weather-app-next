@@ -3,12 +3,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useSettings } from '@/contexts/SettingsContext';
 import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon, ChevronDownIcon, CloudIcon } from '@heroicons/react/24/outline';
 import { guides, Guide } from '@/data/guides';
 import { getCountriesByContinent } from '@/data/countries';
+import { isSnowCity } from '@/data/snowCities';
 import './TopMenu.css';
 
 const countryGroups = getCountriesByContinent();
@@ -16,8 +17,12 @@ const countryGroups = getCountriesByContinent();
 export default function TopMenu() {
   const { t } = useTranslation();
   const router = useRouter();
+  const pathname = usePathname();
   const { data: session } = useSession();
   const { unit, setUnit, language, setLanguage, country, getTempSymbol } = useSettings();
+
+  const snowSlugMatch = pathname?.match(/^\/clima\/([^/]+)$/);
+  const showSnowLink = snowSlugMatch ? isSnowCity(snowSlugMatch[1]) : false;
 
   const [showUnitDropdown, setShowUnitDropdown] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
@@ -285,6 +290,12 @@ export default function TopMenu() {
           <CloudIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em', marginRight: 4 }} />
           {t('app.nav.rain_map')}
         </Link>
+
+        {showSnowLink && (
+          <Link href="#nieve" className="top-nav-link" suppressHydrationWarning>
+            ❄️ {t('app.nav.snow')}
+          </Link>
+        )}
       </nav>
 
       {/* Panel móvil — solo cuando está abierto (mobileMenuOpen arranca en false,
@@ -351,6 +362,12 @@ export default function TopMenu() {
                   <CloudIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em', marginRight: 4 }} />
                   {t('app.nav.rain_map')}
                 </Link>
+
+                {showSnowLink && (
+                  <Link href="#nieve" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                    ❄️ {t('app.nav.snow')}
+                  </Link>
+                )}
               </nav>
 
               <div className="mobile-menu-item">

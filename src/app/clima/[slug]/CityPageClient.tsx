@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import WindyMap from '@/components/WindyMap';
+import SnowForecast from '@/components/SnowForecast';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { SunIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
@@ -18,7 +19,7 @@ function SkeletonLoader() {
   );
 }
 
-function CityContent({ slug, cityName }: { slug: string; cityName: string }) {
+function CityContent({ slug, cityName, showSnow }: { slug: string; cityName: string; showSnow?: boolean }) {
   const router = useRouter();
   const { language } = useSettings();
   const lastFetchedLang = useRef<string>('');
@@ -125,6 +126,9 @@ function CityContent({ slug, cityName }: { slug: string; cityName: string }) {
             isFavorite={isFavorite}
             onLocationClick={handleLocationClick}
           />
+          {showSnow && (
+            <SnowForecast forecast={forecast} />
+          )}
           {weather.coord?.lat && weather.coord?.lon && (
             <div style={{ margin: '24px 0 8px' }}>
               <WindyMap
@@ -140,11 +144,11 @@ function CityContent({ slug, cityName }: { slug: string; cityName: string }) {
   );
 }
 
-export default function CityPageClient({ slug, cityName }: { slug: string; cityName: string }) {
+export default function CityPageClient({ slug, cityName, showSnow }: { slug: string; cityName: string; showSnow?: boolean }) {
   return (
     <SettingsProvider>
       <Suspense fallback={<SkeletonLoader />}>
-        <CityContent slug={slug} cityName={cityName} />
+        <CityContent slug={slug} cityName={cityName} showSnow={showSnow} />
       </Suspense>
     </SettingsProvider>
   );

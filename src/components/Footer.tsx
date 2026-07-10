@@ -23,6 +23,7 @@ export default function Footer() {
           <a>Glosario</a>
           <a>FAQ</a>
           <a>Radar de lluvia</a>
+          <a>Nieve</a>
           <a>Calidad del aire</a>
           <a>Términos de uso</a>
           <a>Política de privacidad</a>
@@ -43,6 +44,7 @@ export default function Footer() {
         <Link href="/glosario">{t('app.footer.glossary')}</Link>
         <Link href="/faq">{t('app.footer.faq')}</Link>
         <Link href="/lluvia">{t('app.nav.rain_map')}</Link>
+        <Link href="/nieve">{t('app.nav.snow')}</Link>
         <Link href="/calidad-del-aire">{t('app.footer.air_quality')}</Link>
         <Link href="/terms">{t('app.footer.terms')}</Link>
         <Link href="/privacy">{t('app.footer.privacy')}</Link>

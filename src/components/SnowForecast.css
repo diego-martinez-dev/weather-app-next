@@ -1,0 +1,77 @@
+.snow-forecast {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: var(--color-shadow-sm);
+}
+
+.snow-forecast__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.snow-forecast__no-snow {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.snow-forecast__intro {
+  font-size: 0.9rem;
+  margin: 0 0 10px;
+}
+
+.snow-forecast__days {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.snow-forecast__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg, #f8f9fa);
+  border: 1px solid var(--color-border);
+  min-width: 72px;
+  font-size: 0.82rem;
+}
+
+.snow-forecast__day--snow {
+  background: #e8f4fd;
+  border-color: #90caf9;
+}
+
+.snow-forecast__day-name {
+  font-weight: 600;
+  color: var(--color-text);
+  text-transform: capitalize;
+  font-size: 0.78rem;
+}
+
+.snow-forecast__day-icon {
+  font-size: 1.2rem;
+}
+
+.snow-forecast__day-temp {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.snow-forecast__day-accum {
+  font-size: 0.75rem;
+  color: #1565c0;
+  font-weight: 600;
+}
+
+.snow-forecast__day-pop {
+  font-size: 0.75rem;
+  color: #546e7a;
+}

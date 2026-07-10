@@ -5,9 +5,10 @@ interface WindyMapProps {
   lon: number;
   zoom?: number;
   height?: number;
+  overlay?: string;
 }
 
-export default function WindyMap({ lat, lon, zoom = 9, height = 470 }: WindyMapProps) {
+export default function WindyMap({ lat, lon, zoom = 9, height = 470, overlay = 'rain' }: WindyMapProps) {
   const params = new URLSearchParams({
     lat: String(lat),
     lon: String(lon),
@@ -15,7 +16,7 @@ export default function WindyMap({ lat, lon, zoom = 9, height = 470 }: WindyMapP
     detailLon: String(lon),
     zoom: String(zoom),
     level: 'surface',
-    overlay: 'rain',
+    overlay,
     product: 'ecmwf',
     menu: '',
     message: 'true',

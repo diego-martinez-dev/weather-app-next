@@ -70,7 +70,8 @@
     "nav": {
       "home": "Home",
       "rain_map": "Rain radar",
-      "weather_by_country": "Weather by country"
+      "weather_by_country": "Weather by country",
+      "snow": "Snow"
     },
     "home": {
       "faq_title": "Frequently asked questions"
