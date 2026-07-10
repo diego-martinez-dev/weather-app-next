@@ -1,0 +1,102 @@
+.uv-section {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  padding: 16px 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--color-shadow-sm);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.uv-title {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.uv-current {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--color-bg, #f8f9fa);
+  margin-bottom: 14px;
+}
+
+.uv-current-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.uv-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.uv-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.uv-label {
+  font-size: 0.95rem;
+}
+
+.uv-max {
+  font-size: 0.8rem;
+  color: #888;
+  margin-left: auto;
+}
+
+.uv-advice {
+  margin: 0;
+  font-size: 0.87rem;
+  color: var(--color-text-muted, #555);
+}
+
+.uv-hourly {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 4px 0 2px;
+  align-items: flex-end;
+}
+
+.uv-hour-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 34px;
+  flex-shrink: 0;
+}
+
+.uv-hour-val {
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.uv-hour-bar-wrap {
+  width: 18px;
+  height: 44px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.uv-hour-bar {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  min-height: 2px;
+}
+
+.uv-hour-time {
+  font-size: 0.7rem;
+  color: #888;
+  margin-top: 3px;
+}

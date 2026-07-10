@@ -66,6 +66,7 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 - **Consejo del clima data-driven** (`WeatherClient.tsx`): `src/lib/weatherSignals.ts` + `weatherAdvice.ts` (la prob. de lluvia real manda sobre la condición) + `localLexicon.ts` (léxico por país es: sombrilla/paraguas, abrigo/chaqueta/chamarra/campera, voseo AR) + plantillas `app.advice.*`. Temps convertidas con `convertTemp` antes de interpolar.
 - **Calidad del aire:** `src/lib/airQuality.ts` (`getAqiInfo`, `getPollutantLevel` umbrales OMS/EPA) + `components/AirQuality.{tsx,css}` (AQI + PM2.5/PM10/O₃/NO₂ + consejo salud) + hub `/calidad-del-aire`.
 - **Sol y Luna:** `src/lib/moon.ts` (`getMoonPhase`, cálculo astronómico sin API) + `components/SunMoon.{tsx,css}` (amanecer/atardecer/duración día/fase lunar).
+- **Índice UV:** `src/lib/uv.ts` (`getUvInfo`, escala OMS 5 niveles) + `components/UvIndex.{tsx,css}` (UV actual + gráfico barras horario daytime usando `timezone_offset` de One Call 3.0 + consejo de protección). Montado en `CityPageClient.tsx` condicionado a `uvData?.current?.uvi !== undefined`. Fetch `type=onecall` paralelo con air y forecast.
 - **Mapa de lluvia/nieve:** `components/WindyMap.tsx` (iframe embed de Windy). Props: `lat`, `lon`, `zoom` (default 9), `height` (default 470), `overlay` (default `'rain'`; para nieve usar `'snowAccu'`). RainViewer fue **descartado** (no soporta zoom de barrio). Divulgación de cookies apunta a Windy.
 
 **Data files de contenido (español):** `cityDescriptions.ts` (description + touristTip por ciudad), `cityClimate.ts` (bestTimeToVisit/rainySeasons/avgTempRange/faq, ~95 ciudades), `cityMonthlyClimate.ts` (15 ciudades top), `countries.ts` (19 países + nuevas ciudades de nieve en Argentina, Chile y EE.UU.), `guides.ts` (24 guías), `snowCities.ts` (lista curada 16 snow cities).
@@ -90,10 +91,10 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 
 ## Pendientes
 
-### ⭐ LISTO PARA EJECUTAR — Índice UV (Fase 4 de `PLAN_CONTENIDO_VALOR.md`)
-- **One Call API 3.0 ✓ ACTIVO.** Diego se suscribió al producto correcto ("One Call API 3.0", NO la 4.0 — son planes separados; había activado la 4.0 por error). Verificado (9-jul): `data/3.0/onecall` da **HTTP 200** con `uvi` real (máx ~12 de día). Límite 1.000/día, $0.
-- **Siguiente paso:** ejecutar la Fase 4 del `PLAN_CONTENIDO_VALOR.md` (ya escrita): `type=onecall` en `route.ts` (endpoint **3.0**, no 4.0 — la URL 4.0 da 404), `src/lib/uv.ts`, `components/UvIndex.{tsx,css}`, i18n `app.uv.*`. Toma `uvi` de `current` y `hourly[]`.
-- Nota Solar Irradiance API: **descartada** (0.12 USD/call, sin tramo gratis, público de nicho solar; no encaja).
+### ✅ Índice UV — EJECUTADO (jul-2026)
+- One Call API 3.0 activa. Endpoint `data/3.0/onecall` (no la 4.0 — da 404). Límite 1.000/día, $0.
+- **Implementado:** `type=onecall` en `route.ts`, `src/lib/uv.ts` (escala OMS 5 niveles: bajo/#4caf50, moderado/#ffb300, alto/#ff7043, muy alto/#e53935, extremo/#7b1fa2 + consejo por nivel), `components/UvIndex.{tsx,css}` (UV actual + gráfico de barras horario daytime con timezone_offset + consejo), fetch en `CityPageClient.tsx` (paralelo con air y forecast), `app.uv.*` en 6 idiomas.
+- **Falla silenciosa:** si `current.uvi` no existe en la respuesta (key sin acceso), el componente no se monta.
 
 ### Diego (manual)
 - **GSC:** seguir la indexación manual (arriba) y confirmar redirect 308 en Vercel.

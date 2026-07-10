@@ -114,6 +114,20 @@
       "waning_gibbous": "Abnehmender Mond",
       "last_quarter": "Letztes Viertel",
       "waning_crescent": "Abnehmende Sichel"
+    },
+    "uv": {
+      "title": "UV-Index",
+      "low": "Niedrig",
+      "moderate": "Moderat",
+      "high": "Hoch",
+      "very_high": "Sehr hoch",
+      "extreme": "Extrem",
+      "advice_low": "Minimale UV-Strahlung. Kein besonderer Sonnenschutz erforderlich.",
+      "advice_moderate": "Verwende Sonnencreme LSF 30+, wenn du länger als 30 Minuten in der Sonne bist. Sonnenbrille empfohlen.",
+      "advice_high": "Sonnencreme LSF 50+, suche während der Mittagszeit (12–15 Uhr) Schatten und trage eine Sonnenbrille.",
+      "advice_very_high": "Schutz unbedingt erforderlich: LSF 50+, breitkrempiger Hut, UV400-Sonnenbrille und bedeckende Kleidung. Reduziere die Sonnenexposition zwischen 10 und 16 Uhr.",
+      "advice_extreme": "Vermeide die Sonne zwischen 10 und 16 Uhr. Falls du hinausgehen musst: LSF 50+, Schutzkleidung, Hut und bleib im Schatten. Sonnenbrandgefahr in wenigen Minuten.",
+      "max_today": "Maximum heute"
     }
   },
   "legal": {

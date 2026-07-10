@@ -114,6 +114,20 @@
       "waning_gibbous": "Waning gibbous",
       "last_quarter": "Last quarter",
       "waning_crescent": "Waning crescent"
+    },
+    "uv": {
+      "title": "UV Index",
+      "low": "Low",
+      "moderate": "Moderate",
+      "high": "High",
+      "very_high": "Very high",
+      "extreme": "Extreme",
+      "advice_low": "Minimal UV radiation. No special sun protection needed.",
+      "advice_moderate": "Wear SPF 30+ sunscreen if you'll be in the sun for more than 30 minutes. Sunglasses recommended.",
+      "advice_high": "SPF 50+ sunscreen, seek shade during peak hours (12:00–15:00) and wear sunglasses.",
+      "advice_very_high": "Protection is essential: SPF 50+, wide-brim hat, UV400 sunglasses and cover-up clothing. Limit sun exposure between 10:00 and 16:00.",
+      "advice_extreme": "Avoid the sun between 10:00 and 16:00. If you must go out: SPF 50+, protective clothing, hat and stay in permanent shade. Risk of sunburn in minutes.",
+      "max_today": "Today's max"
     }
   },
   "legal": {

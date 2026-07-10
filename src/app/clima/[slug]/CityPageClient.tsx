@@ -6,6 +6,7 @@ import WeatherClient from '@/components/WeatherClient';
 import Favorites from '@/components/Favorites';
 import WindyMap from '@/components/WindyMap';
 import SnowForecast from '@/components/SnowForecast';
+import UvIndex from '@/components/UvIndex';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { SunIcon } from '@heroicons/react/24/outline';
 import { getWeatherIcon } from '@/lib/weatherIcons';
@@ -27,6 +28,7 @@ function CityContent({ slug, cityName, showSnow }: { slug: string; cityName: str
   const [weather, setWeather] = useState<any>(null);
   const [airQuality, setAirQuality] = useState<any>(null);
   const [forecast, setForecast] = useState<any>(null);
+  const [uvData, setUvData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -75,12 +77,15 @@ function CityContent({ slug, cityName, showSnow }: { slug: string; cityName: str
 
       if (weatherData.cod === 200) {
         setWeather(weatherData);
-        const [airRes, forecastRes] = await Promise.all([
+        const [airRes, forecastRes, uvRes] = await Promise.all([
           fetch(`/api/weather?type=air&lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}`),
           fetch(`/api/weather?type=forecast&city=${encodeURIComponent(weatherData.name)}&lang=${language}`),
+          fetch(`/api/weather?type=onecall&lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}`),
         ]);
         setAirQuality(await airRes.json());
         setForecast(await forecastRes.json());
+        const uvJson = await uvRes.json();
+        if (uvJson?.current?.uvi !== undefined) setUvData(uvJson);
       } else {
         setError(weatherData.message || 'Ciudad no encontrada');
       }
@@ -126,6 +131,7 @@ function CityContent({ slug, cityName, showSnow }: { slug: string; cityName: str
             isFavorite={isFavorite}
             onLocationClick={handleLocationClick}
           />
+          {uvData && <UvIndex uvData={uvData} />}
           {showSnow && (
             <SnowForecast forecast={forecast} />
           )}

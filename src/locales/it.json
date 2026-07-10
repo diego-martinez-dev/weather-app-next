@@ -114,6 +114,20 @@
       "waning_gibbous": "Gibbosa calante",
       "last_quarter": "Ultimo quarto",
       "waning_crescent": "Luna calante"
+    },
+    "uv": {
+      "title": "Indice UV",
+      "low": "Basso",
+      "moderate": "Moderato",
+      "high": "Alto",
+      "very_high": "Molto alto",
+      "extreme": "Estremo",
+      "advice_low": "Radiazione UV minima. Non è necessaria una protezione solare speciale.",
+      "advice_moderate": "Usa crema solare SPF 30+ se stai al sole per più di 30 minuti. Occhiali da sole consigliati.",
+      "advice_high": "Crema solare SPF 50+, cerca ombra nelle ore centrali (12:00–15:00) e indossa occhiali da sole.",
+      "advice_very_high": "Protezione essenziale: SPF 50+, cappello a tesa larga, occhiali UV400 e indumenti coprenti. Riduci l'esposizione al sole tra le 10:00 e le 16:00.",
+      "advice_extreme": "Evita il sole tra le 10:00 e le 16:00. Se devi uscire: SPF 50+, abbigliamento protettivo, cappello e cerca ombra permanente. Rischio di scottatura in pochi minuti.",
+      "max_today": "Massimo oggi"
     }
   },
   "legal": {

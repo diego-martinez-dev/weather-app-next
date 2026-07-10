@@ -114,6 +114,20 @@
       "waning_gibbous": "Gibosa menguante",
       "last_quarter": "Cuarto menguante",
       "waning_crescent": "Luna menguante"
+    },
+    "uv": {
+      "title": "Índice UV",
+      "low": "Bajo",
+      "moderate": "Moderado",
+      "high": "Alto",
+      "very_high": "Muy alto",
+      "extreme": "Extremo",
+      "advice_low": "Radiación UV mínima. No necesitas protección solar especial.",
+      "advice_moderate": "Usa protector solar SPF 30+ si vas a estar al sol más de 30 minutos. Gafas de sol recomendadas.",
+      "advice_high": "Protector solar SPF 50+, busca sombra en las horas centrales (12:00–15:00) y usa gafas de sol.",
+      "advice_very_high": "Protección esencial: SPF 50+, sombrero de ala ancha, gafas UV400 y ropa de cobertura. Reduce el tiempo al sol entre 10:00 y 16:00.",
+      "advice_extreme": "Evita el sol entre 10:00 y 16:00. Si debes salir: SPF 50+, ropa protectora, sombrero y busca sombra permanente. Riesgo de quemadura en minutos.",
+      "max_today": "Máximo hoy"
     }
   },
   "legal": {

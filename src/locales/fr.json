@@ -114,6 +114,20 @@
       "waning_gibbous": "Gibbeuse descendante",
       "last_quarter": "Dernier quartier",
       "waning_crescent": "Croissant descendant"
+    },
+    "uv": {
+      "title": "Indice UV",
+      "low": "Faible",
+      "moderate": "Modéré",
+      "high": "Élevé",
+      "very_high": "Très élevé",
+      "extreme": "Extrême",
+      "advice_low": "Rayonnement UV minimal. Aucune protection solaire spéciale n'est nécessaire.",
+      "advice_moderate": "Portez une crème solaire SPF 30+ si vous vous exposez au soleil plus de 30 minutes. Lunettes de soleil recommandées.",
+      "advice_high": "Crème solaire SPF 50+, cherchez l'ombre aux heures centrales (12h–15h) et portez des lunettes de soleil.",
+      "advice_very_high": "Protection essentielle : SPF 50+, chapeau à larges bords, lunettes UV400 et vêtements couvrants. Limitez l'exposition au soleil entre 10h et 16h.",
+      "advice_extreme": "Évitez le soleil entre 10h et 16h. Si vous devez sortir : SPF 50+, vêtements protecteurs, chapeau et restez à l'ombre. Risque de brûlure en quelques minutes.",
+      "max_today": "Maximum aujourd'hui"
     }
   },
   "legal": {

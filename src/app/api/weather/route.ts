@@ -24,7 +24,13 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Se requieren lat y lon para calidad del aire' }, { status: 400 });
     }
     url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
-  } 
+  }
+  else if (type === 'onecall') {
+    if (!lat || !lon) {
+      return NextResponse.json({ error: 'Se requieren lat y lon para onecall' }, { status: 400 });
+    }
+    url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${API_KEY}`;
+  }
   else if (type === 'forecast') {
     if (city) {
       url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=${lang}`;
