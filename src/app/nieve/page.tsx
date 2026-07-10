@@ -3,6 +3,8 @@ import Link from 'next/link';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import WindyMap from '@/components/WindyMap';
+import { SnowflakeIcon } from '@/components/SnowflakeIcon';
+import { CalendarIcon } from '@heroicons/react/24/outline';
 import { snowDestinations } from '@/data/snowCities';
 
 export const metadata: Metadata = {
@@ -84,8 +86,9 @@ export default function NievePage() {
       <TopMenu />
 
       <div className="home-two-columns">
-        <h1 style={{ textAlign: 'center', margin: '24px auto 8px', fontSize: '1.7rem', maxWidth: 900 }}>
-          ❄️ Nieve y esquí en América: Andes, Patagonia y Estados Unidos
+        <h1 style={{ textAlign: 'center', margin: '24px auto 8px', fontSize: '1.7rem', maxWidth: 900, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+          <SnowflakeIcon style={{ width: '1.4rem', height: '1.4rem', flexShrink: 0 }} />
+          Nieve y esquí en América: Andes, Patagonia y Estados Unidos
         </h1>
 
         <p style={{ maxWidth: 900, margin: '0 auto 12px', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--color-text)', textAlign: 'center' }}>
@@ -95,7 +98,8 @@ export default function NievePage() {
         </p>
 
         <div style={{ maxWidth: 900, margin: '0 auto 8px', padding: '12px 20px', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid #90caf9', fontSize: '0.9rem', lineHeight: 1.7 }}>
-          <strong>🗓️ Dos temporadas diferentes:</strong>{' '}
+          <CalendarIcon style={{ width: '1.1em', height: '1.1em', display: 'inline', verticalAlign: '-0.2em', marginRight: 4 }} />
+          <strong>Dos temporadas diferentes:</strong>{' '}
           Si eres del hemisferio norte y quieres esquiar fuera de tu temporada (diciembre–marzo),
           los Andes te ofrecen nieve de junio a septiembre. Si eres latinoamericano y quieres
           ver nieve en invierno boreal, Nueva York, Chicago o Denver son excelentes opciones.
@@ -129,7 +133,8 @@ export default function NievePage() {
                     fontWeight: 500,
                   }}
                 >
-                  ❄️ {city.name}
+                  <SnowflakeIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em', marginRight: 4 }} />
+                  {city.name}
                 </Link>
               ))}
             </div>

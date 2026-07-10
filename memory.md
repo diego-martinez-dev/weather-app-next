@@ -30,13 +30,15 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 6. **Exactitud > volumen** en contenido climático: no inventar cifras; rangos reales aproximados + descripción cualitativa.
 7. **No** crear páginas por-ciudad finitas a escala (riesgo "low value"): el dato en vivo va como sección en la página de ciudad existente; lo educativo, en un hub.
 8. Footer: última línea siempre "Website creado por [cracksdigitales.com]". Commits terminan con `Co-Authored-By: Claude Opus 4.8`.
+9. **Nunca emojis en la UI.** Íconos de Heroicons (o SVG propio como `SnowflakeIcon` cuando Heroicons no lo tenga, ej. nieve). Look profesional.
+10. **Radares (lluvia/nieve) = página aparte.** El mapa Windy vive en su página dedicada (`/lluvia`, `/nieve`); las páginas de ciudad solo enlazan a ellas con un botón, no embeben el mapa en la sección.
 
 ---
 
 ## Estado actual del sitio (~347 páginas SSG — jul-2026)
 
 **Páginas de ciudad `/clima/[slug]`** (95 ciudades, patrón Server+Client):
-- `page.tsx` (Server, SEO): h1, intro, tip climático + turístico, bloque **"¿Qué temperatura hace en {ciudad} hoy?"** (featured snippet, si hay `avgTempRange`), recuadro clima típico/mejor época/lluvias, **tabla "Clima mes a mes"** (15 ciudades), FAQ `<details>`, guías relacionadas, bloque "otras ciudades del país", **sección ❄️ Nieve (solo snow cities, con mapa Windy snowAccu)**, mapa Windy lluvia. Titles cubren variantes "el tiempo en / temperatura en / por horas".
+- `page.tsx` (Server, SEO): h1, intro, tip climático + turístico, bloque **"¿Qué temperatura hace en {ciudad} hoy?"** (featured snippet, si hay `avgTempRange`), recuadro clima típico/mejor época/lluvias, **tabla "Clima mes a mes"** (15 ciudades), FAQ `<details>`, guías relacionadas, bloque "otras ciudades del país", **sección Nieve (solo snow cities): intro + botón a la página `/nieve`, sin mapa embebido** (igual que la sección de lluvia enlaza a `/lluvia`). Titles cubren variantes "el tiempo en / temperatura en / por horas".
 - `CityPageClient.tsx` (Client): tarjeta en vivo, pronóstico, **calidad del aire**, **Sol y Luna**, **pronóstico de nieve `SnowForecast.tsx`** (solo snow cities, usa `snow['3h']` del endpoint forecast ya disponible), mapa.
 - Sub-rutas: `/manana` (95 SSG) y `/por-hora` (95 SSG), ambas Server(SEO)+Client(datos).
 
@@ -48,19 +50,20 @@ Snapshot del estado actual. Actualizar cuando cambie algo importante. Última li
 
 **Feature de nieve (jul-2026):**
 - `src/data/snowCities.ts`: `Set<string>` con 16 snow cities + `isSnowCity(slug)` + `snowDestinations` agrupado por región (para el hub).
-- `WindyMap.tsx`: acepta prop `overlay?: string` (default `'rain'`). Para nieve usar `overlay="snowAccu"`, zoom 8 (regional).
-- Sección `id="nieve"` en `page.tsx` (Server, solo snow cities): párrafo intro server-rendered + mapa Windy snowAccu + link al hub.
+- `WindyMap.tsx`: acepta prop `overlay?: string` (default `'rain'`). El mapa `snowAccu` vive SOLO en `/nieve`.
+- Sección `id="nieve"` en `page.tsx` (Server, solo snow cities): intro server-rendered + **botón a `/nieve`** (el mapa NO se embebe en la ciudad — corrección 10-jul; ícono `SnowflakeIcon`, no emoji).
 - `components/SnowForecast.{tsx,css}` (Client): usa el `forecast` existente (`snow['3h']` + condición "Snow"); muestra días nevosos y acumulación; se monta en `CityPageClient.tsx` condicionado a `showSnow`.
-- **Menú condicional:** `TopMenu.tsx` usa `usePathname()` para detectar `/clima/{slug}` y mostrar "❄️ Nieve" solo si `isSnowCity(slug)`. Clave i18n `app.nav.snow` en los 6 idiomas (es/en/pt/fr/de/it).
+- **Menú condicional:** `TopMenu.tsx` usa `usePathname()` para detectar `/clima/{slug}` y mostrar el link "Nieve" (ícono `SnowflakeIcon`) solo si `isSnowCity(slug)`. Clave i18n `app.nav.snow` en los 6 idiomas (es/en/pt/fr/de/it).
 - Hub `/nieve` (Server, SSG): H1, intro doble temporada, mapa Windy snowAccu centrado en Bariloche (zoom 5), grilla de destinos por región, 4 FAQ + JSON-LD FAQPage + BreadcrumbList, enlazado desde footer.
 - **Sin dependencia de One Call API.** Esta feature es independiente del UV.
-- ✓ **Revisión Opus (9-jul):** verificado independiente — 16 snow cities, sección `snowAccu` server-rendered SOLO en snow cities (bariloche/denver/ushuaia sí; caracas/miami no), hub `/nieve` con ambas regiones, EE.UU. con temporada correcta (Buffalo: diciembre/invierno/efecto lago, NO jun-sep), 14 ciudades nuevas enlazadas en sus guías-país, `WindyMap` con prop `overlay`, `app.nav.snow` en 6 locales, build OK (~347 SSG). Sin problemas.
+- ✓ **Revisión Opus (9-jul):** verificado independiente — 16 snow cities, hub `/nieve` con ambas regiones, EE.UU. con temporada correcta (Buffalo: diciembre/invierno/efecto lago, NO jun-sep), 14 ciudades nuevas enlazadas en sus guías-país, `WindyMap` con prop `overlay`, `app.nav.snow` en 6 locales, build OK.
+- ✏️ **Corrección 10-jul (Diego):** (1) **Sin emojis** — se reemplazaron TODOS los emojis de la UI (sol/luna, nieve, "qué llevar", labels mes a mes, nav) por Heroicons + `SnowflakeIcon` (SVG propio, ya que Heroicons no tiene copo). Regla #9 re-agregada a CLAUDE.md y memoria. (2) **Radar de nieve = página aparte:** se quitó el mapa Windy embebido de la sección de nieve de la ciudad; ahora es un botón a `/nieve` (el mapa vive solo en `/nieve`), igual que la lluvia enlaza a `/lluvia`. Build OK (~347 SSG), 0 emojis en `src`.
 
 **Páginas-país `/clima-pais/[pais]`** (19 países hispanos + EEUU/Canadá, SSG): guía extensa server-rendered — intro (3 párr.), clima por regiones, cuándo viajar, qué llevar, grilla de ciudades, FAQ, otros países. Enlazado interno bidireccional ciudad↔país. Agrupados por continente en el menú.
 
 **Contenido / confianza:** `/clima` (índice ciudades + 19 países), `/guias` + 24 guías (`/guias/[slug]`), `/glosario` (27 términos), `/faq` (14), `/calidad-del-aire` (hub educativo), `/lluvia` (mapa Windy), `/nieve` (hub nieve/esquí), `/acerca`, `/contacto`, legales (`/privacy`, `/cookies`, `/terms`, `/data-sources`), `HomeFaq` en el home.
 
-**Navegación (`TopMenu`):** Guías (submenú), Clima por país (submenú por continentes), Glosario (link), FAQ (link), Radar de lluvia (link), ❄️ Nieve (condicional, solo páginas snow city). Móvil: secciones expandibles.
+**Navegación (`TopMenu`):** Guías (submenú), Clima por país (submenú por continentes), Glosario (link), FAQ (link), Radar de lluvia (link), Nieve (condicional, solo páginas snow city). Móvil: secciones expandibles.
 
 **Features vivas y sus archivos clave:**
 - **Consejo del clima data-driven** (`WeatherClient.tsx`): `src/lib/weatherSignals.ts` + `weatherAdvice.ts` (la prob. de lluvia real manda sobre la condición) + `localLexicon.ts` (léxico por país es: sombrilla/paraguas, abrigo/chaqueta/chamarra/campera, voseo AR) + plantillas `app.advice.*`. Temps convertidas con `convertTemp` antes de interpolar.

@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
+import { SunIcon, MoonIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { getMoonPhase } from '@/lib/moon';
 import './SunMoon.css';
 
@@ -39,22 +40,22 @@ export default function SunMoon({ weather }: SunMoonProps) {
       <h2 className="sun-moon-title">{t('app.sun_moon.title')}</h2>
       <div className="sun-moon-grid">
         <div className="sun-moon-item">
-          <span className="sun-moon-emoji">🌅</span>
+          <SunIcon className="sun-moon-icon" />
           <div className="sun-moon-label">{t('app.weather.sunrise')}</div>
           <div className="sun-moon-value">{formatTime(sunrise, tz)}</div>
         </div>
         <div className="sun-moon-item">
-          <span className="sun-moon-emoji">🌇</span>
+          <SunIcon className="sun-moon-icon" />
           <div className="sun-moon-label">{t('app.weather.sunset')}</div>
           <div className="sun-moon-value">{formatTime(sunset, tz)}</div>
         </div>
         <div className="sun-moon-item">
-          <span className="sun-moon-emoji">⏱</span>
+          <ClockIcon className="sun-moon-icon" />
           <div className="sun-moon-label">{t('app.sun_moon.day_length')}</div>
           <div className="sun-moon-value">{formatDuration(dayLength)}</div>
         </div>
         <div className="sun-moon-item">
-          <span className="sun-moon-emoji">{moon.emoji}</span>
+          <MoonIcon className="sun-moon-icon" />
           <div className="sun-moon-label">{t(moon.phaseKey)}</div>
           <div className="sun-moon-value">{moon.illumination}%</div>
         </div>

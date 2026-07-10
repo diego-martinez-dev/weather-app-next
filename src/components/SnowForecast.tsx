@@ -1,5 +1,6 @@
 'use client';
 
+import { CloudIcon } from '@heroicons/react/24/outline';
 import { SnowflakeIcon } from './SnowflakeIcon';
 import './SnowForecast.css';
 
@@ -45,7 +46,8 @@ export default function SnowForecast({ forecast }: SnowForecastProps) {
   return (
     <div className="snow-forecast">
       <h3 className="snow-forecast__title">
-        ❄️ ¿Va a nevar? Pronóstico de nieve
+        <SnowflakeIcon style={{ width: '1.1em', height: '1.1em', verticalAlign: '-0.15em', marginRight: 6 }} />
+        ¿Va a nevar? Pronóstico de nieve
       </h3>
       {snowDays.length === 0 ? (
         <p className="snow-forecast__no-snow">
@@ -66,7 +68,11 @@ export default function SnowForecast({ forecast }: SnowForecastProps) {
           return (
             <div key={dateStr} className={`snow-forecast__day ${hasSnow ? 'snow-forecast__day--snow' : ''}`}>
               <span className="snow-forecast__day-name">{formatDate(dateStr)}</span>
-              <span className="snow-forecast__day-icon">{hasSnow ? '❄️' : '☁️'}</span>
+              <span className="snow-forecast__day-icon">
+                {hasSnow
+                  ? <SnowflakeIcon style={{ width: '1.2em', height: '1.2em' }} />
+                  : <CloudIcon style={{ width: '1.2em', height: '1.2em' }} />}
+              </span>
               <span className="snow-forecast__day-temp">{avgTemp}°</span>
               {hasSnow && totalSnow > 0 && (
                 <span className="snow-forecast__day-accum">{totalSnow.toFixed(1)} mm nieve</span>

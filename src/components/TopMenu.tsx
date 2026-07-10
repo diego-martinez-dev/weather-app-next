@@ -7,6 +7,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useSettings } from '@/contexts/SettingsContext';
 import { SunIcon, MagnifyingGlassIcon, Bars3Icon, FireIcon, MapPinIcon, GlobeAltIcon, XMarkIcon, UserCircleIcon, ChevronDownIcon, CloudIcon } from '@heroicons/react/24/outline';
+import { SnowflakeIcon } from './SnowflakeIcon';
 import { guides, Guide } from '@/data/guides';
 import { getCountriesByContinent } from '@/data/countries';
 import { isSnowCity } from '@/data/snowCities';
@@ -293,7 +294,8 @@ export default function TopMenu() {
 
         {showSnowLink && (
           <Link href="#nieve" className="top-nav-link" suppressHydrationWarning>
-            ❄️ {t('app.nav.snow')}
+            <SnowflakeIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em', marginRight: 4 }} />
+            {t('app.nav.snow')}
           </Link>
         )}
       </nav>
@@ -365,7 +367,8 @@ export default function TopMenu() {
 
                 {showSnowLink && (
                   <Link href="#nieve" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
-                    ❄️ {t('app.nav.snow')}
+                    <SnowflakeIcon style={{ width: '1em', height: '1em', display: 'inline', verticalAlign: '-0.15em', marginRight: 4 }} />
+                    {t('app.nav.snow')}
                   </Link>
                 )}
               </nav>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
-import { MapPinIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BuildingOffice2Icon, GlobeAltIcon, SunIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BuildingOffice2Icon, GlobeAltIcon, SunIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
 import { countries, countrySlugs, getCountryBySlug } from '@/data/countries';
 
 export async function generateStaticParams() {
@@ -150,8 +150,9 @@ export default async function CountryPage(
         </div>
 
         <div style={{ maxWidth: 900, margin: '8px auto 20px', padding: '16px 20px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', boxShadow: 'var(--color-shadow-sm)' }}>
-          <h2 style={{ margin: '0 0 10px', fontSize: '1rem' }}>
-            🎒 Qué llevar
+          <h2 style={{ margin: '0 0 10px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+            <BriefcaseIcon style={{ width: '1.2em', height: '1.2em' }} />
+            Qué llevar
           </h2>
           <p style={{ margin: 0 }}>{country.whatToPack}</p>
         </div>

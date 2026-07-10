@@ -1,7 +1,6 @@
 export interface MoonPhase {
   phaseKey: string;
   illumination: number;
-  emoji: string;
 }
 
 // Reference new moon: 2000-01-06 18:14 UTC (Julian day 2451550.1)
@@ -22,17 +21,16 @@ export function getMoonPhase(date: Date): MoonPhase {
   const illumination = Math.round((1 - Math.cos(2 * Math.PI * phase)) / 2 * 100);
 
   let phaseKey: string;
-  let emoji: string;
 
-  if (phase < 0.0625)      { phaseKey = 'app.moon.new';             emoji = '🌑'; }
-  else if (phase < 0.1875) { phaseKey = 'app.moon.waxing_crescent'; emoji = '🌒'; }
-  else if (phase < 0.3125) { phaseKey = 'app.moon.first_quarter';   emoji = '🌓'; }
-  else if (phase < 0.4375) { phaseKey = 'app.moon.waxing_gibbous';  emoji = '🌔'; }
-  else if (phase < 0.5625) { phaseKey = 'app.moon.full';            emoji = '🌕'; }
-  else if (phase < 0.6875) { phaseKey = 'app.moon.waning_gibbous';  emoji = '🌖'; }
-  else if (phase < 0.8125) { phaseKey = 'app.moon.last_quarter';    emoji = '🌗'; }
-  else if (phase < 0.9375) { phaseKey = 'app.moon.waning_crescent'; emoji = '🌘'; }
-  else                     { phaseKey = 'app.moon.new';             emoji = '🌑'; }
+  if (phase < 0.0625)      { phaseKey = 'app.moon.new'; }
+  else if (phase < 0.1875) { phaseKey = 'app.moon.waxing_crescent'; }
+  else if (phase < 0.3125) { phaseKey = 'app.moon.first_quarter'; }
+  else if (phase < 0.4375) { phaseKey = 'app.moon.waxing_gibbous'; }
+  else if (phase < 0.5625) { phaseKey = 'app.moon.full'; }
+  else if (phase < 0.6875) { phaseKey = 'app.moon.waning_gibbous'; }
+  else if (phase < 0.8125) { phaseKey = 'app.moon.last_quarter'; }
+  else if (phase < 0.9375) { phaseKey = 'app.moon.waning_crescent'; }
+  else                     { phaseKey = 'app.moon.new'; }
 
-  return { phaseKey, illumination, emoji };
+  return { phaseKey, illumination };
 }

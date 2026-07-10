@@ -3,7 +3,7 @@ import Link from 'next/link';
 import TopMenu from '@/components/TopMenu';
 import Footer from '@/components/Footer';
 import CityPageClient from './CityPageClient';
-import WindyMap from '@/components/WindyMap';
+import { SnowflakeIcon } from '@/components/SnowflakeIcon';
 import { LightBulbIcon, CalendarIcon, CloudIcon, QuestionMarkCircleIcon, BookOpenIcon, MapPinIcon, BuildingOffice2Icon, TableCellsIcon } from '@heroicons/react/24/outline';
 import { getCityDescription, getCityTouristTip } from '@/data/cityDescriptions';
 import { getCityClimate } from '@/data/cityClimate';
@@ -11,25 +11,6 @@ import { getCityMonthly, MONTHS } from '@/data/cityMonthlyClimate';
 import { getGuideBySlug } from '@/data/guides';
 import { getCountryForCity } from '@/data/countries';
 import { isSnowCity } from '@/data/snowCities';
-
-const snowCityCoords: Record<string, { lat: number; lon: number }> = {
-  'bariloche': { lat: -41.1335, lon: -71.3103 },
-  'ushuaia': { lat: -54.8019, lon: -68.3030 },
-  'san-martin-de-los-andes': { lat: -40.1572, lon: -71.3545 },
-  'villa-la-angostura': { lat: -40.7533, lon: -71.6476 },
-  'esquel': { lat: -42.9069, lon: -71.3197 },
-  'el-bolson': { lat: -41.9602, lon: -71.5335 },
-  'el-calafate': { lat: -50.3385, lon: -72.2648 },
-  'farellones': { lat: -33.3522, lon: -70.3147 },
-  'coyhaique': { lat: -45.5712, lon: -72.0682 },
-  'punta-arenas': { lat: -53.1638, lon: -70.9171 },
-  'new-york': { lat: 40.7128, lon: -74.0060 },
-  'chicago': { lat: 41.8781, lon: -87.6298 },
-  'denver': { lat: 39.7392, lon: -104.9903 },
-  'boston': { lat: 42.3601, lon: -71.0589 },
-  'minneapolis': { lat: 44.9778, lon: -93.2650 },
-  'buffalo': { lat: 42.8864, lon: -78.8784 },
-};
 
 const snowCityIntros: Record<string, string> = {
   'bariloche': 'Bariloche es el principal destino de esquí de Latinoamérica. El Cerro Catedral, a 20 km de la ciudad, opera de junio a septiembre con más de 100 pistas. La acumulación de nieve puede superar los 3 metros en la temporada. Fuera del invierno, los lagos y bosques andinos hacen de Bariloche un destino espectacular para el trekking veraniego.',
@@ -161,7 +142,6 @@ export default async function CityPage(
   const description = getCityDescription(slug);
   const touristTip = getCityTouristTip(slug);
   const snowCity = isSnowCity(slug);
-  const snowCoords = snowCityCoords[slug];
   const snowIntro = snowCityIntros[slug];
   const relatedGuides = getRelatedGuideSlugs(slug)
     .map(s => { const g = getGuideBySlug(s); return g ? { slug: s, title: g.title.es } : null; })
@@ -320,7 +300,7 @@ export default async function CityPage(
                             background: m.rain === 'seco' ? '#e8f5e9' : m.rain === 'moderado' ? '#fff3e0' : '#e3f2fd',
                             color: m.rain === 'seco' ? '#2e7d32' : m.rain === 'moderado' ? '#e65100' : '#0d47a1',
                           }}>
-                            {m.rain === 'seco' ? '☀ Seco' : m.rain === 'moderado' ? '🌤 Moderado' : '🌧 Lluvioso'}
+                            {m.rain === 'seco' ? 'Seco' : m.rain === 'moderado' ? 'Moderado' : 'Lluvioso'}
                           </span>
                         </td>
                         <td style={{ padding: '6px 8px', color: '#888', fontSize: '0.8rem' }}>{m.note ?? ''}</td>
@@ -382,22 +362,23 @@ export default async function CityPage(
           </div>
         )}
 
-        {snowCity && snowCoords && (
+        {snowCity && (
           <div id="nieve" style={{ maxWidth: 900, margin: '16px auto 8px', padding: '16px 20px', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid #90caf9', boxShadow: 'var(--color-shadow-sm)' }}>
-            <h2 style={{ margin: '0 0 10px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
-              ❄️ Nieve en {city}
+            <h2 style={{ margin: '0 0 8px', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+              <SnowflakeIcon style={{ width: '1.2em', height: '1.2em' }} />
+              ¿Nieva en {city}? Radar de nieve
             </h2>
             {snowIntro && (
-              <p style={{ margin: '0 0 14px', fontSize: '0.9rem', lineHeight: 1.7, color: 'var(--color-text)' }}>
+              <p style={{ margin: '0 0 12px', fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--color-text)' }}>
                 {snowIntro}
               </p>
             )}
-            <WindyMap lat={snowCoords.lat} lon={snowCoords.lon} overlay="snowAccu" zoom={8} height={420} />
-            <p style={{ margin: '10px 0 0', fontSize: '0.85rem', color: '#666' }}>
-              <Link href="/nieve" style={{ color: 'var(--color-primary, #1a73e8)', textDecoration: 'none' }}>
-                Ver hub de nieve y esquí en los Andes y EE.UU. →
-              </Link>
-            </p>
+            <Link
+              href="/nieve"
+              style={{ display: 'inline-block', background: '#1a73e8', color: 'white', borderRadius: 8, padding: '8px 16px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}
+            >
+              Ver radar de nieve y esquí →
+            </Link>
           </div>
         )}
 

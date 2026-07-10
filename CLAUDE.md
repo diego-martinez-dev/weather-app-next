@@ -164,7 +164,8 @@ const toggleFavorite = () => {
 ## Convenciones de código
 
 - No uses comentarios salvo que el motivo sea no obvio
-- No uses tailwind. El código de todo el website está en css. 
+- No uses tailwind. El código de todo el website está en css.
+- **Nunca uses emojis en la UI.** Usa íconos de `@heroicons/react/24/outline` (o un componente SVG propio como `SnowflakeIcon` cuando Heroicons no tenga el ícono adecuado, p. ej. nieve). El objetivo es que la página se vea profesional. 
 - No agregues manejo de errores para escenarios imposibles
 - No crees archivos de documentación ni README adicionales
 - Prefiere editar archivos existentes a crear nuevos

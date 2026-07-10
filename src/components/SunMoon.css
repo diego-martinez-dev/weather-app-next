@@ -39,9 +39,10 @@
   gap: 4px;
 }
 
-.sun-moon-emoji {
-  font-size: 1.6rem;
-  line-height: 1;
+.sun-moon-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  color: #f59e0b;
 }
 
 .sun-moon-label {
